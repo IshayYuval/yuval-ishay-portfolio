@@ -21,14 +21,14 @@ export default function NavItem({ href, children, className = "", ...props }: Na
             {...props}
         >
             <span
-                className={`uppercase text-sm transition-colors duration-300 ${isActive ? 'text-[var(--color-brand-primary)]' : 'text-[var(--color-typography-header)]'}`}
+                className={`uppercase text-sm transition-colors duration-300 ${isActive ? 'text-[var(--color-brand-primary-500)]' : 'text-[var(--color-typography-header)]'}`}
             >
                 {children}
             </span>
 
             {/* Underline Animation */}
             <span
-                className={`h-[1px] w-full origin-center transform transition-transform duration-300 ease-out ${isActive ? 'scale-x-100 bg-[var(--color-brand-primary)]' : 'scale-x-0 group-hover:scale-x-100 bg-[var(--color-typography-header)]'}`}
+                className={`h-[1px] w-full origin-center transform transition-transform duration-300 ease-out ${isActive ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0 group-hover:scale-x-100 bg-[var(--color-typography-header)]'}`}
             />
         </Link>
     );

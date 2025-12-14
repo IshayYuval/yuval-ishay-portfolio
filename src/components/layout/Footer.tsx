@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="py-12 border-t" style={{ borderColor: 'var(--border)' }}>
+        <footer className="py-12">
             <div className="container-custom flex justify-between items-center">
                 <p className="text-small">© 2025 Yuval Ishay</p>
                 <div className="flex gap-4">

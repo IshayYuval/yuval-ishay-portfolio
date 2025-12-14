@@ -1,13 +1,15 @@
 import Link from "next/link";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
+import ReviewCard from "@/components/ui/ReviewCard";
+import { reviews } from "@/data/portfolio";
 
 export default function Home() {
   return (
     <>
       {/* Masthead */}
       <section
-        className="min-h-screen flex items-center pt-20 px-[7.5rem] relative overflow-hidden"
+        className="min-h-screen flex items-center pt-20 px-8 md:px-[7.5rem] relative overflow-hidden"
         style={{
           backgroundImage: 'url(/web-assets/hero-image.png)',
           backgroundSize: 'cover',
@@ -17,13 +19,13 @@ export default function Home() {
       >
         {/* <div className="absolute inset-0 bg-black/30" /> Overlay for readability */}
         <div className="container-custom z-10">
-          <h1 className="mb-6">
+          <h1 className="mb-1">
             I'M YUVAL, TURNING VISIONS INTO VIBRANT VISUAL REALITIES.
           </h1>
-          <p className="text-xl mb-10 max-w-2xl text-white/90">
+          <span className="subheader">
             Graphic designer specializes in UX/UI & branding.
-          </p>
-          <div className="flex gap-4">
+          </span>
+          <div className="flex gap-4 md:flex-row flex-col mt-16">
             <Button variant="primary" href="/collections/branding">
               Order Now via Fiverr
             </Button>
@@ -59,7 +61,7 @@ export default function Home() {
             <br />
             So do you wanna see some of that passion visually? I've hand picked some of my case studies just for you!
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 md:flex-row flex-col">
             <Button variant="secondary" href="/collections/product-design">
               Product Design Case Studies
             </Button>
@@ -71,15 +73,13 @@ export default function Home() {
       </Section>
 
       {/* Clients */}
-      <Section className="border-t" style={{ borderColor: 'var(--border)' }}>
+      <Section>
         <div className="text-center mb-12">
-          <h2 className="text-sm uppercase tracking-widest" style={{ color: 'var(--muted)' }}>Selected Clients</h2>
+          <h2>a glance of my very happy clients ;)</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-60">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div key={i} className="h-16 flex items-center justify-center border border-dashed rounded" style={{ borderColor: 'var(--border)' }}>
-              <span className="text-xs font-medium" style={{ color: 'var(--muted)' }}>CLIENT {i + 1}</span>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          {reviews.map((review) => (
+            <ReviewCard key={review.id} review={review} />
           ))}
         </div>
       </Section>

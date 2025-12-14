@@ -112,3 +112,56 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "photography",
   },
 ];
+
+export type Review = {
+  id: string;
+  clientName: string;
+  companyName: string;
+  image: string;
+  reviewMessage: string;
+};
+
+export const reviews: Review[] = [
+  {
+    id: "1",
+    clientName: "Sarah Jenkins",
+    companyName: "Onyx",
+    image: "/reviews/onyx.svg",
+    reviewMessage: "Yuval is a true professional who knows his craft and executes it perfectly. He chose the exact colors and shapes that fit, providing a thorough and detailed explanation behind every element of the logo. The result is an impressive, professional, and precise logo, and the experience throughout the process was both pleasant and highly professional. Highly recommended! - Onyx",
+  },
+  {
+    id: "2",
+    clientName: "David Chen",
+    companyName: "Nouvelle",
+    image: "/reviews/nouvelle.svg",
+    reviewMessage: "Simply Amazing! - Nouvelle",
+  },
+  {
+    id: "3",
+    clientName: "Emily Rodriguez",
+    companyName: "Unique Freight",
+    image: "/reviews/unique-freight.svg",
+    reviewMessage: "Yuval did an amazing job with meticulous attention to detail! In the end, we received an incredible product that met all the requirements of our company! I highly recommend Yuval's services to anyone looking for a personal touch and top-level professionalism! - Unique Freight",
+  },
+  {
+    id: "4",
+    clientName: "Avi",
+    companyName: "Yuroneti",
+    image: "/reviews/yuroneti.svg",
+    reviewMessage: "Yuval gave me the feeling I made the right choice. He's very professional and creative, which is very important in design. He has a high sense of service. Many THX Yuval! - Yuroneti",
+  },
+  {
+    id: "5",
+    clientName: "Yehiel",
+    companyName: "3D Mylev",
+    image: "/reviews/3dmylev.svg",
+    reviewMessage: "The guy knows how to work. And knows what he's doing He seems to have years of experience and the Work was above the expected - 3DMylev",
+  },
+  {
+    id: "6",
+    clientName: "Tom Wilson",
+    companyName: "Lushay Docs",
+    image: "/reviews/lushay-docs.svg",
+    reviewMessage: "Delivered an amazing design and a great experience working together, above and beyond expectations, and would love to work together again in the future - Lushay Docs",
+  },
+];

@@ -5,12 +5,15 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import NavItem from "../nav/NavItem";
 import NavDropdown from "../nav/NavDropdown";
+import MobileMenuToggle from "../nav/MobileMenuToggle";
+import MobileMenu from "../nav/MobileMenu";
 import { collections } from "@/data/portfolio";
 
 export default function Header() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const visualCommItems = collections.filter(c => c.parentNav === "visual-communication");
@@ -25,7 +28,7 @@ export default function Header() {
     }, []);
 
     // Header background logic
-    const headerBg = isDropdownOpen || isScrolled || isHovered
+    const headerBg = isDropdownOpen || isScrolled || isHovered || isMobileMenuOpen
         ? 'var(--color-brand-secondary-900)'
         : 'transparent';
 
@@ -46,7 +49,7 @@ export default function Header() {
             <header
                 className="fixed top-0 left-0 w-full right-0 z-50 transition-all duration-300 ease-in-out overflow-hidden"
                 style={{
-                    backgroundColor: (isScrolled || isDropdownOpen || isHovered) ? headerBg : 'transparent',
+                    backgroundColor: (isScrolled || isDropdownOpen || isHovered || isMobileMenuOpen) ? headerBg : 'transparent',
                     maxHeight: isDropdownOpen ? '600px' : 'var(--header-height)',
                 }}
                 onMouseEnter={() => setIsHovered(true)}
@@ -55,7 +58,7 @@ export default function Header() {
                     handleDropdownLeave();
                 }}
             >
-                <div className="container-custom h-[var(--header-height)] flex items-center relative z-20">
+                <div className=" container-custom h-[var(--header-height)] flex items-center justify-between md:justify-start relative z-50">
                     {/* Logo */}
                     <Link href="/" className="logo flex items-center">
                         <Image
@@ -67,8 +70,8 @@ export default function Header() {
                         />
                     </Link>
 
-                    {/* Navigation */}
-                    <nav className="flex items-center gap-[2rem] h-full ml-[2rem]">
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex items-center gap-[2rem] h-full ml-[2rem]">
                         <NavItem
                             href="/collections/product-design"
                             onMouseEnter={handleOtherItemEnter}
@@ -97,6 +100,15 @@ export default function Header() {
                             About Me
                         </NavItem>
                     </nav>
+
+                </div>
+
+                {/* Mobile Menu Toggle - Positioned absolutely to break out of container stacking context if needed, or just z-index */}
+                <div className="absolute top-0 right-0 h-[var(--header-height)] flex items-center px-6 md:hidden z-[61]">
+                    <MobileMenuToggle
+                        isOpen={isMobileMenuOpen}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    />
                 </div>
 
                 {/* Dropdown Content - Rendered inside Header */}
@@ -104,7 +116,7 @@ export default function Header() {
                     className={`w-full transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none'}`}
                     aria-hidden={!isDropdownOpen}
                 >
-                    <div className="container-custom py-12 border-t" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+                    <div className="container-custom py-12">
                         <div className="flex flex-col gap-4">
                             {visualCommItems.map((item) => (
                                 <Link
@@ -119,6 +131,11 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
+                {/* Mobile Menu */}
+                <MobileMenu
+                    isOpen={isMobileMenuOpen}
+                    onClose={() => setIsMobileMenuOpen(false)}
+                />
             </header>
 
             {/* Backdrop Overlay - Starts below the expanded header if open, or standard header if closed (but opacity 0) */}

@@ -72,6 +72,7 @@ h1 {
   font-size: 1.5rem;
   line-height: 1.4;
   font-weight: 400;
+  margin-top: 0.5rem;
   color: var(--color-typography-subheader);
 }
 
@@ -80,7 +81,6 @@ h2 {
   text-transform: uppercase;
   line-height: 1.4;
   font-weight: 700;
-  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -254,13 +254,38 @@ p {
     margin-bottom: 0px;
     margin-top: 34px;
   }
+
+  .subheader {
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 27px;
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 540px) {
   h1 {
     font-size: 21px;
     line-height: 28px;
-    margin-bottom: 0px;
-    margin-top: 29px;
+    margin-bottom: 0.5rem;
+  }
+
+  .subheader {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-typography-subheader);
+  }
+
+  h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 }

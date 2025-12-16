@@ -26,8 +26,8 @@ export default async function CollectionPage({ params }: PageProps) {
     return (
         <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)]">
             <Section>
-                <div className="absolute top-0 left-0 right-0 pt-50 pb-20 px-45 mb-16 bg-[var(--color-brand-secondary-900)] w-full">
-                    <h1 className="h1 mb-4">Case Studies</h1>
+                <div className="absolute top-0 left-0 right-0 pt-48 pb-32 px-72 mb-16 bg-[var(--color-brand-secondary-900)] w-full">
+                    <h1 className="mb-1">Case Studies</h1>
                     <span className="">{collection.description}</span>
                 </div>
 

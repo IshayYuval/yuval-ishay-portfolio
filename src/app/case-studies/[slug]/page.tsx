@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/data/portfolio";
 import Section from "@/components/layout/Section";
+import "./case-study.css";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -22,9 +23,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
     return (
         <article className="pt-[var(--header-height)]">
-            <Section className="pb-0">
-                <h1 className="h1 mb-6">{study.title}</h1>
-                <p className="text-xl text-body max-w-3xl mb-8">{study.excerpt}</p>
+            <div className="absolute top-0 left-0 w-full flex justify-center items-center py-60 logo-placeholder">
                 <div className="flex gap-2 mb-12">
                     {study.tags.map(tag => (
                         <span key={tag} className="text-sm uppercase tracking-wider border px-3 py-1 rounded-full" style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}>
@@ -32,6 +31,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
                         </span>
                     ))}
                 </div>
+            </div>
+            <Section className="pb-0 max-w-3xl mx-auto">
+                <h1 className="text-center pt-20 mb-6">About The Project</h1>
+                <p className="mb-6">
+                    This is a placeholder for the case study content. In a real application, this would be populated from a CMS or Markdown files.
+                </p>
+                <h3>About the Company</h3>
             </Section>
 
             <div className="w-full h-[60vh] mb-16 flex items-center justify-center" style={{ backgroundColor: 'var(--muted-light)' }}>
@@ -40,9 +46,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
             <Section className="pt-0">
                 <div className="max-w-3xl mx-auto text-body text-lg">
-                    <p className="mb-6">
-                        This is a placeholder for the case study content. In a real application, this would be populated from a CMS or Markdown files.
-                    </p>
+
                     <h2 className="h3 mb-4" style={{ color: 'var(--foreground)' }}>The Challenge</h2>
                     <p className="mb-6">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

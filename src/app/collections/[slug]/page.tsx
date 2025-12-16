@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { collections, caseStudies } from "@/data/portfolio";
 import Section from "@/components/layout/Section";
-import CaseStudyCard from "@/components/ui/CaseStudyCard";
+import CaseStudyCard from "@/components/ui/CaseStudyCard/CaseStudyCard";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -24,14 +24,14 @@ export default async function CollectionPage({ params }: PageProps) {
     const studies = caseStudies.filter((s) => s.collectionSlug === slug);
 
     return (
-        <div className="pt-[var(--header-height)]">
+        <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)]">
             <Section>
-                <div className="mb-16">
+                <div className="absolute top-0 left-0 right-0 pt-50 pb-20 px-45 mb-16 bg-[var(--color-brand-secondary-900)] w-full">
                     <h1 className="h1 mb-4">Case Studies</h1>
-                    <p className="text-xl text-body max-w-2xl">{collection.description}</p>
+                    <span className="">{collection.description}</span>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
+                <div className="grid md:grid-cols-2 gap-x-4 gap-y-4 pt-60">
                     {studies.length > 0 ? (
                         studies.map((study) => (
                             <CaseStudyCard key={study.slug} study={study} />

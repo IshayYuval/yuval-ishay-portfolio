@@ -1,0 +1,38 @@
+.review-card {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius);
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.review-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    background-color: rgba(43, 54, 98, 0.7);
+    /* var(--color-brand-secondary-700) with opacity */
+    backdrop-filter: blur(4px);
+}
+
+.review-card:hover .review-card-overlay {
+    opacity: 1;
+}
+
+.review-card-text {
+    color: white;
+    font-size: 0.75rem;
+    /* caption size */
+    transform: translateY(1rem);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover .review-card-text {
+    transform: translateY(0);
+}

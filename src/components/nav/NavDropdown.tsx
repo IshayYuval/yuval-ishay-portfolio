@@ -38,13 +38,13 @@ export default function NavDropdown({ label, isOpen, onOpenChange, id }: NavDrop
             onMouseEnter={() => onOpenChange(true)}
         >
             <button
-                className={`nav-link flex items-center gap-1`}
+                className={`nav-link flex flex-row items-center gap-1`}
                 onClick={() => onOpenChange(!isOpen)}
                 aria-expanded={isOpen}
                 style={{ backgroundColor: "transparent", outline: "none", border: "none" }}
             >
                 <span
-                    className={`uppercase text-sm font-bold transition-colors duration-300 ${isActive || isOpen ? 'text-[var(--color-brand-primary)]' : 'text-[var(--color-typography-header)]'}`}
+                    className={`transition-colors duration-300 ${isActive || isOpen ? 'text-[var(--color-brand-primary)]' : 'text-[var(--color-typography-header)]'}`}
                 >
                     {label}
                 </span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import styles from "./Button.module.css";
 
 type ButtonBaseProps = {
     variant?: "primary" | "secondary";
@@ -25,17 +26,11 @@ export default function Button({
     children,
     ...props
 }: ButtonProps) {
-    const baseStyles =
-        "inline-flex items-center justify-center px-6 py-3 min-w-[120px] text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+    // Base styles are now handled by CSS classes, but we keep the logic for variant class names
+    // We can simplify this since the CSS classes handle most of it
 
-    const variants = {
-        primary:
-            "bg-[var(--color-brand-primary-500)] text-[var(--color-brand-secondary-900)] hover:bg-[var(--color-brand-primary-600)] focus:ring-[var(--color-brand-primary-500)]",
-        secondary:
-            "bg-transparent border border-[var(--color-brand-primary-500)] text-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-secondary-700)] focus:ring-[var(--color-brand-primary-500)]",
-    };
-
-    const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
+    const variantClass = variant === "primary" ? styles['btn-primary'] : styles['btn-secondary'];
+    const combinedClassName = `${styles.btn} ${variantClass} ${className}`;
 
     if (props.href) {
         const { href, ...linkProps } = props as ButtonAsLink;

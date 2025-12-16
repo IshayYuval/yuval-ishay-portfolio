@@ -82,10 +82,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                         <button
                             onClick={() => handleViewChange("visual-communication")}
-                            className={`flex justify-between nav-link relative w-full ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : ''}`}
+                            className={`flex nav-link gap-1 items-center relative ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : ''}`}
                         >
                             <span>Visual Communication</span>
-                            <ChevronRight size={24} />
+                            <ChevronRight size={20} />
                             <span className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0'}`} />
                         </button>
 

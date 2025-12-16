@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Section from "@/components/layout/Section";
-import Button from "@/components/ui/Button";
-import ReviewCard from "@/components/ui/ReviewCard";
+import Button from "@/components/ui/Button/Button";
+import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
 import { reviews } from "@/data/portfolio";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* Masthead */}
       <section
-        className="min-h-screen flex items-center pt-20 px-8 md:px-[7.5rem] relative overflow-hidden"
+        className="min-h-screen flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] relative overflow-hidden"
         style={{
           backgroundImage: 'url(/web-assets/hero-image.png)',
           backgroundSize: 'cover',
@@ -25,7 +25,7 @@ export default function Home() {
           <span className="subheader">
             Graphic designer specializes in UX/UI & branding.
           </span>
-          <div className="flex gap-4 md:flex-row flex-col mt-16">
+          <div className="flex gap-4 sm:flex-row flex-col mt-16">
             <Button variant="primary" href="/collections/branding">
               Order Now via Fiverr
             </Button>
@@ -47,6 +47,9 @@ export default function Home() {
             creating strong connections between business owners and their clients through amazing brand identities.
           </p>
         </div>
+        <Button variant="secondary" href="/about">
+          More about my story
+        </Button>
       </Section>
 
 
@@ -61,7 +64,7 @@ export default function Home() {
             <br />
             So do you wanna see some of that passion visually? I've hand picked some of my case studies just for you!
           </p>
-          <div className="flex gap-4 md:flex-row flex-col">
+          <div className="flex gap-4 sm:flex-row flex-col">
             <Button variant="secondary" href="/collections/product-design">
               Product Design Case Studies
             </Button>

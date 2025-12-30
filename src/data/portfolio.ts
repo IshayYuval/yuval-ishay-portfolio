@@ -12,6 +12,7 @@ export type CaseStudy = {
   tags: string[];
   collectionSlug: string;
   cover?: string;
+  date: string;
 };
 
 export const collections: Collection[] = [
@@ -49,12 +50,14 @@ export const collections: Collection[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
+    // branding
     slug: "cheetah",
     title: "Cheetah",
     excerpt: "During my first year in my Visual Communication B.A, we've got an assignment to select an animal and build a comprehensive visual identity around it",
     tags: ["HIT Visual Communication BA", "Graphic Fundamentals"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/cheetah/page-cover.svg",
+    date: "2025-01-18",
   },
   {
     slug: "name-the-font",
@@ -63,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Passion Project", "Gaming"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/name-the-font/page-cover.svg",
+    date: "2025-11-01",
   },
   {
     slug: "unique-freight",
@@ -71,6 +75,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "Delivery"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/unique-freight/page-cover.svg",
+    date: "2024-01-12",
   },
   {
     slug: "onyx",
@@ -79,6 +84,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "Software", "Digital"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/onyx/page-cover.svg",
+    date: "2023-11-28",
   },
   {
     slug: "nouvelle",
@@ -87,6 +93,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "Bakery", "Print & Digital"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/nouvelle/page-cover.svg",
+    date: "2024-05-03",
   },
   {
     slug: "united-future-fa",
@@ -95,6 +102,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Passion Project", "Football Club"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/uffa/page-cover.svg",
+    date: "2024-04-03",
   },
   {
     slug: "cloudeye",
@@ -103,20 +111,111 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "SaaS"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/cloudeye/page-cover.svg",
+    date: "2022-5-18",
   },
+
+  // conceptual art
   {
-    slug: "health-tracker",
-    title: "Health Tracker",
-    excerpt: "A minimal mobile app for tracking daily wellness metrics.",
-    tags: ["Product Design", "Mobile", "Health"],
-    collectionSlug: "product-design",
-  },
-  {
-    slug: "urban-shadows",
-    title: "Urban Shadows",
+    slug: "tarantino-homage",
+    title: "Tarantino Homage",
     excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["Photography", "Fine Art"],
+    tags: ["HIT", "Visual Communication BA"],
+    collectionSlug: "conceptual-design",
+    date: "2025-03-22",
+  },
+  {
+    slug: "long-distance-love",
+    title: "Long Distance Love",
+    excerpt: "A photographic exploration of light and shadow in the city.",
+    tags: ["HIT", "Visual Communication BA"],
+    collectionSlug: "conceptual-design",
+    date: "2025-07-11",
+  },
+  {
+    slug: "city-activism",
+    title: "City Activism",
+    excerpt: "A photographic exploration of light and shadow in the city.",
+    tags: ["HIT", "Visual Communication BA"],
+    collectionSlug: "conceptual-design",
+    date: "2025-04-25",
+  },
+
+  // photography
+  {
+    slug: "hunger",
+    title: "Hunger",
+    excerpt: "A photographic exploration of light and shadow in the city.",
+    tags: ["HIT", "Visual Communication BA"],
     collectionSlug: "photography",
+    date: "2025-12-29",
+  },
+  {
+    slug: "out-of-bounds",
+    title: "Out of Bounds",
+    excerpt: "A photographic exploration of light and shadow in the city.",
+    tags: ["HIT", "Visual Communication BA"],
+    collectionSlug: "photography",
+    date: "2025-07-22",
+  },
+
+  // typography
+  {
+    slug: "ezer-alchemist-homage",
+    title: "Ezer Alchemist Homage",
+    excerpt: "A photographic exploration of light and shadow in the city.",
+    tags: ["HIT", "Visual Communication BA"],
+    collectionSlug: "typography",
+    date: "2025-05-28",
+  },
+
+  // product design
+  {
+    slug: "name-the-font",
+    title: "Name the Font",
+    excerpt: "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
+    tags: ["Passion Project", "Typography"],
+    collectionSlug: "product-design",
+    date: "2025-10-31",
+  },
+  {
+    slug: "infowork",
+    title: "Infowork",
+    excerpt: "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
+    tags: ["Personal Project", "SaaS"],
+    collectionSlug: "product-design",
+    date: "2025-10-01",
+  },
+  {
+    slug: "lushay-docs",
+    title: "Lushay Docs",
+    excerpt: "A documentation site for learning and enhancing FPGA knowledge.",
+    tags: ["Client Project", "Documentation", "Learning Platform"],
+    collectionSlug: "product-design",
+    date: "2024-05-22",
+  },
+  {
+    slug: "cloudeye",
+    title: "Cloudeye",
+    excerpt: "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
+    tags: ["Client Project", "SaaS"],
+    collectionSlug: "product-design",
+    date: "2025-10-10",
+  },
+  {
+    slug: "upllery",
+    title: "Upllery Event Manager",
+    excerpt: "Web management platform for Upllery events - Use your audience Instagram stories as your events content!",
+    tags: ["Client Project", "SaaS"],
+    collectionSlug: "product-design",
+    date: "2025-12-25",
+  },
+  {
+    slug: "3dmylev",
+    title: "3DMylev",
+    excerpt: "An online business for 3D Printing designers furnitures",
+    tags: ["Client Project", "E-commerce", "Shopify"],
+    collectionSlug: "product-design",
+    date: "2025-7-2",
   },
 ];
 
@@ -131,21 +230,21 @@ export type Review = {
 export const reviews: Review[] = [
   {
     id: "1",
-    clientName: "Sarah Jenkins",
+    clientName: "Valeria",
     companyName: "Onyx",
     image: "/reviews/onyx.svg",
     reviewMessage: "Yuval is a true professional who knows his craft and executes it perfectly. He chose the exact colors and shapes that fit, providing a thorough and detailed explanation behind every element of the logo. The result is an impressive, professional, and precise logo, and the experience throughout the process was both pleasant and highly professional. Highly recommended!",
   },
   {
     id: "2",
-    clientName: "David Chen",
+    clientName: "Guy Hadash",
     companyName: "Nouvelle",
     image: "/reviews/nouvelle.svg",
     reviewMessage: "Simply Amazing!",
   },
   {
     id: "3",
-    clientName: "Emily Rodriguez",
+    clientName: "Giorgi",
     companyName: "Unique Freight",
     image: "/reviews/unique-freight.svg",
     reviewMessage: "Yuval did an amazing job with meticulous attention to detail! In the end, we received an incredible product that met all the requirements of our company! I highly recommend Yuval's services to anyone looking for a personal touch and top-level professionalism!",

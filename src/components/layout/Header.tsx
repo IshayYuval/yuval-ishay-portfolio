@@ -58,48 +58,60 @@ export default function Header() {
                     handleDropdownLeave();
                 }}
             >
-                <div className=" container-custom h-[var(--header-height)] flex items-center justify-between md:justify-start relative z-50">
+                <div className="w-full px-12 md:px-24 gap-4 h-[var(--header-height)] flex items-center justify-between relative z-50">
                     {/* Logo */}
-                    <Link href="/" className="logo flex items-center">
-                        <Image
-                            src="/web-assets/Brandmark.svg"
-                            alt="Brandmark"
-                            width={40}
-                            height={40}
-                            className="w-16 h-16"
-                        />
-                    </Link>
+                    <div className="flex items-center">
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-[2rem] h-full ml-[2rem]">
-                        <NavItem
-                            href="/collections/product-design"
-                            onMouseEnter={handleOtherItemEnter}
-                        >
-                            Product Design
-                        </NavItem>
-                        <NavItem
-                            href="/collections/branding"
-                            onMouseEnter={handleOtherItemEnter}
-                        >
-                            Branding
-                        </NavItem>
-
-                        <div onMouseEnter={handleDropdownEnter}>
-                            <NavDropdown
-                                label="Visual Communication"
-                                isOpen={isDropdownOpen}
-                                onOpenChange={setIsDropdownOpen}
+                        <Link href="/" className="logo flex items-center">
+                            <Image
+                                src="/web-assets/Brandmark.svg"
+                                alt="Brandmark"
+                                width={40}
+                                height={40}
+                                className="w-16 h-16"
                             />
-                        </div>
+                        </Link>
 
-                        <NavItem
-                            href="/about"
-                            onMouseEnter={handleOtherItemEnter}
-                        >
-                            About Me
-                        </NavItem>
-                    </nav>
+                        {/* Desktop Navigation */}
+                        <nav className="hidden md:flex items-center gap-[2rem] h-full ml-[2rem]">
+                            <NavItem
+                                href="/collections/product-design"
+                                onMouseEnter={handleOtherItemEnter}
+                            >
+                                Product Design
+                            </NavItem>
+                            <NavItem
+                                href="/collections/branding"
+                                onMouseEnter={handleOtherItemEnter}
+                            >
+                                Branding
+                            </NavItem>
+
+                            <div onMouseEnter={handleDropdownEnter}>
+                                <NavDropdown
+                                    label="Visual Communication"
+                                    isOpen={isDropdownOpen}
+                                    onOpenChange={setIsDropdownOpen}
+                                />
+                            </div>
+
+                            <NavItem
+                                href="/about"
+                                onMouseEnter={handleOtherItemEnter}
+                            >
+                                About Me
+                            </NavItem>
+                        </nav>
+                    </div>
+
+                    <div className="flex gap-4 items-center">
+                        <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                            <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/yuvalishay-art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                            <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 invert" />
+                        </a>
+                    </div>
 
                 </div>
 

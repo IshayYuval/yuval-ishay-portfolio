@@ -58,7 +58,7 @@ export default function Header() {
                     handleDropdownLeave();
                 }}
             >
-                <div className="w-full px-12 md:px-24 gap-4 h-[var(--header-height)] flex items-center justify-between relative z-50">
+                <div className="w-full nav-bar-container gap-4 h-[var(--header-height)] flex items-center justify-between relative z-50">
                     {/* Logo */}
                     <div className="flex items-center">
 
@@ -73,7 +73,7 @@ export default function Header() {
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center gap-[2rem] h-full ml-[2rem]">
+                        <nav className="hidden md:flex items-center gap-4 lg:gap-8 h-full ml-[1.5rem] lg:ml-[2rem]">
                             <NavItem
                                 href="/collections/product-design"
                                 onMouseEnter={handleOtherItemEnter}
@@ -104,7 +104,7 @@ export default function Header() {
                         </nav>
                     </div>
 
-                    <div className="flex gap-4 items-center">
+                    <div className="hidden md:flex gap-4 items-center">
                         <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                             <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
                         </a>

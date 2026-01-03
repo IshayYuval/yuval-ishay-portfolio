@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { collections } from "@/data/portfolio";
@@ -72,26 +73,37 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     className={`absolute inset-0 pt-[var(--header-height)] px-6 transition-transform duration-300 ease-in-out ${view === "main" ? "translate-x-0" : "-translate-x-full"
                         }`}
                 >
-                    <nav className={`flex flex-col gap-8 text-2xl font-bold mt-8 uppercase tracking-wide transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-                        <MobileNavItem href="/collections/product-design" onClick={onClose}>
-                            Product Design
-                        </MobileNavItem>
-                        <MobileNavItem href="/collections/branding" onClick={onClose}>
-                            Branding
-                        </MobileNavItem>
+                    <nav className={`flex flex-col justify-between mt-8 uppercase transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                        <div className="flex flex-col gap-8">
 
-                        <button
-                            onClick={() => handleViewChange("visual-communication")}
-                            className={`flex nav-link gap-1 items-center relative ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : ''}`}
-                        >
-                            <span>Visual Communication</span>
-                            <ChevronRight size={20} />
-                            <span className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0'}`} />
-                        </button>
+                            <MobileNavItem href="/collections/product-design" onClick={onClose}>
+                                Product Design
+                            </MobileNavItem>
+                            <MobileNavItem href="/collections/branding" onClick={onClose}>
+                                Branding
+                            </MobileNavItem>
 
-                        <MobileNavItem href="/about" onClick={onClose}>
-                            About Me
-                        </MobileNavItem>
+                            <button
+                                onClick={() => handleViewChange("visual-communication")}
+                                className={`flex nav-link gap-1 items-center relative ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : ''}`}
+                            >
+                                <span>Visual Communication</span>
+                                <ChevronRight size={20} />
+                                <span className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0'}`} />
+                            </button>
+
+                            <MobileNavItem href="/about" onClick={onClose}>
+                                About Me
+                            </MobileNavItem>
+                        </div>
+                        <div className="flex gap-4 items-center mt-24">
+                            <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/yuvalishay-art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 invert" />
+                            </a>
+                        </div>
                     </nav>
                 </div>
 

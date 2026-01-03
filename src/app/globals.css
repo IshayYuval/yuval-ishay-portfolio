@@ -151,6 +151,11 @@ p {
   text-decoration: none;
 }
 
+.nav-bar-container {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
 @media (max-width: 1200px) {
   h1 {
     font-size: 32px;
@@ -164,6 +169,13 @@ p {
     line-height: 20px;
     margin-bottom: 27px;
     margin-top: 8px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-bar-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 

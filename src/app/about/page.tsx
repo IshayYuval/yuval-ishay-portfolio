@@ -8,7 +8,7 @@ export default function AboutPage() {
         <div className="pt-[var(--header-height)]">
             <Section>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-                    <Image src="/web-assets/profile-image.jpg" alt="Hero Image" width={504} height={504} />
+                    <Image src="/web-assets/profile.webp" alt="Hero Image" width={504} height={504} />
                     <div className="max-w-3xl">
                         <h1 className="mb-8">Hey there, I'm <span className="emphasized-text">Yuval!</span></h1>
                         <p className="mb-6 max-w-xl">

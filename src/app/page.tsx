@@ -11,7 +11,7 @@ export default function Home() {
       <section
         className="min-h-screen flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] relative overflow-hidden"
         style={{
-          backgroundImage: 'url(/web-assets/hero-image.png)',
+          backgroundImage: 'url(/web-assets/hero-image.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

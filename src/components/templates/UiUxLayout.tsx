@@ -45,7 +45,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                             target="_blank"
                             className=""
                         >
-                            View Live Project
+                            {data.projectUrlText}
                         </Button>
                     )}
                 </header>
@@ -58,6 +58,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                             <div key={index} className="flex flex-col gap-4">
                                 <h3>{renderTextWithBreaks(step.title)}</h3>
                                 {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
+                                {step.bulletsTitle && <h4 className="font-bold mt-2 mb-4">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
                                 {step.bullets && step.bullets.length > 0 && (
                                     <ul className="list-disc pl-5 text-body space-y-1.5">
                                         {step.bullets.map((bullet, i) => (
@@ -78,6 +79,29 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                                         ))}
                                     </ul>
                                 )}
+                                {step.bulletSections && step.bulletSections.map((section, sIndex) => (
+                                    <div key={sIndex} className="mt-4">
+                                        {section.title && <h4 className="font-bold mt-2 mb-4">{renderTextWithBreaks(section.title)}</h4>}
+                                        <ul className="list-disc pl-5 text-body space-y-1.5">
+                                            {section.bullets.map((bullet, bIndex) => (
+                                                <li key={bIndex}>
+                                                    {typeof bullet === "string" ? (
+                                                        renderTextWithBreaks(bullet)
+                                                    ) : (
+                                                        <>
+                                                            {bullet.label && (
+                                                                <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
+                                                                    {bullet.label}
+                                                                </span>
+                                                            )}
+                                                            {renderTextWithBreaks(bullet.text)}
+                                                        </>
+                                                    )}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
                                 {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
                             </div>
                         ))}

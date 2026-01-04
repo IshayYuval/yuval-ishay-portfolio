@@ -28,7 +28,12 @@ export type ProcessStepBullet = string | {
 export type ProcessStep = {
   title: string;
   text: string;
+  bulletsTitle?: string;
   bullets?: ProcessStepBullet[];
+  bulletSections?: {
+    title?: string;
+    bullets: ProcessStepBullet[];
+  }[];
   textAfter?: string;
 };
 
@@ -48,6 +53,7 @@ export type CaseStudy = {
   contentSections?: ZigZagSection[];
   gallery?: GalleryItem[];
   backgroundColor?: string;
+  projectUrlText?: string;
 };
 
 export const collections: Collection[] = [
@@ -741,11 +747,57 @@ export const caseStudies: CaseStudy[] = [
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
     backgroundColor: "#133C66",
     projectUrl: "http://namethefont.com",
+    projectUrlText: "Play now!",
     collectionSlug: "product-design",
     date: "2025-10-31",
-    introText: "During my first year studying Visual Communication, a friend from class and I discovered a shared obsession with Hebrew typography — and an ongoing debate about who was better at identifying fonts by sight. What started as a playful rivalry quickly turned into an idea for a game that could settle it once and for all. <br/> That’s how Name the Font was born — a browser-based game that challenges players to recognize Hebrew typefaces used in our daily life, under time pressure. I led the UX/UI design and front-end development using the Next.js framework, crafting a clean, competitive experience that celebrates typography through play. <br/> Wanna see for yourselves? Let's go! Grab your place at the leaderboards table!",
+    introText: "During my first year studying Visual Communication, a friend from class and I discovered a shared obsession with Hebrew typography — and an ongoing debate about who was better at identifying fonts by sight. What started as a playful rivalry quickly turned into an idea for a game that could settle it once and for all. <br/><br/> That’s how Name the Font was born — a browser-based game that challenges players to recognize Hebrew typefaces used in our daily life, under time pressure. I led the UX/UI design and front-end development using the Next.js framework, crafting a clean, competitive experience that celebrates typography through play. <br/><br/> Wanna see for yourselves? Let's go! Grab your place at the leaderboards table!",
     processSteps: [
-      { title: "Project Requirements Document", text: "We started by sitting with my friend and deciding on the needed features for the MVP version: How users are gonna interact, the basic game logic, the all-around experience, the authentication, the competitive aspects and more:" },
+      {
+        title: "Project Requirements Document",
+        text: "We started by sitting with my friend and deciding on the needed features for the MVP version: How users are gonna interact, the basic game logic, the all-around experience, the authentication, the competitive aspects and more:",
+        bulletSections: [
+          {
+            title: "Game Logic",
+            bullets: [
+              {
+                text: "10 questions per round, because we wanted depth, but a continuous experience to discover more fonts."
+              },
+              {
+                text: "Time-based points, to add additional challenge to player who know a lot of fonts"
+              },
+              {
+                text: "Motion Design using gamification principles, so the whole experience will fill alive."
+              },
+            ],
+          },
+          {
+            title: "Authentication",
+            bullets: [
+              {
+                text: "Google-based social login, to disappear the need to remember yet another password."
+              },
+              {
+                text: "Magic-Link authentication, to cover the edge cases of those who don't have a google account."
+              },
+              {
+                text: "Combined sign-up and sign-in, to make everything at one place."
+              },
+            ],
+          },
+          {
+            title: "Leaderboards and Profile",
+            bullets: [
+              {
+                text: "Personal profile page, with the relevant statistics about the player's performance, with weekly and all-time views."
+              },
+              {
+                text: "Leaderboards table with points based rankings with logic to rank properly in-case of a tie."
+              },
+            ],
+          },
+        ],
+        textAfter: "Once I had the PRD, I started designing the UI, not before creating user flows, and design guidelines the game needed.",
+      },
       { title: "User Interface", text: "The UI was designed around the brand of name the font, which we designed together. This case study is available in the branding section of my portfolio. For now, For now, here’s a glimpse of the final design:" },
     ],
     contentSections: [

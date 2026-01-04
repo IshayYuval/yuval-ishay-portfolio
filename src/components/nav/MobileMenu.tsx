@@ -40,10 +40,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <Link
                 href={href}
                 onClick={onClick}
-                className={`nav-link relative w-fit ${active ? 'text-[var(--color-brand-primary-500)]' : ''}`}
+                className={`nav-link relative w-fit group pl-4 ${active ? 'text-[var(--color-brand-primary-500)]' : 'hover:text-[var(--foreground)]'}`}
             >
                 {children}
-                <span className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left transform transition-transform duration-300 ease-out ${active ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0'}`} />
+                <span className={`absolute left-0 top-0 h-full w-[2px] origin-center transform transition-transform duration-300 ease-out ${active ? 'scale-y-100 bg-[var(--color-brand-primary-500)]' : 'scale-y-0 group-hover:scale-y-100 bg-[var(--foreground)]'}`} />
             </Link>
         );
     };
@@ -85,11 +85,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                             <button
                                 onClick={() => handleViewChange("visual-communication")}
-                                className={`flex nav-link gap-1 items-center relative ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : ''}`}
+                                className={`flex nav-link gap-1 items-center relative w-fit group pl-4 ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : 'hover:text-[var(--foreground)]'}`}
                             >
                                 <span>Visual Communication</span>
                                 <ChevronRight size={20} />
-                                <span className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0'}`} />
+                                <span className={`absolute left-0 top-0 h-full w-[2px] origin-center transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-y-100 bg-[var(--color-brand-primary-500)]' : 'scale-y-0 group-hover:scale-y-100 bg-[var(--foreground)]'}`} />
                             </button>
 
                             <MobileNavItem href="/about" onClick={onClose}>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import NavItem from "../nav/NavItem";
 import NavDropdown from "../nav/NavDropdown";
 import MobileMenuToggle from "../nav/MobileMenuToggle";
@@ -10,6 +11,7 @@ import MobileMenu from "../nav/MobileMenu";
 import { collections } from "@/data/portfolio";
 
 export default function Header() {
+    const pathname = usePathname();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -131,14 +133,14 @@ export default function Header() {
                     <div className="container-custom py-12">
                         <div className="flex flex-col gap-4">
                             {visualCommItems.map((item) => (
-                                <Link
+                                <NavItem
                                     key={item.slug}
                                     href={`/collections/${item.slug}`}
-                                    className="group block nav-link"
                                     onClick={() => setIsDropdownOpen(false)}
+                                    className="w-fit items-start"
                                 >
-                                    <span className="mb-2 group-hover:text-[var(--color-brand-primary)] transition-colors">{item.title}</span>
-                                </Link>
+                                    {item.title}
+                                </NavItem>
                             ))}
                         </div>
                     </div>

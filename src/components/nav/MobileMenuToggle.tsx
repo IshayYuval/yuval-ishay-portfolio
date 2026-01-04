@@ -13,6 +13,7 @@ export default function MobileMenuToggle({ isOpen, onClick }: MobileMenuTogglePr
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
         >
+            {/* Hamburger Icon */}
             {/* Top Line */}
             <span
                 className={`block w-6 h-[2px] bg-[var(--foreground)] transition-transform duration-300 ease-in-out origin-center ${isOpen ? "rotate-45 translate-y-[1px]" : "-translate-y-[3px]"

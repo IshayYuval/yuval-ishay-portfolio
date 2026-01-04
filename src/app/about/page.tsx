@@ -11,7 +11,7 @@ export default function AboutPage() {
                     <Image src="/web-assets/profile.webp" alt="Hero Image" width={504} height={504} />
                     <div className="max-w-3xl">
                         <h1 className="mb-8">Hey there, I'm <span className="emphasized-text">Yuval!</span></h1>
-                        <p className="mb-6 max-w-xl">
+                        <p className="mb-6 max-w-xl text-body">
                             I'm a professional product designer and logo designer working as a freelancer on Fiverr, based in Rishon Letzion, Israel
                             and I only have one mission - to solve your problems using my skills. I bring a wealth of expertise to the table in both
                             the UX/UI and logo design field, and I'm here to help.

@@ -5,6 +5,7 @@ import { CaseStudy } from "@/data/portfolio";
 import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
 import Button from "../ui/Button/Button";
+import Tag from "../ui/Tag/Tag";
 import { renderTextWithBreaks } from "@/utils/text";
 
 export default function BrandingLayout({ data }: { data: CaseStudy }) {
@@ -26,9 +27,14 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
             <div className="container-custom mx-auto px-6">
                 {/* Intro Section */}
                 <section className="max-w-4xl mx-auto pt-24">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-8 text-center">About the Project</h1>
+                    <h1 className="mb-2 text-center">About the Project</h1>
+                    <div className="flex flex-wrap justify-center gap-2 mb-8">
+                        {data.tags.map(tag => (
+                            <Tag key={tag}>{tag}</Tag>
+                        ))}
+                    </div>
                     {data.introText && (
-                        <p className="text-xl md:text-2xl text-left text-[var(--foreground)] opacity-90 font-light mb-6">
+                        <p className="text-body mb-6">
                             {renderTextWithBreaks(data.introText)}
                         </p>
                     )}
@@ -48,9 +54,9 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         {data.processSteps.map((step, index) => (
                             <div key={index} className="flex flex-col gap-4">
                                 <h3 className="font-bold">{renderTextWithBreaks(step.title)}</h3>
-                                {step.text && <p className="text-[var(--foreground)]/80 leading-relaxed font-light">{renderTextWithBreaks(step.text)}</p>}
+                                {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
                                 {step.bullets && step.bullets.length > 0 && (
-                                    <ul className="list-disc pl-5 text-[var(--foreground)]/80 space-y-2">
+                                    <ul className="list-disc pl-5 text-body space-y-1.5">
                                         {step.bullets.map((bullet, i) => (
                                             <li key={i}>
                                                 {typeof bullet === "string" ? (
@@ -69,7 +75,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                                         ))}
                                     </ul>
                                 )}
-                                {step.textAfter && <p className="text-[var(--foreground)]/80 leading-relaxed font-light">{renderTextWithBreaks(step.textAfter)}</p>}
+                                {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
                             </div>
                         ))}
                     </section>
@@ -77,7 +83,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
 
                 {/* Content Sections */}
                 {data.contentSections && (
-                    <section className="py-12">
+                    <section className="pt-14">
                         <h1 className="mb-2 text-center">Visual Language</h1>
                         {data.contentSections.map((section, index) => (
                             <ZigZagRow key={index} {...section} />

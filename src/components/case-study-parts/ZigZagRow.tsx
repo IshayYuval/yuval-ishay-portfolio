@@ -18,7 +18,7 @@ export default function ZigZagRow({ image, title, text, reverse }: ZigZagSection
 
             {/* Text Side */}
             <div className="w-full md:w-1/3 flex flex-col justify-center">
-                {title && <h3 className="text-2xl md:text-3xl font-bold mb-4">{renderTextWithBreaks(title)}</h3>}
+                {title && <h3 className="mb-4">{renderTextWithBreaks(title)}</h3>}
                 <p>
                     {renderTextWithBreaks(text)}
                 </p>

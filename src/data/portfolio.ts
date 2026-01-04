@@ -68,19 +68,19 @@ export const collections: Collection[] = [
   {
     slug: "typography",
     title: "Typography",
-    description: "Type design and typographic systems.",
+    description: "See some amazing typography project, in a new area I fell in love with during my bachelor's visual communication studies.",
     parentNav: "visual-communication",
   },
   {
     slug: "conceptual-design",
     title: "Conceptual Design",
-    description: "Experimental and theoretical design projects.",
+    description: "My thoughts and beliefs, in personal and general topics, communicating through design.",
     parentNav: "visual-communication",
   },
   {
     slug: "photography",
     title: "Photography",
-    description: "Visual storytelling through the lens.",
+    description: "My view of the world, and my view of the ideal world, through the lens.",
     parentNav: "visual-communication",
   },
 ];
@@ -326,7 +326,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         image: "/case-studies/branding/unique-freight/logotype.svg",
-        title: "The Logotype",
+        title: "Typography",
         text: "Hanken Grotesk is a sans serif typeface inspired by the classic grotesques, with identical features to linear grotesk, yet available for commercial use.   by modifing some letters of the font, such as the F and T, I was able to much the font to the brandmark and achieve the sense of speed.",
       },
       {
@@ -532,9 +532,36 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "branding",
     cover: "/case-studies/branding/uffa/page-cover.svg",
     date: "2024-04-03",
-    introText: "United Future Football Academy is a premier institution dedicated to cultivating young soccer talent and instilling a deep love for the game. It stands out for its comprehensive approach to player development, combining physical training, tactical knowledge, and mental resilience. The academy is committed to shaping well-rounded athletes who excel on the pitch and demonstrate integrity off it. This project is a part of my ChatGPT challenge, in which I design a comprehensive visual identity according to the briefs provided by the Chat :)",
-    heroImage: "/case-studies/branding/uffa/hero.svg",
     backgroundColor: "#072131",
+    heroImage: "/case-studies/branding/uffa/hero.svg",
+    introText: "United Future Football Academy is a premier institution dedicated to cultivating young soccer talent and instilling a deep love for the game. It stands out for its comprehensive approach to player development, combining physical training, tactical knowledge, and mental resilience. The academy is committed to shaping well-rounded athletes who excel on the pitch and demonstrate integrity off it. <br/> <br/>This project is a part of my ChatGPT challenge, in which I design a comprehensive visual identity according to the briefs provided by the Chat :)",
+    processSteps: [
+      {
+        title: "",
+        text: "",
+        bullets: [
+          {
+            label: "Target Audience: ",
+            labelWeight: "bold",
+            labelColor: "#EFAF22",
+            text: "Young soccer enthusiasts aged 8-18 eager to develop their skills, as well as their parents seeking a reputable academy for their children. The academy also appeals to soccer coaches, local sports communities, and potential sponsors interested in supporting youth sports."
+          },
+          {
+            label: "The Mission: ",
+            labelWeight: "bold",
+            labelColor: "#EFAF22",
+            text: "To create a design that reflects the area of the academy in an innovative and futuristic way, which will establish trust and professionalism in the market. Although I was aiming for a futuristic look, I also wanted to design a timeless logo, a one that’s gonna become traditional over time, while unitying the community behind it."
+          },
+          {
+            label: "Creative Concept: ",
+            labelWeight: "bold",
+            labelColor: "#EFAF22",
+            text: "Incorporating a house and a shield to symbolize strength and a home-like feeling, paired with a design language that conveys the academy's dedication to unity, friendship and excellence both on and outside the pitch."
+          },
+        ],
+        textAfter: "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
+      },
+    ],
     contentSections: [
       {
         image: "/case-studies/branding/uffa/brandmark.svg",
@@ -666,14 +693,42 @@ export const caseStudies: CaseStudy[] = [
 
   // typography
   {
+    slug: "liebling-haus",
+    title: "Liebling Haus Poster",
+    excerpt: "An infographic poster, based on the architectual style of Liebling Haus.",
+    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    collectionSlug: "typography",
+    date: "2025-12-23",
+    introText: "Dummy intro for Liebling Haus.",
+  },
+  {
+    slug: "dance-tel-aviv",
+    title: "Dance Tel-Aviv",
+    excerpt: "A typographic flyer, capturing the movement and soul of the festival",
+    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    collectionSlug: "typography",
+    date: "2025-11-20",
+    introText: "Dummy intro for Dance Tel-Aviv.",
+  },
+  {
     slug: "ezer-alchemist-homage",
     title: "Ezer Alchemist Homage",
     excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "typography",
     date: "2025-05-28",
     introText: "Dummy intro for Ezer Alchemist Homage.",
   },
+  {
+    slug: "theory-of-relativity",
+    title: "Theory of Relativity",
+    excerpt: "A typographic poster, capturing the movement and soul of the festival",
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    collectionSlug: "typography",
+    date: "2025-05-28",
+    introText: "Dummy intro for Theory of Relativity.",
+  },
+
 
   // product design
   {

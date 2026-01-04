@@ -99,7 +99,7 @@ export default function Header() {
                                 href="/about"
                                 onMouseEnter={handleOtherItemEnter}
                             >
-                                About Me
+                                My Story
                             </NavItem>
                         </nav>
                     </div>

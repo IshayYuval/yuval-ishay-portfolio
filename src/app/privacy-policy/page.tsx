@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
                 <h1 className="mb-1">Privacy Policy</h1>
 
                 <div className="pt-4 max-w-3xl">
-                    <p className="text-xl leading-relaxed mb-8 text-[var(--color-text-secondary)]">
+                    <p className="text-body mb-8">
                         This website does not collect any personal information from visitors. This website uses a secure protocol (HTTPS) to protect your information during transmission. No cookies are used on this website for advertising or analytics purposes.
                     </p>
                     <Button href="/" variant="primary">

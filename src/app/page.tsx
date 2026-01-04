@@ -22,7 +22,7 @@ export default function Home() {
           <h1 className="mb-1">
             I'M YUVAL, TURNING VISIONS INTO VIBRANT VISUAL REALITIES.
           </h1>
-          <span className="subheader">
+          <span className="subhero">
             Graphic designer specializes in UX/UI & branding.
           </span>
           <div className="flex gap-4 sm:flex-row flex-col mt-16">
@@ -40,7 +40,7 @@ export default function Home() {
       <Section className="flex items-center justify-center">
         <div className="gap-12 max-w-2xl">
           <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
-          <p className="text-body text-lg mb-6">
+          <p className="text-body mb-6">
             Hey there! I'm Yuval, a 26-year-old graphic designer, artist, football fan and a traveler, living my dream as a freelancer.
             While I might be young, I've been pursuing my love for the arts since I was 13, giving me a wealth of experience in building
             unique user experiences and
@@ -62,7 +62,8 @@ export default function Home() {
             <br />
             Some will agree, and some will define me as a 'multidisciplinary' designer. Bottom line, those two are what gets me out of bed every morning.
             <br />
-            So do you wanna see some of that passion visually? I've hand picked some of my case studies just for you!
+            <br />
+            Do you wanna see that passion visually? I've hand picked some of my case studies just for you!
           </p>
           <div className="flex gap-4 sm:flex-row flex-col">
             <Button variant="secondary" href="/collections/product-design">

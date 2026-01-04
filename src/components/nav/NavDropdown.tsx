@@ -38,7 +38,7 @@ export default function NavDropdown({ label, isOpen, onOpenChange, id }: NavDrop
             onMouseEnter={() => onOpenChange(true)}
         >
             <button
-                className={`nav-link flex flex-row items-center gap-1`}
+                className={`nav-link text-sm flex flex-row items-center gap-1`}
                 onClick={() => onOpenChange(!isOpen)}
                 aria-expanded={isOpen}
                 style={{ backgroundColor: "transparent", outline: "none", border: "none" }}

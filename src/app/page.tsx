@@ -2,6 +2,7 @@ import Link from "next/link";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
 import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
+import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
 import { reviews } from "@/data/portfolio";
 
 export default function Home() {
@@ -17,7 +18,6 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* <div className="absolute inset-0 bg-black/30" /> Overlay for readability */}
         <div className="container-custom z-10">
           <h1 className="mb-1">
             I'M YUVAL, TURNING VISIONS INTO VIBRANT VISUAL REALITIES.
@@ -34,10 +34,11 @@ export default function Home() {
             </Button>
           </div>
         </div>
+        <ScrollDownButton targetId="about-me" />
       </section>
 
       {/* About Me */}
-      <Section className="flex items-center justify-center">
+      <Section id="about-me" className="flex items-center justify-center">
         <div className="gap-12 max-w-2xl">
           <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
           <p className="text-body mb-6">

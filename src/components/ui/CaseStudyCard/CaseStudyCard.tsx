@@ -5,9 +5,11 @@ import styles from "./CaseStudyCard.module.css";
 
 interface CaseStudyCardProps {
     study: CaseStudy;
+    hideExcerpt?: boolean;
+    hideTags?: boolean;
 }
 
-export default function CaseStudyCard({ study }: CaseStudyCardProps) {
+export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = false }: CaseStudyCardProps) {
     const formattedDate = new Date(study.date).toLocaleDateString('en-US', {
         month: 'long',
         year: 'numeric'
@@ -35,14 +37,16 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
                     <span className="px-1 block text-white/70 mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-50">
                         {formattedDate}
                     </span>
-                    <p className={`mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>
-                    <div className="flex gap-2 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                        {study.tags.map(tag => (
-                            <span key={tag} className="text-[10px] uppercase tracking-wider border border-white/40 text-white px-2 py-1 rounded-full">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
+                    {!hideExcerpt && <p className={`mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>}
+                    {!hideTags && (
+                        <div className="flex gap-2 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                            {study.tags.map(tag => (
+                                <span key={tag} className="text-[10px] uppercase tracking-wider border border-white/40 text-white px-2 py-1 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </Link>

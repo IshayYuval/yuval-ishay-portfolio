@@ -98,70 +98,6 @@ h5 {
   color: var(--color-typography-body);
 }
 
-/* h4 {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-h5 {
-  font-size: 1.25rem;
-  line-height: 1.3;
-  font-weight: 700;
-} */
-
-/* p {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-typography-body);
-} */
-
-/* h1 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 4rem;
-  font-weight: 700;
-} */
-
-
-
-/* h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  line-height: 1.4;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.75rem;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-h4 {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-h5 {
-  font-size: 1.25rem;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-p {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-typography-body);
-}
-
-.text-small {
-  font-size: 0.875rem;
-} */
-
 /* Components */
 .footer-item {
   font-size: 0.875rem;
@@ -192,18 +128,19 @@ p {
   z-index: 50;
 }
 
-.backdrop-overlay {
+/* .backdrop-overlay {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 40;
+} */
+
+/* @media (prefers-color-scheme: dark) { */
+.backdrop-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  .backdrop-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
+/* } */
 
 /* Utilities */
 .container-custom {
@@ -227,21 +164,7 @@ p {
   padding-right: 8rem;
 }
 
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 32px;
-    line-height: 32px;
-    margin-bottom: 20px;
-    margin-top: 34px;
-  }
 
-  .subheader {
-    font-size: 20px;
-    line-height: 20px;
-    margin-bottom: 27px;
-    margin-top: 8px;
-  }
-}
 
 @media (max-width: 1000px) {
   .nav-bar-container {
@@ -250,45 +173,103 @@ p {
   }
 }
 
-@media (max-width: 932px) {
+@media (max-width: 1199px) {
   h1 {
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 0px;
-    margin-top: 34px;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
   }
 
-  .subheader {
-    font-size: 15px;
-    line-height: 15px;
-    margin-bottom: 27px;
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 540px) {
-  h1 {
-    font-size: 21px;
-    line-height: 28px;
-    margin-bottom: 0.5rem;
-  }
-
-  .subheader {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    font-weight: 400;
-    color: var(--color-typography-subheader);
+  .subhero {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
   }
 
   h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    line-height: 1.4;
-    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
 
-  p {
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+  }
+
+  h4 {
+    font-size: 1.0625rem;
+    line-height: 1.4375rem;
+  }
+
+  h5 {
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+  }
+
+  .text-body {
+    font-size: 0.9375rem;
+    /* 15px */
+    line-height: 1.35rem;
+  }
+
+  .text-caption {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+
+  .subhero {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+
+  h5 {
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 1.25rem;
+  }
+
+  .text-body {
+    font-size: 0.875rem;
+    /* 14px – הגבול התחתון */
+    line-height: 1.3rem;
+  }
+
+  .text-caption {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    /* ~28px */
+    line-height: 2.375rem;
+    letter-spacing: 0.005em;
+  }
+
+  h2 {
+    font-size: 1.05rem;
+    /* ~22px */
+    line-height: 1.875rem;
+    letter-spacing: 0.01em;
+    /* עוזר לשבירת שורות מאוזנת יותר */
   }
 }

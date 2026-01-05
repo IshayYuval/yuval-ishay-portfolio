@@ -7,12 +7,23 @@ export default function ZigZagRow({ image, title, text, reverse }: ZigZagSection
     return (
         <div className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 my-12 ${reverse ? 'md:flex-row-reverse' : ''}`}>
             {/* Image Side */}
-            <div className="w-full md:w-2/3 relative aspect-video md:aspect-[4/3] overflow-hidden rounded-lg">
+
+            <div className="w-full md:w-2/3 relative md:aspect-[4/3] overflow-hidden rounded-lg">
+                {/* Mobile Image: Hug content height */}
+                <Image
+                    src={image}
+                    alt={title || "Case study image"}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-auto md:hidden"
+                />
+                {/* Desktop Image: Fixed aspect ratio, contained */}
                 <Image
                     src={image}
                     alt={title || "Case study image"}
                     fill
-                    className="object-contain"
+                    className="object-contain hidden md:block"
                 />
             </div>
 

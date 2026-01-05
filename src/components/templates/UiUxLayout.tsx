@@ -4,6 +4,7 @@ import Image from "next/image"; // Added Image import
 import { CaseStudy } from "@/data/portfolio";
 import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
+import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import { renderTextWithBreaks } from "@/utils/text";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
@@ -26,7 +27,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
 
             <div className={`container-custom max-w-4xl mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}> {/* Adjusted padding */}
                 {/* Header */}
-                <header className="py-20 max-w-4xl mx-auto">
+                <header className="pt-20 max-w-4xl mx-auto">
                     <h1 className="mb-2 text-center">About the Project</h1>
 
                     <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -35,7 +36,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                         ))}
                     </div>
                     {data.introText && (
-                        <p className="text-body mb-8">
+                        <p className="text-body">
                             {renderTextWithBreaks(data.introText)}
                         </p>
                     )}
@@ -43,7 +44,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                         <Button
                             href={data.projectUrl}
                             target="_blank"
-                            className=""
+                            className="mb-8 mt-6"
                         >
                             {data.projectUrlText}
                         </Button>
@@ -53,7 +54,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
 
                 {/* Process Steps */}
                 {data.processSteps && (
-                    <section className="grid grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
+                    <section className="grid pt-12 grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
                         {data.processSteps.map((step, index) => (
                             <div key={index} className="flex flex-col gap-4">
                                 <h3>{renderTextWithBreaks(step.title)}</h3>
@@ -116,6 +117,8 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                         ))}
                     </section>
                 )}
+
+                <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />
             </div>
         </article>
     );

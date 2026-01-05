@@ -625,7 +625,7 @@ export const caseStudies: CaseStudy[] = [
 
   // branding - cloudeye
   {
-    slug: "cloudeye",
+    slug: "branding-cloudeye",
     title: "Cloudeye",
     excerpt:
       "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
@@ -743,7 +743,7 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/product-design/name-the-font/page-cover.svg",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
-    tags: ["Passion Project", "Typography"],
+    tags: ["Passion Project", "Typography", "Gaming", "Software Development"],
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
     backgroundColor: "#133C66",
     projectUrl: "http://namethefont.com",
@@ -798,7 +798,7 @@ export const caseStudies: CaseStudy[] = [
         ],
         textAfter: "Once I had the PRD, I started designing the UI, not before creating user flows, and design guidelines the game needed.",
       },
-      { title: "User Interface", text: "The UI was designed around the brand of name the font, which we designed together. This case study is available in the branding section of my portfolio. For now, For now, here’s a glimpse of the final design:" },
+      { title: "User Interface", text: "The UI was designed around the brand of name the font, which we designed together. This case study is available in the branding section of my portfolio. For now, here’s a glimpse of the final design:" },
     ],
     contentSections: [
       {
@@ -833,7 +833,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2025-10-01",
     heroImage: "/case-studies/product-design/infowork/hero.svg",
-    introText: "Informat, founded in 1994, is one of Israel’s leading IT companies, offering advanced computing solutions, infrastructure, hardware, licensing, and support services across industries. <br/> When I joined as a part-time Social Media Designer, I was responsible for creative concepts for Facebook, LinkedIn, and newsletters. The creative side was fun, but managing the work was messy. I kept losing track of how many posts I had made, when they were scheduled, and what content belonged where. Everything got buried in my inbox and in my excel sheet. What should have been an inspiring process turned into something frustrating and overwhelming. <br/> That was the trigger for Infowork – my own smart tool to manage social content.",
+    introText: "Informat, founded in 1994, is one of Israel’s leading IT companies, offering advanced computing solutions, infrastructure, hardware, licensing, and support services across industries. <br/><br/> When I joined as a part-time Social Media Designer, I was responsible for creative concepts for Facebook, LinkedIn, and newsletters. The creative side was fun, but managing the work was messy. I kept losing track of how many posts I had made, when they were scheduled, and what content belonged where. Everything got buried in my inbox and in my excel sheet. What should have been an inspiring process turned into something frustrating and overwhelming. <br/><br/> That was the trigger for Infowork – my own smart tool to manage social content.",
     backgroundColor: "#232066",
     processSteps: [
       {
@@ -853,9 +853,34 @@ export const caseStudies: CaseStudy[] = [
     ],
     contentSections: [
       {
-        image: "/case-studies/product/infowork/img1.jpg",
-        title: "Feature 1",
-        text: "Dummy text.",
+        image: "/case-studies/product-design/infowork/overview-1.png",
+        title: "Quick view of my work this month <br/><br/> Notifications if something needs to be uploaded today<br/><br/>One-click export of monthly work",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/infowork/table.png",
+        title: "Clean table for scanning data fast<br/><br/>Tags by type and status for quick filtering<br/><br/>Tabs to switch between all work or just this month<br/><br/>Highlighted cost column to easily track incomes",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/infowork/form.png",
+        title: "Custom date-picker that shows when other posts are scheduled<br/><br/>Automatic cost calculation",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/infowork/details.png",
+        title: "Detailed view with all relevant info<br/><br/>Dedicated content area with “copy to clipboard” buttons",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/infowork/statistics.png",
+        title: "Progress overview with graphs<br/><br/>Filters to see data by time period<br/><br/>Income graphs with quick PDF export for invoices",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/infowork/calendar.png",
+        title: "Calendar showing post/mail upload dates<br/><br/>Expandable navigation for fast access without endless scrolling",
+        text: "",
       },
     ],
   },
@@ -867,11 +892,27 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2024-05-22",
     cover: "/case-studies/product-design/lushay-docs/page-cover.svg",
-    introText: "Dummy intro for Lushay Docs.",
     backgroundColor: "#161F40",
+    heroImage: "/case-studies/product-design/lushay-docs/hero.svg",
+    introText: "Lushay Labs is a company specializing in electrical engineering, focusing on creating educational content in the FPGA domain. For this project, I crafted a new user experience for their website, Lushay Docs. This site offers comprehensive class documentation for all built-in FPGA primitives.",
+    processSteps: [
+      {
+        title: "The Goals:",
+        text: "",
+        bullets: [
+          "Create a clean and clutter-free UI, giving the best learning experience possible.",
+          "Maintain the company's existing brand and engage with the company's clients in new areas",
+          "Show the company's knowledge and professionalism in the educational world",],
+        textAfter: "",
+      },
+      {
+        title: "User Interface",
+        text: "The UI design prioritizes clarity and intent, using a prominent call to action and a smart navigator to guide users seamlessly toward the right collection or lesson. A distraction-free, high-contrast interface keeps the focus on essential content, while custom brand icons and subtle storytelling create a personal connection.",
+      },
+    ],
   },
   {
-    slug: "cloudeye",
+    slug: "product-design-cloudeye",
     title: "Cloudeye",
     excerpt:
       "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
@@ -879,7 +920,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2025-10-10",
     cover: "/case-studies/product-design/cloudeye/page-cover.svg",
-    introText: "Dummy intro for Cloudeye (Product).",
+    heroImage: "/case-studies/product-design/cloudeye/hero.svg",
+    introText: "Cloudeye is a platform responsible for managing web services. Given its extensive capabilities, creating a smooth user experience and a clutter-free, appealing, and friendly user interface was essential.​​​​​​​<br/><br/>Since the product is proprietary to a private company, I cannot explain every detail of the UX research I conducted. However, my approach remained consistent, which is vital for such a significant platform:",
     backgroundColor: "#161F40",
   },
   {
@@ -891,7 +933,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2025-12-25",
     cover: "/case-studies/product-design/upllery/page-cover.svg",
-    introText: "Dummy intro for Upllery.",
+    heroImage: "/case-studies/product-design/upllery/hero.svg",
+    introText: "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design a management platform for Upllery that enables real-time interaction with event attendees. The project goals included:",
     backgroundColor: "#1B1B1B",
   },
   {
@@ -902,8 +945,41 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2025-7-2",
     cover: "/case-studies/product-design/3dmylev/page-cover.jpg",
-    introText: "Dummy intro for 3DMylev.",
-    backgroundColor: "#1B1B1B",
+    heroImage: "/case-studies/product-design/3dmylev/hero.svg",
+    introText: "3D Mylev is a company specializes in 3D printing, with a huge passion for arts. In this design, I’ve tried to create a smooth user experience for their online shop, which capturing the essence of 3D Mylev - creating amazing art while changing the public’s point of view about Autism through design and art.",
+    backgroundColor: "#5C0009",
+    processSteps: [
+      {
+        title: "The Challenges:",
+        text: "",
+        bullets: [
+          "Create a smooth and clutter-free UI, giving the owner's products the stage to shine.",
+          "Increase the business's income with each purchase a client makes.",
+          "Generate more return clients by improving the overall user experience.",],
+        textAfter: "",
+      },
+      {
+        title: "User Interface",
+        text: "The UI approach emphasizes a refined balance between luxury and approachability through generous whitespace and a clean visual language. Large product cards, minimalistic buttons, and a clear call to action keep attention on the products, while smart filtering, sorting, and navigation tools help users find exactly what they’re looking for. Subtle brand storytelling and a “you may also like” section near checkout strengthen emotional connection and optimize purchase value.",
+      },
+    ],
+    contentSections: [
+      {
+        image: "/case-studies/product-design/name-the-font/landing-page.svg",
+        title: "A wide use of whitespace to ensure a luxury, yet friendly and clean UI.<br/><br/> A prominent call to action directs clients to the desired collection.<br/><br/>Custom brand icons and a glimpse of the owner's story create a client connection.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/name-the-font/table.svg",
+        title: "Large product cards and minimalistic buttons highlight the products and ensure they have the focus.​​​​​​​ <br/><br/>Filter and sorting tools, along with pagination and collection tabs, ensure users find exactly what they want​​​​​​​.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/name-the-font/authentication.svg",
+        title: "A \"you may also like\" section before checkout maximizes revenue per purchase",
+        text: "",
+      },
+    ],
   },
 ];
 

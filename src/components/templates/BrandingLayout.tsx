@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
+import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 import { renderTextWithBreaks } from "@/utils/text";
@@ -122,6 +123,8 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         <DynamicGrid items={data.gallery} />
                     </section>
                 )}
+
+                <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />
             </div>
         </article>
     );

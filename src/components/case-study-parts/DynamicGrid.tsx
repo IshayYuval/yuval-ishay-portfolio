@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import LightboxImage from "../ui/LightboxImage/LightboxImage";
 import { GalleryItem } from "@/data/portfolio";
 
 interface DynamicGridProps {
@@ -9,6 +10,8 @@ interface DynamicGridProps {
 export default function DynamicGrid({ items }: DynamicGridProps) {
     if (!items || items.length === 0) return null;
 
+    const slides = items.map(item => ({ src: item.src }));
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full my-12">
             {items.map((item, index) => (
@@ -17,11 +20,14 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                     className={`relative overflow-hidden rounded-lg ${item.colSpan === "full" ? "md:col-span-2 aspect-video" : "aspect-square"
                         }`}
                 >
-                    <Image
+                    <LightboxImage
                         src={item.src}
                         alt={item.alt}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                        lightboxSlides={slides}
+                        lightboxIndex={index}
+                        enableZoom={true}
                     />
                 </div>
             ))}

@@ -23,7 +23,7 @@ export default function Home() {
             I'M YUVAL, TURNING VISIONS INTO VIBRANT VISUAL REALITIES.
           </h1>
           <span className="subhero">
-            Graphic designer specializes in UX/UI & branding.
+            Visual Communication Designer specializes in UX/UI & branding.
           </span>
           <div className="flex gap-4 sm:flex-row flex-col mt-16">
             <Button variant="primary" href="/collections/branding">

@@ -892,7 +892,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2024-05-22",
     cover: "/case-studies/product-design/lushay-docs/page-cover.svg",
-    backgroundColor: "#161F40",
+    backgroundColor: "#1A254D",
     heroImage: "/case-studies/product-design/lushay-docs/hero.svg",
     introText: "Lushay Labs is a company specializing in electrical engineering, focusing on creating educational content in the FPGA domain. For this project, I crafted a new user experience for their website, Lushay Docs. This site offers comprehensive class documentation for all built-in FPGA primitives.",
     processSteps: [
@@ -908,6 +908,23 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "User Interface",
         text: "The UI design prioritizes clarity and intent, using a prominent call to action and a smart navigator to guide users seamlessly toward the right collection or lesson. A distraction-free, high-contrast interface keeps the focus on essential content, while custom brand icons and subtle storytelling create a personal connection.",
+      },
+    ],
+    contentSections: [
+      {
+        image: "/case-studies/product-design/lushay-docs/landing-page.jpg",
+        title: "Clean landing page with flat illustration, to show professionalism and playfulness.<br/><br/> A prominent call to action directs clients to the desired collection.<br/><br/>Custom brand icons and a glimpse of the owner's story create a client connection.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/lushay-docs/documentation.jpg",
+        title: "Distraction-free interface with high contrast to ensure focus on what matters.<br/><br/>A smart navigator to guide you to the perfect lesson.​​​​​​​",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/lushay-docs/responsiveness.jpg",
+        title: "Mobile & tablet support for learning anywhere, anytime.​​​​​​​",
+        text: "",
       },
     ],
   },
@@ -934,8 +951,42 @@ export const caseStudies: CaseStudy[] = [
     date: "2025-12-25",
     cover: "/case-studies/product-design/upllery/page-cover.svg",
     heroImage: "/case-studies/product-design/upllery/hero.svg",
-    introText: "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design a management platform for Upllery that enables real-time interaction with event attendees. The project goals included:",
+    introText: "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design Upllery's management platform for real-time interaction with event attendees.",
     backgroundColor: "#1B1B1B",
+    processSteps: [
+      {
+        title: "The Goals:",
+        text: "",
+        bullets: [
+          "Providing an overview of all scheduled events.",
+          "Enabling selection and analysis of engagement data for specific events.",
+          "Creating a filter for inappropriate content in Instagram stories displayed on event screens.",
+          "Ensuring proper display of Instagram stories on landscape screens.​​​​​​​"],
+        textAfter: "",
+      },
+    ],
+    contentSections: [
+      {
+        image: "/case-studies/product-design/upllery/event-dashboard.jpg",
+        title: "Clean dashboard to quickly the events performance and engagement data.  <br/><br/> 2 action btns to quickly start an event.<br/><br/>Branded UI to create a connection of Upllery employees to the product.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/upllery/events-table.jpg",
+        title: "Sortable table to show all events according to the needed order.<br/><br/> CTA button to quickly creare a new one.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/upllery/stories-filter.webp",
+        title: "An overview of all pending stories for a quick scan.<br/><br/>Pagination to avoid cognitive load by placing too much stories at once.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/upllery/stories-lightbox.jpg",
+        title: "Dedicated lightbox to avoid visual load while approving stories.<br/><br/> Navigation buttons to approve multiple stories quickly without leaving the lightbox.",
+        text: "",
+      },
+    ],
   },
   {
     slug: "3dmylev",

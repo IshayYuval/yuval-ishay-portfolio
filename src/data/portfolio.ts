@@ -187,7 +187,7 @@ export const caseStudies: CaseStudy[] = [
 
   //branding - name the font
   {
-    slug: "name-the-font",
+    slug: "branding-namethefont",
     title: "Name the Font",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
@@ -641,11 +641,11 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "tarantino-homage",
     title: "Tarantino Homage",
-    excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    excerpt: "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "conceptual-design",
     date: "2025-03-22",
-    introText: "Dummy intro for Tarantino Homage.",
+    introText: "This project is a visual tribute to Quentin Tarantino, built around his quote: \"I don’t take it seriously… it’s just good direction… There’s a lot of feet in a lot of good directors’ movies.\" <br/> <br/>The goal was to translate Tarantino and his words into a clear visual idea. The concept takes his alleged foot fetish and expresses it through a collection of high-heel shoes, chosen specifically for their stronger connection to foot fetish imagery compared to sneakers or sandals.",
     gallery: [
       {
         src: "/case-studies/conceptual/tarantino/img1.jpg",
@@ -658,9 +658,9 @@ export const caseStudies: CaseStudy[] = [
   // conceptual art - long distance love
   {
     slug: "long-distance-love",
-    title: "Long Distance Love",
-    excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    title: "Long-Distance Love",
+    excerpt: "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
+    tags: ["HIT", "Visual Communication BA", "1nd Year"],
     collectionSlug: "conceptual-design",
     date: "2025-07-11",
     introText: "Dummy intro for Long Distance Love.",
@@ -670,8 +670,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "city-activism",
     title: "City Activism",
-    excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    excerpt: "A video-based activist project that places wealth and hunger side by side, confronting the viewer with social gaps and personal responsibility.",
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "conceptual-design",
     date: "2025-04-25",
     introText: "Dummy intro for City Activism.",
@@ -681,20 +681,102 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "hunger",
     title: "Hunger",
-    excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    excerpt: "A photographic essay that explores raw materials, ritual, and instinct, revealing the passion behind food through process rather than the final dish.",
+    tags: ["HIT", "Visual Communication BA", "2nd Year"],
     collectionSlug: "photography",
+    cover: "/case-studies/photography/hunger/page-cover.webp",
     date: "2025-12-29",
-    introText: "Dummy intro for Hunger.",
+    backgroundColor: "black",
+    introText: "This project is a photographic essay created as part of a food photography assignment, centered around an underground <br/> pop-up called Hunger. The work explores the figure of “the butcher,” focusing on raw materials, hands-on process, and the ritual around meat rather than the final dish. Through a dark, moody visual language, the goal was to add value for the viewer by revealing the passion, tension, and instinct behind the act of cooking.",
+    gallery: [
+      {
+        src: "/case-studies/photography/hunger/raw-meat.webp",
+        alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/whiskey.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/preparing-meat.webp",
+        alt: "Image 3",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/butcher-burner.webp",
+        alt: "Image 4",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/butcher-whiskey.webp",
+        alt: "Image 5",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/wine-and-meat.webp",
+        alt: "Image 6",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/dinner.webp",
+        alt: "Image 7",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/hunger/hunger.webp",
+        alt: "Image 7",
+        colSpan: "full",
+      },
+    ],
   },
   {
     slug: "out-of-bounds",
     title: "Out of Bounds",
-    excerpt: "A photographic exploration of light and shadow in the city.",
-    tags: ["HIT", "Visual Communication BA"],
+    excerpt: "A portrait series that captures the human moments, imperfections, and quiet breaks hidden within the act of running.",
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "photography",
     date: "2025-07-22",
-    introText: "Dummy intro for Out of Bounds.",
+    cover: "/case-studies/photography/out-of-bounds/page-cover.webp",
+    introText: "This project is a portrait series created as part of a photography course, focusing on moments that break the routine of running. Instead of portraying running as a perfect, ideal action, the work highlights small mistakes, pauses, and human imperfections. <br/> <br/> The goal was to slow time and  revealing the vulnerability and humanity hidden within a repetitive act.",
+    gallery: [
+      {
+        src: "/case-studies/photography/out-of-bounds/page-cover.webp",
+        alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/first.webp",
+        alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/third.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/fourth.webp",
+        alt: "Image 3",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/fifth.webp",
+        alt: "Image 4",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/sixth.webp",
+        alt: "Image 5",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/photography/out-of-bounds/seventh.webp",
+        alt: "Image 6",
+        colSpan: "full",
+      },
+    ],
   },
 
   // typography
@@ -705,16 +787,46 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "2nd Year"],
     collectionSlug: "typography",
     date: "2025-12-23",
-    introText: "Dummy intro for Liebling Haus.",
+    introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
   },
   {
     slug: "dance-tel-aviv",
     title: "Dance Tel-Aviv",
+    cover: "/case-studies/typography/dance-tel-aviv/page-cover.webp",
     excerpt: "A typographic flyer, capturing the movement and soul of the festival",
     tags: ["HIT", "Visual Communication BA", "2nd Year"],
     collectionSlug: "typography",
     date: "2025-11-20",
-    introText: "Dummy intro for Dance Tel-Aviv.",
+    introText: "This project is an event flyer designed around the idea of expressing human movement through typography, inspired by a dance-focused festival. The concept is translated through the use of the Ezer Dialogue typeface, combined with folding and a grid system that emerges from the physical format itself. Together, these elements create a dynamic layout that reflects rhythm, motion, and the body in motion.",
+    projectUrl: "https://www.ezertypehouse.com/fonts/ezerdialogue",
+    projectUrlText: "The Ezer Dialogue typeface",
+    gallery: [
+      {
+        src: "/case-studies/typography/dance-tel-aviv/two-flyers.webp",
+        alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/dance-tel-aviv/triangle.webp",
+        alt: "Image 2",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/typography/dance-tel-aviv/closeup-intro.webp",
+        alt: "Image 2",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/typography/dance-tel-aviv/inside.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/dance-tel-aviv/single.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+    ],
   },
   {
     slug: "ezer-alchemist-homage",
@@ -723,7 +835,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "typography",
     date: "2025-05-28",
-    introText: "Dummy intro for Ezer Alchemist Homage.",
+    introText: "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
   },
   {
     slug: "theory-of-relativity",
@@ -732,13 +844,15 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "typography",
     date: "2025-05-28",
-    introText: "Dummy intro for Theory of Relativity.",
+    introText: "This project is an informational leaflet built around a text from Einstein’s Theory of Relativity, which I selected from several text options. The core concept is space–time, translated into typography through layout, spacing, and structure to visually express relativity and perception. The goal was to add value for the viewer by teaching the idea through the visual language itself, not just the written content",
   },
 
 
   // product design
+
+  // name-the-font-uxui
   {
-    slug: "name-the-font-uxui",
+    slug: "namethefont",
     title: "Name the Font",
     cover: "/case-studies/product-design/name-the-font/page-cover.svg",
     excerpt:
@@ -823,6 +937,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // infowork
   {
     slug: "infowork",
     title: "Infowork",
@@ -884,6 +1000,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // lushay-docs
   {
     slug: "lushay-docs",
     title: "Lushay Docs",
@@ -928,6 +1046,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // cloudeye
   {
     slug: "product-design-cloudeye",
     title: "Cloudeye",
@@ -941,6 +1061,8 @@ export const caseStudies: CaseStudy[] = [
     introText: "Cloudeye is a platform responsible for managing web services. Given its extensive capabilities, creating a smooth user experience and a clutter-free, appealing, and friendly user interface was essential.​​​​​​​<br/><br/>Since the product is proprietary to a private company, I cannot explain every detail of the UX research I conducted. However, my approach remained consistent, which is vital for such a significant platform:",
     backgroundColor: "#161F40",
   },
+
+  // upllery
   {
     slug: "upllery",
     title: "Upllery Event Manager",
@@ -988,6 +1110,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // 3dmylev
   {
     slug: "3dmylev",
     title: "3DMylev",
@@ -1016,18 +1140,23 @@ export const caseStudies: CaseStudy[] = [
     ],
     contentSections: [
       {
-        image: "/case-studies/product-design/name-the-font/landing-page.svg",
+        image: "/case-studies/product-design/3dmylev/landing.jpg",
         title: "A wide use of whitespace to ensure a luxury, yet friendly and clean UI.<br/><br/> A prominent call to action directs clients to the desired collection.<br/><br/>Custom brand icons and a glimpse of the owner's story create a client connection.",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/table.svg",
+        image: "/case-studies/product-design/3dmylev/shop.jpg",
         title: "Large product cards and minimalistic buttons highlight the products and ensure they have the focus.​​​​​​​ <br/><br/>Filter and sorting tools, along with pagination and collection tabs, ensure users find exactly what they want​​​​​​​.",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/authentication.svg",
+        image: "/case-studies/product-design/3dmylev/you-may-also-like.jpg",
         title: "A \"you may also like\" section before checkout maximizes revenue per purchase",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/3dmylev/product-page.jpg",
+        title: "Added information about current sells, to maximize business revenue. <br/><br/> Information about how many items are left in stock, to encourage clients to buy them before they run out.",
         text: "",
       },
     ],

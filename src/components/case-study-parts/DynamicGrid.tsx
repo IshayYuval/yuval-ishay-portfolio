@@ -17,14 +17,17 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
             {items.map((item, index) => (
                 <div
                     key={index}
-                    className={`relative overflow-hidden rounded-lg ${item.colSpan === "full" ? "md:col-span-2 aspect-video" : "aspect-square"
+                    className={`relative overflow-hidden rounded-lg ${item.colSpan === "full" ? "md:col-span-2" : ""
                         }`}
                 >
                     <LightboxImage
                         src={item.src}
                         alt={item.alt}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: '100%', height: 'auto' }}
+                        className="hover:scale-105 transition-transform duration-500 ease-out"
                         lightboxSlides={slides}
                         lightboxIndex={index}
                         enableZoom={true}

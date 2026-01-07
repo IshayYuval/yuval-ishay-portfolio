@@ -113,7 +113,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                 {data.contentSections && (
                     <section className="py-12">
                         {data.contentSections.map((section, index) => (
-                            <ZigZagRow key={index} {...section} />
+                            <ZigZagRow key={index} {...section} enableLightbox={true} />
                         ))}
                     </section>
                 )}

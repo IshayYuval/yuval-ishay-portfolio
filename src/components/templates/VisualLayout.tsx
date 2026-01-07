@@ -3,15 +3,15 @@ import { CaseStudy } from "@/data/portfolio";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
 import { renderTextWithBreaks } from "@/utils/text";
 import Tag from "../ui/Tag/Tag";
+import Button from "../ui/Button/Button";
 
 export default function VisualLayout({ data }: { data: CaseStudy }) {
     return (
-        <article className="min-h-screen pt-[var(--header-height)] pb-24">
+        <article className="min-h-screen pt-[var(--header-height)] pb-24" style={{ backgroundColor: data.backgroundColor }}>
             <div className="container-custom mx-auto px-6">
-                <header className="py-24 max-w-4xl mx-auto">
-                    <h1 className="mb-2 text-center">about the project</h1>
-
-                    <div className="flex flex-wrap justify-center gap-2 mb-8">
+                <header className="pt-24 max-w-4xl mx-auto">
+                    <h1 className="text-center">about the project</h1>
+                    <div className="flex flex-wrap justify-center gap-2 mt-2 mb-8">
                         {data.tags.map(tag => (
                             <Tag key={tag}>{tag}</Tag>
                         ))}
@@ -20,6 +20,17 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                         <p className="text-body">
                             {renderTextWithBreaks(data.introText)}
                         </p>
+                    )}
+                    {data.projectUrl && (
+                        <div className="flex mt-6">
+                            <Button
+                                href={data.projectUrl}
+                                target="_blank"
+                                variant="secondary"
+                            >
+                                {data.projectUrlText || "Visit Project"}
+                            </Button>
+                        </div>
                     )}
                 </header>
 

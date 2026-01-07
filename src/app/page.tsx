@@ -26,7 +26,7 @@ export default function Home() {
             Visual Communication Designer specializes in UX/UI & branding.
           </span>
           <div className="flex gap-4 sm:flex-row flex-col mt-16">
-            <Button variant="primary" href="/collections/branding">
+            <Button variant="primary" href="/branding">
               Order Now via Fiverr
             </Button>
             <Button variant="secondary" href="/about">
@@ -67,10 +67,10 @@ export default function Home() {
             Do you wanna see that passion visually? I've hand picked some of my case studies just for you!
           </p>
           <div className="flex gap-4 sm:flex-row flex-col">
-            <Button variant="secondary" href="/collections/product-design">
+            <Button variant="secondary" href="/product-design">
               Product Design Case Studies
             </Button>
-            <Button variant="secondary" href="/collections/branding">
+            <Button variant="secondary" href="/branding">
               Branding Case Studies
             </Button>
           </div>

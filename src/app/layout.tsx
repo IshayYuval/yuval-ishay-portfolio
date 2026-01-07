@@ -5,7 +5,8 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Yuval Ishay",
-  description: "Portfolio of Yuval Ishay, a Product & Brand Designer focused on clarity, systems, and craft.",
+  description: "I'm a graphic designer, specializes in designing stunning, easy to use user interfaces, and in crafting unique, clean and modern logos.",
+  keywords: ["graphic design", "logo design", "logo", "design", "fiverr", "fiverr graphic design", "ui", "ux", "ux designer", "visual communication designer"],
 };
 
 export default function RootLayout({

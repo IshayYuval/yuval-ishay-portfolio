@@ -77,13 +77,13 @@ export default function Header() {
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center gap-4 lg:gap-8 h-full ml-[1.5rem] lg:ml-[2rem]">
                             <NavItem
-                                href="/collections/product-design"
+                                href="/product-design"
                                 onMouseEnter={handleOtherItemEnter}
                             >
                                 Product Design
                             </NavItem>
                             <NavItem
-                                href="/collections/branding"
+                                href="/branding"
                                 onMouseEnter={handleOtherItemEnter}
                             >
                                 Branding
@@ -135,7 +135,7 @@ export default function Header() {
                             {visualCommItems.map((item) => (
                                 <NavItem
                                     key={item.slug}
-                                    href={`/collections/${item.slug}`}
+                                    href={`/${item.slug}`}
                                     onClick={() => setIsDropdownOpen(false)}
                                     className="w-fit items-start"
                                 >

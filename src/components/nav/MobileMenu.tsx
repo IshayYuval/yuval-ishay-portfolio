@@ -32,7 +32,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     };
 
     const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
-    const isVisualCommActive = visualCommItems.some(item => isActive(`/collections/${item.slug}`));
+    const isVisualCommActive = visualCommItems.some(item => isActive(`/${item.slug}`));
 
     const MobileNavItem = ({ href, children, onClick }: { href: string, children: React.ReactNode, onClick: () => void }) => {
         const active = isActive(href);
@@ -76,10 +76,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     <nav className={`flex flex-col justify-between mt-8 uppercase transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                         <div className="flex flex-col gap-8">
 
-                            <MobileNavItem href="/collections/product-design" onClick={onClose}>
+                            <MobileNavItem href="/product-design" onClick={onClose}>
                                 Product Design
                             </MobileNavItem>
-                            <MobileNavItem href="/collections/branding" onClick={onClose}>
+                            <MobileNavItem href="/branding" onClick={onClose}>
                                 Branding
                             </MobileNavItem>
 
@@ -119,7 +119,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         {visualCommItems.map((item) => (
                             <MobileNavItem
                                 key={item.slug}
-                                href={`/collections/${item.slug}`}
+                                href={`/${item.slug}`}
                                 onClick={onClose}
                             >
                                 {item.title}

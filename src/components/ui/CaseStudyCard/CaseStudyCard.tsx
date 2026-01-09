@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
+import StopMotion from "@/components/ui/StopMotion/StopMotion";
 import styles from "./CaseStudyCard.module.css";
 
 interface CaseStudyCardProps {
@@ -18,7 +19,13 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
     return (
         <Link href={`/case-studies/${study.slug}`} className={`${styles.card} group relative block overflow-hidden rounded-[var(--radius)]`}>
             <div className={`${styles['card-image-wrapper']} relative aspect-[4/3] w-full bg-[var(--color-brand-secondary-800)]`}>
-                {study.cover ? (
+                {study.stopMotionData ? (
+                    <StopMotion
+                        images={study.stopMotionData.images}
+                        duration={study.stopMotionData.duration}
+                        alt={study.stopMotionData.alt}
+                    />
+                ) : study.cover ? (
                     <Image
                         src={study.cover}
                         alt={study.title}

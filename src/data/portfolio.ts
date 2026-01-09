@@ -54,6 +54,11 @@ export type CaseStudy = {
   gallery?: GalleryItem[];
   backgroundColor?: string;
   projectUrlText?: string;
+  stopMotionData?: {
+    images: string[];
+    duration: number;
+    alt: string;
+  };
 };
 
 export const collections: Collection[] = [
@@ -635,6 +640,50 @@ export const caseStudies: CaseStudy[] = [
     date: "2022-5-18",
     introText: "Cloudeye is a web platform for managing the web services of an organization. It's packed with useful features like monitoring, automations, reported tickets with live  status updates, and a record of past tickets to help solve problems faster in the future. This variety of functions highlighted the need for a strong and clear brand identity.",
     heroImage: "/case-studies/branding/cloudeye/hero.svg",
+    processSteps: [
+      {
+        title: "",
+        text: "",
+        bullets: [
+          {
+            label: "Target Audience: ",
+            labelWeight: "bold",
+            labelColor: "#69fff3",
+            text: "The employees of the organization, IT support teams,  electronic engineers, material engineers, software developers,  and everything in between."
+          },
+          {
+            label: "The Mission: ",
+            labelWeight: "bold",
+            labelColor: "#69fff3",
+            text: "To create a simple brand identity that is clear and understandable, without unnecessary complications, which will also appear friendly and easy to use."
+          },
+          {
+            label: "Creative Concept: ",
+            labelWeight: "bold",
+            labelColor: "#69fff3",
+            text: "Using 2 elements, the security camera and the cloud, to create a smooth connection between the two. The goal was to make the visual identity straight-forward as possible, but still modern and appealing to the users."
+          },
+        ],
+        textAfter: "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/case-studies/branding/cloudeye/logo-mockup.webp",
+        alt: "logo-mockup",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/branding/cloudeye/notebook-mockup.webp",
+        alt: "logo-mockup",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/branding/cloudeye/illustrations.jpg",
+        alt: "illustrations",
+        colSpan: "full",
+      },
+    ],
   },
 
   // conceptual art - tarantino homage 
@@ -644,12 +693,30 @@ export const caseStudies: CaseStudy[] = [
     excerpt: "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "conceptual-design",
+    stopMotionData: {
+      images: [
+        "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",
+        "/case-studies/conceptual-design/tarantino/cover/cover-2.webp"
+      ],
+      duration: 0.8,
+      alt: "Tarantino Homage Cover"
+    },
     date: "2025-03-22",
     introText: "This project is a visual tribute to Quentin Tarantino, built around his quote: \"I don’t take it seriously… it’s just good direction… There’s a lot of feet in a lot of good directors’ movies.\" <br/> <br/>The goal was to translate Tarantino and his words into a clear visual idea. The concept takes his alleged foot fetish and expresses it through a collection of high-heel shoes, chosen specifically for their stronger connection to foot fetish imagery compared to sneakers or sandals.",
     gallery: [
       {
-        src: "/case-studies/conceptual/tarantino/img1.jpg",
+        src: "/case-studies/conceptual-design/tarantino/glamour/glamour-1.webp",
         alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/conceptual-design/tarantino/glamour/glamour-2.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/conceptual-design/tarantino/glamour/glamour-3.webp",
+        alt: "Image 3",
         colSpan: "full",
       },
     ],
@@ -788,6 +855,14 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "typography",
     date: "2025-12-23",
     introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
+    cover: "/case-studies/typography/liebling-haus/page-cover.webp",
+    gallery: [
+      {
+        src: "/case-studies/typography/liebling-haus/page-cover.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+    ],
   },
   {
     slug: "dance-tel-aviv",
@@ -831,21 +906,39 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "ezer-alchemist-homage",
     title: "Ezer Alchemist Homage",
-    excerpt: "A photographic exploration of light and shadow in the city.",
+    excerpt: "A typographic tribute to Ezer Alchemist, using its ink traps as a visual tool to teach and reveal the character of the typeface.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "typography",
     date: "2025-05-28",
+    cover: "/case-studies/typography/alchemist-homage/page-cover.webp",
     introText: "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
+    gallery: [
+      {
+        src: "/case-studies/typography/alchemist-homage/alchemist-poster.svg",
+        alt: "poster",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/alchemist-homage/page-cover.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/alchemist-homage/zoom-in-alchemist.svg",
+        alt: "poster",
+        colSpan: "full",
+      },
+    ],
   },
-  {
-    slug: "theory-of-relativity",
-    title: "Theory of Relativity",
-    excerpt: "A typographic poster, capturing the movement and soul of the festival",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
-    collectionSlug: "typography",
-    date: "2025-05-28",
-    introText: "This project is an informational leaflet built around a text from Einstein’s Theory of Relativity, which I selected from several text options. The core concept is space–time, translated into typography through layout, spacing, and structure to visually express relativity and perception. The goal was to add value for the viewer by teaching the idea through the visual language itself, not just the written content",
-  },
+  // {
+  //   slug: "theory-of-relativity",
+  //   title: "Theory of Relativity",
+  //   excerpt: "A typographic poster, capturing the movement and soul of the festival",
+  //   tags: ["HIT", "Visual Communication BA", "1st Year"],
+  //   collectionSlug: "typography",
+  //   date: "2025-05-28",
+  //   introText: "This project is an informational leaflet built around a text from Einstein’s Theory of Relativity, which I selected from several text options. The core concept is space–time, translated into typography through layout, spacing, and structure to visually express relativity and perception. The goal was to add value for the viewer by teaching the idea through the visual language itself, not just the written content",
+  // },
 
 
   // product design

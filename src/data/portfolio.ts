@@ -1004,7 +1004,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "namethefont",
     title: "Name the Font",
-    cover: "/case-studies/product-design/name-the-font/page-cover.svg",
+    cover: "/case-studies/product-design/name-the-font/page-cover.jpg",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
     tags: ["Passion Project", "Typography", "Gaming", "Software Development"],
@@ -1066,22 +1066,22 @@ export const caseStudies: CaseStudy[] = [
     ],
     contentSections: [
       {
-        image: "/case-studies/product-design/name-the-font/landing-page.svg",
+        image: "/case-studies/product-design/name-the-font/landing-page.jpg",
         title: "Landing page with a clear call-to-play <br/><br/> Homage to the top-ranked players <br/><br/>Rotating header to show different typefaces",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/table.svg",
+        image: "/case-studies/product-design/name-the-font/table.jpg",
         title: "Clean table for scanning data fast <br/><br/> Search bar for easy filtering <br/><br/>Tabs to switch between all-times leaders or weekly leaders <br/><br/>visual difference between the top-3 and the rest of the players.",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/authentication.svg",
+        image: "/case-studies/product-design/name-the-font/authentication.jpg",
         title: "Combined sign-up and sign-in <br/><br/>Redirecting to this page, in-case a player starts a game as a guest <br/><br/>Google & Magic Link for a password-free experience",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/gameplay.svg",
+        image: "/case-studies/product-design/name-the-font/gameplay.jpg",
         title: "Clear feedback about the wrong and correct answers <br/><br/>Large image in high-quality, emphasizing the typeface characteristics",
         text: "",
       },

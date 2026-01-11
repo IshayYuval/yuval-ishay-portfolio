@@ -1256,7 +1256,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "SaaS"],
     collectionSlug: "product-design",
     date: "2025-12-25",
-    cover: "/case-studies/product-design/upllery/page-cover.svg",
+    cover: "/case-studies/product-design/upllery/page-cover.jpg",
     heroImage: "/case-studies/product-design/upllery/hero.svg",
     introText: "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design Upllery's management platform for real-time interaction with event attendees.",
     backgroundColor: "#1B1B1B",

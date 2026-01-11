@@ -1198,19 +1198,54 @@ export const caseStudies: CaseStudy[] = [
   },
 
   // cloudeye
-  {
-    slug: "product-design-cloudeye",
-    title: "Cloudeye",
-    excerpt:
-      "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
-    tags: ["Client Project", "SaaS"],
-    collectionSlug: "product-design",
-    date: "2025-10-10",
-    cover: "/case-studies/product-design/cloudeye/page-cover.svg",
-    heroImage: "/case-studies/product-design/cloudeye/hero.svg",
-    introText: "Cloudeye is a platform responsible for managing web services. Given its extensive capabilities, creating a smooth user experience and a clutter-free, appealing, and friendly user interface was essential.​​​​​​​<br/><br/>Since the product is proprietary to a private company, I cannot explain every detail of the UX research I conducted. However, my approach remained consistent, which is vital for such a significant platform:",
-    backgroundColor: "#161F40",
-  },
+  // {
+  //   slug: "product-design-cloudeye",
+  //   title: "Cloudeye",
+  //   excerpt:
+  //     "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
+  //   tags: ["Client Project", "SaaS"],
+  //   collectionSlug: "product-design",
+  //   date: "2025-10-10",
+  //   cover: "/case-studies/product-design/cloudeye/page-cover.svg",
+  //   heroImage: "/case-studies/product-design/cloudeye/hero.svg",
+  //   introText: "Cloudeye is a platform responsible for managing web services. Given its extensive capabilities, creating a smooth user experience and a clutter-free, appealing, and friendly user interface was essential.​​​​​​​<br/><br/>Since the product is proprietary to a private company, I cannot explain every detail of the UX research I conducted. However, my approach remained consistent, which is vital for such a significant platform:",
+  //   backgroundColor: "#161F40",
+  //   processSteps: [
+  //     {
+  //       title: "",
+  //       text: "",
+  //       bullets: [
+  //         {
+  //           label: "User Research: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "Initially, I aimed to interview both users and clients to understand why the platform was necessary. I proceeded to identify what was lacking and pinpoint the users' pain points."
+  //         },
+  //         {
+  //           label: "User Personas & Wireframes: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "Establishing user personas was crucial to keep the pain points organized and focused, given the large number of users with overlapping issues. Although wireframes are not always necessary and can be time-consuming, I found them to be particularly beneficial in providing extra clarity for the clients during presentations, which is especially important for a large platform."
+  //         },
+  //         {
+  //           label: "User Interface: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "I chose a dark theme based on user needs and designed the interface to be clean and organized, ensuring every piece of information has its proper place. "
+  //         },
+  //       ],
+  //       textAfter: "Here's a glimpse of the beautiful, and elegant UI.",
+  //     },
+  //   ],
+  //   gallery: [
+  //     {
+  //       src: "/case-studies/product-design/cloudeye/ui.webp",
+  //       alt: "UI",
+  //       colSpan: "full",
+  //     },
+  //   ],
+
+  // },
 
   // upllery
   {

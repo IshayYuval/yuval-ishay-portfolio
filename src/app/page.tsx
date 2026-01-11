@@ -26,10 +26,10 @@ export default function Home() {
             Visual Communication Designer specializes in UX/UI & branding.
           </span>
           <div className="flex gap-4 sm:flex-row flex-col mt-16">
-            <Button variant="primary" href="/branding">
+            <Button variant="primary" href="https://www.fiverr.com/ibrushart" target="_blank">
               Order Now via Fiverr
             </Button>
-            <Button variant="secondary" href="/about">
+            <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank">
               Send me an email
             </Button>
           </div>

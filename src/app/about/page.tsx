@@ -31,7 +31,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex flex-col items-center mt-12">
                     <h4 className="mb-4">Well, are you convinced? let's build something amazing together!</h4>
-                    <Button variant="primary" href="https://www.fiverr.com/yuvalishay">
+                    <Button variant="primary" href="https://www.fiverr.com/yuvalishay" target="_blank">
                         Order Now via Fiverr
                     </Button>
                 </div>

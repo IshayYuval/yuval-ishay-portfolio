@@ -1081,7 +1081,7 @@ export const caseStudies: CaseStudy[] = [
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/gameplay.jpg",
+        image: "/case-studies/product-design/name-the-font/gameplay-1.jpg",
         title: "Clear feedback about the wrong and correct answers <br/><br/>Large image in high-quality, emphasizing the typeface characteristics",
         text: "",
       },

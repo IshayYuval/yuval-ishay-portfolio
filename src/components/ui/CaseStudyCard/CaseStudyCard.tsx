@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import StopMotion from "@/components/ui/StopMotion/StopMotion";
+import Skeleton from "@/components/ui/Skeleton/Skeleton";
 import styles from "./CaseStudyCard.module.css";
 
 interface CaseStudyCardProps {
@@ -15,6 +19,10 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
         month: 'long',
         year: 'numeric'
     });
+
+    // Default loading to true until loaded.
+    // NOTE: For Next/Image, it defaults to blurred placeholder if configured, but here we want a skeleton.
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
         <Link href={`/case-studies/${study.slug}`} className={`${styles.card} group relative block overflow-hidden rounded-[var(--radius)]`}>
@@ -35,13 +43,17 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
                         className="w-full h-full object-cover"
                     />
                 ) : study.cover ? (
-                    <Image
-                        src={study.cover}
-                        alt={study.title}
-                        fill
-                        className="object-cover transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    <>
+                        {isLoading && <Skeleton className="absolute inset-0 z-10 w-full h-full" />}
+                        <Image
+                            src={study.cover}
+                            alt={study.title}
+                            fill
+                            className={`object-cover transition-transform duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            onLoad={() => setIsLoading(false)}
+                        />
+                    </>
                 ) : (
                     <div className="w-full h-full flex items-center justify-center text-[var(--muted)]">
                     </div>

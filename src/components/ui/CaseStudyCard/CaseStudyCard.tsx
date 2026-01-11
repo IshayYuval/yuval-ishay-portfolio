@@ -25,6 +25,15 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
                         duration={study.stopMotionData.duration}
                         alt={study.stopMotionData.alt}
                     />
+                ) : study.cover?.endsWith('.mp4') ? (
+                    <video
+                        src={study.cover}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover"
+                    />
                 ) : study.cover ? (
                     <Image
                         src={study.cover}

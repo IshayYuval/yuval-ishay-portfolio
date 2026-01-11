@@ -16,6 +16,9 @@ export type GalleryItem = {
   src: string;
   alt: string;
   colSpan: "full" | "half";
+  vimeoSrc?: string;
+  width?: number;
+  height?: number;
 };
 
 export type ProcessStepBullet = string | {
@@ -161,11 +164,15 @@ export const caseStudies: CaseStudy[] = [
         src: "/case-studies/branding/cheetah/mockups/brand-guidelines.jpg",
         alt: "Cheetah 1",
         colSpan: "half",
+        width: 3000,
+        height: 2250,
       },
       {
         src: "/case-studies/branding/cheetah/mockups/packages.jpg",
         alt: "Cheetah 2",
         colSpan: "half",
+        width: 2339,
+        height: 3307,
       },
       {
         src: "/case-studies/branding/cheetah/mockups/app.jpg",
@@ -176,11 +183,15 @@ export const caseStudies: CaseStudy[] = [
         src: "/case-studies/branding/cheetah/mockups/building.jpg",
         alt: "Cheetah 3",
         colSpan: "half",
+        width: 4000,
+        height: 3000,
       },
       {
         src: "/case-studies/branding/cheetah/mockups/business-cards.jpg",
         alt: "Cheetah 3",
         colSpan: "half",
+        width: 3307,
+        height: 2339,
       },
       {
         src: "/case-studies/branding/cheetah/mockups/delivery-van.jpg",
@@ -686,6 +697,51 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
+  // conceptual art - long distance love
+  {
+    slug: "long-distance-love",
+    title: "Long-Distance Love",
+    excerpt: "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
+    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    collectionSlug: "conceptual-design",
+    date: "2025-07-11",
+    cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
+    introText: "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships.",
+    gallery: [
+      {
+        src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover
+        vimeoSrc: "https://player.vimeo.com/video/1153221759?badge=0&autopause=0&player_id=0&app_id=58479",
+        alt: "Long Distance Love Video",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/conceptual-design/long-distance-love/leaflet-mockup.webp",
+        alt: "Long Distance Love Video",
+        // The user set them to colSpan="full" in their edit, but implying they want them on the same row?
+        // "if I have one image larger than the other on the same row".
+        // Previously they were likely half.
+        // I will assume for the sake of the "equal height" logic that they should be "half" (or dynamic width sharing a row).
+        // But wait, the user set them to "full" in the previous step (Step 99).
+        // "right now the height is the real heigh, but if I have one image larger than the other on the same row"
+        // Use logic: if 2 items are meant to be on the same row, they share the row.
+        // I should probably switch them back to "half" (or just let the Grid logic decide based on pairing).
+        // The Grid logic usually relies on `colSpan` to decide if it's a standalone full row or a split row.
+        // I will set them to "half" for the purpose of this test, or design the grid to group ANY consecutive "half" items.
+        // Let's set them to "half" and add dims.
+        colSpan: "half",
+        width: 3190,
+        height: 2226,
+      },
+      {
+        src: "/case-studies/conceptual-design/long-distance-love/safety-card-mockup.webp",
+        alt: "Long Distance Love Video",
+        colSpan: "half",
+        width: 1920,
+        height: 1080,
+      }
+    ]
+  },
+
   // conceptual art - tarantino homage 
   {
     slug: "tarantino-homage",
@@ -705,6 +761,16 @@ export const caseStudies: CaseStudy[] = [
     introText: "This project is a visual tribute to Quentin Tarantino, built around his quote: \"I don’t take it seriously… it’s just good direction… There’s a lot of feet in a lot of good directors’ movies.\" <br/> <br/>The goal was to translate Tarantino and his words into a clear visual idea. The concept takes his alleged foot fetish and expresses it through a collection of high-heel shoes, chosen specifically for their stronger connection to foot fetish imagery compared to sneakers or sandals.",
     gallery: [
       {
+        src: "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",
+        alt: "Image 1",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/conceptual-design/tarantino/cover/cover-2.webp",
+        alt: "Image 2",
+        colSpan: "full",
+      },
+      {
         src: "/case-studies/conceptual-design/tarantino/glamour/glamour-1.webp",
         alt: "Image 1",
         colSpan: "full",
@@ -722,27 +788,18 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
-  // conceptual art - long distance love
-  {
-    slug: "long-distance-love",
-    title: "Long-Distance Love",
-    excerpt: "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
-    tags: ["HIT", "Visual Communication BA", "1nd Year"],
-    collectionSlug: "conceptual-design",
-    date: "2025-07-11",
-    introText: "Dummy intro for Long Distance Love.",
-  },
 
-  // conceptual art - city activism
-  {
-    slug: "city-activism",
-    title: "City Activism",
-    excerpt: "A video-based activist project that places wealth and hunger side by side, confronting the viewer with social gaps and personal responsibility.",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
-    collectionSlug: "conceptual-design",
-    date: "2025-04-25",
-    introText: "Dummy intro for City Activism.",
-  },
+
+  // // conceptual art - city activism
+  // {
+  //   slug: "city-activism",
+  //   title: "City Activism",
+  //   excerpt: "A video-based activist project that places wealth and hunger side by side, confronting the viewer with social gaps and personal responsibility.",
+  //   tags: ["HIT", "Visual Communication BA", "1st Year"],
+  //   collectionSlug: "conceptual-design",
+  //   date: "2025-04-25",
+  //   introText: "Dummy intro for City Activism.",
+  // },
 
   // photography
   {

@@ -1,29 +1,15 @@
-import { notFound } from "next/navigation";
-import { caseStudies } from "@/data/portfolio";
+import { CaseStudy } from "@/data/portfolio";
 import BrandingLayout from "@/components/templates/BrandingLayout";
 import UiUxLayout from "@/components/templates/UiUxLayout";
 import VisualLayout from "@/components/templates/VisualLayout";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
 import "./case-study.css";
 
-interface PageProps {
-    params: Promise<{ slug: string }>;
+interface CaseStudyViewProps {
+    study: CaseStudy;
 }
 
-export async function generateStaticParams() {
-    return caseStudies.map((study) => ({
-        slug: study.slug,
-    }));
-}
-
-export default async function CaseStudyPage({ params }: PageProps) {
-    const { slug } = await params;
-    const study = caseStudies.find((s) => s.slug === slug);
-
-    if (!study) {
-        notFound();
-    }
-
+export default function CaseStudyView({ study }: CaseStudyViewProps) {
     let content;
 
     // Layout switching logic based on collectionSlug
@@ -43,7 +29,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             break;
 
         default:
-            // Fallback or 404 if slug matches but collection type is unknown
+            // Fallback
             content = <div className="pt-32 text-center text-red-500">Unknown layout type: {study.collectionSlug}</div>;
     }
 

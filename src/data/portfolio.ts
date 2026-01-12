@@ -1092,7 +1092,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "infowork",
     title: "Infowork",
-    cover: "/case-studies/product-design/infowork/page-cover.svg",
+    cover: "/case-studies/product-design/infowork/page-cover.jpg",
     excerpt:
       "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
     tags: ["Personal Project", "SaaS"],

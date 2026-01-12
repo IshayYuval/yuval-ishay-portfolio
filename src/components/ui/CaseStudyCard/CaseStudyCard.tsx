@@ -25,7 +25,7 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
     const [isLoading, setIsLoading] = useState(true);
 
     return (
-        <Link href={`/case-studies/${study.slug}`} className={`${styles.card} group relative block overflow-hidden rounded-[var(--radius)]`}>
+        <Link href={`/${study.slug}`} className={`${styles.card} group relative block overflow-hidden rounded-[var(--radius)]`}>
             <div className={`${styles['card-image-wrapper']} relative aspect-[4/3] w-full bg-[var(--color-brand-secondary-800)]`}>
                 {study.stopMotionData ? (
                     <StopMotion

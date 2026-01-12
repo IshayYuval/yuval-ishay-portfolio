@@ -10,7 +10,16 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
     const handleScroll = () => {
         const element = document.getElementById(targetId);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            // Get header height from CSS variable or fallback number.
+            // Since we know it's 80px, closely matching it ensures it tucks under nicely.
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
     };
 

@@ -82,7 +82,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2>a glance of my very happy clients ;)</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}

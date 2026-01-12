@@ -36,14 +36,3 @@
 .review-card:hover .review-card-text {
     transform: translateY(0);
 }
-
-@media (max-width: 1000px) {
-    .review-card-text {
-        font-size: 0.7rem;
-    }
-
-    .review-card-overlay {
-        padding-inline: 0.75rem;
-    }
-
-}

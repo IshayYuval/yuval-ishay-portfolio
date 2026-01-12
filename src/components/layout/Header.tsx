@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import NavItem from "../nav/NavItem";
+import BrandMark from "../ui/BrandMark/BrandMark";
 import NavDropdown from "../nav/NavDropdown";
 import MobileMenuToggle from "../nav/MobileMenuToggle";
 import MobileMenu from "../nav/MobileMenu";
@@ -51,7 +52,9 @@ export default function Header() {
             <header
                 className="fixed top-0 left-0 w-full right-0 z-50 transition-all duration-300 ease-in-out overflow-hidden"
                 style={{
-                    backgroundColor: (isScrolled || isDropdownOpen || isHovered || isMobileMenuOpen) ? headerBg : 'transparent',
+                    backgroundColor: (isScrolled || isDropdownOpen ||
+                        // isHovered ||
+                        isMobileMenuOpen) ? headerBg : 'transparent',
                     maxHeight: isDropdownOpen ? '600px' : 'var(--header-height)',
                 }}
                 onMouseEnter={() => setIsHovered(true)}
@@ -64,14 +67,8 @@ export default function Header() {
                     {/* Logo */}
                     <div className="flex items-center">
 
-                        <Link href="/" className="logo flex items-center">
-                            <Image
-                                src="/web-assets/Brandmark.svg"
-                                alt="Brandmark"
-                                width={40}
-                                height={40}
-                                className="w-16 h-16"
-                            />
+                        <Link href="/" className="logo flex items-center group">
+                            <BrandMark className="w-16 h-16 text-[var(--color-brand-primary-500)] group-hover:text-white transition-colors duration-300" />
                         </Link>
 
                         {/* Desktop Navigation */}

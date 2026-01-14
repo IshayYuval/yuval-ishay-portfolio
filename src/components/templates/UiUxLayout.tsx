@@ -28,9 +28,15 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
             <div className={`container-custom max-w-4xl mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}> {/* Adjusted padding */}
                 {/* Header */}
                 <header className="pt-20 max-w-4xl mx-auto">
+                    <div className="text-body text-center">
+                        {new Date(data.date).toLocaleDateString("en-US", {
+                            month: "long",
+                            year: "numeric",
+                        })}
+                    </div>
                     <h1 className="mb-2 text-center">About the Project</h1>
-
                     <div className="flex flex-wrap justify-center gap-2 mb-8">
+
                         {data.tags.map(tag => (
                             <Tag key={tag}>{tag}</Tag>
                         ))}

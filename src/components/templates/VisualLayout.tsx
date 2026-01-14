@@ -10,6 +10,12 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
         <article className="min-h-screen pt-[var(--header-height)] pb-24" style={{ backgroundColor: data.backgroundColor }}>
             <div className="container-custom mx-auto px-6">
                 <header className="pt-24 max-w-4xl mx-auto">
+                    <div className="text-body text-center">
+                        {new Date(data.date).toLocaleDateString("en-US", {
+                            month: "long",
+                            year: "numeric",
+                        })}
+                    </div>
                     <h1 className="text-center">about the project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mt-2 mb-8">
                         {data.tags.map(tag => (

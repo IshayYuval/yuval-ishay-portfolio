@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import StopMotion from "@/components/ui/StopMotion/StopMotion";
 import Skeleton from "@/components/ui/Skeleton/Skeleton";
+import Tag from "@/components/ui/Tag/Tag";
 import styles from "./CaseStudyCard.module.css";
 
 interface CaseStudyCardProps {
@@ -67,11 +68,11 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
                     </span>
                     {!hideExcerpt && <p className={`mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>}
                     {!hideTags && (
-                        <div className="flex gap-2 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                        <div className="flex gap-1 md:gap-2 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
                             {study.tags.map(tag => (
-                                <span key={tag} className="text-[10px] uppercase tracking-wider border border-white/40 text-white px-2 py-1 rounded-full">
+                                <Tag key={tag}>
                                     {tag}
-                                </span>
+                                </Tag>
                             ))}
                         </div>
                     )}

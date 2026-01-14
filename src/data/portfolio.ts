@@ -100,13 +100,13 @@ export const collections: Collection[] = [
 ];
 
 export const caseStudies: CaseStudy[] = [
+  // branding - cheetah
   {
-    // branding
     slug: "cheetah",
     title: "Cheetah",
     excerpt:
       "During my first year in my Visual Communication B.A, we've got an assignment to select an animal and build a comprehensive visual identity around it",
-    tags: ["HIT Visual Communication BA", "Graphic Fundamentals"],
+    tags: ["HIT Visual Communication BA", "Graphic Fundamentals 1", "1st Year"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/cheetah/page-cover.svg",
     date: "2025-01-18",

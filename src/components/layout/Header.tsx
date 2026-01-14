@@ -67,7 +67,7 @@ export default function Header() {
                     {/* Logo */}
                     <div className="flex items-center">
 
-                        <Link href="/" className="logo flex items-center group">
+                        <Link href="/" className="logo flex items-center group" aria-label="home page">
                             <BrandMark className="w-16 h-16 text-[var(--color-brand-primary-500)] group-hover:text-white transition-colors duration-300" />
                         </Link>
 

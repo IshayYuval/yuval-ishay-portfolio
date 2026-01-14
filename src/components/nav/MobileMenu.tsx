@@ -62,6 +62,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         <button
                             onClick={() => handleViewChange("main")}
                             className={`flex items-center gap-2 nav-link text-[var(--foreground)] transition-all duration-500 delay-200 ease-out ${view === "visual-communication" ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-4 pointer-events-none"}`}
+                            aria-label="Back to main menu"
                         >
                             <ChevronLeft size={30} />
                         </button>

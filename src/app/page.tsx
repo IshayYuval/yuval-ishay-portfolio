@@ -19,13 +19,13 @@ export default function Home() {
         }}
       >
         <div className="container-custom z-10">
-          <h1 className="mb-1">
-            I'M YUVAL, TURNING VISIONS INTO VIBRANT VISUAL REALITIES.
+          <h1 className="mb-1 ml-0.5">
+            I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.
           </h1>
-          <span className="subhero">
-            Visual Communication Designer specializes in UX/UI & branding.
+          <span className="subhero ml-0.5">
+            UX Designer & Product Maker, specializing in branding, product design and AI-driven development.
           </span>
-          <div className="flex gap-4 sm:flex-row flex-col mt-16">
+          <div className="flex gap-4 sm:flex-row flex-col mt-16 mb-2">
             <Button variant="primary" href="https://www.fiverr.com/ibrushart" target="_blank">
               Order Now via Fiverr
             </Button>
@@ -33,6 +33,7 @@ export default function Home() {
               Send me an email
             </Button>
           </div>
+          <span className="text-caption ml-1">This portfolio was built with Antigravity and Gemini 3 Pro</span>
         </div>
         <ScrollDownButton targetId="about-me" />
       </section>
@@ -42,10 +43,9 @@ export default function Home() {
         <div className="gap-12 max-w-2xl">
           <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
           <p className="text-body mb-6">
-            Hey there! I'm Yuval, a 26-year-old graphic designer, artist, football fan and a traveler, living my dream as a freelancer.
-            While I might be young, I've been pursuing my love for the arts since I was 13, giving me a wealth of experience in building
-            unique user experiences and
-            creating strong connections between business owners and their clients through amazing brand identities.
+            Hey! I'm Yuval, UX and brand designer, building products and experiences with concept-driven design and AI-driven software development.
+            I started designing at 13, and over the years I've grown into building digital products, brands, and experiences that connect people, technology, and business.
+            Outside of work I'm a football fan and a traveler, love exploring the world and trying new things.
           </p>
         </div>
         <Button variant="secondary" href="/about">
@@ -60,9 +60,10 @@ export default function Home() {
           <p className="text-body text-lg mb-6">
             Although at first glance branding and product design seem different niches, branding and product design go hand in hand.
             Just like your logo, your user experience should appeal to the same people your brand appeals to.
+            In the world of AI, I took my abilities to the next level, by shipping my designs to the real-world, mastering tools like Base44, Antigravity, and more.
             <br />
-            Some will agree, and some will define me as a 'multidisciplinary' designer. Bottom line, those two are what gets me out of bed every morning.
             <br />
+            That's right, I'm a one man show, and that's what gets me out of bed every morning.
             <br />
             Do you wanna see that passion visually? I've hand picked some of my case studies just for you!
           </p>

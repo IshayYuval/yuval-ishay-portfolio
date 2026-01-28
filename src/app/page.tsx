@@ -26,11 +26,17 @@ export default function Home() {
             UX Designer & Product Maker, specializing in branding, product design and AI-driven development.
           </span>
           <div className="flex gap-4 sm:flex-row flex-col mt-16 mb-2">
-            <Button variant="primary" href="https://www.fiverr.com/ibrushart" target="_blank">
+            {/* <Button variant="primary" href="https://www.fiverr.com/ibrushart" target="_blank">
               Order Now via Fiverr
-            </Button>
+            </Button> */}
+            {/* <Button variant="primary" href="/product-design" target="_blank">
+              Order Now via Fiverr
+            </Button> */}
             <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank">
               Send me an email
+            </Button>
+            <Button variant="secondary" targetId="about-me">
+              A bit about my story
             </Button>
           </div>
           <span className="text-caption ml-1">This portfolio was built with Antigravity and Gemini 3 Pro</span>

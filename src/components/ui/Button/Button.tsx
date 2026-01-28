@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import styles from "./Button.module.css";
@@ -6,6 +8,7 @@ type ButtonBaseProps = {
     variant?: "primary" | "secondary";
     children: React.ReactNode;
     className?: string;
+    targetId?: string;
 };
 
 type ButtonAsButton = ButtonBaseProps &
@@ -24,6 +27,7 @@ export default function Button({
     variant = "primary",
     className = "",
     children,
+    targetId,
     ...props
 }: ButtonProps) {
     // Base styles are now handled by CSS classes, but we keep the logic for variant class names
@@ -41,8 +45,25 @@ export default function Button({
         );
     }
 
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (targetId) {
+            const element = document.getElementById(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        if ((props as ButtonAsButton).onClick) {
+            (props as ButtonAsButton).onClick!(e);
+        }
+    };
+
     return (
-        <button className={combinedClassName} {...(props as ButtonAsButton)}>
+        <button
+            className={combinedClassName}
+            {...(props as ButtonAsButton)}
+            onClick={handleClick}
+        >
             {children}
         </button>
     );

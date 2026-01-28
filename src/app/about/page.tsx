@@ -12,8 +12,8 @@ export default function AboutPage() {
                     <div className="max-w-3xl">
                         <h1 className="mb-8">Hey there, I'm <span className="emphasized-text">Yuval!</span></h1>
                         <p className="mb-6 max-w-xl text-body">
-                            I'm a professional product designer and logo designer working as a freelancer on Fiverr, based in Rishon Letzion, Israel
-                            and I only have one mission - to solve your problems using my skills. I bring a wealth of expertise to the table in both
+                            I'm a professional product designer and logo designer, based in Rishon Letzion, Israel.
+                            I only have one mission - to solve your problems using my skills. I bring a wealth of expertise to the table in both
                             the UX/UI and logo design field, and I'm here to help.
                             <br />
                             <br />
@@ -29,12 +29,12 @@ export default function AboutPage() {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center mt-12">
+                {/* <div className="flex flex-col items-center mt-12">
                     <h4 className="mb-4">Well, are you convinced? let's build something amazing together!</h4>
                     <Button variant="primary" href="https://www.fiverr.com/yuvalishay" target="_blank">
                         Order Now via Fiverr
                     </Button>
-                </div>
+                </div> */}
 
             </Section>
         </div>

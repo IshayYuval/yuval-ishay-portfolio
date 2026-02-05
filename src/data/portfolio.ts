@@ -52,6 +52,7 @@ export type CaseStudy = {
   introText?: string;
   heroImage?: string; // specific for Branding top section
   projectUrl?: string; // optional external link
+  projectUrlVariant?: "primary" | "secondary";
   processSteps?: ProcessStep[]; // mainly for UX/UI
   contentSections?: ZigZagSection[];
   gallery?: GalleryItem[];
@@ -890,7 +891,7 @@ export const caseStudies: CaseStudy[] = [
   //   introText: "Dummy intro for City Activism.",
   // },
 
-  // photography
+  // photography - hunger
   {
     slug: "hunger",
     title: "Hunger",
@@ -944,6 +945,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // photography - out of bounds
   {
     slug: "out-of-bounds",
     title: "Out of Bounds",
@@ -992,7 +995,7 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
-  // typography
+  // typography - liebling haus
   {
     slug: "liebling-haus",
     title: "Liebling Haus Poster",
@@ -1010,6 +1013,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // typography - dance tel aviv
   {
     slug: "dance-tel-aviv",
     title: "Dance Tel-Aviv",
@@ -1049,6 +1054,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // typography - ezer alchemist homage
   {
     slug: "ezer-alchemist-homage",
     title: "Ezer Alchemist Homage",
@@ -1076,6 +1083,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+  // typography - theory of relativity
   // {
   //   slug: "theory-of-relativity",
   //   title: "Theory of Relativity",
@@ -1088,6 +1097,135 @@ export const caseStudies: CaseStudy[] = [
 
 
   // product design
+
+  // spod
+  {
+    slug: "spod",
+    title: "Spod",
+    cover: "/case-studies/product-design/spod/page-cover.jpg",
+    excerpt:
+      "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "App Design"],
+    heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
+    backgroundColor: "#400047",
+    projectUrl: "https://noakuterman.myportfolio.com",
+    projectUrlText: "Noa Kuterman's Portfolio",
+    projectUrlVariant: "secondary",
+    collectionSlug: "product-design",
+    date: "2025-10-31",
+    introText: "A bit of context: at HIT, the standard for presenting our work is just as high as the standard for the work itself. The presentation is expected to be impressive and polished, something that respects and elevates the project, not something that weakens it. <br/> <br/> Across the hallways, colored podiums are present for students to use during their presentations. To secure one, students physically come to campus sometimes a week in advance, tape a note with their name and date, and pray no one takes it or that the note doesn’t fall off. Spod was designed to end this nonsense; bringing presentation prep into 2026 and giving students one less thing to worry about. <br/><br/> Spod was designed as part of a semester project in the Introduction to Interactive Design course, under the guidance of Iris Duani. I've worked on it with 2 good friends of mine and amazing designers on their own right: Noa Kuterman and <br/> Sharon Kisilevich. You're welcome to check their amazing work in their portfolios:",
+    processSteps: [
+      {
+        title: "The Problem",
+        text: "As Visual Communication students, we are expected to present our work in the best possible way, using podiums. Meaning, we need to search the building, floor by floor, a podiums that fits our concept by color shape and size, a one that isn't broken or saved by someone else. Until this moment, we written our name and phone number on a note. Did it help? Not always. There was always the fear the podium will be gone until the day of the presentation.",
+      },
+      {
+        title: "The Research",
+        text: "We've commited a deep user research to see how many of the students have the same worries as us. here are the numbers:",
+        bullets: [
+          {
+            label: "70%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of students arrive ahead of time physically to campus to check for available podiums"
+          },
+          {
+            label: "60%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of students reported running into overload and chaos during submission week due to poor organization."
+          },
+          {
+            label: "42%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of students use a podium more than five times a year."
+          },
+          {
+            label: "90%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of students rated their desire for a podium reservation app at 4 or higher out of 5, with 5 being the strongest interest."
+          },
+          {
+            label: "40%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of students signed up for the newsletter to receive project updates, join the pilot, and get notified when it launches."
+          },
+        ],
+        textAfter: "The numbers are clear. We've found a real problem that needs solving."
+      },
+      {
+        title: "User Interviews & Personas",
+        text: "To get a deeper understanding of the problem, we conducted deep user interviews with 5 students from different departments and years. based on the interviews we created 3 personas that represent the different types of users we are designing for:",
+        bulletSections: [
+          {
+            title: "Netanel Plank",
+            bullets: [
+              {
+                text: "26-year-old student balancing studies, work, and commuting, constantly short on time"
+              },
+              {
+                text: "Values strong visual presentation but is frustrated by disorder and unnecessary hassle"
+              },
+              {
+                text: "Tends to improvise under pressure when no clear system supports him"
+              },
+              {
+                text: "Sensitive to deadline stress and seeks certainty and control"
+              },
+              {
+                text: "Wants to focus on creating, not on the logistics."
+              }
+            ]
+          },
+          {
+            title: "Marina Milderman",
+            bullets: [
+              {
+                text: "24-year-old student juggling studies, work, and a packed weekly schedule"
+              },
+              {
+                text: "Highly organized and practical, plans ahead to avoid last-minute stress"
+              },
+              {
+                text: "Treats presentation as part of the work, not an afterthought"
+              },
+              {
+                text: "Relies on structure and clear systems to manage her time"
+              },
+              {
+                text: "Wants a smooth process so she can stay focused on learning and creating"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    contentSections: [
+      {
+        image: "/case-studies/product-design/name-the-font/landing-page.jpg",
+        title: "Landing page with a clear call-to-play <br/><br/> Homage to the top-ranked players <br/><br/>Rotating header to show different typefaces",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/name-the-font/table.jpg",
+        title: "Clean table for scanning data fast <br/><br/> Search bar for easy filtering <br/><br/>Tabs to switch between all-times leaders or weekly leaders <br/><br/>visual difference between the top-3 and the rest of the players.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/name-the-font/authentication.jpg",
+        title: "Combined sign-up and sign-in <br/><br/>Redirecting to this page, in-case a player starts a game as a guest <br/><br/>Google & Magic Link for a password-free experience",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/name-the-font/gameplay-1.jpg",
+        title: "Clear feedback about the wrong and correct answers <br/><br/>Large image in high-quality, emphasizing the typeface characteristics",
+        text: "",
+      },
+    ],
+  },
 
   // name-the-font-uxui
   {

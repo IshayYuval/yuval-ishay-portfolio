@@ -50,6 +50,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                         <Button
                             href={data.projectUrl}
                             target="_blank"
+                            variant={data.projectUrlVariant || "primary"}
                             className="mb-8 mt-6"
                         >
                             {data.projectUrlText}

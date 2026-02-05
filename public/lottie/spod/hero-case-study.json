@@ -1,0 +1,1030 @@
+{
+    "nm": "hero-case-study",
+    "ddd": 0,
+    "h": 1080,
+    "w": 3456,
+    "meta": {
+        "g": "@lottiefiles/toolkit-js 0.70.6"
+    },
+    "layers": [
+        {
+            "ty": 0,
+            "nm": "Pre-comp 2",
+            "sr": 1,
+            "st": 0,
+            "op": 450,
+            "ip": 0,
+            "ln": "202",
+            "hasMask": true,
+            "ao": 0,
+            "ks": {
+                "a": {
+                    "a": 0,
+                    "k": [
+                        1728,
+                        540
+                    ]
+                },
+                "s": {
+                    "a": 0,
+                    "k": [
+                        100,
+                        100
+                    ]
+                },
+                "p": {
+                    "a": 0,
+                    "k": [
+                        1728,
+                        540
+                    ]
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100
+                }
+            },
+            "masksProperties": [
+                {
+                    "nm": "Mask 1",
+                    "inv": false,
+                    "mode": "a",
+                    "x": {
+                        "a": 0,
+                        "k": 0
+                    },
+                    "o": {
+                        "a": 0,
+                        "k": 100
+                    },
+                    "pt": {
+                        "a": 1,
+                        "k": [
+                            {
+                                "o": {
+                                    "x": 0.167,
+                                    "y": 0
+                                },
+                                "i": {
+                                    "x": 0.667,
+                                    "y": 1
+                                },
+                                "s": [
+                                    {
+                                        "c": true,
+                                        "i": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "o": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "v": [
+                                            [
+                                                3442.176,
+                                                1.08
+                                            ],
+                                            [
+                                                0,
+                                                1.08
+                                            ],
+                                            [
+                                                0,
+                                                1077.84
+                                            ],
+                                            [
+                                                3442.176,
+                                                1077.84
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "t": 156.999
+                            },
+                            {
+                                "o": {
+                                    "x": 0.333,
+                                    "y": 0
+                                },
+                                "i": {
+                                    "x": 0,
+                                    "y": 1
+                                },
+                                "s": [
+                                    {
+                                        "c": true,
+                                        "i": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "o": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "v": [
+                                            [
+                                                2716.416,
+                                                274.32
+                                            ],
+                                            [
+                                                784.512,
+                                                274.32
+                                            ],
+                                            [
+                                                784.512,
+                                                793.8
+                                            ],
+                                            [
+                                                2716.416,
+                                                793.8
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "t": 182.999
+                            },
+                            {
+                                "s": [
+                                    {
+                                        "c": true,
+                                        "i": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "o": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                0,
+                                                0
+                                            ]
+                                        ],
+                                        "v": [
+                                            [
+                                                2716.416,
+                                                274.32
+                                            ],
+                                            [
+                                                784.512,
+                                                274.32
+                                            ],
+                                            [
+                                                784.512,
+                                                309.96
+                                            ],
+                                            [
+                                                2716.416,
+                                                309.96
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "t": 206.998
+                            }
+                        ]
+                    }
+                }
+            ],
+            "w": 3456,
+            "h": 1080,
+            "refId": "1",
+            "ind": 1
+        },
+        {
+            "ty": 1,
+            "nm": "Pale Magenta Solid 4",
+            "sr": 1,
+            "st": 0,
+            "op": 210,
+            "ip": 0,
+            "ln": "187",
+            "hasMask": false,
+            "ao": 0,
+            "ks": {
+                "a": {
+                    "a": 0,
+                    "k": [
+                        1728,
+                        540
+                    ]
+                },
+                "s": {
+                    "a": 0,
+                    "k": [
+                        100,
+                        100
+                    ]
+                },
+                "p": {
+                    "a": 0,
+                    "k": [
+                        1728,
+                        540
+                    ]
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100
+                }
+            },
+            "sc": "#fcf0ff",
+            "sh": 1080,
+            "sw": 3456,
+            "ind": 2
+        },
+        {
+            "ty": 1,
+            "nm": "Pale Magenta Solid 2",
+            "sr": 1,
+            "st": 0,
+            "op": 210,
+            "ip": 0,
+            "ln": "172",
+            "hasMask": false,
+            "ao": 0,
+            "ks": {
+                "a": {
+                    "a": 0,
+                    "k": [
+                        960,
+                        540
+                    ]
+                },
+                "s": {
+                    "a": 0,
+                    "k": [
+                        100,
+                        100
+                    ]
+                },
+                "p": {
+                    "a": 0,
+                    "k": [
+                        1728,
+                        540
+                    ]
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100
+                }
+            },
+            "sc": "#fcf0ff",
+            "sh": 1080,
+            "sw": 1920,
+            "ind": 3
+        }
+    ],
+    "v": "5.7.0",
+    "fr": 30,
+    "op": 210,
+    "ip": 0,
+    "assets": [
+        {
+            "nm": "Pre-comp 2",
+            "id": "1",
+            "fr": 30,
+            "layers": [
+                {
+                    "ty": 2,
+                    "nm": "Text",
+                    "sr": 1,
+                    "st": 0,
+                    "op": 450,
+                    "ip": 0,
+                    "ln": "191",
+                    "hasMask": true,
+                    "ao": 0,
+                    "ks": {
+                        "a": {
+                            "a": 0,
+                            "k": [
+                                212.5,
+                                57.27
+                            ]
+                        },
+                        "s": {
+                            "a": 0,
+                            "k": [
+                                100,
+                                100
+                            ]
+                        },
+                        "p": {
+                            "a": 0,
+                            "k": [
+                                1912.474,
+                                540,
+                                0
+                            ]
+                        },
+                        "r": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "sa": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "o": {
+                            "a": 0,
+                            "k": 100
+                        }
+                    },
+                    "masksProperties": [
+                        {
+                            "nm": "Mask 1",
+                            "inv": false,
+                            "mode": "a",
+                            "x": {
+                                "a": 0,
+                                "k": 0
+                            },
+                            "o": {
+                                "a": 0,
+                                "k": 100
+                            },
+                            "pt": {
+                                "a": 1,
+                                "k": [
+                                    {
+                                        "o": {
+                                            "x": 0.333,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0.027,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            {
+                                                "c": true,
+                                                "i": [
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ]
+                                                ],
+                                                "o": [
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ]
+                                                ],
+                                                "v": [
+                                                    [
+                                                        525.3,
+                                                        -88.55
+                                                    ],
+                                                    [
+                                                        437.325,
+                                                        -88.55
+                                                    ],
+                                                    [
+                                                        437.325,
+                                                        191.13
+                                                    ],
+                                                    [
+                                                        525.3,
+                                                        191.13
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "t": 81.999
+                                    },
+                                    {
+                                        "s": [
+                                            {
+                                                "c": true,
+                                                "i": [
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ]
+                                                ],
+                                                "o": [
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    [
+                                                        0,
+                                                        0
+                                                    ]
+                                                ],
+                                                "v": [
+                                                    [
+                                                        525.3,
+                                                        -88.55
+                                                    ],
+                                                    [
+                                                        -107.95,
+                                                        -88.55
+                                                    ],
+                                                    [
+                                                        -107.95,
+                                                        191.13
+                                                    ],
+                                                    [
+                                                        525.3,
+                                                        191.13
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "t": 92.999
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "refId": "2",
+                    "ind": 1
+                },
+                {
+                    "ty": 0,
+                    "nm": "face",
+                    "sr": 1,
+                    "st": 0,
+                    "op": 450,
+                    "ip": 0,
+                    "ln": "190",
+                    "hasMask": false,
+                    "ao": 0,
+                    "ks": {
+                        "a": {
+                            "a": 0,
+                            "k": [
+                                960,
+                                540
+                            ]
+                        },
+                        "s": {
+                            "a": 0,
+                            "k": [
+                                100,
+                                100
+                            ]
+                        },
+                        "p": {
+                            "s": true,
+                            "x": {
+                                "a": 1,
+                                "k": [
+                                    {
+                                        "o": {
+                                            "x": 0.468,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            -168.966
+                                        ],
+                                        "t": 38
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 0.333,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0.337,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            1967.035
+                                        ],
+                                        "t": 48
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 0.457,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            1967.035
+                                        ],
+                                        "t": 82.999
+                                    },
+                                    {
+                                        "s": [
+                                            1728
+                                        ],
+                                        "t": 92.999
+                                    }
+                                ]
+                            },
+                            "y": {
+                                "a": 0,
+                                "k": 540
+                            },
+                            "z": {
+                                "a": 0,
+                                "k": 0
+                            }
+                        },
+                        "r": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "sa": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "o": {
+                            "a": 0,
+                            "k": 100
+                        }
+                    },
+                    "w": 1920,
+                    "h": 1080,
+                    "refId": "3",
+                    "ind": 2
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "e": 1,
+            "w": 425,
+            "h": 115,
+            "p": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAakAAABzCAYAAAAi/v2mAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAS8klEQVR4nO2d7XnbxrKA3/jJf/FWIKQC8VYgpALzVmCkAisVGKkgSgWBKzhKBRlXELqCA1dwqQp8fgxxKMukRIA7+wHM+zzzyHaUwewCu7Mz+/UDjuPMiWov9f7va2B15v/b72UHbJ/83XGS8UNqA/ZUaGNac2hkALcnfv8RbUTsf+4AwRuVsywq1BkNbedUe7mUT2g7k73sjJ7jONmwAhqgQ53K14DS7/U2nD+CdJxS2AD3hG83Y2S7t2FtW1THiR9JNWgjexvxmZ9Qp/VA/iNAb/iX0e1lbtQc2s5VUku+5wvatjoO2Y05UUqbHFK0T5H9zx7PML3ICmjRSkw18vu6f/49h1Rijghp66h0acdWeMasgDvSRkxjZYs60zkhpK/XkO9H0HayIe++MAq5OKdTnVmOqUAhfd2ULO3YCs+QCh1M5dhuzpUd+baxsQjp69NSeg7TI9Xl1VUOG/IfAe7Ib9QnpK+XkqUdW+EZUaGdReo6DClzcFZC+nqMKVs0gq8ur7o8WVFeQ3sgn0YkpK+PkqUdW+EZkHPGIZTkOCA8FyF9/aWSIX2bS/94MWu0UKkrdmojymFyVEhfFyVLO7bCE1NCxiGkbMmjnY1BSF9vqWWHBh/VJRU5lTeB9KzRl3kTSF9srlD7m7RmOAthhUbw/wKuE9sSkxvgH3TObTaj8wVwBbwD/k1CZ3UJa+aVqmiC1s445Ig9LudLO7bCE7BhXu1lqpQSVQnp6ypH6Yg00Lg0khoiqNz2blzCn3hE5dhwj0ZPc2ovUxmiqrvUhjiTeIemqlvrB13ipFbMz0ENlLKBzymDFRo5vE9tSIb8TsRRuROUK+ADxlHxJU5KmKeDgsMclTcc51LW6Iiz1PnaGLzD21vJDFFxa6F8qpNqmX+ju2KeR+w48aiZ92AuJDeoM/cMRrl8wGCwMcVJVXtjlsBbfH7KmUYD/I07qDEMGQx3VOVyS+DBxhQndR/q4YXgy2WdsTToAhxnPO6oyucKTf81IZSNdVI1cU8wz4ErfAWScz4N7qAuxR3VPAiyUnqsk7r4gYVyh0dTzuvUuIMKhTuqefAnFy6oGOOkKnQVzhLxaMp5jTV6ioQTjivyOlvTmcYHLug/xzipzdSHTOQz8Bvw815+2MvPwP8Bf6AXrsWiifgspyzmvGcwNdccLu9zyuV3JvahP4743VhO6iMaHvYn/rvsfz6g3rnZ//61qVWqf4OPlp3vEfJ0UJ/QjZY7Xu7oV2gkWO1/5ra95IbDnUdOufyJfosmfegK+7OgdmhOf6p9XQQbu4n2nYtEKMOcpR1b4QG4n2irhWzROqgDlKvel63PoFyDNAHKNRaZYKfLaRl948S5kZT15OUj2ii2E///4b4awXbiujbUbckj0+vWgtvUBgRiQ/qjjh7RwdPgUEIhe7lD2/8dWt6UEeM9+h3n9C1PJWSbXJNnJH+MYZ5xOJg8GC223rUOaKv1yNbSYYuRzWJo8xSs3k0bsQwr0p5m3hM/ssjhgsbYDkoC2R2rTVZof3qH9oVW9l8qwVN+naGxXWhjsX0xjYG91naLoc1TsHo3bcQyPBiV4TXZkX6l6eCsUpQ/9nsWA/tTtMkNM0/fiqGhdUhD96wN7bU8cUOMbBZDm6dg9W7aSPZvDMvwknTktRy7It1IPdb+KTGyXyLZf4yaOHP4r8mOMy5QDHUz71QesXlZW3SVoAW+uXDZrIh/NNgjuu2iIXAe/0J6tMP7FbUxJks7ni0kgn5LP6HbfGK/u4ErAr5HK08qoQw8gkU0JdimWsTA5tSjtmNYfU9tBNtbQ/uPyZa8oqdTDFeSxKybGNtixMh2iWD7uVSkjazqEIUotVPpJ9rVox9RizaEytjOAZlob0kNAsr9niriLhrojMsTmuFyx1j100cokxjZLhFsH0tNmjmr/iWjUqf7rDlnBcln4C8Op1v8D4cVMu1eR29hnFMcLfGW+n6kvM2rw17HvyI975ry6ihnBI2IraZKThHkPVqNHrtLDXuF5xPcsn/mHXnueRKWMWqzGpG1hjZXhnbHbhcx6MhgFB4AMbJbjO2+lIZ433uQ9yhGhlnveajQyi5lsYOwjAZh9aG3hjZ3hnY/lc6wDDGJmfprDMshRjaLoc2hGDbcxniHF79HMTSsusSwmSEso0FYfUutkb0xjgXL8T1dSixH1RuWQYxsFkObQxLTUfXHDDh3Tsoy4mkNdTtOCGJsnv1C/JsGrBmOK7Ne4nzN/OouF7bo1EiMZerXHJmGOddJ9SEtecY7yknHOcukifCMDXntgQrFljhOvonwjKUS6x1y7Dk5RFKgoW8Je0Gc5bHB/hqY35jHoamn6LBf8fcWnzqwpEO/U2ve8swXnOukJLgp3zJcFV0ZP8dxxmKdRvrCMlLeDfYpI0/52dKiW3as+eY9jtknZT0SuuGQ/3ScXLDu+Bpj/bmww94ZN8b6nTgDgebpX8Y4qRg30l4Bf6PnOXn6z0mN9f1JnyhnlVcI7tHI0YobPBtjTY992u+WJ/3/GCfVEe8gwvdoVNVEep7jHMOjqPC0xvo95WeP9WADnrzHsccixTx5+Bq9ZbdnmY3ZSY9lh/eJZR631WHbwbmTsidG6rYe/jDFScU+1v25s/I0oBMD6yu5W0PduWM52L011O0c6LD1BfXwh7FOake6e1yeOqsO31vl2FIb6v7CsuaintMZ66+N9TuKpS+4Zj+/OOUU9Bb7fORLXKEbgP/hMG/l0ZUTmtpQ99Iv7Nthe9J2bajbOdAZ61/D9Ks6csn73vBtdFUntMWZF5aReoyVsrljWQeeZYlDj+2+qYuc1Ba9MjoXhujqb7TiWnwpqnMZVqdMfGaZCyae405qHnSGumu47NLDe+JfjnUO18AH4N9o3r9JaYxTJLWhbjHUXRqfjPRaH2PlHLAcbFRw+c28DXk6qoFbNB04LPioklrjlEJlqFsMdZeGGOquDXU7B3rs1ihcQ5jr4xvydlSg6cD3aHT1gH/AzstUhrrFUHdpiKFuX0wVD8vDkasQTgrUUf0RSJc1b9G5K8GdlXOcykjvF+Z5HcdULDs3n5eKRxFOCvQekF+Iv9l3Kre4s3KOUxnp7Y30lsqOcvoL5zSm18yEdFJwWAYe4zj3UAzO6gGfs3JsmfOdUVOxqhOPpOJhmR2oQzsp0I9uTZwLskLyFrW9TWyHkx6rDs5Tfd9jVSc+JxUPsVRu4aQGWuAn7JaZWnCFLl8fHK2zTKzO7OuN9JaMR5fOi1g6KdBGWQM/k/YopbHc4HusnPD0qQ1wnNKwdlIDgs73/EI5zuoK3WPVJbbDcRxnscRyUgMd5Tmrd6iTLTnHfQt8zUgcx3HOIraTGuhQZ/UzZcxZ3VK+o3IcxymOVE5qQNA5q5/QzcA575kY5qncUTlT8W/HcUaS2kkN9Ohm4ApNBeYaXd3gdwE50/EVo9/jjtt5kVyc1MCOw4bgXKOrd6hDdeZLSZvRS8cdd/lUlspzc1JP6VFnsCK/6Op3vHHNGasNpv7NfI9VJOX7r+JRGeruc3ZST+nIL7rqUhvgFIentr7nxkivn+4RD8vBVzFOaqDn27mrlMvYb/AjlOaKGOm9NdJbKpadmzupeFSWyktzUgPD3FVFWmc1pCMd51w85XfAsi483ReP2lC3lOqkntKRzlld4Yso5ogY6q4NdZdGbai7N9TtHFhhl7IFyo2kjtGhzir26etN5Oc59vSGumtD3aVRG+ruDXU7B2pD3Z9gXk5qoAX+l3jLiK+BTaRnOXHosVuc89ZIb2ms0bZjQU4rgeeOZd/XwzydFGg+ugb+ivQ8d1Lzw3JOw78X2wyEz0fFw/Jb3sJ8nRTo4ooN8DHCs+oIz3DiIoa6G0PdpWDZuYmhbudAg93da7AAJzXQYB/+X+OrtuaG5Wj8LcbLdjOnxi7VBx5JxaIx1i+wDCcFOmqz3gDsTmpeiLH+xlh/zliuiP2CL5qIQY3tvr//BhYhndQKNbwlv/TXDvul4pWxficuO2wj8KXusauwXTzyYKjbOdAa65fhD1Od1FOH9ICOXP4f+Bv4QJ57hzpso6naULeTBssOb6l77Fpj/WKs37GPomBk26vQdFmLfgA9r9+8mmtO+B6722YlgH1iaN8SpB1b4a9QGdu7Y1nR1Br7+gyNGNkqBrbGYovte+yfPuzHZw+v0A9pjXrLNdNWb5juQL4AAd4b6fY5qfnRo/vtrL7nK9SxLiWisr6LzVN99rTY9+/fvMcf0QayIXz4tnn+sAzoDXVbLsW8lC8s49R2MdDZoVezWPEebSdi+IwcuMM+RdQZ6186a3Q6x5ru+T8INiFbrjfYWoaplyJGdkkA25bKCttvZkhvzDntV6GpuGgpooCIkb1iZK8VK86b6gn+Ht9gd6S976p35sAO+w3h1+Q7qAvBA/aZhs5Y/5JZoU71OsKzvmsHb7Bb5HBNfive5jxadezoIjzjHfPcO9URZ456zk4+NffEeYePHGlrb7Cdp8ltQthycUMOtwU7NghxDi39k3ktwGlQ52vNR/ySQwtWqNOI8Q5BI+6j79F6WWhOje4Ou3JKAPskY9uWToN9Pv4r2khzajNTaYhTX1+x3UgvRjaLoc0hWGG/1Pys92iZ7hvIKQyvUxvgFEtHnEs1r9AOrGRH1aBRYQw+4scghWaN+oWYW4lefY+CrYfMYRGF9SqtEM5YjGyTALY5+h3HGlWWGlE1ZDD6DogY2S3Gdk/FMts06T0OxyJJoAKeoiP9ogXr+bHeWL+TngfiXah3BfxDWYspWuJFUAB/4O0uFEP0ZLkn8BS/ccZ7tJ6X+opWQCpHtcJ+n0YdwE4xsk0C2OYoMdrKc8kpZX6MYYlyzDqJdaSUVbkkgu3nUKFBROxvepCeEe+xj2BQd64xgXk4075LJARiZJsEss9RLM+APCVb8kz/bbAfAB6TWCuHxch+iWT/KWrSOqdBRk0FxWp4HXEjqi6w/ZYfnGRun6PEiMxPyT3pU+egI/AYg7/U37MY2J+qTVaoc+/PtNFaRh+bFzONsSXO/UtdpPK0gewVI/skkH3OgZiLKJ7LDv3mUjir1f7ZKcseM6IUgzLEapMVOqd5Tz6O6el7POv7fXoK+hbbE5+fcrN/3h02KcBqr/fWQPcxcjtI17HnAV02+y7Bs6843Nt2j37rvfEzK9Q5bUh7mHJLvlcBjaHC5m6tev8zVt83lSFNPJqG+B5VCLd/qSJ+njVkgxEjGyWgjc6BFBseT8kD2n5DRlcV6ghzKaMELNu5yAQ7XV6WdkT9H6VPZHiPNohqpL0V2jhT5cebkfa+hBjZKAFtdL5lTbr5qVOyRSOsDeNSYzWH9FAujulp/5AivSkj7XR5WboxlQ/ww5F/a4i71+EYX9BGMkQpW7QjqJ/8To06qOuIdj3nkcM1BCEQbML0T/hpG5Y0pG8zr/HI6ajf4psLySP6/aZI8wn5108pfEbfY5D+sie9xy1B2mnVexIxslMC2+l8T4pl6UuR5vzXEBw5Yo/LeJm8T/bNiX9vpihbGI/kv8nSiccd9vdOLZFf8buiSueiCOqUkxL0yBHnNC1+PYDzLQ3wV2ojZsRHfCBYOkFTfM+JdV1wiSKTa/VlpDB7ne/JacVfydKNrHcrhPR1UaoEOQrvVCQF6vlyOL08Nx7xdKhzmmGBz+fEdpTMR7yNlc5HDitfL+IlJwXqCX+59CEzo8FPXnZeZjgVweeoxvMH7qBK51cSvMOO9KFjDtJeVo2vIkZ2i7Hdzmk60n+3pUgzqYZtEdLXSynSk/gQ5I70lZBSuksr8AzEyHaJYLtzmob032/OkvPUgpC+fkqQXA4+Xqyj6i6vurMQI/slkv3OaWryO5kiB8n1CpIBIX0d5Sw9GR4U0JK+YmJKzCWwYlQGiVcE5wVSXA6Ys3RkMvp+ASF9PeUow0n82dKwjFFhE6a6zkYC2HxMJF4RnDO4Yxnt55TknN57jpC+vnKTjvwHF4CG6HPdD5IqBSETbD1HJF4RnDOpWGYH2FFIB7dHSF9nOcgOzSpVl1RmKlrSV2BISTkBKGfYN0UkXhGckTQsY9P8lgznLs5ASF93KaVHI/+SBhZHqSj/ZQrpJ3AFu7I5+TLcdjvHFGBPnkvLz0VIX4exZYiaUveHJtSU91KFfEZ4gl0ZnfyZk7PqKds5DQjp6zKGDHeQzdIxHaMm3SWE58oD+TinAcGmrBKvCE4AVmiKpSd9O5nS2TWhKyQhQvo6teoThosxi0/lXUJFXo1ty7Tbf2Mh2H2QTplsyH/At0MXRMxxFC6kr9+pfZ3spd1LTb59XxasUQchxG08D+TtmBznHFZohJKLwxocUylLyZ1COXZ9fCxq1HGtUQdye6G+z2jDETRye3r9vOPMjQ3ahmrgJtIzP3EYnUukZzoLJ6WTOsWaQ450xfcphJ5vTyHf4pcPOk7NYcA3/LyeqMsHfE425OikHMcJS33G7+xwR+RkyH8AN1bRubki0HwAAAAASUVORK5CYII=",
+            "u": ""
+        },
+        {
+            "nm": "face",
+            "id": "3",
+            "fr": 30,
+            "layers": [
+                {
+                    "ty": 2,
+                    "nm": "Eyes",
+                    "sr": 1,
+                    "st": 0,
+                    "op": 450,
+                    "ip": 0,
+                    "ln": "80",
+                    "hasMask": false,
+                    "ao": 0,
+                    "ks": {
+                        "a": {
+                            "a": 0,
+                            "k": [
+                                73.059,
+                                33.5
+                            ]
+                        },
+                        "s": {
+                            "a": 0,
+                            "k": [
+                                100,
+                                100
+                            ]
+                        },
+                        "p": {
+                            "s": true,
+                            "x": {
+                                "a": 0,
+                                "k": 710.232
+                            },
+                            "y": {
+                                "a": 1,
+                                "k": [
+                                    {
+                                        "o": {
+                                            "x": 0.386,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            542.187
+                                        ],
+                                        "t": 119.999
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 1,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0.668,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            534.187
+                                        ],
+                                        "t": 124.999
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 0.475,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            542.187
+                                        ],
+                                        "t": 129.999
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 0.845,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0.389,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            534.187
+                                        ],
+                                        "t": 134.999
+                                    },
+                                    {
+                                        "s": [
+                                            542.187
+                                        ],
+                                        "t": 139.999
+                                    }
+                                ]
+                            },
+                            "z": {
+                                "a": 0,
+                                "k": 0
+                            }
+                        },
+                        "r": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "sa": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "o": {
+                            "a": 0,
+                            "k": 100
+                        }
+                    },
+                    "refId": "4",
+                    "ind": 1
+                },
+                {
+                    "ty": 2,
+                    "nm": "Hat",
+                    "sr": 1,
+                    "st": 0,
+                    "op": 450,
+                    "ip": 0,
+                    "ln": "79",
+                    "hasMask": false,
+                    "ao": 0,
+                    "ks": {
+                        "a": {
+                            "a": 0,
+                            "k": [
+                                160.678,
+                                83.333
+                            ]
+                        },
+                        "s": {
+                            "a": 0,
+                            "k": [
+                                100,
+                                100
+                            ]
+                        },
+                        "p": {
+                            "s": true,
+                            "x": {
+                                "a": 0,
+                                "k": 719.68
+                            },
+                            "y": {
+                                "a": 1,
+                                "k": [
+                                    {
+                                        "o": {
+                                            "x": 0.167,
+                                            "y": 0.31
+                                        },
+                                        "i": {
+                                            "x": 0.509,
+                                            "y": 1
+                                        },
+                                        "s": [
+                                            448.02
+                                        ],
+                                        "t": 49
+                                    },
+                                    {
+                                        "o": {
+                                            "x": 0.735,
+                                            "y": 0
+                                        },
+                                        "i": {
+                                            "x": 0.833,
+                                            "y": 0.47
+                                        },
+                                        "s": [
+                                            133.02
+                                        ],
+                                        "t": 62
+                                    },
+                                    {
+                                        "s": [
+                                            448.02
+                                        ],
+                                        "t": 76.999
+                                    }
+                                ]
+                            },
+                            "z": {
+                                "a": 0,
+                                "k": 0
+                            }
+                        },
+                        "r": {
+                            "a": 1,
+                            "k": [
+                                {
+                                    "o": {
+                                        "x": 0.55,
+                                        "y": 0
+                                    },
+                                    "i": {
+                                        "x": 0.106,
+                                        "y": 1
+                                    },
+                                    "s": [
+                                        0
+                                    ],
+                                    "t": 49
+                                },
+                                {
+                                    "s": [
+                                        360
+                                    ],
+                                    "t": 76.999
+                                }
+                            ]
+                        },
+                        "sa": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "o": {
+                            "a": 0,
+                            "k": 100
+                        }
+                    },
+                    "refId": "5",
+                    "ind": 2
+                },
+                {
+                    "ty": 2,
+                    "nm": "Face",
+                    "sr": 1,
+                    "st": 0,
+                    "op": 450,
+                    "ip": 0,
+                    "ln": "78",
+                    "hasMask": false,
+                    "ao": 0,
+                    "ks": {
+                        "a": {
+                            "a": 0,
+                            "k": [
+                                143.424,
+                                127.744
+                            ]
+                        },
+                        "s": {
+                            "a": 0,
+                            "k": [
+                                100,
+                                100
+                            ]
+                        },
+                        "p": {
+                            "s": true,
+                            "x": {
+                                "a": 0,
+                                "k": 709.995
+                            },
+                            "y": {
+                                "a": 0,
+                                "k": 583.425
+                            },
+                            "z": {
+                                "a": 0,
+                                "k": 0
+                            }
+                        },
+                        "r": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "sa": {
+                            "a": 0,
+                            "k": 0
+                        },
+                        "o": {
+                            "a": 0,
+                            "k": 100
+                        }
+                    },
+                    "refId": "6",
+                    "ind": 3
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "e": 1,
+            "w": 147,
+            "h": 67,
+            "p": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAABDCAYAAACY2zc6AAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAADEElEQVR4nO3d722jMBzG8W9P9/7Y4LzBsUEZISMwQkfICIzACBmBbpARGIFOcPfCoKBeSTD4H+nzkaxIVZv8IE+xY8B5QZ5RCZjxsRgfH+mAAbiObQhUm2SuAs7YQPz11K5AC5wibYMkdMK+2QP+ArTUhvG1qvCbJbEYoCFOgJZaD9RBt1KCqoAL6QK0FCp1gQdS4XccFKLVYTZdfCnJP0TzZkLsBNmnwA50U4fDtZ397wrZoybtwHpP6wB+et4h4s5gj0avacvYT2FKa5or+hXo+d+5zWYvzWobbrPlJfB7w+tctpUnPoQaG3XAG+tOnywx2C537VTEMG6PJFBijxK+AnTFBijEG2qwg+ulsdyA5pqSqfE3yG7ZdwRyUWADexnrn06vmEivL580+AuRiVq5ZMPX+OiCQvStFewfH/XobL2w/+TsOXrFkqWSfZ/QYg2u5QDe2BakhoPO22gGPBzXQHxgA9j6L0WO7oS6NfFozQRlx0G7NYnr0dGpTVaZHFKFnSuah2jAjo+eykvqAr6R6YZIGC8mExERERERERERERERERERSSqXqwbmZ9SX9GOTTMUM07TKhuF2H9jrhuf54LZW9RV7OUe/tzjJW4n/tanv3ajYoOuon0pFvLWp711TXYXcSAmnwB6BetIFaClUJtA2i2eG9EehR21AXV/WpiNRziFSoA6gIr/ubG2gjO+dIdsU+FusKlXrfO8UcWfwuwZjyqbuLqBHC1dMX7sQamnhz96/+FkB/PH0/CfsP4YEcC9MoYI0rU3dzx77lX87n0Gv8BcyCajE36e1K/bTX4guxuC2XqSWGY6sYH+Qeuy99CZSzWtWadPi5wnsGWx3pPvvrx/UpqNSZGe2hWggjy+xO/H/PNgFBSm6rQt6tuTXfZToZG9SHe5BqhPUKZmrce/W1HXIl3rcwqQgyZcq3IL0dMvniT8uJ3D1jYdyV8f6cZJJUqEcwg+H323QXSDywNrv+DCJ6pMDWXMurklWnRzOvasEOvKb4ZYMze/oLbCTl9Mc0oD99NbGLUmO6h8avDzYA7h+NgAAAABJRU5ErkJggg==",
+            "u": ""
+        },
+        {
+            "id": "5",
+            "e": 1,
+            "w": 322,
+            "h": 167,
+            "p": "data:image/png;base64,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",
+            "u": ""
+        },
+        {
+            "id": "6",
+            "e": 1,
+            "w": 288,
+            "h": 256,
+            "p": "data:image/png;base64,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",
+            "u": ""
+        }
+    ]
+}

@@ -33,7 +33,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                             <Button
                                 href={data.projectUrl}
                                 target="_blank"
-                                variant="secondary"
+                                variant={data.projectUrlVariant || "secondary"}
                             >
                                 {data.projectUrlText || "Visit Project"}
                             </Button>

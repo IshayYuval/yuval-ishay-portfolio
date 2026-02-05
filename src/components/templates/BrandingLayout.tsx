@@ -49,6 +49,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         <Button
                             href={data.projectUrl}
                             target="_blank"
+                            variant={data.projectUrlVariant || "primary"}
                             className="bg-[var(--foreground)] mb-8 text-[var(--background)] rounded-full font-medium hover:opacity-90 transition-opacity"
                         >
                             Visit Website

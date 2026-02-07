@@ -14,7 +14,10 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
         <article className="min-h-screen pb-24" style={{ backgroundColor: data.backgroundColor }}>
             {/* Hero Image */}
             {data.heroImage && (
-                <div className="relative w-full h-[20vh] md:h-[40vh]">
+                <div
+                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    style={{ backgroundColor: data.heroBackgroundColor }}
+                >
                     <Image
                         src={data.heroImage}
                         alt={`${data.title} Hero`}

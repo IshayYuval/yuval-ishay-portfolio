@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export type Collection = {
   slug: string;
   title: string;
@@ -51,6 +53,9 @@ export type CaseStudy = {
   // New fields
   introText?: string;
   heroImage?: string; // specific for Branding top section
+  heroBackgroundColor?: string; // optional background color for hero section
+  heroLottie?: string; // specific for Lottie hero animation
+  navbarTextColor?: string; // optional override for navbar text color (e.g. "black" or hex)
   projectUrl?: string; // optional external link
   projectUrlVariant?: "primary" | "secondary";
   processSteps?: ProcessStep[]; // mainly for UX/UI
@@ -311,6 +316,8 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "Unique Freight is a freight forwarding company offering end-to-end logistics solutions with personalized service, client-focused support, and free consulting for regular clients.",
     tags: ["Client Project", "Delivery"],
+    projectUrlVariant: "primary",
+    // navbarTextColor: "black", // Removed temporary
     collectionSlug: "branding",
     cover: "/case-studies/branding/unique-freight/page-cover.svg",
     date: "2024-01-12",
@@ -1106,11 +1113,13 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "App Design"],
-    heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
+    heroBackgroundColor: "#FCF0FF",
+    navbarTextColor: "#36437A",
     backgroundColor: "#400047",
     projectUrl: "https://noakuterman.myportfolio.com",
     projectUrlText: "Noa Kuterman's Portfolio",
     projectUrlVariant: "secondary",
+    heroLottie: "/lottie/spod/hero-case-study.json",
     collectionSlug: "product-design",
     date: "2025-10-31",
     introText: "A bit of context: at HIT, the standard for presenting our work is just as high as the standard for the work itself. The presentation is expected to be impressive and polished, something that respects and elevates the project, not something that weakens it. <br/> <br/> Across the hallways, colored podiums are present for students to use during their presentations. To secure one, students physically come to campus sometimes a week in advance, tape a note with their name and date, and pray no one takes it or that the note doesn’t fall off. Spod was designed to end this nonsense; bringing presentation prep into 2026 and giving students one less thing to worry about. <br/><br/> Spod was designed as part of a semester project in the Introduction to Interactive Design course, under the guidance of Iris Duani. I've worked on it with 2 good friends of mine and amazing designers on their own right: Noa Kuterman and <br/> Sharon Kisilevich. You're welcome to check their amazing work in their portfolios:",
@@ -1205,23 +1214,33 @@ export const caseStudies: CaseStudy[] = [
     ],
     contentSections: [
       {
-        image: "/case-studies/product-design/name-the-font/landing-page.jpg",
-        title: "Landing page with a clear call-to-play <br/><br/> Homage to the top-ranked players <br/><br/>Rotating header to show different typefaces",
+        image: "/case-studies/product-design/spod/explore.jpg",
+        title: "A single place that shows the full podium inventory, with filters so users can quickly find what they need <br/><br/> Icons that show podium material, cable hole availability, and height for fast scanning of key details <br/><br/>The Explore page is available without signup, so users can confirm what they need exists before registering",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/table.jpg",
-        title: "Clean table for scanning data fast <br/><br/> Search bar for easy filtering <br/><br/>Tabs to switch between all-times leaders or weekly leaders <br/><br/>visual difference between the top-3 and the rest of the players.",
+        image: "/case-studies/product-design/spod/hit-registration.jpg",
+        title: "Signup use college credentials to pull the student’s presentation schedule based on their department and year, without manual input.<br/><br/> Signup happens during the reservation flow, so the podium is saved for the specific student who booked it, and only for them.",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/authentication.jpg",
-        title: "Combined sign-up and sign-in <br/><br/>Redirecting to this page, in-case a player starts a game as a guest <br/><br/>Google & Magic Link for a password-free experience",
+        image: "/case-studies/product-design/spod/home.jpg",
+        title: "Home screen with one place to see all upcoming presentations<br><br>Presentations are sorted with those missing a podium first, then by the closest date<br><br>Shows how many podiums are still available for the selected presentation<br><br>For presentations without a booked podium, the app suggests suitable podiums to reduce unnecessary searching<br><br>App reminders, with an option to turn them off, about a week in advance",
         text: "",
       },
       {
-        image: "/case-studies/product-design/name-the-font/gameplay-1.jpg",
-        title: "Clear feedback about the wrong and correct answers <br/><br/>Large image in high-quality, emphasizing the typeface characteristics",
+        image: "/case-studies/product-design/spod/my-podiums.jpg",
+        title: "One place to see all reserved podiums and locate them in the building<br><br>AirTag-based tracking for live directions on presentation day",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/spod/qr-code.jpg",
+        title: "A QR code that shows who reserved the podium and for which date, to prevent someone from taking a podium that’s already claimed.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/spod/custom-date.jpg",
+        title: "A visual calendar indicator showing podium availability for each day, so students can understand availability without checking dates one by one.",
         text: "",
       },
     ],

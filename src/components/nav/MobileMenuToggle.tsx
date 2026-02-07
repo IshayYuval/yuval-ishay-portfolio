@@ -3,9 +3,12 @@ import React from "react";
 interface MobileMenuToggleProps {
     isOpen: boolean;
     onClick: () => void;
+    overrideColor?: string;
 }
 
-export default function MobileMenuToggle({ isOpen, onClick }: MobileMenuToggleProps) {
+export default function MobileMenuToggle({ isOpen, onClick, overrideColor }: MobileMenuToggleProps) {
+    const barStyle = overrideColor ? { backgroundColor: overrideColor } : {};
+
     return (
         <button
             onClick={onClick}
@@ -18,11 +21,13 @@ export default function MobileMenuToggle({ isOpen, onClick }: MobileMenuTogglePr
             <span
                 className={`block w-6 h-[2px] bg-[var(--foreground)] transition-transform duration-300 ease-in-out origin-center ${isOpen ? "rotate-45 translate-y-[1px]" : "-translate-y-[3px]"
                     }`}
+                style={barStyle}
             />
             {/* Bottom Line */}
             <span
                 className={`block w-6 h-[2px] bg-[var(--foreground)] transition-transform duration-300 ease-in-out origin-center ${isOpen ? "-rotate-45 -translate-y-[1px]" : "translate-y-[3px]"
                     }`}
+                style={barStyle}
             />
         </button>
     );

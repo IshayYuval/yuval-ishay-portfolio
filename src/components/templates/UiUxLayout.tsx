@@ -9,19 +9,31 @@ import { renderTextWithBreaks } from "@/utils/text";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 
+import LottieAnimation from "../ui/LottieAnimation/LottieAnimation"; // Added import
+
 export default function UiUxLayout({ data }: { data: CaseStudy }) {
     return (
         <article className="min-h-screen pb-24" style={{ backgroundColor: data.backgroundColor }}> {/* Adjusted padding */}
-            {/* Hero Image */}
-            {data.heroImage && (
-                <div className="relative w-full h-[20vh] md:h-[40vh]">
-                    <Image
-                        src={data.heroImage}
-                        alt={`${data.title} Hero`}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+            {/* Hero Section */}
+            {(data.heroImage || data.heroLottie) && (
+                <div
+                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    style={{ backgroundColor: data.heroBackgroundColor }}
+                >
+                    {data.heroLottie ? (
+                        <LottieAnimation
+                            animationPath={data.heroLottie}
+                            className="w-full h-full"
+                        />
+                    ) : (
+                        <Image
+                            src={data.heroImage!}
+                            alt={`${data.title} Hero`}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    )}
                 </div>
             )}
 

@@ -1121,7 +1121,7 @@ export const caseStudies: CaseStudy[] = [
     projectUrlVariant: "secondary",
     heroLottie: "/lottie/spod/hero-case-study.json",
     collectionSlug: "product-design",
-    date: "2025-10-31",
+    date: "2025-02-01",
     introText: "A bit of context: at HIT, the standard for presenting our work is just as high as the standard for the work itself. The presentation is expected to be impressive and polished, something that respects and elevates the project, not something that weakens it. <br/> <br/> Across the hallways, colored podiums are present for students to use during their presentations. To secure one, students physically come to campus sometimes a week in advance, tape a note with their name and date, and pray no one takes it or that the note doesn’t fall off. Spod was designed to end this nonsense; bringing presentation prep into 2026 and giving students one less thing to worry about. <br/><br/> Spod was designed as part of a semester project in the Introduction to Interactive Design course, under the guidance of Iris Duani. I've worked on it with 2 good friends of mine and amazing designers on their own right: Noa Kuterman and <br/> Sharon Kisilevich. You're welcome to check their amazing work in their portfolios:",
     processSteps: [
       {

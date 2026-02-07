@@ -1214,7 +1214,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     contentSections: [
       {
-        image: "/case-studies/product-design/spod/explore.jpg",
+        image: "/case-studies/product-design/spod/explore-page.jpg",
         title: "A single place that shows the full podium inventory, with filters so users can quickly find what they need <br/><br/> Icons that show podium material, cable hole availability, and height for fast scanning of key details <br/><br/>The Explore page is available without signup, so users can confirm what they need exists before registering",
         text: "",
       },

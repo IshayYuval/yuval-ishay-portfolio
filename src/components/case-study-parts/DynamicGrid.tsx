@@ -10,7 +10,10 @@ interface DynamicGridProps {
 export default function DynamicGrid({ items }: DynamicGridProps) {
     if (!items || items.length === 0) return null;
 
-    const slides = items.map(item => ({ src: item.src }));
+    // Create slides for Lightbox, filtering out items without a src (e.g. Vimeo videos without a placeholder)
+    const slides = items
+        .filter(item => item.src && item.src.length > 0)
+        .map(item => ({ src: item.src }));
 
     // Group items into rows
     // logic: "full" takes a whole row. Consecutive "half" take a row (up to 2? or unlimited? Usually just 2 for this prompt).
@@ -38,7 +41,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
         rows.push(currentRow); // leftover item
     }
 
-    let globalIndex = 0;
+    let slideIndex = 0;
 
     return (
         <div className="flex flex-col gap-2 w-full my-12">
@@ -47,7 +50,8 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
 
                 if (isSingle) {
                     const item = row[0];
-                    const index = globalIndex++;
+                    // Only increment slide index if item is part of slides
+                    const currentSlideIndex = (item.src && item.src.length > 0) ? slideIndex++ : -1;
 
                     return (
                         <div key={rowIndex} className="w-full relative overflow-hidden rounded-lg">
@@ -72,7 +76,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                                     style={{ width: '100%', height: 'auto' }}
                                     className="hover:scale-105 transition-transform duration-500 ease-out"
                                     lightboxSlides={slides}
-                                    lightboxIndex={index}
+                                    lightboxIndex={currentSlideIndex}
                                     enableZoom={true}
                                 />
                             )}
@@ -87,7 +91,8 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                 return (
                     <div key={rowIndex} className="flex flex-row gap-2 w-full">
                         {row.map((item, i) => {
-                            const index = globalIndex++;
+                            // Only increment slide index if item is part of slides
+                            const currentSlideIndex = (item.src && item.src.length > 0) ? slideIndex++ : -1;
                             const ar = (item.width && item.height) ? item.width / item.height : 1.5; // default 3:2
 
                             return (
@@ -124,7 +129,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                             className="hover:scale-105 transition-transform duration-500 ease-out"
                                             lightboxSlides={slides}
-                                            lightboxIndex={index}
+                                            lightboxIndex={currentSlideIndex}
                                             enableZoom={true}
                                         />
                                     )}

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
 import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
@@ -8,8 +9,35 @@ import Button from "../ui/Button/Button";
 
 export default function VisualLayout({ data }: { data: CaseStudy }) {
     return (
-        <article className="min-h-screen pt-[var(--header-height)] pb-24" style={{ backgroundColor: data.backgroundColor }}>
-            <div className="container-custom mx-auto px-6">
+        <article className="min-h-screen pb-24" style={{ backgroundColor: data.backgroundColor }}>
+            {/* Hero Section */}
+            {(data.heroImage) && (
+                <div
+                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    style={{ backgroundColor: data.heroBackgroundColor }}
+                >
+                    {data.heroImage.endsWith(".mp4") ? (
+                        <video
+                            src={data.heroImage}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <Image
+                            src={data.heroImage}
+                            alt={`${data.title} Hero`}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    )}
+                </div>
+            )}
+
+            <div className={`container-custom mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}>
                 <header className="pt-24 max-w-4xl mx-auto">
                     <div className="text-body text-center">
                         {new Date(data.date).toLocaleDateString("en-US", {
@@ -40,6 +68,8 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                         </div>
                     )}
                 </header>
+
+
 
                 {/* Process Steps */}
                 {data.processSteps && (

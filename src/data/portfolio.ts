@@ -709,6 +709,120 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
+  // conceptual art - Supporters Voice
+  {
+    slug: "social-campaign",
+    title: "Social Campaign - Supporters Voice",
+    excerpt: "My social campaign is a protest campaign called “The Supporters’ Protest.” The protest aims to unite all sports supporters against the disgraceful practice of broadcasting games in bars without sound. #משחקלארואיםמושתק #מחאתהאוהדים #תפסיקולשדראושתפסיקולשקר",
+    tags: ["HIT", "Visual Communication BA", "VC", "2nd Year"],
+    collectionSlug: "conceptual-design",
+    date: "2026-02-04",
+    introText: "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
+    cover: "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
+    heroBackgroundColor: "#000000",
+    heroImage: "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
+    processSteps: [
+      {
+        title: "The Problem",
+        text: "The 2023/24 season, Champions League final. My team, Borussia Dortmund, reached the final against Real Madrid. I reserved spots for myself and two friends at our favorite bar, which said it would broadcast the match. <br/>We arrived, ordered food and beers, everything was ready for kickoff. The game started, but the sound didn’t. I asked about it, and they said they didn’t have a license to play the broadcast with audio.<br/>They ruined the biggest moment of the season for us, a moment we had been waiting for two full months, simply because they didn’t bother telling us the game would be muted. This phenomenon is far from a one-time case. Bars across the country keep broadcasting matches without sound. Not anymore.",
+      },
+      {
+        title: "The Research",
+        text: "I've commited a survey among football and basketball fans, to see if other fans are pissed about this phenomenon:",
+        bullets: [
+          {
+            label: "95%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of voters go to watch a sports match at least once a month."
+          },
+          {
+            label: "68%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of voters came across this horrific issue in a medium-high frequency."
+          },
+          {
+            label: "74%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of voters will stay at the bar, but will be pissed about it."
+          },
+          {
+            label: "50%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of voters have experienced a situation where the bar said he's broadcasting the game, but didn't mention the lack of sound issue."
+          },
+        ],
+        textAfter: "The numbers are clear. This is annoying. Very annoying."
+      },
+      {
+        title: "Campaign Materials",
+        text: "The protest campaign includes several digital and printed materials:",
+        bullets: [
+          {
+            label: "3 TV Commercials: ",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: "Took the sound from my game? I'll take it from yours. I created 3 commercials with iconic cinematic scenes, ones that everybody recognizes and ones that won't be the same without the sound, and I've took it away."
+          },
+          {
+            label: "Testimonial Series: ",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: "A series of testimonials from supporters whose viewing moments were spoiled."
+          },
+          {
+            label: "Sticker Sheet: ",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: "Found a bar/pub that destroys everyone's experience? Let's mark it and ad it to the blacklist."
+          },
+        ],
+      }
+    ],
+    gallery: [
+      {
+        src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover
+        vimeoSrc: "https://player.vimeo.com/video/1164704125?",
+        alt: "Long Distance Love Video",
+        colSpan: "full",
+      },
+      {
+        src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover
+        vimeoSrc: "https://player.vimeo.com/video/1164701933?",
+        alt: "Long Distance Love Video",
+        colSpan: "full",
+      },
+      {
+        src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover
+        vimeoSrc: "https://player.vimeo.com/video/1164701016?",
+        alt: "Long Distance Love Video",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/conceptual-design/social-campaign/stickers.webp",
+        alt: "stickers",
+        colSpan: "half",
+        width: 2528,
+        height: 1696,
+      },
+      {
+        src: "/case-studies/conceptual-design/social-campaign/stickers-closeup.webp",
+        alt: "de-jora",
+        colSpan: "half",
+        width: 1080,
+        height: 1350,
+      },
+    ],
+    prototype: {
+      title: "Instagram Page",
+      src: "https://embed.figma.com/proto/FKruVguhZxLd0fXj7ml062/Instagram-Page?page-id=0%3A1&node-id=5-464&p=f&viewport=-304%2C249%2C0.26&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A464&embed-host=share"
+    }
+
+
+  },
   // conceptual art - chicha
   {
     slug: "basic-food-packaging-series",
@@ -1121,7 +1235,7 @@ export const caseStudies: CaseStudy[] = [
     projectUrlVariant: "secondary",
     heroLottie: "/lottie/spod/hero-case-study.json",
     collectionSlug: "product-design",
-    date: "2025-02-01",
+    date: "2026-02-01",
     introText: "A bit of context: at HIT, the standard for presenting our work is just as high as the standard for the work itself. The presentation is expected to be impressive and polished, something that respects and elevates the project, not something that weakens it. <br/> <br/> Across the hallways, colored podiums are present for students to use during their presentations. To secure one, students physically come to campus sometimes a week in advance, tape a note with their name and date, and pray no one takes it or that the note doesn’t fall off. Spod was designed to end this nonsense; bringing presentation prep into 2026 and giving students one less thing to worry about. <br/><br/> Spod was designed as part of a semester project in the Introduction to Interactive Design course, under the guidance of Iris Duani. I've worked on it with 2 good friends of mine and amazing designers on their own right: Noa Kuterman and <br/> Sharon Kisilevich. You're welcome to check their amazing work in their portfolios:",
     processSteps: [
       {

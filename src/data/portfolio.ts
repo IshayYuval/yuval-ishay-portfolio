@@ -1118,10 +1118,64 @@ export const caseStudies: CaseStudy[] = [
 
   // typography - liebling haus
   {
+    slug: "cinemateque-magazine",
+    title: "Liebling Haus Poster",
+    excerpt: "An infographic poster, based on the architectual style of Liebling Haus.",
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
+    collectionSlug: "typography",
+    date: "2025-12-23",
+    heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
+    introText: "In this typography studio assignment, we were asked to design a paged editorial format based on a long article, using a structured grid and a typographic system to create an engaging reading experience. The goal was to translate text and imagery into a cohesive booklet that balances hierarchy, rhythm, and visual storytelling across multiple spreads. The text I selected is a cinema article from the Tel Aviv Cinematheque about the presence of the automobile in film and its function as a space that drives narrative events.",
+    cover: "/case-studies/typography/cinemateque/COVER.webp",
+    gallery: [
+      {
+        src: "/case-studies/typography/cinemateque/COVER.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/INTRO.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/A.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/B.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/B2.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/C.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/D.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/typography/cinemateque/OUTRO.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+    ],
+  },
+  // typography - liebling haus
+  {
     slug: "liebling-haus",
     title: "Liebling Haus Poster",
     excerpt: "An infographic poster, based on the architectual style of Liebling Haus.",
-    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
     date: "2025-12-23",
     introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
@@ -1141,7 +1195,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Dance Tel-Aviv",
     cover: "/case-studies/typography/dance-tel-aviv/page-cover.webp",
     excerpt: "A typographic flyer, capturing the movement and soul of the festival",
-    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
     date: "2025-11-20",
     introText: "This project is an event flyer designed around the idea of expressing human movement through typography, inspired by a dance-focused festival. The concept is translated through the use of the Ezer Dialogue typeface, combined with folding and a grid system that emerges from the physical format itself. Together, these elements create a dynamic layout that reflects rhythm, motion, and the body in motion.",
@@ -1181,7 +1235,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "ezer-alchemist-homage",
     title: "Ezer Alchemist Homage",
     excerpt: "A typographic tribute to Ezer Alchemist, using its ink traps as a visual tool to teach and reveal the character of the typeface.",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    tags: ["HIT", "Visual Communication BA", "1st Year", "Typography"],
     collectionSlug: "typography",
     date: "2025-05-28",
     cover: "/case-studies/typography/alchemist-homage/page-cover.webp",

@@ -1129,7 +1129,7 @@ export const caseStudies: CaseStudy[] = [
     excerpt: "This project is designed as a magazine editorial, exploring the automobile in cinema as a space that drives narrative and shapes on-screen events.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
-    date: "2025-02-08",
+    date: "2026-02-08",
     heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
     introText: "In this typography studio assignment, we were asked to design a paged editorial format based on a long article, using a structured grid and a typographic system to create an engaging reading experience. The goal was to translate text and imagery into a cohesive booklet that balances hierarchy, rhythm, and visual storytelling across multiple spreads. The text I selected is a cinema article from the Tel Aviv Cinematheque about the presence of the automobile in film and its function as a space that drives narrative events.",
     cover: "/case-studies/typography/cinemateque/cover-mockup.webp",

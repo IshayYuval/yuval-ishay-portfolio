@@ -714,7 +714,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "social-campaign",
     title: "Social Campaign - Supporters Voice",
     excerpt: "My social campaign is a protest campaign called “The Supporters’ Protest.” The protest aims to unite all sports supporters against the disgraceful practice of broadcasting games in bars without sound. #משחקלארואיםמושתק #מחאתהאוהדים #תפסיקולשדראושתפסיקולשקר",
-    tags: ["HIT", "Visual Communication BA", "VC", "2nd Year"],
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
     collectionSlug: "conceptual-design",
     date: "2026-02-04",
     introText: "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
@@ -828,9 +828,13 @@ export const caseStudies: CaseStudy[] = [
     slug: "basic-food-packaging-series",
     title: "Basic Food Packaging Series",
     excerpt: "A conceptual packaging series for a basic food product, re-examining cultural, social, and political meanings through visual language rather than functional solutions.",
-    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
     collectionSlug: "conceptual-design",
     date: "2025-12-26",
+    navbarTextColor: "#612423",
+    backgroundColor: "#2e1010ff",
+    heroImage: "/case-studies/conceptual-design/basic-food-packaging/hero-image-v3.svg",
+
     introText: "This project explores the design of a packaging series for a basic food product — an everyday, essential item that is usually taken for granted. The starting point was an in-depth research process into the product’s cultural, historical, and social contexts, deliberately moving away from packaging as a purely functional solution.<br><br>The packaging is treated as a conceptual medium: a visual system that communicates values, ideas, and a new point of view. Throughout the process, a unified visual language was developed for the entire series, while questioning the product’s conventional associations and stretching the boundaries of how it is typically perceived.<br><br>The result is a packaging series that prioritizes idea over utility, positioning design as a critical and expressive tool rather than a purely commercial object.<br/><br/> The food product I've chose is Corn.",
     cover: "/case-studies/conceptual-design/basic-food-packaging/page-cover.webp",
     processSteps: [
@@ -917,6 +921,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "conceptual-design",
     date: "2025-07-11",
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
+    heroImage: "/case-studies/conceptual-design/long-distance-love/hero-cover.svg",
     introText: "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships.",
     gallery: [
       {
@@ -1076,6 +1081,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "photography",
     date: "2025-07-22",
     cover: "/case-studies/photography/out-of-bounds/page-cover.webp",
+    heroImage: "/case-studies/photography/out-of-bounds/hero-image-v4.svg",
     introText: "This project is a portrait series created as part of a photography course, focusing on moments that break the routine of running. Instead of portraying running as a perfect, ideal action, the work highlights small mistakes, pauses, and human imperfections. <br/> <br/> The goal was to slow time and  revealing the vulnerability and humanity hidden within a repetitive act.",
     gallery: [
       {
@@ -1116,11 +1122,11 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
-  // typography - liebling haus
+  // typography - cinemateque magazine
   // {
   //   slug: "cinemateque-magazine",
-  //   title: "Liebling Haus Poster",
-  //   excerpt: "An infographic poster, based on the architectual style of Liebling Haus.",
+  //   title: "Cinemateque Magazine",
+  //   excerpt: "Cinema",
   //   tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
   //   collectionSlug: "typography",
   //   date: "2025-12-23",
@@ -1178,6 +1184,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
     date: "2025-12-23",
+    heroImage: "/case-studies/typography/liebling-haus/hero-image.svg",
     introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
     cover: "/case-studies/typography/liebling-haus/page-cover.webp",
     gallery: [
@@ -1198,6 +1205,8 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
     date: "2025-11-20",
+    heroImage: "/case-studies/typography/dance-tel-aviv/hero-image.svg",
+    backgroundColor: "#1b1b1bff",
     introText: "This project is an event flyer designed around the idea of expressing human movement through typography, inspired by a dance-focused festival. The concept is translated through the use of the Ezer Dialogue typeface, combined with folding and a grid system that emerges from the physical format itself. Together, these elements create a dynamic layout that reflects rhythm, motion, and the body in motion.",
     projectUrl: "https://www.ezertypehouse.com/fonts/ezerdialogue",
     projectUrlText: "The Ezer Dialogue typeface",
@@ -1280,7 +1289,7 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/product-design/spod/page-cover.jpg",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
-    tags: ["HIT", "Visual Communication BA", "2nd Year", "App Design"],
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Interactive Design Intro", "App Design"],
     heroBackgroundColor: "#FCF0FF",
     navbarTextColor: "#36437A",
     backgroundColor: "#400047",

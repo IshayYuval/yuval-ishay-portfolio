@@ -260,10 +260,15 @@ h5 {
 }
 
 @media (max-width: 480px) {
+  .subhero {
+    font-size: 0.875rem;
+    line-height: 1.35rem;
+  }
+
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     /* ~28px */
-    line-height: 2.375rem;
+    line-height: 1.875rem;
     letter-spacing: 0.005em;
   }
 

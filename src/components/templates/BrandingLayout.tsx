@@ -8,6 +8,7 @@ import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 import { renderTextWithBreaks } from "@/utils/text";
+import { formatCaseStudyDate } from "@/utils/dateUtils";
 
 export default function BrandingLayout({ data }: { data: CaseStudy }) {
     return (
@@ -32,10 +33,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                 {/* Intro Section */}
                 <section className="max-w-4xl mx-auto pt-24">
                     <div className="text-body text-center">
-                        {new Date(data.date).toLocaleDateString("en-US", {
-                            month: "long",
-                            year: "numeric",
-                        })}
+                        {formatCaseStudyDate(data)}
                     </div>
                     <h1 className="mb-2 text-center">About the Project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mb-8">

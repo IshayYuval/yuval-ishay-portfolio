@@ -8,6 +8,7 @@ import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import { renderTextWithBreaks } from "@/utils/text";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
+import { formatCaseStudyDate } from "@/utils/dateUtils";
 
 import LottieAnimation from "../ui/LottieAnimation/LottieAnimation"; // Added import
 
@@ -41,10 +42,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                 {/* Header */}
                 <header className="pt-20 max-w-4xl mx-auto">
                     <div className="text-body text-center">
-                        {new Date(data.date).toLocaleDateString("en-US", {
-                            month: "long",
-                            year: "numeric",
-                        })}
+                        {formatCaseStudyDate(data)}
                     </div>
                     <h1 className="mb-2 text-center">About the Project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mb-8">

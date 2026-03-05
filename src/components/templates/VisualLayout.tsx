@@ -6,6 +6,7 @@ import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
 import { renderTextWithBreaks } from "@/utils/text";
 import Tag from "../ui/Tag/Tag";
 import Button from "../ui/Button/Button";
+import { formatCaseStudyDate } from "@/utils/dateUtils";
 
 export default function VisualLayout({ data }: { data: CaseStudy }) {
     return (
@@ -40,10 +41,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
             <div className={`container-custom mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}>
                 <header className="pt-24 max-w-4xl mx-auto">
                     <div className="text-body text-center">
-                        {new Date(data.date).toLocaleDateString("en-US", {
-                            month: "long",
-                            year: "numeric",
-                        })}
+                        {formatCaseStudyDate(data)}
                     </div>
                     <h1 className="text-center">about the project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mt-2 mb-8">

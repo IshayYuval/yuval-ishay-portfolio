@@ -7,6 +7,7 @@ import { CaseStudy } from "@/data/portfolio";
 import StopMotion from "@/components/ui/StopMotion/StopMotion";
 import Skeleton from "@/components/ui/Skeleton/Skeleton";
 import Tag from "@/components/ui/Tag/Tag";
+import { formatCaseStudyDate } from "@/utils/dateUtils";
 import styles from "./CaseStudyCard.module.css";
 
 interface CaseStudyCardProps {
@@ -16,10 +17,7 @@ interface CaseStudyCardProps {
 }
 
 export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = false }: CaseStudyCardProps) {
-    const formattedDate = new Date(study.date).toLocaleDateString('en-US', {
-        month: 'long',
-        year: 'numeric'
-    });
+    const formattedDate = formatCaseStudyDate(study);
 
     // Default loading to true until loaded.
     // NOTE: For Next/Image, it defaults to blurred placeholder if configured, but here we want a skeleton.

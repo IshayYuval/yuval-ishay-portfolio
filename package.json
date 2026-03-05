@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
+    "framer-motion": "^12.35.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.561.0",
     "next": "^16.1.6",

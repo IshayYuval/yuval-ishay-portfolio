@@ -49,7 +49,9 @@ export type CaseStudy = {
   tags: string[];
   collectionSlug: string;
   cover?: string;
-  date: string;
+  date?: string;
+  startDate?: string;
+  endDate?: string;
   // New fields
   introText?: string;
   heroImage?: string; // specific for Branding top section
@@ -1629,7 +1631,8 @@ export const caseStudies: CaseStudy[] = [
   //     "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
   //   tags: ["Client Project", "SaaS"],
   //   collectionSlug: "product-design",
-  //   date: "2025-10-10",
+  //   startDate: "2025-10-10",
+  //   endDate: "2025-10-10",
   //   cover: "/case-studies/product-design/cloudeye/page-cover.svg",
   //   heroImage: "/case-studies/product-design/cloudeye/hero.svg",
   //   introText: "Cloudeye is a platform responsible for managing web services. Given its extensive capabilities, creating a smooth user experience and a clutter-free, appealing, and friendly user interface was essential.​​​​​​​<br/><br/>Since the product is proprietary to a private company, I cannot explain every detail of the UX research I conducted. However, my approach remained consistent, which is vital for such a significant platform:",

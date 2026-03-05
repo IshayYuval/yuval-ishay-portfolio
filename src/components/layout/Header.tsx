@@ -27,7 +27,7 @@ export default function Header() {
 
     // Dynamic Color Logic
     // Apply override ONLY when header is transparent (top of page, closed menu/dropdown)
-    const isHeaderTransparent = !isScrolled && !isDropdownOpen && !isMobileMenuOpen && !isHovered;
+    const isHeaderTransparent = !isScrolled && !isDropdownOpen && !isMobileMenuOpen;
     const dynamicTextColor = isHeaderTransparent && currentCaseStudy?.navbarTextColor
         ? currentCaseStudy.navbarTextColor
         : undefined;

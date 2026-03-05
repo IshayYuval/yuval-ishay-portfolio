@@ -3,6 +3,7 @@ import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
 import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
 import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
+import HeroAnimatedContent from "@/components/ui/HeroAnimatedContent/HeroAnimatedContent";
 import { reviews } from "@/data/portfolio";
 
 export default function Home() {
@@ -18,29 +19,7 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="container-custom z-10">
-          <h1 className="mb-1 ml-0.5">
-            I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.
-          </h1>
-          <span className="subhero ml-0.5">
-            UX Designer & Product Maker, specializing in branding, product design and AI-driven development.
-          </span>
-          <div className="flex gap-4 sm:flex-row flex-col mt-16 mb-2">
-            {/* <Button variant="primary" href="https://www.fiverr.com/ibrushart" target="_blank">
-              Order Now via Fiverr
-            </Button> */}
-            {/* <Button variant="primary" href="/product-design" target="_blank">
-              Order Now via Fiverr
-            </Button> */}
-            <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank">
-              Send me an email
-            </Button>
-            <Button variant="secondary" targetId="about-me">
-              A bit about my story
-            </Button>
-          </div>
-          <span className="text-caption ml-1">This portfolio was built with Antigravity and Gemini 3 Pro</span>
-        </div>
+        <HeroAnimatedContent />
         <ScrollDownButton targetId="about-me" />
       </section>
 

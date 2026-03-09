@@ -928,7 +928,8 @@ export const caseStudies: CaseStudy[] = [
     gallery: [
       {
         src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover
-        vimeoSrc: "https://player.vimeo.com/video/1153221759?badge=0&autopause=0&player_id=0&app_id=58479",
+        // vimeoSrc: "https://player.vimeo.com/video/1153221759?badge=0&autopause=0&player_id=0&app_id=58479",
+        vimeoSrc: "https://player.vimeo.com/video/1171841024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         alt: "Long Distance Love Video",
         colSpan: "full",
       },

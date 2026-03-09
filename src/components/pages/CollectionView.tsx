@@ -11,9 +11,47 @@ const containerVariants: Variants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.15,
+            delayChildren: 0.5,
         },
     },
 };
+
+const wordVariants: Variants = {
+    hidden: { opacity: 0, y: 15 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+        },
+    },
+};
+
+function AnimatedText({ text, delay = 0, className = "" }: { text: string, delay?: number, className?: string }) {
+    if (!text) return null;
+    return (
+        <motion.span
+            className={`inline-block ${className}`}
+            initial="hidden"
+            animate="show"
+            variants={{
+                hidden: { opacity: 0 },
+                show: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.04, delayChildren: delay }
+                }
+            }}
+        >
+            {text.split(" ").map((word, index) => (
+                <motion.span key={index} className="inline-block mr-[0.25em]" variants={wordVariants}>
+                    {word}
+                </motion.span>
+            ))}
+        </motion.span>
+    );
+}
 
 const itemVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
@@ -35,14 +73,20 @@ export default function CollectionView({ collection }: CollectionViewProps) {
         <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)]">
             <Section>
                 <motion.div
-                    initial={{ y: -40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4 }}
                     className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-24 lg:px-48 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
                 >
-                    <h5 className="text-body ">{collection.title}</h5>
-                    <h1 className="mb-1">Case Studies</h1>
-                    <span className="text-body">{collection.description}</span>
+                    <h5 className="text-body min-h-[1.25rem]">
+                        <AnimatedText text={collection.title || " "} delay={0.4} />
+                    </h5>
+                    <h1 className="mb-1">
+                        <AnimatedText text="Case Studies" delay={0.1} />
+                    </h1>
+                    <span className="text-body block min-h-[1.4rem]">
+                        <AnimatedText text={collection.description || " "} delay={0.2} />
+                    </span>
                 </motion.div>
 
                 <motion.div
@@ -51,8 +95,7 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                     initial="hidden"
                     animate="show"
                     transition={{
-                        delay: 3,
-                        duration: 0.6,
+                        duration: 0.4,
                         ease: "easeOut",
                     }}
                 >

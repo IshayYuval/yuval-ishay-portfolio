@@ -9,6 +9,7 @@
     transition: all var(--transition-fast);
     cursor: pointer;
     text-decoration: none;
+    min-width: 7.5rem;
 }
 
 .btn-primary {

@@ -78,15 +78,50 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                     transition={{ duration: 0.4 }}
                     className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-24 lg:px-48 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
                 >
-                    <h5 className="text-body min-h-[1.25rem]">
-                        <AnimatedText text={collection.title || " "} delay={0.4} />
-                    </h5>
-                    <h1 className="mb-1">
-                        <AnimatedText text="Case Studies" delay={0.1} />
-                    </h1>
-                    <span className="text-body block min-h-[1.4rem]">
-                        <AnimatedText text={collection.description || " "} delay={0.2} />
-                    </span>
+                    <motion.h5
+                        className="text-body min-h-[1.25rem]"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
+                    >
+                        {collection.title || " "}
+                    </motion.h5>
+
+                    <motion.h1
+                        className="mb-1 uppercase"
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: { opacity: 1 },
+                            visible: {
+                                opacity: 1,
+                                transition: {
+                                    staggerChildren: 0.04
+                                }
+                            }
+                        }}
+                    >
+                        {"Case Studies".split("").map((char, index) => (
+                            <motion.span
+                                key={index}
+                                variants={{
+                                    hidden: { opacity: 0, display: "none" },
+                                    visible: { opacity: 1, display: "inline-block" }
+                                }}
+                            >
+                                {char === " " ? "\u00A0" : char}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
+
+                    <motion.span
+                        className="text-body block min-h-[1rem]"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+                    >
+                        {collection.description || " "}
+                    </motion.span>
                 </motion.div>
 
                 <motion.div

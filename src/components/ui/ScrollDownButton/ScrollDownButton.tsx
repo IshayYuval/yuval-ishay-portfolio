@@ -6,6 +6,8 @@ interface ScrollDownButtonProps {
     targetId: string;
 }
 
+import { motion } from "framer-motion";
+
 export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
     const handleScroll = () => {
         const element = document.getElementById(targetId);
@@ -16,21 +18,80 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - offset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+            const targetPosition = offsetPosition;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            const duration = 1500; // 1.5 seconds scroll duration
+            let start: number | null = null;
+
+            function animation(currentTime: number) {
+                if (start === null) start = currentTime;
+                const timeElapsed = currentTime - start;
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                // easeInOutCubic easing function
+                const ease = progress < 0.5
+                    ? 4 * progress * progress * progress
+                    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
         }
     };
 
     return (
-        <button
+        <motion.button
             onClick={handleScroll}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center animate-bounce text-white/80 hover:text-white transition-colors"
-            style={{ animationDuration: "2s" }}
+            className="absolute bottom-8 left-1/2 flex items-center justify-center text-white/80 hover:text-white transition-colors overflow-hidden rounded-full py-2 px-1"
             aria-label="Scroll down"
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            style={{ x: "-50%" }} // Replaces -translate-x-1/2 to avoid conflicting with framer-motion transforms
+            variants={{
+                initial: { y: 0 },
+                animate: {
+                    y: 8,
+                    transition: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut"
+                    }
+                }
+            }}
         >
-            <ChevronDown className="w-8 h-8" />
-        </button>
+            <motion.div
+                className="flex items-center"
+            >
+                <motion.div
+                    variants={{
+                        initial: { rotate: 0 },
+                        hover: { rotate: -360 }
+                    }}
+                    transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+                >
+                    <ChevronDown className="w-8 h-8" />
+                </motion.div>
+                <motion.div
+                    variants={{
+                        initial: { width: 0, opacity: 0 },
+                        hover: { width: "auto", opacity: 1 }
+                    }}
+                    transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+                    className="overflow-hidden flex items-center justify-start"
+                >
+                    <span className="whitespace-nowrap font-medium text-sm pl-2 uppercase">
+                        Tell me more!
+                    </span>
+                </motion.div>
+            </motion.div>
+        </motion.button>
     );
 }

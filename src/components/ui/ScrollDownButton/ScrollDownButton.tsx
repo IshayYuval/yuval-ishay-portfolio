@@ -60,9 +60,9 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
             variants={{
                 initial: { y: 0 },
                 animate: {
-                    y: 8,
+                    y: 15,
                     transition: {
-                        duration: 2,
+                        duration: 1.5,
                         repeat: Infinity,
                         repeatType: "reverse",
                         ease: "easeInOut"

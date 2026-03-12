@@ -76,7 +76,7 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-24 lg:px-48 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
+                    className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-30 lg:px-56 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
                 >
                     <motion.h5
                         className="text-body min-h-[1.25rem]"

@@ -40,7 +40,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
 
             <div className={`container-custom max-w-4xl mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}> {/* Adjusted padding */}
                 {/* Header */}
-                <header className="pt-20 max-w-4xl mx-auto">
+                <header className="pt-4 max-w-4xl mx-auto">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>

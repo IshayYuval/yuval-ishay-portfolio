@@ -654,62 +654,62 @@ export const caseStudies: CaseStudy[] = [
   },
 
   // branding - cloudeye
-  {
-    slug: "branding-cloudeye",
-    title: "Cloudeye",
-    excerpt:
-      "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
-    tags: ["Client Project", "SaaS"],
-    collectionSlug: "branding",
-    cover: "/case-studies/branding/cloudeye/page-cover.svg",
-    date: "2022-5-18",
-    introText: "Cloudeye is a web platform for managing the web services of an organization. It's packed with useful features like monitoring, automations, reported tickets with live  status updates, and a record of past tickets to help solve problems faster in the future. This variety of functions highlighted the need for a strong and clear brand identity.",
-    heroImage: "/case-studies/branding/cloudeye/hero.svg",
-    processSteps: [
-      {
-        title: "",
-        text: "",
-        bullets: [
-          {
-            label: "Target Audience: ",
-            labelWeight: "bold",
-            labelColor: "#69fff3",
-            text: "The employees of the organization, IT support teams,  electronic engineers, material engineers, software developers,  and everything in between."
-          },
-          {
-            label: "The Mission: ",
-            labelWeight: "bold",
-            labelColor: "#69fff3",
-            text: "To create a simple brand identity that is clear and understandable, without unnecessary complications, which will also appear friendly and easy to use."
-          },
-          {
-            label: "Creative Concept: ",
-            labelWeight: "bold",
-            labelColor: "#69fff3",
-            text: "Using 2 elements, the security camera and the cloud, to create a smooth connection between the two. The goal was to make the visual identity straight-forward as possible, but still modern and appealing to the users."
-          },
-        ],
-        textAfter: "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
-      },
-    ],
-    gallery: [
-      {
-        src: "/case-studies/branding/cloudeye/logo-mockup.webp",
-        alt: "logo-mockup",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/branding/cloudeye/notebook-mockup.webp",
-        alt: "logo-mockup",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/branding/cloudeye/illustrations.jpg",
-        alt: "illustrations",
-        colSpan: "full",
-      },
-    ],
-  },
+  // {
+  //   slug: "branding-cloudeye",
+  //   title: "Cloudeye",
+  //   excerpt:
+  //     "Web platform for managing web services status (Cloudeye is not available in the worldwide web)",
+  //   tags: ["Client Project", "SaaS"],
+  //   collectionSlug: "branding",
+  //   cover: "/case-studies/branding/cloudeye/page-cover.svg",
+  //   date: "2022-5-18",
+  //   introText: "Cloudeye is a web platform for managing the web services of an organization. It's packed with useful features like monitoring, automations, reported tickets with live  status updates, and a record of past tickets to help solve problems faster in the future. This variety of functions highlighted the need for a strong and clear brand identity.",
+  //   heroImage: "/case-studies/branding/cloudeye/hero.svg",
+  //   processSteps: [
+  //     {
+  //       title: "",
+  //       text: "",
+  //       bullets: [
+  //         {
+  //           label: "Target Audience: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "The employees of the organization, IT support teams,  electronic engineers, material engineers, software developers,  and everything in between."
+  //         },
+  //         {
+  //           label: "The Mission: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "To create a simple brand identity that is clear and understandable, without unnecessary complications, which will also appear friendly and easy to use."
+  //         },
+  //         {
+  //           label: "Creative Concept: ",
+  //           labelWeight: "bold",
+  //           labelColor: "#69fff3",
+  //           text: "Using 2 elements, the security camera and the cloud, to create a smooth connection between the two. The goal was to make the visual identity straight-forward as possible, but still modern and appealing to the users."
+  //         },
+  //       ],
+  //       textAfter: "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
+  //     },
+  //   ],
+  //   gallery: [
+  //     {
+  //       src: "/case-studies/branding/cloudeye/logo-mockup.webp",
+  //       alt: "logo-mockup",
+  //       colSpan: "full",
+  //     },
+  //     {
+  //       src: "/case-studies/branding/cloudeye/notebook-mockup.webp",
+  //       alt: "logo-mockup",
+  //       colSpan: "full",
+  //     },
+  //     {
+  //       src: "/case-studies/branding/cloudeye/illustrations.jpg",
+  //       alt: "illustrations",
+  //       colSpan: "full",
+  //     },
+  //   ],
+  // },
 
   // conceptual art - Supporters Voice
   {
@@ -906,7 +906,14 @@ export const caseStudies: CaseStudy[] = [
         colSpan: "full",
         width: 2528,
         height: 1696,
-      }
+      },
+      {
+        src: "/case-studies/conceptual-design/basic-food-packaging/mockup-landing-page.webp",
+        alt: "morada-label",
+        colSpan: "full",
+        width: 1080,
+        height: 1350,
+      },
     ],
     prototype: {
       title: "Landing Page Prototype",
@@ -936,23 +943,12 @@ export const caseStudies: CaseStudy[] = [
       {
         src: "/case-studies/conceptual-design/long-distance-love/leaflet-mockup.webp",
         alt: "Long Distance Love Video",
-        // The user set them to colSpan="full" in their edit, but implying they want them on the same row?
-        // "if I have one image larger than the other on the same row".
-        // Previously they were likely half.
-        // I will assume for the sake of the "equal height" logic that they should be "half" (or dynamic width sharing a row).
-        // But wait, the user set them to "full" in the previous step (Step 99).
-        // "right now the height is the real heigh, but if I have one image larger than the other on the same row"
-        // Use logic: if 2 items are meant to be on the same row, they share the row.
-        // I should probably switch them back to "half" (or just let the Grid logic decide based on pairing).
-        // The Grid logic usually relies on `colSpan` to decide if it's a standalone full row or a split row.
-        // I will set them to "half" for the purpose of this test, or design the grid to group ANY consecutive "half" items.
-        // Let's set them to "half" and add dims.
         colSpan: "half",
         width: 3190,
         height: 2226,
       },
       {
-        src: "/case-studies/conceptual-design/long-distance-love/safety-card-mockup.webp",
+        src: "/case-studies/conceptual-design/long-distance-love/card-mockup.webp",
         alt: "Long Distance Love Video",
         colSpan: "half",
         width: 1920,
@@ -1082,6 +1078,7 @@ export const caseStudies: CaseStudy[] = [
     excerpt: "A portrait series that captures the human moments, imperfections, and quiet breaks hidden within the act of running.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "photography",
+    backgroundColor: "#232428ff",
     date: "2025-07-22",
     cover: "/case-studies/photography/out-of-bounds/page-cover.webp",
     heroImage: "/case-studies/photography/out-of-bounds/hero-image-v4.svg",
@@ -1133,9 +1130,37 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
     date: "2026-02-08",
+    backgroundColor: "#1b1b1bff",
     heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
-    introText: "In this typography studio assignment, we were asked to design a paged editorial format based on a long article, using a structured grid and a typographic system to create an engaging reading experience. The goal was to translate text and imagery into a cohesive booklet that balances hierarchy, rhythm, and visual storytelling across multiple spreads. The text I selected is a cinema article from the Tel Aviv Cinematheque about the presence of the automobile in film and its function as a space that drives narrative events.",
+    introText: "In this typography studio assignment, the task was to design a paged editorial format based on a long-form article. The goal was to utilize a structured grid and a robust typographic system to create an engaging reading experience across multiple spreads. For this project, I specifically selected an essay from the Tel Aviv Cinematheque exploring the automobile as a narrative space in film—a vehicle that actively drives the plot forward.",
     cover: "/case-studies/typography/cinemateque/cover-mockup.webp",
+    processSteps: [
+      {
+        title: "The Creative Process",
+        text: "",
+        bullets: [
+          {
+            label: "The Concept: ",
+            labelWeight: "bold",
+            labelColor: "white",
+            text: "I approached the magazine's layout as a cinematic journey rather than a standard editorial piece. Rejecting conventional magazine tropes, the cover features no title or masthead. Instead, it relies solely on a climatic image of Thelma & Louise, physically directing the reader's eye to a single conceptual quote, forcing an active exploration."
+          },
+          {
+            label: "The Pacing: ",
+            labelWeight: "bold",
+            labelColor: "white",
+            text: "The reading experience is designed to mirror film sequencing. The magazine opens with a pitch-black spread—a cinematic 'cold open'—before revealing the title and introductory text. Throughout the article, images are not merely decorative; they are rhythmically placed to serve as visual breaks that align exactly with narrative shifts in the essay."
+          },
+          {
+            label: "Typography: ",
+            labelWeight: "bold",
+            labelColor: "white",
+            text: "To emphasize the contrast between the mechanical subject matter and the cinematic storytelling, I built a system around two opposing typefaces. The headlines utilize a harsh, utilitarian highway-signage font (a nod to the road), which contrasts sharply with the classic, elegant serif font used for the body text. This creates a typographic tension that reflects the layered nature of films."
+          }
+        ],
+        textAfter: "",
+      },
+    ],
     gallery: [
       {
         src: "/case-studies/typography/cinemateque/cover-mockup.webp",

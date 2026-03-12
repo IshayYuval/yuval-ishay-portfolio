@@ -6,9 +6,12 @@ interface ScrollDownButtonProps {
     targetId: string;
 }
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
+    const { scrollY } = useScroll();
+    const opacity = useTransform(scrollY, [0, 600], [1, 0]);
+
     const handleScroll = () => {
         const element = document.getElementById(targetId);
         if (element) {
@@ -53,7 +56,7 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
             initial="initial"
             animate="animate"
             whileHover="hover"
-            style={{ x: "-50%" }} // Replaces -translate-x-1/2 to avoid conflicting with framer-motion transforms
+            style={{ x: "-50%", opacity }}
             variants={{
                 initial: { y: 0 },
                 animate: {

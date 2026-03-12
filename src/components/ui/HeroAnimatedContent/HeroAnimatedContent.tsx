@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 
 const textContainerVariants: Variants = {
@@ -89,8 +89,12 @@ export default function HeroAnimatedContent() {
     const h1Text = "I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.";
     const subText = "UX Designer & Product Maker, specializing in branding, product design and AI-driven development.";
 
+    const { scrollY } = useScroll();
+    // Assuming a standard screen height is around 800-1000px, 600px of scroll is a good point to fully fade out.
+    const opacity = useTransform(scrollY, [0, 600], [1, 0]);
+
     return (
-        <div className="container-custom z-10">
+        <motion.div className="container-custom z-10" style={{ opacity }}>
             <motion.h1
                 className="mb-1 ml-0.5"
                 variants={textContainerVariants}
@@ -123,13 +127,13 @@ export default function HeroAnimatedContent() {
                 initial="hidden"
                 animate="visible"
             >
-                <motion.div variants={buttonVariants}>
-                    <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[240px]">
+                    <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank" className="w-full justify-center">
                         Send me an email
                     </Button>
                 </motion.div>
-                <motion.div variants={buttonVariants}>
-                    <Button variant="secondary" targetId="about-me">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[240px]">
+                    <Button variant="secondary" targetId="about-me" className="w-full justify-center">
                         A bit about my story
                     </Button>
                 </motion.div>
@@ -143,6 +147,6 @@ export default function HeroAnimatedContent() {
             >
                 This portfolio was built with Antigravity and Gemini 3 Pro
             </motion.span>
-        </div>
+        </motion.div>
     );
 }

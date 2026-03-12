@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button/Button";
 import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
 import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
 import HeroAnimatedContent from "@/components/ui/HeroAnimatedContent/HeroAnimatedContent";
+import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
 import { reviews } from "@/data/portfolio";
 
 export default function Home() {
@@ -30,7 +31,7 @@ export default function Home() {
 
       <div className="relative z-10 bg-[var(--color-brand-secondary-900)]">
         {/* About Me */}
-        <Section id="about-me" className="flex items-center justify-center">
+        <Section id="about-me" className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +54,7 @@ export default function Home() {
         </Section>
 
         {/* Me as a designer */}
-        <Section className="flex items-center justify-center">
+        <Section className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,6 +97,7 @@ export default function Home() {
             ))}
           </div>
         </Section>
+        <ScrollToTop />
       </div>
     </>
   );

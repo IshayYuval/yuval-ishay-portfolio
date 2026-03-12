@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
 import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
+import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import { renderTextWithBreaks } from "@/utils/text";
 import Tag from "../ui/Tag/Tag";
 import Button from "../ui/Button/Button";
@@ -137,6 +138,8 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                 {data.prototype && (
                     <PrototypeSection title={data.prototype.title} src={data.prototype.src} />
                 )}
+
+                <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />
             </div>
         </article>
     );

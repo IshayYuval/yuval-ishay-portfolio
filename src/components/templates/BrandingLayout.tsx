@@ -31,7 +31,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
 
             <div className="container-custom mx-auto px-6">
                 {/* Intro Section */}
-                <section className="max-w-4xl mx-auto pt-24">
+                <section className="max-w-4xl mx-auto pt-22">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>

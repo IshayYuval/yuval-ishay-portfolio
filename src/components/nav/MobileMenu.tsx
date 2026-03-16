@@ -94,7 +94,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                             </button>
 
                             <MobileNavItem href="/about" onClick={onClose}>
-                                About Me
+                                My Story
                             </MobileNavItem>
                         </div>
                         <div className="flex gap-4 items-center mt-24">

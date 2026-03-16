@@ -87,7 +87,7 @@ const captionVariants: Variants = {
 
 export default function HeroAnimatedContent() {
     const h1Text = "I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.";
-    const subText = "UX Designer & Product Maker, specializing in branding, product design and AI-driven development.";
+    const subText = "Multidisciplinary designer, specializing in branding, product design and AI-driven development.";
 
     const { scrollY } = useScroll();
     // Assuming a standard screen height is around 800-1000px, 600px of scroll is a good point to fully fade out.
@@ -127,26 +127,17 @@ export default function HeroAnimatedContent() {
                 initial="hidden"
                 animate="visible"
             >
-                <motion.div variants={buttonVariants} className="w-full sm:w-[240px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
                     <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank" className="w-full justify-center">
                         Send me an email
                     </Button>
                 </motion.div>
-                <motion.div variants={buttonVariants} className="w-full sm:w-[240px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
                     <Button variant="secondary" targetId="about-me" className="w-full justify-center">
                         A bit about my story
                     </Button>
                 </motion.div>
             </motion.div>
-
-            <motion.span
-                className="text-caption ml-1 block mt-2"
-                variants={captionVariants}
-                initial="hidden"
-                animate="visible"
-            >
-                This portfolio was built with Antigravity and Gemini 3 Pro
-            </motion.span>
         </motion.div>
     );
 }

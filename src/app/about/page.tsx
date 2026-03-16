@@ -1,25 +1,43 @@
 "use client";
-import Section from "@/components/layout/Section";
 import Image from "next/image";
 import "./about.css";
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
     return (
-        <div className="pt-[var(--header-height)]">
-            <Section>
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}>
-                        <Image src="/web-assets/profile-picture.webp" alt="Hero Image" width={504} height={504} className="rounded-xl" />
-                    </motion.div>
+        <div className="flex flex-col lg:flex-row w-full bg-[var(--color-brand-secondary-950)] min-h-screen relative">
 
-                    <div className="max-w-3xl flex flex-col items-start gap-8">
+            {/* Left side: Sticky Image */}
+            <motion.div
+                className="w-full lg:w-1/2 h-[50vh] lg:h-screen sticky top-0 shrink-0 z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <Image
+                    src="/web-assets/about-me.jpg"
+                    alt="Yuval Ishay profile picture"
+                    fill
+                    unoptimized
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                />
+                {/* Gradient Fade */}
+                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--color-brand-secondary-950)] to-transparent pointer-events-none hidden lg:block" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--color-brand-secondary-950)] to-transparent pointer-events-none lg:hidden" />
+            </motion.div>
+
+            {/* Right side: Scrolling text content */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-start pr-6 pl-6 md:pr-12 md:pl-6 lg:pr-24 lg:pl-12 z-0 pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)] lg:bg-transparent shadow-[-10px_0_20px_rgba(21,30,61,1)] lg:shadow-none">
+                <div className="flex flex-col gap-12 lg:gap-32 max-w-xl pb-32">
+
+                    {/* Section 1 */}
+                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-4 lg:py-12">
                         <motion.h1
                             initial="hidden"
-                            animate="visible"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
                             variants={{
                                 hidden: { opacity: 1 },
                                 visible: {
@@ -59,29 +77,134 @@ export default function AboutPage() {
 
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
                             className="mb-6 max-w-xl text-body"
                         >
-                            I'm a professional product designer and logo designer, based in Rishon Letzion, Israel.
-                            I only have one mission - to solve your problems using my skills. I bring a wealth of expertise to the table in both
-                            the UX/UI and logo design field, and I'm here to help.
+                            I am a multidisciplinary designer based in Israel, currently in my second year of the Visual Communication B.A. program at the Holon Institute of Technology (HIT).
                             <br />
                             <br />
-                            Over the last 10 years I had the pleasure to craft my art and improve it
-                            with every project I worked on, and I believe my path isn't much different than
-                            yours - we're all trying to leverage our skills to boost our businesses.
-                            <br />
-                            <br />
-                            A little bit on a personal note, I love lots of sports, from football to martial arts,
-                            and I'm an enthusiast music fan. In addition, I took upon myself to expand my knowledge and
-                            improve myself as a designer, by starting my Visual Communication BA in
-                            the Holon Institute of Technology.
+                            My work is driven by curiosity, research, and a search for narrative—whether through strict typographic grids or conceptual packaging. To bridge the gap between static concepts and functioning reality, I deeply integrate AI frameworks into my workflow. Tools like Antigravity (which I used to code this very portfolio) and Base44 serve as my creative amplifiers, empowering me to turn abstract design thinking into living, interactive digital products autonomously.
                         </motion.p>
                     </div>
-                </div>
 
-            </Section>
+                    {/* Section 2 */}
+                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                        <motion.h2
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 1 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.04,
+                                    }
+                                }
+                            }}
+                            className="mb-0"
+                        >
+                            {"My ".split("").map((char, index) => (
+                                <motion.span
+                                    key={`part1-sec2-${index}`}
+                                    variants={{
+                                        hidden: { opacity: 0, display: "none" },
+                                        visible: { opacity: 1, display: "inline-block" }
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                            <span className="emphasized-text">
+                                {"Background".split("").map((char, index) => (
+                                    <motion.span
+                                        key={`part2-sec2-${index}`}
+                                        variants={{
+                                            hidden: { opacity: 0, display: "none" },
+                                            visible: { opacity: 1, display: "inline-block" }
+                                        }}
+                                    >
+                                        {char === " " ? "\u00A0" : char}
+                                    </motion.span>
+                                ))}
+                            </span>
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="mb-6 max-w-xl text-body"
+                        >
+                            Before trading my office chair for a student desk, I spent about a decade out in the wild working on product design (UX/UI) and branding.
+                            So, why go back to school?
+                            <br />
+                            <br />
+                            Honestly, just making things look good and work smoothly wasn't enough anymore. I came to HIT to geek out on the
+                            why behind it all; the conceptual storytelling that turns a nice design into something with an actual soul.
+                        </motion.p>
+                    </div>
+
+                    {/* Section 3 */}
+                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                        <motion.h2
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 1 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.04,
+                                    }
+                                }
+                            }}
+                            className="mb-0"
+                        >
+                            {"Outside the ".split("").map((char, index) => (
+                                <motion.span
+                                    key={`part1-sec3-${index}`}
+                                    variants={{
+                                        hidden: { opacity: 0, display: "none" },
+                                        visible: { opacity: 1, display: "inline-block" }
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                            <span className="emphasized-text">
+                                {"Studio".split("").map((char, index) => (
+                                    <motion.span
+                                        key={`part2-sec3-${index}`}
+                                        variants={{
+                                            hidden: { opacity: 0, display: "none" },
+                                            visible: { opacity: 1, display: "inline-block" }
+                                        }}
+                                    >
+                                        {char === " " ? "\u00A0" : char}
+                                    </motion.span>
+                                ))}
+                            </span>
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="mb-6 max-w-xl text-body"
+                        >
+                            When I'm not obsessing over micro-typography or experimenting with new AI models, I'm usually practicing martial arts,
+                            following football, or listening to music. I'm constantly seeking to step out of my comfort zone, it applies to my hobbies, it applies to my lifestyle and it applies to how I design.
+                        </motion.p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     );
 }

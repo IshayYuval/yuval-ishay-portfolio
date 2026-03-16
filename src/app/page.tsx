@@ -42,7 +42,7 @@ export default function Home() {
             <div className="gap-12 max-w-2xl">
               <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
               <p className="text-body mb-6">
-                Hey! I'm Yuval, UX and brand designer, building products and experiences with concept-driven design and AI-driven software development.
+                Hey! I'm Yuval, Multidisciplinary Designer, building products and experiences with concept-driven design and AI-driven software development.
                 I started designing at 13, and over the years I've grown into building digital products, brands, and experiences that connect people, technology, and business.
                 Outside of work I'm a football fan and a traveler, love exploring the world and trying new things.
               </p>
@@ -89,7 +89,7 @@ export default function Home() {
         {/* Clients */}
         <Section>
           <div className="text-center mb-12">
-            <h2>a glance of my very happy clients ;)</h2>
+            <h2>Some of my very happy clients ;)</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             {reviews.map((review) => (
@@ -97,8 +97,8 @@ export default function Home() {
             ))}
           </div>
         </Section>
-        <ScrollToTop />
       </div>
+      <ScrollToTop />
     </>
   );
 }

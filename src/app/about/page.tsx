@@ -2,6 +2,7 @@
 import Image from "next/image";
 import "./about.css";
 import { motion } from "framer-motion";
+import Button from "@/components/ui/Button/Button";
 
 export default function AboutPage() {
     return (
@@ -80,18 +81,25 @@ export default function AboutPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
-                            className="mb-6 max-w-xl text-body"
+                            className="max-w-xl text-body"
                         >
                             I am a multidisciplinary designer based in Israel, currently in my second year of the Visual Communication B.A. program at the Holon Institute of Technology (HIT).
                             <br />
                             <br />
                             My work is driven by curiosity, research, and a search for narrative—whether through strict typographic grids or conceptual packaging. To bridge the gap between static concepts and functioning reality, I deeply integrate AI frameworks into my workflow. Tools like Antigravity (which I used to code this very portfolio) and Base44 serve as my creative amplifiers, empowering me to turn abstract design thinking into living, interactive digital products autonomously.
                         </motion.p>
+                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
+                            <motion.div className="w-full sm:w-[200px]">
+                                <Button variant="primary" targetId="background" className="w-full justify-center">
+                                    How did you start?
+                                </Button>
+                            </motion.div>
+                        </motion.div>
                     </div>
 
                     {/* Section 2 */}
-                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
-                        <motion.h2
+                    <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                        <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -130,14 +138,14 @@ export default function AboutPage() {
                                     </motion.span>
                                 ))}
                             </span>
-                        </motion.h2>
+                        </motion.h1>
 
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="mb-6 max-w-xl text-body"
+                            className="max-w-xl text-body"
                         >
                             Before trading my office chair for a student desk, I spent about a decade out in the wild working on product design (UX/UI) and branding.
                             So, why go back to school?
@@ -146,11 +154,18 @@ export default function AboutPage() {
                             Honestly, just making things look good and work smoothly wasn't enough anymore. I came to HIT to geek out on the
                             why behind it all; the conceptual storytelling that turns a nice design into something with an actual soul.
                         </motion.p>
+                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
+                            <motion.div className="w-full sm:w-[200px]">
+                                <Button variant="primary" targetId="hobbies" className="w-full justify-center">
+                                    Do you ever log off?
+                                </Button>
+                            </motion.div>
+                        </motion.div>
                     </div>
 
                     {/* Section 3 */}
-                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
-                        <motion.h2
+                    <div id="hobbies" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                        <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -189,18 +204,25 @@ export default function AboutPage() {
                                     </motion.span>
                                 ))}
                             </span>
-                        </motion.h2>
+                        </motion.h1>
 
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="mb-6 max-w-xl text-body"
+                            className="max-w-xl text-body"
                         >
                             When I'm not obsessing over micro-typography or experimenting with new AI models, I'm usually practicing martial arts,
                             following football, or listening to music. I'm constantly seeking to step out of my comfort zone, it applies to my hobbies, it applies to my lifestyle and it applies to how I design.
                         </motion.p>
+                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
+                            <motion.div className="w-full sm:w-auto">
+                                <Button variant="primary" href="/" className="w-full justify-center">
+                                    Show me the work!
+                                </Button>
+                            </motion.div>
+                        </motion.div>
                     </div>
 
                 </div>

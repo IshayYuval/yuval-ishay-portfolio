@@ -132,9 +132,14 @@ export default function HeroAnimatedContent() {
                         Send me an email
                     </Button>
                 </motion.div>
+                {/* <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                    <Button variant="primary" href="/" className="w-full justify-center">
+                        Show me the work!
+                    </Button>
+                </motion.div> */}
                 <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
                     <Button variant="secondary" targetId="about-me" className="w-full justify-center">
-                        A bit about my story
+                        Wait, tell me more
                     </Button>
                 </motion.div>
             </motion.div>

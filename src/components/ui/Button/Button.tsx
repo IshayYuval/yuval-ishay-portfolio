@@ -49,7 +49,34 @@ export default function Button({
         if (targetId) {
             const element = document.getElementById(targetId);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - offset;
+
+                const targetPosition = offsetPosition;
+                const startPosition = window.scrollY;
+                const distance = targetPosition - startPosition;
+                const duration = 1500; // 1.5 seconds scroll duration
+                let start: number | null = null;
+
+                function animation(currentTime: number) {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const progress = Math.min(timeElapsed / duration, 1);
+
+                    // easeInOutCubic easing function
+                    const ease = progress < 0.5
+                        ? 4 * progress * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                    window.scrollTo(0, startPosition + distance * ease);
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                requestAnimationFrame(animation);
             }
         }
 

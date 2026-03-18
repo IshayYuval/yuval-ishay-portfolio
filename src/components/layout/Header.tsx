@@ -47,7 +47,7 @@ export default function Header() {
 
     // Header background logic
     const headerBg = isDropdownOpen || isScrolled || isHovered || isMobileMenuOpen
-        ? 'var(--color-brand-secondary-900)'
+        ? 'var(--color-brand-secondary-950)'
         : 'transparent';
 
     const handleDropdownEnter = () => {

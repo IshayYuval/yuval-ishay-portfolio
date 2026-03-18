@@ -29,7 +29,7 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="relative z-10 bg-[var(--color-brand-secondary-900)]">
+      <div className="relative z-10 bg-[var(--color-brand-secondary-950)]">
         {/* About Me */}
         <Section id="about-me" className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
           <motion.div

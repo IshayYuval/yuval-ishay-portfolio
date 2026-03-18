@@ -8,7 +8,9 @@ import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
 import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
 import HeroAnimatedContent from "@/components/ui/HeroAnimatedContent/HeroAnimatedContent";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
+import FeaturedWorks from "@/components/ui/FeaturedWorks/FeaturedWorks";
 import { reviews } from "@/data/portfolio";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,73 +27,62 @@ export default function Home() {
           }}
         >
           <HeroAnimatedContent />
-          <ScrollDownButton targetId="about-me" />
+          <ScrollDownButton targetId="featured-works" />
         </section>
       </div>
 
-      <div className="relative z-10 bg-[var(--color-brand-secondary-900)]">
-        {/* About Me */}
-        <Section id="about-me" className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-start w-full"
-          >
-            <div className="gap-12 max-w-2xl">
-              <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
-              <p className="text-body mb-6">
-                Hey! I'm Yuval, Multidisciplinary Designer, building products and experiences with concept-driven design and AI-driven software development.
-                I started designing at 13, and over the years I've grown into building digital products, brands, and experiences that connect people, technology, and business.
-                Outside of work I'm a football fan and a traveler, love exploring the world and trying new things.
-              </p>
+      <div className="relative z-10 bg-[var(--color-brand-secondary-950)]">
+        {/* Featured Works */}
+        <section id="featured-works" className="w-full h-screen flex flex-col pt-8 sm:pt-16 pb-12 overflow-hidden bg-[var(--color-brand-secondary-950)]">
+          <div className="px-8 lg:px-32 xl:px-64 flex-1 flex flex-col min-h-0">
+            <div className="w-full flex justify-start md:justify-center text-center shrink-0">
+              <h2 className="mb-6 lg:mb-12">My favorite projects</h2>
             </div>
-            <Button variant="secondary" href="/about">
-              More about my story
-            </Button>
-          </motion.div>
-        </Section>
+            <div className="flex-1 w-full min-h-0 overflow-hidden relative">
+              <FeaturedWorks />
+            </div>
+          </div>
+        </section>
 
-        {/* Me as a designer */}
-        <Section className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-start w-full"
-          >
-            <div className="gap-12 max-w-2xl">
-              <h2 className="mb-4">VISUAL IDENTITY & PRODUCT DESIGN ARE MY TRUE PASSION.</h2>
-              <p className="text-body text-lg mb-6">
-                Although at first glance branding and product design seem different niches, branding and product design go hand in hand.
-                Just like your logo, your user experience should appeal to the same people your brand appeals to.
-                In the world of AI, I took my abilities to the next level, by shipping my designs to the real-world, mastering tools like Base44, Antigravity, and more.
-                <br />
-                <br />
-                That's right, I'm a one man show, and that's what gets me out of bed every morning.
-                <br />
-                Do you wanna see that passion visually? I've hand picked some of my case studies just for you!
-              </p>
-              <div className="flex gap-4 sm:flex-row flex-col">
-                <Button variant="secondary" href="/product-design">
-                  Product Design Case Studies
-                </Button>
-                <Button variant="secondary" href="/branding">
-                  Branding Case Studies
-                </Button>
+        {/* About Me */}
+        <Section id="about-me" className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))]">
+          <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="w-full md:w-1/2 flex justify-center"
+            >
+              <Image src="/web-assets/profile-picture.webp" height={600} width={600} unoptimized className="rounded-[var(--radius-lg)] w-full h-auto object-cover" alt="Yuval's Profile Picture" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+              className="flex flex-col items-start w-full md:w-1/2"
+            >
+              <div className="max-w-xl">
+                <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
+                <p className="text-body mb-6">
+                  I'm Yuval, a multidisciplinary designer with an extensive background in UX design, branding, and conceptual storytelling.
+                  I bridge the gap between visual identity, product design, and functioning reality. Using deep conceptual storytelling and AI-driven frameworks, I don't just design digital experiences I actually build them.
+                </p>
               </div>
-            </div>
-          </motion.div>
+              <Button variant="secondary" href="/about">
+                Cool! Tell me more
+              </Button>
+            </motion.div>
+          </div>
         </Section>
 
         {/* Clients */}
         <Section>
-          <div className="text-center mb-12">
+          <div className="text-left md:text-center mb-12">
             <h2>Some of my very happy clients ;)</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reviews.map((review) => (
               <ReviewCard key={review.id} review={review} />
             ))}

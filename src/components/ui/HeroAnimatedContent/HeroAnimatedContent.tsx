@@ -127,16 +127,16 @@ export default function HeroAnimatedContent() {
                 initial="hidden"
                 animate="visible"
             >
-                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                {/* <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
                     <Button variant="secondary" href="mailto:ishayyuval@gmail.com?subject=Hello%20Yuval" target="_blank" className="w-full justify-center">
                         Send me an email
                     </Button>
-                </motion.div>
-                {/* <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
-                    <Button variant="primary" href="/" className="w-full justify-center">
+                </motion.div> */}
+                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                    <Button variant="primary" targetId="featured-works" className="w-full justify-center">
                         Show me the work!
                     </Button>
-                </motion.div> */}
+                </motion.div>
                 <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
                     <Button variant="secondary" targetId="about-me" className="w-full justify-center">
                         Wait, tell me more

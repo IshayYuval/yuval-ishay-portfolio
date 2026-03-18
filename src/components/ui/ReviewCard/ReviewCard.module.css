@@ -1,9 +1,9 @@
 .review-card {
     display: block;
     overflow: hidden;
-    border-radius: var(--radius);
     aspect-ratio: 1 / 1;
     position: relative;
+    border-radius: var(--radius-lg);
 }
 
 .review-card-overlay {

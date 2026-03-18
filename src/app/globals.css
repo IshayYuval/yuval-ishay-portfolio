@@ -19,6 +19,37 @@
   --color-brand-secondary-600: #36437A;
   --color-brand-secondary-500: #435499;
 
+  /* border-radius */
+  --radius-xs: .25rem;
+  --radius-sm: .5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-2xl: 4rem;
+
+
+  /* Padding */
+  --padding-x-xs: .25rem;
+  --padding-x-sm: .5rem;
+  --padding-x-md: 1rem;
+  --padding-x-lg: 2rem;
+  --padding-x-xl: 3rem;
+  --padding-x-2xl: 4rem;
+
+  --padding-y-xs: .25rem;
+  --padding-y-sm: .5rem;
+  --padding-y-md: 1rem;
+  --padding-y-lg: 2rem;
+  --padding-y-xl: 3rem;
+  --padding-y-2xl: 4rem;
+
+  --padding-full-xs: .25rem;
+  --padding-full-sm: .5rem;
+  --padding-full-md: 1rem;
+  --padding-full-lg: 2rem;
+  --padding-full-xl: 3rem;
+  --padding-full-2xl: 4rem;
+
 
   /* Typography */
   --font-sans: "proxima-nova", sans-serif;
@@ -28,7 +59,6 @@
   --container-width: 1400px;
 
   /* Effects */
-  --radius: 4px;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --transition-fast: 0.2s ease;

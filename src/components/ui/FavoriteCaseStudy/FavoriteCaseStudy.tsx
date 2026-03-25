@@ -20,27 +20,27 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
   const isVideo = coverSrc?.match(/\.(mp4|webm|ogg)$/i);
 
   const buttonContainerVariants: Variants = {
-      hidden: { opacity: 0 },
-      visible: {
-          opacity: 1,
-          transition: {
-              staggerChildren: 0.2,
-              delayChildren: 0.8,
-          },
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.8,
       },
+    },
   };
 
   const buttonVariants: Variants = {
-      hidden: { opacity: 0, y: 15, scale: 0.95 },
-      visible: {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: {
-              duration: 0.6,
-              ease: "easeOut",
-          },
+    hidden: { opacity: 0, y: 15, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
       },
+    },
   };
 
   return (
@@ -59,23 +59,23 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={{
-                hidden: { opacity: 1 },
-                visible: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.04 }
-                }
+              hidden: { opacity: 1 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.04 }
+              }
             }}
           >
             {work.title.split("").map((char, index) => (
-                <motion.span
-                    key={`title-char-${index}`}
-                    variants={{
-                        hidden: { opacity: 0, display: "none" },
-                        visible: { opacity: 1, display: "inline-block" }
-                    }}
-                >
-                    {char === " " ? "\u00A0" : char}
-                </motion.span>
+              <motion.span
+                key={`title-char-${index}`}
+                variants={{
+                  hidden: { opacity: 0, display: "none" },
+                  visible: { opacity: 1, display: "inline-block" }
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
             ))}
           </motion.h3>
           <motion.p
@@ -88,22 +88,22 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
           >
             {work.excerpt}
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex gap-2 md:gap-4 w-full md:flex-wrap flex-nowrap"
             variants={buttonContainerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <motion.div variants={buttonVariants} className="min-w-[180px] w-full md:w-auto">
-                <Button className="w-full" variant="primary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.slug}`}>
-                  Full Case Study
-                </Button>
+            <motion.div variants={buttonVariants} className="min-w-[128px] md:min-w-[180px] w-full md:w-auto">
+              <Button className="w-full" variant="primary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.slug}`}>
+                Full Case Study
+              </Button>
             </motion.div>
-            <motion.div variants={buttonVariants} className="min-w-[180px] w-full md:w-auto">
-                <Button className="w-full" variant="secondary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.collectionSlug}`}>
-                  {collectionTitle} Projects
-                </Button>
+            <motion.div variants={buttonVariants} className="min-w-[128px] md:min-w-[180px] w-full md:w-auto">
+              <Button className="w-full" variant="secondary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.collectionSlug}`}>
+                {collectionTitle} Projects
+              </Button>
             </motion.div>
           </motion.div>
         </div>

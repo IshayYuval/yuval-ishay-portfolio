@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
 import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
@@ -10,6 +10,29 @@ import { caseStudies, collections, favorites } from "@/data/portfolio";
 import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
 import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
 import Image from "next/image";
+
+const cardContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.5,
+        },
+    },
+};
+
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
 
 export default function Home() {
   const favoriteWorks = favorites
@@ -62,12 +85,44 @@ export default function Home() {
 
         {/* Wanna see more? */}
         <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
-          <h2 className="mb-12 text-white">Wanna see more?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-            {collections.map(collection => (
-              <CollectionCard key={collection.slug} collection={collection} />
+          <motion.h2
+            className="mb-12 text-white"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+                hidden: { opacity: 1 },
+                visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.04 }
+                }
+            }}
+          >
+            {"Wanna see more?".split("").map((char, index) => (
+                <motion.span
+                    key={`wanna-char-${index}`}
+                    variants={{
+                        hidden: { opacity: 0, display: "none" },
+                        visible: { opacity: 1, display: "inline-block" }
+                    }}
+                >
+                    {char === " " ? "\u00A0" : char}
+                </motion.span>
             ))}
-          </div>
+          </motion.h2>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {collections.map(collection => (
+              <motion.div key={collection.slug} variants={cardVariants}>
+                <CollectionCard collection={collection} />
+              </motion.div>
+            ))}
+          </motion.div>
         </section>
 
         {/* Clients */}

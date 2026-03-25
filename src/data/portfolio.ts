@@ -5,6 +5,7 @@ export type Collection = {
   title: string;
   description: string;
   parentNav?: "visual-communication" | null;
+  shortTitle?: string;
 };
 
 export type ZigZagSection = {
@@ -54,6 +55,7 @@ export type CaseStudy = {
   endDate?: string;
   // New fields
   favorite?: boolean;
+  appearanceOrder?: number; // Order to display on landing page carousel
   introText?: string;
   heroImage?: string; // specific for Branding top section
   heroBackgroundColor?: string; // optional background color for hero section
@@ -77,6 +79,78 @@ export type CaseStudy = {
   };
 };
 
+export type FavoriteConfig = {
+  slug: string;
+  backgroundColor: string;
+  headingColor: string;
+  textColor: string;
+  coverSrc?: string;
+  appearanceOrder: number;
+  buttonTheme?: "light" | "dark";
+};
+
+export const favorites: FavoriteConfig[] = [
+  {
+    slug: "cheetah",
+    backgroundColor: "#101440",
+    headingColor: "#ffffff",
+    textColor: "#ffffff",
+    coverSrc: "/favorites/cheetah-cover.webp",
+    appearanceOrder: 1,
+  },
+  {
+    slug: "social-campaign",
+    backgroundColor: "#000000",
+    headingColor: "#ffffff",
+    textColor: "#ffffff",
+    coverSrc: "/case-studies/conceptual-design/social-campaign/case-study-favorite.mp4",
+    appearanceOrder: 7,
+  },
+  {
+    slug: "cinemateque-magazine",
+    backgroundColor: "#2c2c2c",
+    headingColor: "#ffffff",
+    textColor: "#ffffff",
+    coverSrc: "/case-studies/typography/cinemateque/cinematheque-landing.webp",
+    appearanceOrder: 3,
+  },
+  {
+    slug: "basic-food-packaging-series",
+    backgroundColor: "#e3dcd6",
+    headingColor: "#000000",
+    textColor: "#000000",
+    coverSrc: "/favorites/basic-food-packaging.webp",
+    appearanceOrder: 4,
+    buttonTheme: "dark",
+  },
+  {
+    slug: "long-distance-love",
+    backgroundColor: "#ede6e9",
+    headingColor: "#000000",
+    textColor: "#000000",
+    coverSrc: "/favorites/long-distance-cover.mp4",
+    appearanceOrder: 5,
+    buttonTheme: "dark",
+  },
+  {
+    slug: "spod",
+    backgroundColor: "#FADDFF",
+    headingColor: "#000000",
+    textColor: "#000000",
+    coverSrc: "/case-studies/product-design/spod/favorites-cover.webp",
+    appearanceOrder: 2,
+    buttonTheme: "dark",
+  },
+  {
+    slug: "infowork",
+    backgroundColor: "#232066",
+    headingColor: "#ffffff",
+    textColor: "#ffffff",
+    coverSrc: "/favorites/infowork.webp",
+    appearanceOrder: 6,
+  }
+];
+
 export const collections: Collection[] = [
   {
     slug: "branding",
@@ -88,6 +162,7 @@ export const collections: Collection[] = [
   {
     slug: "product-design",
     title: "Product Design",
+    shortTitle: "UX",
     description:
       "Explore my past projects and detailed case studies showcasing my product design work and broad expertise across diverse industry sectors.",
     parentNav: null,
@@ -101,6 +176,7 @@ export const collections: Collection[] = [
   {
     slug: "conceptual-design",
     title: "Conceptual Design",
+    shortTitle: "Conceptual",
     description: "My thoughts and beliefs, in personal and general topics, communicating through design.",
     parentNav: "visual-communication",
   },
@@ -124,6 +200,7 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/branding/cheetah/page-cover.svg",
     date: "2025-01-18",
     favorite: true,
+    appearanceOrder: 1,
     introText:
       "During my first year of my Visual Communication B.A, we got an exercise to research an animal of our choice, and based on that animal, to create a visual identity for an imaginary company, which could be represented in theory by the animal we chose. Since a cheetah is one of my favorite wild animals, I knew in the very first second I'll choose it.",
     heroImage: "/case-studies/branding/cheetah/hero-image.svg",
@@ -416,6 +493,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "branding",
     cover: "/case-studies/branding/onyx/page-cover.svg",
     date: "2023-11-28",
+    navbarTextColor: "#2d302e",
     introText: "Onyx is an in-organization team, responsible for creating the long-term strategy and working methods for their organization. Onyx is also responsible for the product of the company, as the team is built from product managers, QA's and product designers.",
     processSteps: [
       {
@@ -724,6 +802,7 @@ export const caseStudies: CaseStudy[] = [
     introText: "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
     cover: "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
     heroBackgroundColor: "#000000",
+    backgroundColor: "#000000",
     heroImage: "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
     processSteps: [
       {
@@ -831,7 +910,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "basic-food-packaging-series",
     title: "Basic Food Packaging Series",
-    excerpt: "A conceptual packaging series for a basic food product, re-examining cultural, social, and political meanings through visual language rather than functional solutions.",
+    excerpt: "A conceptual packaging series for a basic food product, re-examining cultural, and social meanings through visual language rather than functional solutions.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
     collectionSlug: "conceptual-design",
     favorite: true,
@@ -1131,6 +1210,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "cinemateque-magazine",
     title: "Cinemateque Magazine",
     favorite: true,
+    appearanceOrder: 2,
     excerpt: "This project is designed as a magazine editorial, exploring the automobile in cinema as a space that drives narrative and shapes on-screen events.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
     collectionSlug: "typography",
@@ -1321,6 +1401,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "spod",
     title: "Spod",
     favorite: true,
+    appearanceOrder: 3,
     cover: "/case-studies/product-design/spod/page-cover.jpg",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",

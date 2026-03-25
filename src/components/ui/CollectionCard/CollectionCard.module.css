@@ -1,0 +1,8 @@
+.container {
+    background-color: var(--color-brand-secondary-900);
+    border-radius: var(--radius-md);
+}
+
+.container:hover {
+    background-color: var(--color-brand-secondary-800);
+}

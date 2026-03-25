@@ -3,7 +3,8 @@
     overflow: hidden;
     aspect-ratio: 1 / 1;
     position: relative;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
+    /* background-color: var(--color-brand-secondary-900); */
 }
 
 .review-card-overlay {

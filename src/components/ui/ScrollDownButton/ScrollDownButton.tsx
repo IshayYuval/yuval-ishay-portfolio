@@ -91,7 +91,7 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
                     className="overflow-hidden flex items-center justify-start"
                 >
                     <span className="whitespace-nowrap font-medium text-sm pl-2 uppercase">
-                        Tell me more!
+                        Let me explore myself
                     </span>
                 </motion.div>
             </motion.div>

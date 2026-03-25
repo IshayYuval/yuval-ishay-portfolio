@@ -34,7 +34,7 @@ export default function AboutPage() {
                 <div className="flex flex-col gap-12 lg:gap-32 max-w-xl pb-32">
 
                     {/* Section 1 */}
-                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-4 lg:py-12">
+                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-4 lg:py-12">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
@@ -48,7 +48,7 @@ export default function AboutPage() {
                                     }
                                 }
                             }}
-                            className="mb-0 leading-tight"
+                            className="mb-[var(--gap-md)]"
                         >
                             {"Hey there, I'm ".split("").map((char, index) => (
                                 <motion.span
@@ -88,7 +88,7 @@ export default function AboutPage() {
                             <br />
                             My work is driven by curiosity, research, and a search for narrative—whether through strict typographic grids or conceptual packaging. To bridge the gap between static concepts and functioning reality, I deeply integrate AI frameworks into my workflow. Tools like Antigravity (which I used to code this very portfolio) and Base44 serve as my creative amplifiers, empowering me to turn abstract design thinking into living, interactive digital products autonomously.
                         </motion.p>
-                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
+                        <motion.div className="flex mt-[var(--gap-xl)]">
                             <motion.div className="w-full sm:w-[200px]">
                                 <Button variant="primary" targetId="background" className="w-full justify-center">
                                     How did you start?
@@ -98,7 +98,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Section 2 */}
-                    <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                    <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
@@ -112,7 +112,7 @@ export default function AboutPage() {
                                     }
                                 }
                             }}
-                            className="mb-0"
+                            className="mb-[var(--gap-md)]"
                         >
                             {"My ".split("").map((char, index) => (
                                 <motion.span
@@ -154,7 +154,7 @@ export default function AboutPage() {
                             Honestly, just making things look good and work smoothly wasn't enough anymore. I came to HIT to geek out on the
                             why behind it all; the conceptual storytelling that turns a nice design into something with an actual soul.
                         </motion.p>
-                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
+                        <motion.div className="mt-[var(--gap-xl)]">
                             <motion.div className="w-full sm:w-[200px]">
                                 <Button variant="primary" targetId="hobbies" className="w-full justify-center">
                                     Do you ever log off?
@@ -164,7 +164,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Section 3 */}
-                    <div id="hobbies" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center gap-8 py-12">
+                    <div id="hobbies" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
@@ -178,7 +178,7 @@ export default function AboutPage() {
                                     }
                                 }
                             }}
-                            className="mb-0"
+                            className="mb-[var(--gap-lg)]"
                         >
                             {"Outside the ".split("").map((char, index) => (
                                 <motion.span
@@ -216,8 +216,8 @@ export default function AboutPage() {
                             When I'm not obsessing over micro-typography or experimenting with new AI models, I'm usually practicing martial arts,
                             following football, or listening to music. I'm constantly seeking to step out of my comfort zone, it applies to my hobbies, it applies to my lifestyle and it applies to how I design.
                         </motion.p>
-                        <motion.div className="flex gap-4 sm:flex-row flex-col mb-6">
-                            <motion.div className="w-full sm:w-auto">
+                        <motion.div className="mt-[var(--gap-xl)]">
+                            <motion.div className="w-full sm:w-[200px]">
                                 <Button variant="primary" href="/" className="w-full justify-center">
                                     Show me the work!
                                 </Button>

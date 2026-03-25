@@ -90,7 +90,7 @@ export default function Header() {
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center gap-4 lg:gap-8 h-full ml-[1.5rem] lg:ml-[2rem]">
+                        <nav className="hidden md:flex items-center gap-4 lg:gap-8 h-full ml-[1.5rem] lg:ml-[1.5rem]">
                             <NavItem
                                 href="/product-design"
                                 onMouseEnter={handleOtherItemEnter}

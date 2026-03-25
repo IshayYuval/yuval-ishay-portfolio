@@ -1,8 +1,10 @@
 import { caseStudies } from "@/data/portfolio";
-import VerticalCarousel from "./VerticalCarousel";
+import HorizontalScroll from "./HorizontalScroll";
 
 export default function FeaturedWorks() {
-    const favoriteWorks = caseStudies.filter((study) => study.favorite);
+    const favoriteWorks = caseStudies
+        .filter((study) => study.favorite)
+        .sort((a, b) => (a.appearanceOrder ?? 99) - (b.appearanceOrder ?? 99));
 
     if (favoriteWorks.length === 0) {
         return null;
@@ -10,7 +12,7 @@ export default function FeaturedWorks() {
 
     return (
         <div className="w-full h-full relative">
-            <VerticalCarousel caseStudies={favoriteWorks} />
+            <HorizontalScroll caseStudies={favoriteWorks} />
         </div>
     );
 }

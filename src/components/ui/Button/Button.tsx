@@ -6,6 +6,7 @@ import styles from "./Button.module.css";
 
 type ButtonBaseProps = {
     variant?: "primary" | "secondary";
+    theme?: "light" | "dark";
     children: React.ReactNode;
     className?: string;
     targetId?: string;
@@ -25,15 +26,21 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 export default function Button({
     variant = "primary",
+    theme = "light",
     className = "",
     children,
     targetId,
     ...props
 }: ButtonProps) {
-    // Base styles are now handled by CSS classes, but we keep the logic for variant class names
-    // We can simplify this since the CSS classes handle most of it
-
-    const variantClass = variant === "primary" ? styles['btn-primary'] : styles['btn-secondary'];
+    const isDark = theme === "dark";
+    
+    let variantClass = "";
+    if (variant === "primary") {
+        variantClass = isDark ? styles['btn-primary-dark'] : styles['btn-primary'];
+    } else {
+        variantClass = isDark ? styles['btn-secondary-dark'] : styles['btn-secondary'];
+    }
+    
     const combinedClassName = `${styles.btn} ${variantClass} ${className}`;
 
     if (props.href) {

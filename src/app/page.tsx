@@ -1,16 +1,48 @@
 "use client";
-
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
 import ReviewCard from "@/components/ui/ReviewCard/ReviewCard";
 import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
 import HeroAnimatedContent from "@/components/ui/HeroAnimatedContent/HeroAnimatedContent";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
-import { reviews } from "@/data/portfolio";
+import { caseStudies, collections, favorites } from "@/data/portfolio";
+import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
+import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
+import Image from "next/image";
+
+const cardContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function Home() {
+  const favoriteWorks = favorites
+    .sort((a, b) => a.appearanceOrder - b.appearanceOrder)
+    .reduce((acc, fav) => {
+      const study = caseStudies.find(s => s.slug === fav.slug);
+      if (study) acc.push(study);
+      return acc;
+    }, [] as typeof caseStudies);
+
   return (
     <>
       <div className="relative w-full h-screen">
@@ -25,78 +57,85 @@ export default function Home() {
           }}
         >
           <HeroAnimatedContent />
-          <ScrollDownButton targetId="about-me" />
+          <ScrollDownButton targetId="featured-works" />
         </section>
       </div>
 
       <div className="relative z-10 bg-[var(--color-brand-secondary-950)]">
-        {/* About Me */}
-        <Section id="about-me" className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-start w-full"
-          >
-            <div className="gap-12 max-w-2xl">
-              <h2 className="mb-4">SO WHO AM I EXACTLY?</h2>
-              <p className="text-body mb-6">
-                Hey! I'm Yuval, Multidisciplinary Designer, building products and experiences with concept-driven design and AI-driven software development.
-                I started designing at 13, and over the years I've grown into building digital products, brands, and experiences that connect people, technology, and business.
-                Outside of work I'm a football fan and a traveler, love exploring the world and trying new things.
-              </p>
+        {/* Featured Works */}
+        <section id="featured-works" className="relative w-full">
+          {/* Absolute Header Container */}
+          <div className="absolute top-0 left-0 w-full z-20 pointer-events-none">
+            <div className="w-full flex flex-col pt-6 pb-4 md:pt-8 md:pb-6 px-8 lg:px-32 xl:px-46">
+              <h2 className="m-0 pt-4">My favorite projects</h2>
             </div>
-            <Button variant="secondary" href="/about">
-              More about my story
-            </Button>
-          </motion.div>
-        </Section>
+          </div>
 
-        {/* Me as a designer */}
-        <Section className="flex items-center justify-center min-h-[calc(100vh-var(--header-height))] md:min-h-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-start w-full"
+          {/* Content */}
+          <div className="relative z-10 flex flex-col">
+            {favoriteWorks.map((work) => (
+              <FavoriteCaseStudy
+                key={work.slug}
+                work={work}
+                collectionTitle={collections.find(c => c.slug === work.collectionSlug)?.shortTitle || collections.find(c => c.slug === work.collectionSlug)?.title || "View"}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Wanna see more? */}
+        <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
+          <motion.h2
+            className="mb-12 text-white"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              hidden: { opacity: 1 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.04 }
+              }
+            }}
           >
-            <div className="gap-12 max-w-2xl">
-              <h2 className="mb-4">VISUAL IDENTITY & PRODUCT DESIGN ARE MY TRUE PASSION.</h2>
-              <p className="text-body text-lg mb-6">
-                Although at first glance branding and product design seem different niches, branding and product design go hand in hand.
-                Just like your logo, your user experience should appeal to the same people your brand appeals to.
-                In the world of AI, I took my abilities to the next level, by shipping my designs to the real-world, mastering tools like Base44, Antigravity, and more.
-                <br />
-                <br />
-                That's right, I'm a one man show, and that's what gets me out of bed every morning.
-                <br />
-                Do you wanna see that passion visually? I've hand picked some of my case studies just for you!
-              </p>
-              <div className="flex gap-4 sm:flex-row flex-col">
-                <Button variant="secondary" href="/product-design">
-                  Product Design Case Studies
-                </Button>
-                <Button variant="secondary" href="/branding">
-                  Branding Case Studies
-                </Button>
-              </div>
-            </div>
+            {"Wanna see more?".split("").map((char, index) => (
+              <motion.span
+                key={`wanna-char-${index}`}
+                variants={{
+                  hidden: { opacity: 0, display: "none" },
+                  visible: { opacity: 1, display: "inline-block" }
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h2>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {collections.map(collection => (
+              <motion.div key={collection.slug} variants={cardVariants}>
+                <CollectionCard collection={collection} />
+              </motion.div>
+            ))}
           </motion.div>
-        </Section>
+        </section>
 
         {/* Clients */}
-        <Section>
-          <div className="text-center mb-12">
+        {/* <Section>
+          <div className="text-left mb-12">
             <h2>Some of my very happy clients ;)</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reviews.map((review) => (
               <ReviewCard key={review.id} review={review} />
             ))}
           </div>
-        </Section>
+        </Section> */}
       </div>
       <ScrollToTop />
     </>

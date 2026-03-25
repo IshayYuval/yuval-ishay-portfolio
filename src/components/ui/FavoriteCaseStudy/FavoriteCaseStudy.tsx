@@ -89,18 +89,18 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
             {work.excerpt}
           </motion.p>
           <motion.div
-            className="flex gap-2 md:gap-4 w-full md:flex-wrap flex-nowrap"
+            className="flex gap-2 md:gap-4 w-full flex-wrap"
             variants={buttonContainerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <motion.div variants={buttonVariants} className="min-w-[128px] md:min-w-[180px] w-full md:w-auto">
+            <motion.div variants={buttonVariants} className="min-w-auto md:min-w-[180px] w-full md:w-auto">
               <Button className="w-full" variant="primary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.slug}`}>
                 Full Case Study
               </Button>
             </motion.div>
-            <motion.div variants={buttonVariants} className="min-w-[128px] md:min-w-[180px] w-full md:w-auto">
+            <motion.div variants={buttonVariants} className="min-w-auto md:min-w-[180px] w-full md:w-auto">
               <Button className="w-full" variant="secondary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.collectionSlug}`}>
                 {collectionTitle} Projects
               </Button>

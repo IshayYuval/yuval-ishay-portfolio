@@ -51,7 +51,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
       <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-16 xl:gap-24 items-center ">
 
         {/* COLUMN 1: Text Container */}
-        <div className="order-2 md:order-1 flex flex-col justify-center px-8 md:pr-0 md:pl-8 lg:pl-32 xl:pl-64">
+        <div className="order-2 md:order-1 flex flex-col justify-center px-6 md:pr-0 md:pl-8 lg:pl-32 xl:pl-64">
           <motion.h3
             className={`${styles.title} text-4xl md:text-5xl lg:text-6xl mb-3`}
             style={headingColor ? { color: headingColor } : undefined}
@@ -89,7 +89,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
             {work.excerpt}
           </motion.p>
           <motion.div
-            className="flex gap-2 md:gap-4 w-full flex-wrap"
+            className="flex gap-2 md:gap-4 w-full"
             variants={buttonContainerVariants}
             initial="hidden"
             whileInView="visible"

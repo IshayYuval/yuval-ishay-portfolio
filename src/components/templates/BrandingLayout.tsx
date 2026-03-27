@@ -16,7 +16,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
             {/* Hero Image */}
             {data.heroImage && (
                 <div
-                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    className="relative w-full h-[24vh] md:h-[40vh]"
                     style={{ backgroundColor: data.heroBackgroundColor }}
                 >
                     <Image
@@ -29,9 +29,9 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                 </div>
             )}
 
-            <div className="container-custom mx-auto px-6">
+            <div className="container-custom mx-auto">
                 {/* Intro Section */}
-                <section className="max-w-4xl mx-auto pt-22">
+                <section className="max-w-4xl mx-auto pt-12 sm:pt-22">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>

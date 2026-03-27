@@ -209,14 +209,7 @@ h5 {
   padding-right: 6rem;
 }
 
-@media (max-width: 1000px) {
-  .nav-bar-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
 
   .nav-bar-container {
     padding-left: 2rem;
@@ -307,6 +300,12 @@ h5 {
 }
 
 @media (max-width: 480px) {
+
+  .nav-bar-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .subhero {
     font-size: 0.875rem;
     line-height: 1.35rem;

@@ -1,7 +1,7 @@
 .card {
     display: block;
     text-decoration: none;
-    border-radius: 1.5rem;
+    border-radius: var(--radius-md);
 }
 
 .card-image-wrapper {

@@ -54,7 +54,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                     const currentSlideIndex = (item.src && item.src.length > 0) ? slideIndex++ : -1;
 
                     return (
-                        <div key={rowIndex} className="w-full relative overflow-hidden rounded-lg">
+                        <div key={rowIndex} className="w-full relative overflow-hidden rounded-sm sm:rounded-lg">
                             {item.vimeoSrc ? (
                                 <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                                     <iframe
@@ -98,7 +98,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
                             return (
                                 <div
                                     key={i}
-                                    className="relative overflow-hidden rounded-lg"
+                                    className="relative overflow-hidden rounded-sm sm:rounded-lg"
                                     style={{ flex: `${ar} 1 0%` }}
                                 >
                                     {item.vimeoSrc ? (

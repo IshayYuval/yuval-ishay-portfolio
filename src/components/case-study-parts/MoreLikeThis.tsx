@@ -35,8 +35,8 @@ export default function MoreLikeThis({ currentSlug, collectionSlug }: MoreLikeTh
 
     return (
         <section className="py-8">
-            <div className="container-custom mx-auto px-6">
-                <h3 className="mb-6">You may also like</h3>
+            <div>
+                <h3 className="ml-1 mb-6">You may also like</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
                     {relatedStudies.map(study => (
                         <CaseStudyCard key={study.slug} study={study} hideExcerpt={true} hideTags={true} />

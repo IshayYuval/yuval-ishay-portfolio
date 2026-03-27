@@ -153,7 +153,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <div className="absolute top-0 right-0 h-[var(--header-height)] flex items-center px-6 md:hidden z-[61]">
+                <div className="absolute top-0 right-0 h-[var(--header-height)] flex items-center px-5 md:hidden z-[61]">
                     <MobileMenuToggle
                         isOpen={isMobileMenuOpen}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

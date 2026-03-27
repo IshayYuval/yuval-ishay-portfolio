@@ -18,7 +18,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
             {/* Hero Section */}
             {(data.heroImage || data.heroLottie) && (
                 <div
-                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    className="relative w-full h-[24vh] md:h-[40vh]"
                     style={{ backgroundColor: data.heroBackgroundColor }}
                 >
                     {data.heroLottie ? (

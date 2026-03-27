@@ -15,7 +15,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
             {/* Hero Section */}
             {(data.heroImage) && (
                 <div
-                    className="relative w-full h-[20vh] md:h-[40vh]"
+                    className="relative w-full h-[24vh] md:h-[40vh]"
                     style={{ backgroundColor: data.heroBackgroundColor }}
                 >
                     {data.heroImage.endsWith(".mp4") ? (
@@ -39,7 +39,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                 </div>
             )}
 
-            <div className={`container-custom mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}>
+            <div className={`container-custom mx-auto ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}>
                 <header className="pt-24 max-w-4xl mx-auto">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}

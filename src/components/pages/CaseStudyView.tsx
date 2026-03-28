@@ -3,6 +3,7 @@ import BrandingLayout from "@/components/templates/BrandingLayout";
 import UiUxLayout from "@/components/templates/UiUxLayout";
 import VisualLayout from "@/components/templates/VisualLayout";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
+import AnimatedPageTransition from "@/components/ui/AnimatedPageTransition/AnimatedPageTransition";
 import "./case-study.css";
 
 interface CaseStudyViewProps {
@@ -35,7 +36,9 @@ export default function CaseStudyView({ study }: CaseStudyViewProps) {
 
     return (
         <>
-            {content}
+            <AnimatedPageTransition>
+                {content}
+            </AnimatedPageTransition>
             <ScrollToTop />
         </>
     );

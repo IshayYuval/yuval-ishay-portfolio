@@ -10,6 +10,7 @@ import { caseStudies, collections, favorites } from "@/data/portfolio";
 import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
 import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
 import Image from "next/image";
+import TypewriterWordReplace from "@/components/ui/TypewriterWordReplace/TypewriterWordReplace";
 
 const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -67,7 +68,13 @@ export default function Home() {
           {/* Absolute Header Container */}
           <div className="absolute top-0 left-0 w-full z-20 pointer-events-none">
             <div className="w-full flex flex-col pt-6 pb-4 md:pt-8 md:pb-6 px-6 lg:px-32 xl:px-46">
-              <h2 className="m-0 pt-4">My favorite projects</h2>
+              <h2 className="m-0 pt-4">
+                <TypewriterWordReplace
+                  baseText="My favorite "
+                  words={["projects", "exhibitions", "products", "editorials"]}
+                  delay={0}
+                />
+              </h2>
             </div>
           </div>
 

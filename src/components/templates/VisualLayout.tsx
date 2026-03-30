@@ -134,6 +134,22 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                     </section>
                 )}
 
+                {/* Multiple Galleries */}
+                {data.galleries && data.galleries.length > 0 && (
+                    <div className="flex flex-col gap-12 py-12">
+                        {data.galleries.map((gallerySection, idx) => (
+                            <section key={idx} className="w-full">
+                                {gallerySection.title && (
+                                    <div className="max-w-4xl mx-auto mb-6">
+                                        <h2 className="text-5xl md:text-7xl font-bold text-center mb-8">{renderTextWithBreaks(gallerySection.title)}</h2>
+                                    </div>
+                                )}
+                                <DynamicGrid items={gallerySection.items} />
+                            </section>
+                        ))}
+                    </div>
+                )}
+
                 {/* Prototype */}
                 {data.prototype && (
                     <PrototypeSection title={data.prototype.title} src={data.prototype.src} />

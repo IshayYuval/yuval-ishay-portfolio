@@ -43,6 +43,11 @@ export type ProcessStep = {
   textAfter?: string;
 };
 
+export type GallerySection = {
+  title?: string;
+  items: GalleryItem[];
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -66,6 +71,7 @@ export type CaseStudy = {
   processSteps?: ProcessStep[]; // mainly for UX/UI
   contentSections?: ZigZagSection[];
   gallery?: GalleryItem[];
+  galleries?: GallerySection[];
   backgroundColor?: string;
   projectUrlText?: string;
   stopMotionData?: {
@@ -1047,6 +1053,9 @@ export const caseStudies: CaseStudy[] = [
     excerpt: "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "conceptual-design",
+    backgroundColor: "#272727",
+    navbarTextColor: "black",
+    heroImage: "/case-studies/conceptual-design/tarantino/hero-cover.svg",
     stopMotionData: {
       images: [
         "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",
@@ -1058,6 +1067,20 @@ export const caseStudies: CaseStudy[] = [
     date: "2025-03-22",
     introText: "This project is a visual tribute to Quentin Tarantino, built around his quote: \"I don’t take it seriously… it’s just good direction… There’s a lot of feet in a lot of good directors’ movies.\" <br/> <br/>The goal was to translate Tarantino and his words into a clear visual idea. The concept takes his alleged foot fetish and expresses it through a collection of high-heel shoes, chosen specifically for their stronger connection to foot fetish imagery compared to sneakers or sandals.",
     gallery: [
+      {
+        src: "/case-studies/conceptual-design/tarantino/heels-box.webp",
+        alt: "kill bill heels box",
+        colSpan: "half",
+        width: 4000,
+        height: 3000,
+      },
+      {
+        src: "/case-studies/conceptual-design/tarantino/shoes-design.webp",
+        alt: "kill bill heels",
+        colSpan: "half",
+        width: 1792,
+        height: 2390,
+      },
       {
         src: "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",
         alt: "Image 1",
@@ -1086,17 +1109,41 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
-
-
-  // // conceptual art - city activism
+  // // photography - Fashion Catalog
   // {
-  //   slug: "city-activism",
-  //   title: "City Activism",
-  //   excerpt: "A video-based activist project that places wealth and hunger side by side, confronting the viewer with social gaps and personal responsibility.",
-  //   tags: ["HIT", "Visual Communication BA", "1st Year"],
-  //   collectionSlug: "conceptual-design",
-  //   date: "2025-04-25",
-  //   introText: "Dummy intro for City Activism.",
+  //   slug: "fashion-catalog",
+  //   title: "Fashion Catalog",
+  //   excerpt: "A fashion catalog for a pajama collection built around one simple idea: comfort is addictive. Whether you’re lounging at home, grabbing coffee, watching a movie, or cooking somewhere off the grid (wink wink), coziness becomes a lifestyle.",
+  //   tags: ["HIT", "Visual Communication BA", "2nd Year"],
+  //   collectionSlug: "photography",
+  //   cover: "/case-studies/photography/fashion-catalog/cover-image.webp",
+  //   date: "2026-02-11",
+  //   backgroundColor: "black",
+  //   introText: "For our final project in the Photography and Direction course, we created and shot a fashion catalog for a pajama collection built around a clear statement: comfort is addictive, and pajamas belong everywhere, not just at home. <br/><br/>To communicate this idea, we drew a visual connection to Breaking Bad by placing our pajamas in remote, unexpected locations and shooting them in a visual language that contrasts their natural environment. We used wide-angle compositions, high and low points of view, and framing through objects to create a distinct and immersive perspective.<br/><br/>This project was created in collaboration with Noa Kuterman, a close friend, and a talented designer and photographer.",
+  //   projectUrl: "https://noakuterman.myportfolio.com",
+  //   projectUrlText: "Noa Kuterman's Portfolio",
+  //   galleries: [
+  //     {
+  //       title: "Selected visuals",
+  //       items: [
+  //         {
+  //           src: "/case-studies/photography/fashion-catalog/cover-image.webp",
+  //           alt: "Fashion Catalog Image 1",
+  //           colSpan: "full",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "The Magazine",
+  //       items: [
+  //         {
+  //           src: "/case-studies/photography/fashion-catalog/cover-case-study.webp",
+  //           alt: "Fashion Catalog Image 2",
+  //           colSpan: "full",
+  //         },
+  //       ],
+  //     },
+  //   ],
   // },
 
   // photography - hunger

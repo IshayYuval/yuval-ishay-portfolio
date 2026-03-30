@@ -40,6 +40,7 @@ export default function LightboxImage({ lightboxSlides, lightboxIndex = 0, class
                 {...props}
                 className={`cursor-zoom-in ${className || ""}`}
                 onClick={handleClick}
+                unoptimized
             />
 
             <Lightbox

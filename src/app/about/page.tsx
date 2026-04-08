@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./about.css";
 import { motion, Variants } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
+import AnimatedText from "@/components/ui/AnimatedText/AnimatedText";
 
 const buttonContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -81,29 +82,10 @@ export default function AboutPage() {
                             }}
                             className="mb-[var(--gap-md)]"
                         >
-                            {"Hey there, I'm ".split("").map((char, index) => (
-                                <motion.span
-                                    key={`part1-${index}`}
-                                    variants={{
-                                        hidden: { opacity: 0, display: "none" },
-                                        visible: { opacity: 1, display: "inline-block" }
-                                    }}
-                                >
-                                    {char === " " ? "\u00A0" : char}
-                                </motion.span>
-                            ))}
-                            <span className="emphasized-text">
-                                {"Yuval!".split("").map((char, index) => (
-                                    <motion.span
-                                        key={`part2-${index}`}
-                                        variants={{
-                                            hidden: { opacity: 0, display: "none" },
-                                            visible: { opacity: 1, display: "inline-block" }
-                                        }}
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </motion.span>
-                                ))}
+                            <AnimatedText text="Hey there, " />
+                            <span className="inline-block whitespace-nowrap">
+                                <AnimatedText text="I'm " />
+                                <AnimatedText text="Yuval!" className="emphasized-text" />
                             </span>
                         </motion.h1>
 
@@ -151,30 +133,8 @@ export default function AboutPage() {
                             }}
                             className="mb-[var(--gap-md)]"
                         >
-                            {"My ".split("").map((char, index) => (
-                                <motion.span
-                                    key={`part1-sec2-${index}`}
-                                    variants={{
-                                        hidden: { opacity: 0, display: "none" },
-                                        visible: { opacity: 1, display: "inline-block" }
-                                    }}
-                                >
-                                    {char === " " ? "\u00A0" : char}
-                                </motion.span>
-                            ))}
-                            <span className="emphasized-text">
-                                {"Background".split("").map((char, index) => (
-                                    <motion.span
-                                        key={`part2-sec2-${index}`}
-                                        variants={{
-                                            hidden: { opacity: 0, display: "none" },
-                                            visible: { opacity: 1, display: "inline-block" }
-                                        }}
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </motion.span>
-                                ))}
-                            </span>
+                            <AnimatedText text="My " />
+                            <AnimatedText text="Background" className="emphasized-text" />
                         </motion.h1>
 
                         <motion.p
@@ -223,30 +183,8 @@ export default function AboutPage() {
                             }}
                             className="mb-[var(--gap-lg)]"
                         >
-                            {"Outside the ".split("").map((char, index) => (
-                                <motion.span
-                                    key={`part1-sec3-${index}`}
-                                    variants={{
-                                        hidden: { opacity: 0, display: "none" },
-                                        visible: { opacity: 1, display: "inline-block" }
-                                    }}
-                                >
-                                    {char === " " ? "\u00A0" : char}
-                                </motion.span>
-                            ))}
-                            <span className="emphasized-text">
-                                {"Studio".split("").map((char, index) => (
-                                    <motion.span
-                                        key={`part2-sec3-${index}`}
-                                        variants={{
-                                            hidden: { opacity: 0, display: "none" },
-                                            visible: { opacity: 1, display: "inline-block" }
-                                        }}
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </motion.span>
-                                ))}
-                            </span>
+                            <AnimatedText text="Outside the " />
+                            <AnimatedText text="Studio" className="emphasized-text" />
                         </motion.h1>
 
                         <motion.p

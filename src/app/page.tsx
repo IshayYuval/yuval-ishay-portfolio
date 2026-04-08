@@ -11,7 +11,7 @@ import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
 import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
 import Image from "next/image";
 import TypewriterWordReplace from "@/components/ui/TypewriterWordReplace/TypewriterWordReplace";
-
+import AnimatedText from "@/components/ui/AnimatedText/AnimatedText";
 const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -105,17 +105,7 @@ export default function Home() {
               }
             }}
           >
-            {"Wanna see more?".split("").map((char, index) => (
-              <motion.span
-                key={`wanna-char-${index}`}
-                variants={{
-                  hidden: { opacity: 0, display: "none" },
-                  visible: { opacity: 1, display: "inline-block" }
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
+            <AnimatedText text="Wanna see more?" />
           </motion.h2>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"

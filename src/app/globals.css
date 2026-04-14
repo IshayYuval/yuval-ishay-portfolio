@@ -301,6 +301,13 @@ h5 {
 
 @media (max-width: 480px) {
 
+  .text-body-large {
+    font-weight: 400;
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+    color: var(--color-typography-body);
+  }
+
   .nav-bar-container {
     padding-left: 1rem;
     padding-right: 1rem;

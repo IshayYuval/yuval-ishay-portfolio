@@ -55,3 +55,10 @@
         padding: 0.75rem 1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.625rem .875rem;
+        font-size: var(--text-sm);
+    }
+}

@@ -2,6 +2,8 @@
 
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 const textContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -86,6 +88,7 @@ const captionVariants: Variants = {
 };
 
 export default function HeroAnimatedContent() {
+    const isBackNav = useContext(AnimationContext);
     const h1Text = "I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.";
     const subText = "Multidisciplinary designer, specializing in branding, product design and AI-driven development.";
 
@@ -98,7 +101,7 @@ export default function HeroAnimatedContent() {
             <motion.h1
                 className="mb-1 ml-0.5"
                 variants={textContainerVariants}
-                initial="hidden"
+                initial={isBackNav ? false : "hidden"}
                 animate="visible"
             >
                 {h1Text.split(" ").map((word, index) => (
@@ -111,7 +114,7 @@ export default function HeroAnimatedContent() {
             <motion.div
                 className="subhero ml-0.5 block"
                 variants={subheroContainerVariants}
-                initial="hidden"
+                initial={isBackNav ? false : "hidden"}
                 animate="visible"
             >
                 {subText.split(" ").map((word, index) => (
@@ -124,7 +127,7 @@ export default function HeroAnimatedContent() {
             <motion.div
                 className="flex gap-4 sm:flex-row flex-col mt-16 mb-2"
                 variants={buttonContainerVariants}
-                initial="hidden"
+                initial={isBackNav ? false : "hidden"}
                 animate="visible"
             >
                 <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">

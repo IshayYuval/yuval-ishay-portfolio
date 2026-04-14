@@ -4,6 +4,8 @@ import { motion, Variants } from "framer-motion";
 import { Collection, caseStudies } from "@/data/portfolio";
 import Section from "@/components/layout/Section";
 import CaseStudyCard from "@/components/ui/CaseStudyCard/CaseStudyCard";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -30,11 +32,12 @@ const wordVariants: Variants = {
 };
 
 function AnimatedText({ text, delay = 0, className = "" }: { text: string, delay?: number, className?: string }) {
+    const isBackNav = useContext(AnimationContext);
     if (!text) return null;
     return (
         <motion.span
             className={`inline-block ${className}`}
-            initial="hidden"
+            initial={isBackNav ? false : "hidden"}
             animate="show"
             variants={{
                 hidden: { opacity: 0 },
@@ -67,13 +70,14 @@ interface CollectionViewProps {
 }
 
 export default function CollectionView({ collection }: CollectionViewProps) {
+  const isBackNav = useContext(AnimationContext);
     const studies = caseStudies.filter((s) => s.collectionSlug === collection.slug);
 
     return (
         <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)]">
             <Section>
                 <motion.div
-                    initial={{ opacity: 0 }}
+                    initial={isBackNav ? false : { opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
                     className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-30 lg:px-56 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
@@ -89,7 +93,7 @@ export default function CollectionView({ collection }: CollectionViewProps) {
 
                     <motion.h1
                         className="mb-1 uppercase"
-                        initial="hidden"
+                        initial={isBackNav ? false : "hidden"}
                         animate="visible"
                         variants={{
                             hidden: { opacity: 1 },
@@ -127,7 +131,7 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                 <motion.div
                     className="grid md:grid-cols-2 gap-x-4 gap-y-4 pt-60"
                     variants={containerVariants}
-                    initial="hidden"
+                    initial={isBackNav ? false : "hidden"}
                     animate="show"
                     transition={{
                         duration: 0.4,

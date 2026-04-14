@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 interface TypewriterProps {
     text: string;
@@ -18,6 +20,7 @@ export default function Typewriter({
     onComplete,
     showCursor = true,
 }: TypewriterProps) {
+  const isBackNav = useContext(AnimationContext);
     const [displayedText, setDisplayedText] = useState("");
     const [started, setStarted] = useState(false);
     const [completed, setCompleted] = useState(false);

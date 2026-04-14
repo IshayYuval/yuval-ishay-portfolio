@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next"
+import AnimationProvider from "@/components/utils/AnimationProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yuvalishay.com"), // Replace with your actual domain
@@ -36,12 +37,14 @@ export default function RootLayout({
         <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
       </head>
       <body className="antialiased">
-        <Header />
-        <main className="min-h-screen">
-          {children}
-          <Analytics />
-        </main>
-        <Footer />
+        <AnimationProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+            <Analytics />
+          </main>
+          <Footer />
+        </AnimationProvider>
       </body>
     </html>
   );

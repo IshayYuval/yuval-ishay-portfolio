@@ -2,15 +2,18 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 interface AnimatedPageTransitionProps {
     children: ReactNode;
 }
 
 export default function AnimatedPageTransition({ children }: AnimatedPageTransitionProps) {
+  const isBackNav = useContext(AnimationContext);
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={isBackNav ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
                 duration: 0.8,

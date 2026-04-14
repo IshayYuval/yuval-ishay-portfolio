@@ -7,8 +7,11 @@ interface ScrollDownButtonProps {
 }
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
+  const isBackNav = useContext(AnimationContext);
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 

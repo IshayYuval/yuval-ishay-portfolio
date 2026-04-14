@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 interface TypewriterWordReplaceProps {
     baseText: string;
@@ -22,6 +24,7 @@ export default function TypewriterWordReplace({
     pauseDuration = 2000,
     emptyPauseDuration = 500,
 }: TypewriterWordReplaceProps) {
+  const isBackNav = useContext(AnimationContext);
     const [displayedBase, setDisplayedBase] = useState("");
     const [displayedWord, setDisplayedWord] = useState("");
     const [wordIndex, setWordIndex] = useState(0);

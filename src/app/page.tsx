@@ -12,6 +12,8 @@ import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStu
 import Image from "next/image";
 import TypewriterWordReplace from "@/components/ui/TypewriterWordReplace/TypewriterWordReplace";
 import AnimatedText from "@/components/ui/AnimatedText/AnimatedText";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -36,6 +38,7 @@ const cardVariants: Variants = {
 };
 
 export default function Home() {
+  const isBackNav = useContext(AnimationContext);
   const favoriteWorks = favorites
     .sort((a, b) => a.appearanceOrder - b.appearanceOrder)
     .reduce((acc, fav) => {
@@ -94,7 +97,7 @@ export default function Home() {
         <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
           <motion.h2
             className="mb-12 text-white"
-            initial="hidden"
+            initial={isBackNav ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={{
@@ -110,7 +113,7 @@ export default function Home() {
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             variants={cardContainerVariants}
-            initial="hidden"
+            initial={isBackNav ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >

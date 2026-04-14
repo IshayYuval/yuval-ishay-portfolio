@@ -3,6 +3,8 @@ import Button from "@/components/ui/Button/Button";
 import { CaseStudy, favorites } from "@/data/portfolio";
 import styles from "./FavoriteCaseStudy.module.css";
 import { motion, Variants } from "framer-motion";
+import { useContext } from "react";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 interface FavoriteCaseStudyProps {
   work: CaseStudy;
@@ -10,6 +12,7 @@ interface FavoriteCaseStudyProps {
 }
 
 export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCaseStudyProps) {
+  const isBackNav = useContext(AnimationContext);
   const favoriteConfig = favorites.find(f => f.slug === work.slug);
 
   const bgColor = favoriteConfig?.backgroundColor || work.backgroundColor || 'var(--color-brand-secondary-950)';
@@ -55,7 +58,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
           <motion.h3
             className={`${styles.title} text-4xl md:text-5xl lg:text-6xl mb-3`}
             style={headingColor ? { color: headingColor } : undefined}
-            initial="hidden"
+            initial={isBackNav ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={{
@@ -81,7 +84,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
           <motion.p
             className="text-body-large mb-10"
             style={textColor ? { color: textColor } : undefined}
-            initial={{ opacity: 0, y: 30 }}
+            initial={isBackNav ? false : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
@@ -91,7 +94,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
           <motion.div
             className="flex gap-2 md:gap-4 w-full"
             variants={buttonContainerVariants}
-            initial="hidden"
+            initial={isBackNav ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >

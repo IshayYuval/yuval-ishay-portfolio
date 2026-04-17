@@ -93,6 +93,7 @@ export type FavoriteConfig = {
   coverSrc?: string;
   appearanceOrder: number;
   buttonTheme?: "light" | "dark";
+  blendMode?: "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
 };
 
 export const favorites: FavoriteConfig[] = [
@@ -122,7 +123,7 @@ export const favorites: FavoriteConfig[] = [
   },
   {
     slug: "basic-food-packaging-series",
-    backgroundColor: "#e3dcd6",
+    backgroundColor: "#eee7e1ff",
     headingColor: "#000000",
     textColor: "#000000",
     coverSrc: "/favorites/basic-food-packaging.webp",
@@ -131,12 +132,13 @@ export const favorites: FavoriteConfig[] = [
   },
   {
     slug: "long-distance-love",
-    backgroundColor: "#ede6e9",
+    backgroundColor: "#DFDDDF",
     headingColor: "#000000",
     textColor: "#000000",
     coverSrc: "/favorites/long-distance-cover.mp4",
     appearanceOrder: 5,
     buttonTheme: "dark",
+    blendMode: "darken",
   },
   {
     slug: "spod",

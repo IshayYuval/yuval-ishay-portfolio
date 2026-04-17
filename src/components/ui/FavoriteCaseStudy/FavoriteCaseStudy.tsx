@@ -125,6 +125,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
                 muted
                 playsInline
                 className="w-full h-full max-h-[60vh] lg:max-h-[calc(100vh-var(--header-height)-6rem)] object-contain"
+                style={favoriteConfig?.blendMode ? { mixBlendMode: favoriteConfig.blendMode } : undefined}
               />
             ) : (
               <Image
@@ -134,6 +135,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
                 height={1200}
                 unoptimized
                 className="w-full h-full max-h-[60vh] lg:max-h-[calc(100vh-var(--header-height)-6rem)] object-contain"
+                style={favoriteConfig?.blendMode ? { mixBlendMode: favoriteConfig.blendMode } : undefined}
               />
             )
           )}

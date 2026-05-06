@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ChevronRight, ChevronLeft } from "lucide-react";
 import { collections } from "@/data/portfolio";
 
 interface MobileMenuProps {
@@ -12,27 +11,10 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     const pathname = usePathname();
-    const [view, setView] = useState<"main" | "visual-communication">("main");
-    const [isAnimating, setIsAnimating] = useState(false);
 
-    // Reset view when menu closes
-    useEffect(() => {
-        if (!isOpen) {
-            const timer = setTimeout(() => setView("main"), 300);
-            return () => clearTimeout(timer);
-        }
-    }, [isOpen]);
-
-    const visualCommItems = collections.filter(c => c.parentNav === "visual-communication");
-
-    const handleViewChange = (newView: "main" | "visual-communication") => {
-        setIsAnimating(true);
-        setView(newView);
-        setTimeout(() => setIsAnimating(false), 300);
-    };
+    const myWorkItems = collections.filter(c => c.parentNav === "my-work");
 
     const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
-    const isVisualCommActive = visualCommItems.some(item => isActive(`/${item.slug}`));
 
     const MobileNavItem = ({ href, children, onClick }: { href: string, children: React.ReactNode, onClick: () => void }) => {
         const active = isActive(href);
@@ -55,77 +37,40 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             style={{ top: 0 }}
         >
             <div className="container-custom h-full flex flex-col relative overflow-hidden">
-
-                {/* Top Bar for Back Button */}
-                <div className="h-[var(--header-height)] flex items-center absolute top-0 left-0 w-full z-20 pointer-events-none">
-                    <div className="container-custom w-full flex items-center pointer-events-auto">
-                        <button
-                            onClick={() => handleViewChange("main")}
-                            className={`flex items-center gap-2 nav-link text-[var(--foreground)] transition-all duration-500 delay-200 ease-out ${view === "visual-communication" ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-4 pointer-events-none"}`}
-                            aria-label="Back to main menu"
-                        >
-                            <ChevronLeft size={30} />
-                        </button>
-                    </div>
-                </div>
-
-                {/* Main Menu View */}
                 <div
-                    className={`absolute inset-0 pt-[var(--header-height)] px-6 transition-transform duration-300 ease-in-out ${view === "main" ? "translate-x-0" : "-translate-x-full"
-                        }`}
+                    className="absolute inset-0 pt-[var(--header-height)] px-6"
                 >
-                    <nav className={`flex flex-col justify-between mt-8 uppercase transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                    <nav className={`flex flex-col mt-8 uppercase transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                        <div className="flex flex-col gap-6">
+                            <span className="text-xs tracking-widest opacity-50 uppercase mb-2">My Work</span>
+
+                            {myWorkItems.map((item) => (
+                                <MobileNavItem
+                                    key={item.slug}
+                                    href={`/${item.slug}`}
+                                    onClick={onClose}
+                                >
+                                    {item.title}
+                                </MobileNavItem>
+                            ))}
+                        </div>
+
+                        <div className="w-full h-px bg-[var(--foreground)] opacity-20 my-8" />
+
                         <div className="flex flex-col gap-8">
-
-                            <MobileNavItem href="/product-design" onClick={onClose}>
-                                Product Design
-                            </MobileNavItem>
-                            <MobileNavItem href="/branding" onClick={onClose}>
-                                Branding
-                            </MobileNavItem>
-
-                            <button
-                                onClick={() => handleViewChange("visual-communication")}
-                                className={`flex nav-link gap-1 items-center relative w-fit group pl-4 ${isVisualCommActive ? 'text-[var(--color-brand-primary-500)]' : 'hover:text-[var(--foreground)]'}`}
-                            >
-                                <span>Visual Communication</span>
-                                <ChevronRight size={20} />
-                                <span className={`absolute left-0 top-0 h-full w-[2px] origin-center transform transition-transform duration-300 ease-out ${isVisualCommActive ? 'scale-y-100 bg-[var(--color-brand-primary-500)]' : 'scale-y-0 group-hover:scale-y-100 bg-[var(--foreground)]'}`} />
-                            </button>
-
                             <MobileNavItem href="/about" onClick={onClose}>
                                 My Story
                             </MobileNavItem>
-                        </div>
-                        <div className="flex gap-4 items-center mt-24">
-                            <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/yuvalishay-art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 invert" />
-                            </a>
-                        </div>
-                    </nav>
-                </div>
 
-                {/* Submenu View */}
-                <div
-                    className={`absolute inset-0 pt-[var(--header-height)] px-6 transition-transform duration-300 ease-in-out ${view === "visual-communication" ? "translate-x-0" : "translate-x-full"
-                        }`}
-                >
-                    {/* Spacer for top bar */}
-                    <div className="mb-8 mt-8 h-6"></div>
-
-                    <nav className="flex flex-col gap-6 text-xl font-medium">
-                        {visualCommItems.map((item) => (
-                            <MobileNavItem
-                                key={item.slug}
-                                href={`/${item.slug}`}
-                                onClick={onClose}
-                            >
-                                {item.title}
-                            </MobileNavItem>
-                        ))}
+                            <div className="flex gap-4 items-center">
+                                <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                    <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/yuvalishay-art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                    <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 invert" />
+                                </a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>

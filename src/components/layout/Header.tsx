@@ -10,6 +10,7 @@ import NavDropdown from "../nav/NavDropdown";
 import MobileMenuToggle from "../nav/MobileMenuToggle";
 import MobileMenu from "../nav/MobileMenu";
 import { collections, caseStudies } from "@/data/portfolio";
+import styles from "../nav/NavDropdown.module.css";
 
 export default function Header() {
     const pathname = usePathname();
@@ -19,7 +20,7 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const visualCommItems = collections.filter(c => c.parentNav === "visual-communication");
+    const myWorkItems = collections.filter(c => c.parentNav === "my-work");
 
     // Find current case study to check for specific navbar color requirements
     const currentSlug = pathname.replace(/\/$/, '').split('/').pop() || "";
@@ -90,25 +91,10 @@ export default function Header() {
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center gap-4 lg:gap-8 h-full ml-[1.5rem] lg:ml-[1.5rem]">
-                            <NavItem
-                                href="/product-design"
-                                onMouseEnter={handleOtherItemEnter}
-                                overrideColor={dynamicTextColor}
-                            >
-                                Product Design
-                            </NavItem>
-                            <NavItem
-                                href="/branding"
-                                onMouseEnter={handleOtherItemEnter}
-                                overrideColor={dynamicTextColor}
-                            >
-                                Branding
-                            </NavItem>
-
+                        <nav className="hidden md:flex items-center gap-8 h-full ml-[1.5rem] lg:ml-[1.5rem]">
                             <div onMouseEnter={handleDropdownEnter}>
                                 <NavDropdown
-                                    label="Visual Communication"
+                                    label="My Work"
                                     isOpen={isDropdownOpen}
                                     onOpenChange={setIsDropdownOpen}
                                     overrideColor={dynamicTextColor}
@@ -166,9 +152,9 @@ export default function Header() {
                     className={`w-full transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none'}`}
                     aria-hidden={!isDropdownOpen}
                 >
-                    <div className="container-custom py-12">
-                        <div className="flex flex-col gap-4">
-                            {visualCommItems.map((item) => (
+                    <div className={styles.container}>
+                        <div className={styles.menuGrid}>
+                            {myWorkItems.map((item) => (
                                 <NavItem
                                     key={item.slug}
                                     href={`/${item.slug}`}

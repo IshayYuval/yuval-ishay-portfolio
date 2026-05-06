@@ -24,8 +24,9 @@ export default function CaseStudyView({ study }: CaseStudyViewProps) {
             break;
 
         case "photography":
-        case "conceptual-design":
-        case "typography":
+        case "editorial-and-print":
+        case "video-installations":
+        case "packaging-design":
             content = <VisualLayout data={study} />;
             break;
 

@@ -1,0 +1,20 @@
+.container {
+    max-width: var(--container-width);
+    padding-block: 3rem;
+    padding-inline: 11.5rem;
+}
+
+.menuGrid {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    row-gap: 1rem;
+    column-gap: 4rem;
+    width: fit-content;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding-inline: 7.5rem;
+    }
+}

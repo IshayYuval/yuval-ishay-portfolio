@@ -14,10 +14,10 @@ interface NavDropdownProps {
 
 export default function NavDropdown({ label, isOpen, onOpenChange, id, overrideColor }: NavDropdownProps) {
     const pathname = usePathname();
-    // Check if any child route is active (assuming visual-communication routes start with /collections/)
+    // Check if any child route is active (assuming my-work routes start with /collections/)
     // This is a simplification; ideally pass specific active state or check against children
-    const isActive = pathname.includes("visual-communication") ||
-        ["typography", "conceptual-design", "photography"].some(slug => pathname.includes(slug));
+    const isActive = pathname.includes("my-work") ||
+        ["branding", "packaging-design", "product-design", "photography", "editorial-and-print", "video-installations"].some(slug => pathname.includes(slug));
 
     // Close on Escape
     useEffect(() => {

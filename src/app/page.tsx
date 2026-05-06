@@ -70,7 +70,7 @@ export default function Home() {
         <section id="featured-works" className="relative w-full">
           {/* Absolute Header Container */}
           <div className="absolute top-0 left-0 w-full z-20 pointer-events-none">
-            <div className="w-full flex flex-col pt-6 pb-4 md:pt-8 md:pb-6 px-6 lg:px-32 xl:px-46">
+            <div className="w-full flex flex-col pt-7 pb-4 md:pt-14 md:pb-6 px-6 lg:px-32 xl:px-46">
               <h2 className="m-0 pt-4">
                 <TypewriterWordReplace
                   baseText="My favorite "

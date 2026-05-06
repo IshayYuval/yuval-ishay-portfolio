@@ -4,7 +4,7 @@ export type Collection = {
   slug: string;
   title: string;
   description: string;
-  parentNav?: "visual-communication" | null;
+  parentNav?: "my-work" | null;
   shortTitle?: string;
 };
 
@@ -149,50 +149,55 @@ export const favorites: FavoriteConfig[] = [
     appearanceOrder: 2,
     buttonTheme: "dark",
   },
-  {
-    slug: "infowork",
-    backgroundColor: "#232066",
-    headingColor: "#ffffff",
-    textColor: "#ffffff",
-    coverSrc: "/favorites/infowork.webp",
-    appearanceOrder: 6,
-  }
+  // {
+  //   slug: "infowork",
+  //   backgroundColor: "#232066",
+  //   headingColor: "#ffffff",
+  //   textColor: "#ffffff",
+  //   coverSrc: "/favorites/infowork.webp",
+  //   appearanceOrder: 6,
+  // }
 ];
 
 export const collections: Collection[] = [
-  {
-    slug: "branding",
-    title: "Branding",
-    description:
-      "Discover my branding projects and case studies that reflect my approach and extensive work across various industries.",
-    parentNav: null,
-  },
   {
     slug: "product-design",
     title: "Product Design",
     shortTitle: "UX",
     description:
       "Explore my past projects and detailed case studies showcasing my product design work and broad expertise across diverse industry sectors.",
-    parentNav: null,
+    parentNav: "my-work",
   },
   {
-    slug: "typography",
-    title: "Typography",
-    description: "See some amazing typography project, in a new area I fell in love with during my bachelor's visual communication studies.",
-    parentNav: "visual-communication",
+    slug: "branding",
+    title: "Branding",
+    description:
+      "Discover my branding projects and case studies that reflect my approach and extensive work across various industries.",
+    parentNav: "my-work",
   },
   {
-    slug: "conceptual-design",
-    title: "Conceptual Design",
-    shortTitle: "Conceptual",
-    description: "My thoughts and beliefs, in personal and general topics, communicating through design.",
-    parentNav: "visual-communication",
+    slug: "editorial-and-print",
+    title: "Editorial & Print",
+    description: "Several print projects showing how typography and imaging work in different mediums.",
+    parentNav: "my-work",
+  },
+  {
+    slug: "video-installations",
+    title: "Video Installations",
+    description: "Video art, motion design, and video installations.",
+    parentNav: "my-work",
+  },
+  {
+    slug: "packaging-design",
+    title: "Packaging Design",
+    description: "My exploration of how concept can meet practicality.",
+    parentNav: "my-work",
   },
   {
     slug: "photography",
     title: "Photography",
     description: "My view of the world, and my view of the ideal world, through the lens.",
-    parentNav: "visual-communication",
+    parentNav: "my-work",
   },
 ];
 
@@ -804,7 +809,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Social Campaign - Supporters Voice",
     excerpt: "My social campaign is a protest campaign called “The Supporters’ Protest.” The protest aims to unite all sports supporters against the disgraceful practice of broadcasting games in bars without sound. #משחקלארואיםמושתק #מחאתהאוהדים #תפסיקולשדראושתפסיקולשקר",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
-    collectionSlug: "conceptual-design",
+    collectionSlug: "video-installations",
     date: "2026-02-04",
     favorite: true,
     introText: "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
@@ -914,13 +919,14 @@ export const caseStudies: CaseStudy[] = [
 
 
   },
+
   // conceptual art - chicha
   {
     slug: "basic-food-packaging-series",
     title: "Basic Food Packaging Series",
     excerpt: "A conceptual packaging series for a basic food product, re-examining cultural, and social meanings through visual language rather than functional solutions.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
-    collectionSlug: "conceptual-design",
+    collectionSlug: "packaging-design",
     favorite: true,
     date: "2025-12-26",
     navbarTextColor: "#612423",
@@ -1017,7 +1023,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Long-Distance Love",
     excerpt: "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
-    collectionSlug: "conceptual-design",
+    collectionSlug: "video-installations",
     favorite: true,
     date: "2025-07-11",
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
@@ -1054,7 +1060,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Tarantino Homage",
     excerpt: "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
-    collectionSlug: "conceptual-design",
+    collectionSlug: "packaging-design",
     backgroundColor: "#272727",
     navbarTextColor: "black",
     heroImage: "/case-studies/conceptual-design/tarantino/hero-cover.svg",
@@ -1262,7 +1268,7 @@ export const caseStudies: CaseStudy[] = [
     appearanceOrder: 2,
     excerpt: "This project is designed as a magazine editorial, exploring the automobile in cinema as a space that drives narrative and shapes on-screen events.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
-    collectionSlug: "typography",
+    collectionSlug: "editorial-and-print",
     date: "2026-02-08",
     backgroundColor: "#1b1b1bff",
     heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
@@ -1345,7 +1351,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Liebling Haus Poster",
     excerpt: "An infographic poster, based on the architectual style of Liebling Haus.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
-    collectionSlug: "typography",
+    collectionSlug: "editorial-and-print",
     date: "2025-12-23",
     heroImage: "/case-studies/typography/liebling-haus/hero-image.svg",
     introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
@@ -1366,7 +1372,7 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/typography/dance-tel-aviv/page-cover.webp",
     excerpt: "A typographic flyer, capturing the movement and soul of the festival",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Typography Studio"],
-    collectionSlug: "typography",
+    collectionSlug: "editorial-and-print",
     date: "2025-11-20",
     heroImage: "/case-studies/typography/dance-tel-aviv/hero-image.svg",
     backgroundColor: "#1b1b1bff",
@@ -1408,7 +1414,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Ezer Alchemist Homage",
     excerpt: "A typographic tribute to Ezer Alchemist, using its ink traps as a visual tool to teach and reveal the character of the typeface.",
     tags: ["HIT", "Visual Communication BA", "1st Year", "Typography"],
-    collectionSlug: "typography",
+    collectionSlug: "editorial-and-print",
     date: "2025-05-28",
     cover: "/case-studies/typography/alchemist-homage/page-cover.webp",
     introText: "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
@@ -1451,7 +1457,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Spod",
     favorite: true,
     appearanceOrder: 3,
-    cover: "/case-studies/product-design/spod/page-cover.jpg",
+    cover: "/case-studies/product-design/spod/updated-cover.jpg",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Interactive Design Intro", "App Design"],

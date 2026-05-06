@@ -105,7 +105,14 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
             </motion.div>
             <motion.div variants={buttonVariants} className="min-w-auto md:min-w-[180px] w-full md:w-auto">
               <Button className="w-full" variant="secondary" theme={favoriteConfig?.buttonTheme || "light"} href={`/${work.collectionSlug}`}>
-                {collectionTitle} Projects
+                {(() => {
+                  switch (work.collectionSlug) {
+                    case "packaging-design": return "Packaging Designs";
+                    case "video-installations": return "Video Installations";
+                    case "editorial-and-print": return "Editorial & Print";
+                    default: return `${collectionTitle} Projects`;
+                  }
+                })()}
               </Button>
             </motion.div>
           </motion.div>

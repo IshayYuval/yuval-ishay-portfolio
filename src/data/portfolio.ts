@@ -1305,7 +1305,7 @@ export const caseStudies: CaseStudy[] = [
             text: "I chose to work with a single typeface, Ezer Run by Oded Ezer, because of its poetic, expressive character and its human feel. I used only two font sizes: one for the body text and headings, and a slightly smaller one for footnotes. This helped give more presence to the surrounding white space and let the layout breathe."
           }
         ],
-        textAfter: "",
+        textAfter: "My catalogue was one of the few selected for the annual Artist Catalog Exhibition, held at Beit Ariela in collaboration with HIT.",
       },
     ],
     gallery: [

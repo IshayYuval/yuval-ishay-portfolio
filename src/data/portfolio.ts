@@ -110,7 +110,7 @@ export const favorites: FavoriteConfig[] = [
     backgroundColor: "#000000",
     headingColor: "#ffffff",
     textColor: "#ffffff",
-    coverSrc: "/case-studies/catalogues/anatomy-of-memory/image-5.webp",
+    coverSrc: "/case-studies/catalogues/anatomy-of-memory/cover.webp",
     appearanceOrder: 2,
   },
 
@@ -1284,7 +1284,7 @@ export const caseStudies: CaseStudy[] = [
     heroImage: "/case-studies/catalogues/anatomy-of-memory/hero-image.svg",
     heroBackgroundColor: "#fff9eb",
     introText: "Anatomy of Memory traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence. The catalogue examines how objects, space, and threads become carriers of memory and presence.<br/><br/>I discovered Chiharu Shiota by chance while I was in Prague. On my way to Prague Castle, I saw a poster for her exhibition at Kunsthalle Praha. Something about the array of red threads intrigued me enough to go inside.<br/>Until then, I never understood why our lecturers kept telling us to step away from our screens and experience art in galleries when we could find everything online. Inside Shiota’s exhibition, I finally understood. I felt surrounded by the memories, pain, and presence of people I had never known. I left amazed by how much power could be created with something as simple as threads and everyday objects.<br/><br/>This catalogue is my semester project for the Visual Communication 2 course, under the guidance of Golan Gafni.",
-    cover: "/case-studies/catalogues/anatomy-of-memory/image-7.webp",
+    cover: "/case-studies/catalogues/anatomy-of-memory/cover.webp",
     projectUrl: "https://www.chiharu-shiota.com",
     projectUrlText: "Chiharu Shiota's Website",
     processSteps: [
@@ -1348,6 +1348,16 @@ export const caseStudies: CaseStudy[] = [
         src: "/case-studies/catalogues/anatomy-of-memory/image-8.webp",
         alt: "page-cover",
         colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/museum-1.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/museum-2.webp",
+        alt: "page-cover",
+        colSpan: "half",
       },
     ],
   },

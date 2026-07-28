@@ -106,6 +106,15 @@ export const favorites: FavoriteConfig[] = [
     appearanceOrder: 1,
   },
   {
+    slug: "anatomy-of-memory",
+    backgroundColor: "#000000",
+    headingColor: "#ffffff",
+    textColor: "#ffffff",
+    coverSrc: "/case-studies/catalogues/anatomy-of-memory/image-5.webp",
+    appearanceOrder: 2,
+  },
+
+  {
     slug: "social-campaign",
     backgroundColor: "#000000",
     headingColor: "#ffffff",
@@ -119,7 +128,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#ffffff",
     textColor: "#ffffff",
     coverSrc: "/case-studies/typography/cinemateque/cinematheque-landing.webp",
-    appearanceOrder: 3,
+    appearanceOrder: 4,
   },
   {
     slug: "basic-food-packaging-series",
@@ -127,7 +136,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#000000",
     textColor: "#000000",
     coverSrc: "/favorites/basic-food-packaging.webp",
-    appearanceOrder: 4,
+    appearanceOrder: 5,
     buttonTheme: "dark",
   },
   {
@@ -136,7 +145,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#000000",
     textColor: "#000000",
     coverSrc: "/favorites/long-distance-cover.mp4",
-    appearanceOrder: 5,
+    appearanceOrder: 6,
     buttonTheme: "dark",
     blendMode: "darken",
   },
@@ -146,7 +155,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#000000",
     textColor: "#000000",
     coverSrc: "/case-studies/product-design/spod/favorites-cover.webp",
-    appearanceOrder: 2,
+    appearanceOrder: 3,
     buttonTheme: "dark",
   },
   // {
@@ -1260,6 +1269,89 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
+  // Editorials & Print - Anatomy of Memory
+  {
+    slug: "anatomy-of-memory",
+    title: "Anatomy of Memory",
+    favorite: true,
+    appearanceOrder: 3,
+    excerpt: "The catalogue traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence.",
+    tags: ["HIT", "Visual Communication BA", "2nd Year", "Artist Catalogue"],
+    collectionSlug: "editorial-and-print",
+    date: "2026-07-13",
+    backgroundColor: "#000000",
+    navbarTextColor: "#c22419",
+    heroImage: "/case-studies/catalogues/anatomy-of-memory/hero-image.svg",
+    heroBackgroundColor: "#fff9eb",
+    introText: "Anatomy of Memory traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence. The catalogue examines how objects, space, and threads become carriers of memory and presence.<br/><br/>I discovered Chiharu Shiota by chance while I was in Prague. On my way to Prague Castle, I saw a poster for her exhibition at Kunsthalle Praha. Something about the array of red threads intrigued me enough to go inside.<br/>Until then, I never understood why our lecturers kept telling us to step away from our screens and experience art in galleries when we could find everything online. Inside Shiota’s exhibition, I finally understood. I felt surrounded by the memories, pain, and presence of people I had never known. I left amazed by how much power could be created with something as simple as threads and everyday objects.<br/><br/>This catalogue is my semester project for the Visual Communication 2 course, under the guidance of Golan Gafni.",
+    cover: "/case-studies/catalogues/anatomy-of-memory/image-7.webp",
+    projectUrl: "https://www.chiharu-shiota.com",
+    projectUrlText: "Chiharu Shiota's Website",
+    processSteps: [
+      {
+        title: "The Creative Process",
+        text: "",
+        bullets: [
+          {
+            label: "The Concept: ",
+            labelWeight: "bold",
+            labelColor: "white",
+            text: "My concept was to treat the book format as a space of its own—a small universe that isn’t limited by the physical dimensions of its pages. Images and text, arranged in different visual hierarchies, exist as elements within that universe rather than being confined to individual spreads. To support this idea, I created image bleeds that flow across pages, while anchoring the typography to a single grid line that runs consistently on both sides of each spread."
+          },
+          {
+            label: "Typography: ",
+            labelWeight: "bold",
+            labelColor: "white",
+            text: "I chose to work with a single typeface, Ezer Run by Oded Ezer, because of its poetic, expressive character and its human feel. I used only two font sizes: one for the body text and headings, and a slightly smaller one for footnotes. This helped give more presence to the surrounding white space and let the layout breathe."
+          }
+        ],
+        textAfter: "",
+      },
+    ],
+    gallery: [
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-7.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-2.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-5.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-1.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-4.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-6.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-8.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+    ],
+  },
+
   // typography - cinemateque magazine
   {
     slug: "cinemateque-magazine",
@@ -1344,6 +1436,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+
+
 
   // typography - liebling haus
   {

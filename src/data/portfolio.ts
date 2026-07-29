@@ -1305,7 +1305,7 @@ export const caseStudies: CaseStudy[] = [
             text: "I chose to work with a single typeface, Ezer Run by Oded Ezer, because of its poetic, expressive character and its human feel. I used only two font sizes: one for the body text and headings, and a slightly smaller one for footnotes. This helped give more presence to the surrounding white space and let the layout breathe."
           }
         ],
-        textAfter: "My catalogue was one of the few selected for the annual Artist Catalog Exhibition, held at Beit Ariela in collaboration with HIT.",
+        textAfter: "I'm happy to say my catalogue was one of the few selected for the annual Artist Catalog Exhibition, held at Beit Ariela in collaboration with HIT.",
       },
     ],
     gallery: [
@@ -1346,6 +1346,21 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         src: "/case-studies/catalogues/anatomy-of-memory/image-8.webp",
+        alt: "page-cover",
+        colSpan: "full",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-10.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-11.webp",
+        alt: "page-cover",
+        colSpan: "half",
+      },
+      {
+        src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
         alt: "page-cover",
         colSpan: "full",
       },
@@ -1444,6 +1459,7 @@ export const caseStudies: CaseStudy[] = [
         alt: "page-cover",
         colSpan: "half",
       },
+
     ],
   },
 

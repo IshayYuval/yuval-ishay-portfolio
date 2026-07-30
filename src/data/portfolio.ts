@@ -1390,7 +1390,7 @@ export const caseStudies: CaseStudy[] = [
     backgroundColor: "#1b1b1bff",
     heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
     introText: "In this typography studio assignment, the task was to design a paged editorial format based on a long-form article. The goal was to utilize a structured grid and a robust typographic system to create an engaging reading experience across multiple spreads. For this project, I specifically selected an essay from the Tel Aviv Cinematheque exploring the automobile as a narrative space in film—a vehicle that actively drives the plot forward.",
-    cover: "/case-studies/typography/cinemateque/cover-mockup.webp",
+    cover: "/case-studies/typography/cinemateque/cover.webp",
     processSteps: [
       {
         title: "The Creative Process",

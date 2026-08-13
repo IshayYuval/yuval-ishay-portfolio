@@ -68,12 +68,15 @@ export type CaseStudy = {
   navbarTextColor?: string; // optional override for navbar text color (e.g. "black" or hex)
   projectUrl?: string; // optional external link
   projectUrlVariant?: "primary" | "secondary";
+  projectUrlText?: string;
+  secondaryProjectUrl?: string;
+  secondaryProjectUrlVariant?: "primary" | "secondary";
+  secondaryProjectUrlText?: string;
   processSteps?: ProcessStep[]; // mainly for UX/UI
   contentSections?: ZigZagSection[];
   gallery?: GalleryItem[];
   galleries?: GallerySection[];
   backgroundColor?: string;
-  projectUrlText?: string;
   stopMotionData?: {
     images: string[];
     duration: number;
@@ -82,6 +85,9 @@ export type CaseStudy = {
   prototype?: {
     title: string;
     src: string;
+    width?: number | string;
+    height?: number | string;
+    aspectRatio?: string;
   };
 };
 
@@ -103,7 +109,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#ffffff",
     textColor: "#ffffff",
     coverSrc: "/favorites/cheetah-cover.webp",
-    appearanceOrder: 1,
+    appearanceOrder: 2,
   },
   {
     slug: "anatomy-of-memory",
@@ -111,7 +117,7 @@ export const favorites: FavoriteConfig[] = [
     headingColor: "#ffffff",
     textColor: "#ffffff",
     coverSrc: "/case-studies/catalogues/anatomy-of-memory/cover.webp",
-    appearanceOrder: 2,
+    appearanceOrder: 1,
   },
 
   {
@@ -131,7 +137,7 @@ export const favorites: FavoriteConfig[] = [
     appearanceOrder: 4,
   },
   {
-    slug: "basic-food-packaging-series",
+    slug: "chicha-collection",
     backgroundColor: "#eee7e1ff",
     headingColor: "#000000",
     textColor: "#000000",
@@ -422,6 +428,7 @@ export const caseStudies: CaseStudy[] = [
     projectUrlVariant: "primary",
     collectionSlug: "branding",
     cover: "/case-studies/branding/unique-freight/page-cover.svg",
+    navbarTextColor: "#1d2955",
     date: "2024-01-12",
     introText: "Unique Freight is a freight forwarding company specializing in providing end-to-end logistics solutions, including air and sea freight, customs brokerage, and tax payments. The company serves medium to large-sized businesses, offering dedicated and personalized service with a strong emphasis on client satisfaction. Their commitment to going the extra mile, alongside free consulting for regular clients, sets them apart in the industry.",
     processSteps: [
@@ -598,6 +605,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "Bakery", "Print & Digital"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/nouvelle/page-cover.svg",
+    navbarTextColor: "#e3b397",
     date: "2024-05-03",
     introText: "Nouvelle is an emerging patisserie specializing in high-quality baking services including desserts, bread, cakes, and pralines. The business prides itself on offering personal treatment, boutique services, and the unique ability to fulfill special requests as per customer preference.",
 
@@ -923,16 +931,18 @@ export const caseStudies: CaseStudy[] = [
     ],
     prototype: {
       title: "Instagram Page",
-      src: "https://embed.figma.com/proto/FKruVguhZxLd0fXj7ml062/Instagram-Page?page-id=0%3A1&node-id=5-464&p=f&viewport=-304%2C249%2C0.26&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A464&embed-host=share"
+      src: "https://embed.figma.com/proto/FKruVguhZxLd0fXj7ml062/Instagram-Page?page-id=0%3A1&node-id=5-464&p=f&viewport=-304%2C249%2C0.26&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A464&embed-host=share",
+      width: 375,
+      height: 812
     }
 
 
   },
 
-  // conceptual art - chicha
+  // Packaging Design - Chicha
   {
-    slug: "basic-food-packaging-series",
-    title: "Basic Food Packaging Series",
+    slug: "chicha-collection",
+    title: "The Chicha Collection",
     excerpt: "A conceptual packaging series for a basic food product, re-examining cultural, and social meanings through visual language rather than functional solutions.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Visual Communication 1"],
     collectionSlug: "packaging-design",
@@ -1022,7 +1032,9 @@ export const caseStudies: CaseStudy[] = [
     ],
     prototype: {
       title: "Landing Page Prototype",
-      src: "https://embed.figma.com/proto/t2I3v6JqCmHO2ASReYvhA0/Landing-Page?page-id=99%3A1157&node-id=104-916&p=f&viewport=100%2C324%2C0.04&scaling=scale-down-width&content-scaling=fixed&embed-host=share"
+      src: "https://embed.figma.com/proto/t2I3v6JqCmHO2ASReYvhA0/Landing-Page?page-id=99%3A1157&node-id=104-916&p=f&viewport=100%2C324%2C0.04&scaling=scale-down-width&content-scaling=fixed&embed-host=share",
+      width: 1440,
+      height: 900
     }
   },
 
@@ -1582,11 +1594,14 @@ export const caseStudies: CaseStudy[] = [
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: ["HIT", "Visual Communication BA", "2nd Year", "Interactive Design Intro", "App Design"],
     heroBackgroundColor: "#FCF0FF",
-    navbarTextColor: "#36437A",
+    navbarTextColor: "#9600A6",
     backgroundColor: "#400047",
     projectUrl: "https://noakuterman.myportfolio.com",
-    projectUrlText: "Noa Kuterman's Portfolio",
+    projectUrlText: "Noa's Portfolio",
     projectUrlVariant: "secondary",
+    secondaryProjectUrl: "https://sharonkisil.myportfolio.com",
+    secondaryProjectUrlText: "Sharon's Portfolio",
+    secondaryProjectUrlVariant: "secondary",
     heroLottie: "/lottie/spod/hero-case-study.json",
     collectionSlug: "product-design",
     date: "2026-02-01",

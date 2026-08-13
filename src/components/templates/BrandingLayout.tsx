@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
+import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
 import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
@@ -31,7 +32,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
 
             <div className="container-custom mx-auto">
                 {/* Intro Section */}
-                <section className="max-w-4xl mx-auto pt-12 sm:pt-22">
+                <header className="max-w-4xl mx-auto pt-12 sm:pt-16">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>
@@ -46,17 +47,31 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                             {renderTextWithBreaks(data.introText)}
                         </p>
                     )}
-                    {data.projectUrl && (
-                        <Button
-                            href={data.projectUrl}
-                            target="_blank"
-                            variant={data.projectUrlVariant || "primary"}
-                            className="bg-[var(--foreground)] mb-8 text-[var(--background)] rounded-full font-medium hover:opacity-90 transition-opacity"
-                        >
-                            Visit Website
-                        </Button>
+                    {(data.projectUrl || data.secondaryProjectUrl) && (
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8 mt-6">
+                            {data.projectUrl && (
+                                <Button
+                                    href={data.projectUrl}
+                                    target="_blank"
+                                    variant={data.projectUrlVariant || "primary"}
+                                    className="bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:opacity-90 transition-opacity"
+                                >
+                                    {data.projectUrlText || "Visit Website"}
+                                </Button>
+                            )}
+                            {data.secondaryProjectUrl && (
+                                <Button
+                                    href={data.secondaryProjectUrl}
+                                    target="_blank"
+                                    variant={data.secondaryProjectUrlVariant || "primary"}
+                                    className="bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:opacity-90 transition-opacity"
+                                >
+                                    {data.secondaryProjectUrlText || "Visit Website"}
+                                </Button>
+                            )}
+                        </div>
                     )}
-                </section>
+                </header>
 
                 {data.processSteps && (
                     <section className="grid grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
@@ -130,6 +145,11 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         <h1 className="text-5xl md:text-7xl font-bold text-center mb-8">The brand in action</h1>
                         <DynamicGrid items={data.gallery} />
                     </section>
+                )}
+
+                {/* Prototype */}
+                {data.prototype && (
+                    <PrototypeSection {...data.prototype} />
                 )}
 
                 <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />

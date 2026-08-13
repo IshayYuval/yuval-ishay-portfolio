@@ -40,11 +40,11 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
             )}
 
             <div className={`container-custom mx-auto ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}>
-                <header className="pt-24 max-w-4xl mx-auto">
+                <header className="max-w-4xl mx-auto pt-12 sm:pt-16">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>
-                    <h1 className="text-center">about the project</h1>
+                    <h1 className="text-center">About the Project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mt-2 mb-8">
                         {data.tags.map(tag => (
                             <Tag key={tag}>{tag}</Tag>
@@ -55,15 +55,26 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                             {renderTextWithBreaks(data.introText)}
                         </p>
                     )}
-                    {data.projectUrl && (
-                        <div className="flex mt-6">
-                            <Button
-                                href={data.projectUrl}
-                                target="_blank"
-                                variant={data.projectUrlVariant || "secondary"}
-                            >
-                                {data.projectUrlText || "Visit Project"}
-                            </Button>
+                    {(data.projectUrl || data.secondaryProjectUrl) && (
+                        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                            {data.projectUrl && (
+                                <Button
+                                    href={data.projectUrl}
+                                    target="_blank"
+                                    variant={data.projectUrlVariant || "secondary"}
+                                >
+                                    {data.projectUrlText || "Visit Project"}
+                                </Button>
+                            )}
+                            {data.secondaryProjectUrl && (
+                                <Button
+                                    href={data.secondaryProjectUrl}
+                                    target="_blank"
+                                    variant={data.secondaryProjectUrlVariant || "secondary"}
+                                >
+                                    {data.secondaryProjectUrlText || "Visit Project"}
+                                </Button>
+                            )}
                         </div>
                     )}
                 </header>
@@ -152,7 +163,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
 
                 {/* Prototype */}
                 {data.prototype && (
-                    <PrototypeSection title={data.prototype.title} src={data.prototype.src} />
+                    <PrototypeSection {...data.prototype} />
                 )}
 
                 <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />

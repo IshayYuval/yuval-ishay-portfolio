@@ -4,6 +4,7 @@ import Image from "next/image"; // Added Image import
 import { CaseStudy } from "@/data/portfolio";
 import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
+import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
 import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import { renderTextWithBreaks } from "@/utils/text";
 import Button from "../ui/Button/Button";
@@ -38,15 +39,14 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                 </div>
             )}
 
-            <div className={`container-custom max-w-4xl mx-auto px-6 ${!data.heroImage ? 'pt-[var(--header-height)]' : ''}`}> {/* Adjusted padding */}
+            <div className="container-custom max-w-4xl mx-auto px-6"> {/* Adjusted padding */}
                 {/* Header */}
-                <header className="pt-4 max-w-4xl mx-auto">
+                <header className="max-w-4xl mx-auto pt-12 sm:pt-16">
                     <div className="text-body text-center">
                         {formatCaseStudyDate(data)}
                     </div>
                     <h1 className="mb-2 text-center">About the Project</h1>
                     <div className="flex flex-wrap justify-center gap-2 mb-8">
-
                         {data.tags.map(tag => (
                             <Tag key={tag}>{tag}</Tag>
                         ))}
@@ -56,15 +56,27 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                             {renderTextWithBreaks(data.introText)}
                         </p>
                     )}
-                    {data.projectUrl && (
-                        <Button
-                            href={data.projectUrl}
-                            target="_blank"
-                            variant={data.projectUrlVariant || "primary"}
-                            className="mb-8 mt-6"
-                        >
-                            {data.projectUrlText}
-                        </Button>
+                    {(data.projectUrl || data.secondaryProjectUrl) && (
+                        <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-8">
+                            {data.projectUrl && (
+                                <Button
+                                    href={data.projectUrl}
+                                    target="_blank"
+                                    variant={data.projectUrlVariant || "primary"}
+                                >
+                                    {data.projectUrlText}
+                                </Button>
+                            )}
+                            {data.secondaryProjectUrl && (
+                                <Button
+                                    href={data.secondaryProjectUrl}
+                                    target="_blank"
+                                    variant={data.secondaryProjectUrlVariant || "primary"}
+                                >
+                                    {data.secondaryProjectUrlText}
+                                </Button>
+                            )}
+                        </div>
                     )}
                 </header>
 
@@ -133,6 +145,11 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                             <ZigZagRow key={index} {...section} enableLightbox={true} />
                         ))}
                     </section>
+                )}
+
+                {/* Prototype */}
+                {data.prototype && (
+                    <PrototypeSection {...data.prototype} />
                 )}
 
                 <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />

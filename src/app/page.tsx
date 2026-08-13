@@ -69,7 +69,7 @@ export default function Home() {
         {/* Featured Works */}
         <section id="featured-works" className="relative w-full">
           {/* Absolute Header Container */}
-          <div className="absolute top-0 left-0 w-full z-20 pointer-events-none">
+          {/* <div className="absolute top-0 left-0 w-full z-20 pointer-events-none">
             <div className="w-full flex flex-col pt-7 pb-4 md:pt-14 md:pb-6 px-6 lg:px-32 xl:px-46">
               <h2 className="m-0 pt-4">
                 <TypewriterWordReplace
@@ -79,7 +79,7 @@ export default function Home() {
                 />
               </h2>
             </div>
-          </div>
+          </div> */}
 
           {/* Content */}
           <div className="relative z-10 flex flex-col">

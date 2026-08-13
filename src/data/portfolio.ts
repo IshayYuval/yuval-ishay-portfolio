@@ -1542,13 +1542,16 @@ export const caseStudies: CaseStudy[] = [
 
   // typography - ezer alchemist homage
   {
-    slug: "ezer-alchemist-homage",
-    title: "Ezer Alchemist Homage",
+    slug: "ezer-alchemist-poster",
+    title: "Ezer Alchemist Poster",
     excerpt: "A typographic tribute to Ezer Alchemist, using its ink traps as a visual tool to teach and reveal the character of the typeface.",
     tags: ["HIT", "Visual Communication BA", "1st Year", "Typography"],
     collectionSlug: "editorial-and-print",
     date: "2025-05-28",
     cover: "/case-studies/typography/alchemist-homage/page-cover.webp",
+    heroImage: "/case-studies/typography/alchemist-homage/hero-image.svg",
+    backgroundColor: "#000000",
+    navbarTextColor: "#000000",
     introText: "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
     gallery: [
       {

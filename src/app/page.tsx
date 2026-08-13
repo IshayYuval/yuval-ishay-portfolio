@@ -54,10 +54,10 @@ export default function Home() {
         <section
           className="fixed top-0 left-0 w-full h-screen flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] overflow-hidden z-0"
           style={{
-            backgroundImage: 'url(/web-assets/hero-image.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundColor: 'var(--color-brand-secondary-950)',
+            backgroundImage: 'radial-gradient(rgba(139, 252, 244, 0.15) 1.25px, transparent 1.25px)',
+            backgroundSize: '20px 20px',
+            backgroundPosition: '0 0'
           }}
         >
           <HeroAnimatedContent />

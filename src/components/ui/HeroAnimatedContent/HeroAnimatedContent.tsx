@@ -2,31 +2,9 @@
 
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
+import RevealTextHeader from "@/components/ui/RevealTextHeader/RevealTextHeader";
 import { useContext } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
-
-const textContainerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.06,
-        },
-    },
-};
-
-const wordVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 100,
-        },
-    },
-};
 
 const subheroContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -58,7 +36,7 @@ const buttonContainerVariants: Variants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.2,
-            delayChildren: 1.0,
+            delayChildren: 0.8,
         },
     },
 };
@@ -76,43 +54,19 @@ const buttonVariants: Variants = {
     },
 };
 
-const captionVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            delay: 1.4,
-            duration: 0.8,
-        },
-    },
-};
-
 export default function HeroAnimatedContent() {
     const isBackNav = useContext(AnimationContext);
-    const h1Text = "I'M YUVAL, TURNING IDEAS INTO REAL-WORLD PRODUCTS.";
     const subText = "Multidisciplinary designer, specializing in branding, product design and AI-driven development.";
 
     const { scrollY } = useScroll();
-    // Assuming a standard screen height is around 800-1000px, 600px of scroll is a good point to fully fade out.
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
     return (
-        <motion.div className="container-custom z-10" style={{ opacity }}>
-            <motion.h1
-                className="mb-1 ml-0.5"
-                variants={textContainerVariants}
-                initial={isBackNav ? false : "hidden"}
-                animate="visible"
-            >
-                {h1Text.split(" ").map((word, index) => (
-                    <motion.span key={index} className="inline-block mr-[0.25em]" variants={wordVariants}>
-                        {word}
-                    </motion.span>
-                ))}
-            </motion.h1>
+        <motion.div className="px-20 z-10" style={{ opacity }}>
+            <RevealTextHeader />
 
             <motion.div
-                className="subhero ml-0.5 block"
+                className="subhero ml-0.5 block mt-6"
                 variants={subheroContainerVariants}
                 initial={isBackNav ? false : "hidden"}
                 animate="visible"
@@ -125,7 +79,7 @@ export default function HeroAnimatedContent() {
             </motion.div>
 
             <motion.div
-                className="flex gap-4 sm:flex-row flex-col mt-16 mb-2"
+                className="flex gap-4 sm:flex-row flex-col mt-12 mb-2"
                 variants={buttonContainerVariants}
                 initial={isBackNav ? false : "hidden"}
                 animate="visible"

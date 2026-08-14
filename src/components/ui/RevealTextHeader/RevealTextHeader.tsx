@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useContext } from "react";
+import { motion, Variants } from "framer-motion";
+import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 const PHRASES = [
   "a multidisiplinary designer",
@@ -16,17 +18,58 @@ const PHRASES = [
   "a coffee lover",
 ];
 
+const STATIC_WORDS = ["I'm", "Yuval", "Ishay,", "and", "I'm"];
+
 const DISPLAY_DURATION = 3000; // Duration phrase stays fully visible (ms)
 const ANIMATION_DURATION = 0.85; // Mask hide/reveal duration in seconds
 const HIDDEN_PAUSE_DURATION = 10; // Duration animation pauses at collapsed/hidden state before revealing (ms)
 const INACTIVITY_DELAY = 1500; // Delay after user interaction before resuming auto cycle (ms)
 
+const headerContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const headerWordVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+};
+
+const boxEntranceVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      delay: 0.35,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function RevealTextHeader() {
+  const isBackNav = useContext(AnimationContext);
   const [currentIndex, setCurrentIndex] = useState(0);
-  // visibleWidthPercent: 100% = fully revealed, 0% = fully hidden
-  const [visibleWidthPercent, setVisibleWidthPercent] = useState(100);
+  // visibleWidthPercent: 100% on backNav, 0% on initial entrance (closed state)
+  const [visibleWidthPercent, setVisibleWidthPercent] = useState(isBackNav ? 100 : 0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(!isBackNav);
+  const hasEnteredRef = useRef(isBackNav);
 
   const anchorRef = useRef<HTMLSpanElement>(null);
   const containerRef = useRef<HTMLSpanElement>(null);
@@ -39,6 +82,46 @@ export default function RevealTextHeader() {
   const currentIndexRef = useRef(currentIndex);
 
   currentIndexRef.current = currentIndex;
+
+  const hasStartedEntranceRevealRef = useRef(isBackNav);
+
+  const startEntranceReveal = useCallback(() => {
+    if (hasStartedEntranceRevealRef.current) return;
+    hasStartedEntranceRevealRef.current = true;
+
+    const durationMs = ANIMATION_DURATION * 1000;
+    let revealStartTime: number | null = null;
+
+    const stepReveal = (revealTimestamp: number) => {
+      if (!revealStartTime) revealStartTime = revealTimestamp;
+      const revealProgress = Math.min((revealTimestamp - revealStartTime) / durationMs, 1);
+      const easeOut = 1 - (1 - revealProgress) * (1 - revealProgress);
+      const currentRevealWidth = 100 * easeOut;
+      setVisibleWidthPercent(currentRevealWidth);
+
+      if (revealProgress < 1) {
+        requestAnimationFrame(stepReveal);
+      } else {
+        setVisibleWidthPercent(100);
+        setIsTransitioning(false);
+      }
+    };
+
+    requestAnimationFrame(stepReveal);
+  }, []);
+
+  // Fallback entrance timer safeguard if onAnimationComplete is delayed
+  useEffect(() => {
+    if (isBackNav) return;
+
+    const entranceTimer = setTimeout(() => {
+      if (!hasStartedEntranceRevealRef.current) {
+        startEntranceReveal();
+      }
+    }, 750);
+
+    return () => clearTimeout(entranceTimer);
+  }, [isBackNav, startEntranceReveal]);
 
   // Pick next random index (avoiding immediate duplicate)
   const getNextRandomIndex = useCallback((currentIdx: number) => {
@@ -167,14 +250,38 @@ export default function RevealTextHeader() {
   };
 
   return (
-    <h1 className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-left uppercase select-none">
-      {/* Static Part */}
-      <span className="text-[var(--color-typography-header)] tracking-tight whitespace-nowrap">
-        I'm Yuval Ishay, and I'm
-      </span>
+    <h1 className="inline-flex flex-wrap items-baseline gap-y-2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-left uppercase select-none">
+      {/* Static Part - Split word-by-word animation */}
+      <motion.span
+        className="inline-flex flex-wrap items-baseline"
+        variants={isBackNav ? undefined : headerContainerVariants}
+        initial={isBackNav ? false : "hidden"}
+        animate="visible"
+      >
+        {STATIC_WORDS.map((word, index) => (
+          <motion.span
+            key={index}
+            className="inline-block text-[var(--color-typography-header)] tracking-tight whitespace-nowrap mr-[0.25em]"
+            variants={isBackNav ? undefined : headerWordVariants}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </motion.span>
 
       {/* Revealing Interactive Bounding Box Wrapper (Horizontal Reveal Left to Right) */}
-      <span ref={anchorRef} className="relative inline-flex items-baseline">
+      <motion.span
+        ref={anchorRef}
+        className="relative inline-flex items-baseline"
+        variants={isBackNav ? undefined : boxEntranceVariants}
+        initial={isBackNav ? false : "hidden"}
+        animate="visible"
+        onAnimationComplete={() => {
+          if (!isBackNav && !hasStartedEntranceRevealRef.current) {
+            startEntranceReveal();
+          }
+        }}
+      >
         <span
           ref={containerRef}
           onPointerDown={handlePointerDown}
@@ -221,7 +328,7 @@ export default function RevealTextHeader() {
             style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
           />
         </span>
-      </span>
+      </motion.span>
     </h1>
   );
 }

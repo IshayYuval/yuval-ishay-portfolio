@@ -13,7 +13,7 @@ const PHRASES = [
   "a martial artist",
   "a tech nerd",
   "a conceptual thinker",
-  "an art enthusiast",
+  "an autodidact",
   "a creative coder",
   "a coffee lover",
 ];

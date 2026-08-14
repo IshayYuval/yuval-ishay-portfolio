@@ -10,12 +10,16 @@ const PHRASES = [
   "a football fan",
   "a martial artist",
   "a tech nerd",
-  "an art lover",
+  "a conceptual thinker",
+  "an art enthusiast",
+  "a creative coder",
+  "a coffee lover",
 ];
 
 const DISPLAY_DURATION = 3000; // Duration phrase stays fully visible (ms)
 const ANIMATION_DURATION = 0.85; // Mask hide/reveal duration in seconds
-const INACTIVITY_DELAY = 2500; // Delay after user interaction before resuming auto cycle (ms)
+const HIDDEN_PAUSE_DURATION = 10; // Duration animation pauses at collapsed/hidden state before revealing (ms)
+const INACTIVITY_DELAY = 1500; // Delay after user interaction before resuming auto cycle (ms)
 
 export default function RevealTextHeader() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,6 +32,7 @@ export default function RevealTextHeader() {
   const containerRef = useRef<HTMLSpanElement>(null);
   const userTimerRef = useRef<NodeJS.Timeout | null>(null);
   const autoCycleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isDraggingRef = useRef(false);
   const startXRef = useRef(0);
   const startWidthRef = useRef(100);
@@ -64,27 +69,32 @@ export default function RevealTextHeader() {
       if (progress < 1) {
         requestAnimationFrame(stepHide);
       } else {
+        setVisibleWidthPercent(0);
         // Swap phrase
         const nextIdx = getNextRandomIndex(currentIndexRef.current);
         setCurrentIndex(nextIdx);
 
-        // Phase 2: Reveal next word from left to RIGHT (0% -> 100% width)
-        let revealStartTime: number | null = null;
-        const stepReveal = (revealTimestamp: number) => {
-          if (!revealStartTime) revealStartTime = revealTimestamp;
-          const revealProgress = Math.min((revealTimestamp - revealStartTime) / durationMs, 1);
-          const easeOut = 1 - (1 - revealProgress) * (1 - revealProgress);
-          const currentRevealWidth = 100 * easeOut;
-          setVisibleWidthPercent(currentRevealWidth);
+        // Pause at collapsed state before revealing next phrase
+        if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+        pauseTimerRef.current = setTimeout(() => {
+          // Phase 2: Reveal next word from left to RIGHT (0% -> 100% width)
+          let revealStartTime: number | null = null;
+          const stepReveal = (revealTimestamp: number) => {
+            if (!revealStartTime) revealStartTime = revealTimestamp;
+            const revealProgress = Math.min((revealTimestamp - revealStartTime) / durationMs, 1);
+            const easeOut = 1 - (1 - revealProgress) * (1 - revealProgress);
+            const currentRevealWidth = 100 * easeOut;
+            setVisibleWidthPercent(currentRevealWidth);
 
-          if (revealProgress < 1) {
-            requestAnimationFrame(stepReveal);
-          } else {
-            setVisibleWidthPercent(100);
-            setIsTransitioning(false);
-          }
-        };
-        requestAnimationFrame(stepReveal);
+            if (revealProgress < 1) {
+              requestAnimationFrame(stepReveal);
+            } else {
+              setVisibleWidthPercent(100);
+              setIsTransitioning(false);
+            }
+          };
+          requestAnimationFrame(stepReveal);
+        }, HIDDEN_PAUSE_DURATION);
       }
     };
 
@@ -101,6 +111,7 @@ export default function RevealTextHeader() {
 
     return () => {
       if (autoCycleTimerRef.current) clearTimeout(autoCycleTimerRef.current);
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
     };
   }, [currentIndex, isUserInteracting, isTransitioning, triggerTransitionToNext]);
 
@@ -123,6 +134,7 @@ export default function RevealTextHeader() {
     e.preventDefault();
     if (autoCycleTimerRef.current) clearTimeout(autoCycleTimerRef.current);
     if (userTimerRef.current) clearTimeout(userTimerRef.current);
+    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
 
     setIsUserInteracting(true);
     isDraggingRef.current = true;
@@ -173,46 +185,41 @@ export default function RevealTextHeader() {
         >
           {/* 1. Mask Box (Border + Background + Strict Overflow Hidden for Text) */}
           <span
-            className="relative inline-flex items-baseline overflow-hidden border-2 border-[var(--color-brand-primary-500)] backdrop-blur-sm px-2 py-0.5 shadow-lg"
+            className="relative inline-flex items-baseline overflow-hidden border-2 border-[var(--color-brand-primary-500)] backdrop-blur-sm py-0.5 shadow-lg bg-[var(--color-brand-secondary-950)]/90"
             style={{
               width: `${visibleWidthPercent}%`,
-              opacity: visibleWidthPercent < 2 ? 0 : 1,
             }}
           >
             {/* Stationary Text Phrase (Anchored at left: 0, top: 0, NEVER moves during mask) */}
-            <span className="relative text-[var(--color-brand-primary-500)] tracking-tight whitespace-nowrap inline-block left-0 top-0">
+            <span className="relative text-[var(--color-brand-primary-500)] tracking-tight whitespace-nowrap inline-block left-0 top-0 px-1 sm:px-3.5">
               {PHRASES[currentIndex]}
             </span>
           </span>
 
           {/* 2. Unclipped Handles Overlay (Visible outside the border, no clip-content) */}
-          {visibleWidthPercent >= 2 && (
-            <>
-              {/* Top-Left Corner Handle */}
-              <span className="absolute -top-[5px] -left-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] rounded-[1px] pointer-events-none z-30" />
+          {/* Top-Left Corner Handle */}
+          <span className="absolute -top-[5px] -left-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] pointer-events-none z-30" />
 
-              {/* Bottom-Left Corner Handle */}
-              <span className="absolute -bottom-[5px] -left-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] rounded-[1px] pointer-events-none z-30" />
+          {/* Bottom-Left Corner Handle */}
+          <span className="absolute -bottom-[5px] -left-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] pointer-events-none z-30" />
 
-              {/* Top-Right Corner Handle (Tracks visible width!) */}
-              <span
-                className="absolute -top-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] rounded-[1px] pointer-events-none z-30"
-                style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
-              />
+          {/* Top-Right Corner Handle (Tracks visible width!) */}
+          <span
+            className="absolute -top-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] pointer-events-none z-30"
+            style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
+          />
 
-              {/* Bottom-Right Corner Handle (Tracks visible width!) */}
-              <span
-                className="absolute -bottom-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] rounded-[1px] pointer-events-none z-30"
-                style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
-              />
+          {/* Bottom-Right Corner Handle (Tracks visible width!) */}
+          <span
+            className="absolute -bottom-[5px] w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] pointer-events-none z-30"
+            style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
+          />
 
-              {/* Center-Right Handle Square (Tracks visible width, identical to corner squares) */}
-              <span
-                className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] rounded-[1px] pointer-events-none z-30"
-                style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
-              />
-            </>
-          )}
+          {/* Center-Right Handle Square (Tracks visible width, identical to corner squares) */}
+          <span
+            className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white border-2 border-[var(--color-brand-primary-500)] pointer-events-none z-30"
+            style={{ left: `calc(${visibleWidthPercent}% - 5px)` }}
+          />
         </span>
       </span>
     </h1>

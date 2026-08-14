@@ -57,12 +57,11 @@ const buttonVariants: Variants = {
 export default function HeroAnimatedContent() {
     const isBackNav = useContext(AnimationContext);
     const subText = "Multidisciplinary designer, specializing in branding, product design and AI-driven development.";
-
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
     return (
-        <motion.div className="px-20 z-10" style={{ opacity }}>
+        <motion.div className="px-0 sm:px-[4rem] z-10" style={{ opacity }}>
             <RevealTextHeader />
 
             <motion.div
@@ -79,19 +78,19 @@ export default function HeroAnimatedContent() {
             </motion.div>
 
             <motion.div
-                className="flex gap-4 sm:flex-row flex-col mt-12 mb-2"
+                className="flex gap-2 sm:gap-4 sm:flex-row flex-col mt-12 mb-2"
                 variants={buttonContainerVariants}
                 initial={isBackNav ? false : "hidden"}
                 animate="visible"
             >
-                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[212px]">
                     <Button variant="primary" targetId="featured-works" className="w-full justify-center">
-                        Show me the work!
+                        Let me show you around!
                     </Button>
                 </motion.div>
-                <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[212px]">
                     <Button variant="secondary" href="/about" className="w-full justify-center">
-                        What's your story?
+                        A little bit about me :)
                     </Button>
                 </motion.div>
             </motion.div>

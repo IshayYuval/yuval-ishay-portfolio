@@ -77,6 +77,7 @@ export default function RevealTextHeader() {
   const autoCycleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isDraggingRef = useRef(false);
+  const hasCollapsedDuringDragRef = useRef(false);
   const startXRef = useRef(0);
   const startWidthRef = useRef(100);
   const currentIndexRef = useRef(currentIndex);
@@ -221,6 +222,7 @@ export default function RevealTextHeader() {
 
     setIsUserInteracting(true);
     isDraggingRef.current = true;
+    hasCollapsedDuringDragRef.current = false;
     startXRef.current = e.clientX;
     startWidthRef.current = visibleWidthPercent;
 
@@ -237,6 +239,17 @@ export default function RevealTextHeader() {
     // Dragging LEFT (deltaX < 0) decreases width (hides text right-to-left)
     const widthDelta = (deltaX / fullWidth) * 100;
     const newWidth = Math.max(0, Math.min(100, startWidthRef.current + widthDelta));
+
+    if (newWidth <= 2) {
+      if (!hasCollapsedDuringDragRef.current) {
+        hasCollapsedDuringDragRef.current = true;
+        const nextIdx = getNextRandomIndex(currentIndexRef.current);
+        setCurrentIndex(nextIdx);
+      }
+    } else if (newWidth > 15) {
+      hasCollapsedDuringDragRef.current = false;
+    }
+
     setVisibleWidthPercent(newWidth);
   };
 

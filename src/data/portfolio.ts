@@ -1176,7 +1176,7 @@ export const caseStudies: CaseStudy[] = [
   //   ],
   // },
 
-  // photography - hunger
+  // photography - The Butcher
   {
     slug: "the-butcher",
     title: "The Butcher",

@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
-  const isBackNav = useContext(AnimationContext);
+    const isBackNav = useContext(AnimationContext);
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
@@ -94,7 +94,7 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
                     className="overflow-hidden flex items-center justify-start"
                 >
                     <span className="whitespace-nowrap font-medium text-sm pl-2 uppercase">
-                        Let me explore myself
+                        Let me show you around
                     </span>
                 </motion.div>
             </motion.div>

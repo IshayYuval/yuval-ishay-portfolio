@@ -164,14 +164,6 @@ export const favorites: FavoriteConfig[] = [
     appearanceOrder: 3,
     buttonTheme: "dark",
   },
-  // {
-  //   slug: "infowork",
-  //   backgroundColor: "#232066",
-  //   headingColor: "#ffffff",
-  //   textColor: "#ffffff",
-  //   coverSrc: "/favorites/infowork.webp",
-  //   appearanceOrder: 6,
-  // }
 ];
 
 export const collections: Collection[] = [
@@ -232,6 +224,7 @@ export const caseStudies: CaseStudy[] = [
     introText:
       "During my first year of my Visual Communication B.A, we got an exercise to research an animal of our choice, and based on that animal, to create a visual identity for an imaginary company, which could be represented in theory by the animal we chose. Since a cheetah is one of my favorite wild animals, I knew in the very first second I'll choose it.",
     heroImage: "/case-studies/branding/cheetah/hero-image.svg",
+    heroBackgroundColor: "#101440",
     backgroundColor: "#1D2855",
     processSteps: [
       {
@@ -331,6 +324,7 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/branding/name-the-font/page-cover.svg",
     date: "2025-11-01",
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
+    heroBackgroundColor: "#4673b0",
     introText: "During my first year studying Visual Communication, a friend from class and I discovered a shared obsession with Hebrew typography — and an ongoing debate about who was better at identifying fonts by sight. What started as a playful rivalry quickly turned into an idea for a game that could settle it once and for all. That’s how Name the Font was born — a browser-based game that challenges players to recognize Hebrew typefaces used in our daily life, under time pressure. <br/> <br/> Wanna see for yourselves? Let's go! Grab your place at the leaderboards table!",
     processSteps: [
       {
@@ -459,6 +453,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     heroImage: "/case-studies/branding/unique-freight/hero.svg",
+    heroBackgroundColor: "#ed2c37",
     backgroundColor: "#1D2855",
     contentSections: [
       {
@@ -519,6 +514,9 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "Onyx is a product team in a web services company, which responsible for creating the long term strategy of their company's product. ",
     tags: ["Client Project", "Software", "Digital"],
+    heroImage: "/case-studies/branding/onyx/hero-image.svg",
+    heroBackgroundColor: "#56ff99",
+    backgroundColor: "#171918",
     collectionSlug: "branding",
     cover: "/case-studies/branding/onyx/page-cover.svg",
     date: "2023-11-28",
@@ -551,8 +549,7 @@ export const caseStudies: CaseStudy[] = [
         textAfter: "The concept will be the source of the tone of the brand, as well as the looks, the feel and the entire visual identity, including the logo, the colors, the typography and the applications of the brand.",
       },
     ],
-    heroImage: "/case-studies/branding/onyx/hero.svg",
-    backgroundColor: "#171918",
+
     contentSections: [
       {
         image: "/case-studies/branding/onyx/brandmark.svg",
@@ -605,6 +602,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Client Project", "Bakery", "Print & Digital"],
     collectionSlug: "branding",
     cover: "/case-studies/branding/nouvelle/page-cover.svg",
+    heroBackgroundColor: "#2f6c88",
     navbarTextColor: "#e3b397",
     date: "2024-05-03",
     introText: "Nouvelle is an emerging patisserie specializing in high-quality baking services including desserts, bread, cakes, and pralines. The business prides itself on offering personal treatment, boutique services, and the unique ability to fulfill special requests as per customer preference.",
@@ -636,7 +634,7 @@ export const caseStudies: CaseStudy[] = [
         textAfter: "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
       },
     ],
-    heroImage: "/case-studies/branding/nouvelle/hero.svg",
+    heroImage: "/case-studies/branding/nouvelle/hero-image.svg",
     backgroundColor: "#1B3F4C",
     gallery: [
       {
@@ -678,7 +676,8 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/branding/uffa/page-cover.svg",
     date: "2024-04-03",
     backgroundColor: "#072131",
-    heroImage: "/case-studies/branding/uffa/hero.svg",
+    heroImage: "/case-studies/branding/uffa/hero-image.svg",
+    heroBackgroundColor: "#0d303f",
     introText: "United Future Football Academy is a premier institution dedicated to cultivating young soccer talent and instilling a deep love for the game. It stands out for its comprehensive approach to player development, combining physical training, tactical knowledge, and mental resilience. The academy is committed to shaping well-rounded athletes who excel on the pitch and demonstrate integrity off it. <br/> <br/>This project is a part of my ChatGPT challenge, in which I design a comprehensive visual identity according to the briefs provided by the Chat :)",
     processSteps: [
       {
@@ -950,8 +949,8 @@ export const caseStudies: CaseStudy[] = [
     date: "2025-12-26",
     navbarTextColor: "#612423",
     backgroundColor: "#2e1010ff",
-    heroImage: "/case-studies/conceptual-design/basic-food-packaging/hero-image-v3.svg",
-
+    heroImage: "/case-studies/conceptual-design/basic-food-packaging/hero-image.svg",
+    heroBackgroundColor: "#ffffff",
     introText: "This project explores the design of a packaging series for a basic food product — an everyday, essential item that is usually taken for granted. The starting point was an in-depth research process into the product’s cultural, historical, and social contexts, deliberately moving away from packaging as a purely functional solution.<br><br>The packaging is treated as a conceptual medium: a visual system that communicates values, ideas, and a new point of view. Throughout the process, a unified visual language was developed for the entire series, while questioning the product’s conventional associations and stretching the boundaries of how it is typically perceived.<br><br>The result is a packaging series that prioritizes idea over utility, positioning design as a critical and expressive tool rather than a purely commercial object.<br/><br/> The food product I've chose is Corn.",
     cover: "/case-studies/conceptual-design/basic-food-packaging/page-cover.webp",
     processSteps: [
@@ -1038,7 +1037,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
 
-  // conceptual art - long distance love
+  // video installation - long distance love
   {
     slug: "long-distance-love",
     title: "Long-Distance Love",
@@ -1048,7 +1047,8 @@ export const caseStudies: CaseStudy[] = [
     favorite: true,
     date: "2025-07-11",
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
-    heroImage: "/case-studies/conceptual-design/long-distance-love/hero-cover.svg",
+    heroImage: "/case-studies/conceptual-design/long-distance-love/hero-image.svg",
+    heroBackgroundColor: "#2c487e",
     introText: "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships.",
     gallery: [
       {
@@ -1084,7 +1084,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "packaging-design",
     backgroundColor: "#272727",
     navbarTextColor: "black",
-    heroImage: "/case-studies/conceptual-design/tarantino/hero-cover.svg",
+    heroImage: "/case-studies/conceptual-design/tarantino/hero-image.svg",
+    heroBackgroundColor: "#f6d548",
     stopMotionData: {
       images: [
         "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",
@@ -1183,6 +1184,8 @@ export const caseStudies: CaseStudy[] = [
     tags: ["HIT", "Visual Communication BA", "2nd Year"],
     collectionSlug: "photography",
     cover: "/case-studies/photography/hunger/page-cover.webp",
+    heroImage: "/case-studies/photography/hunger/hero-image.svg",
+    heroBackgroundColor: "#000000",
     date: "2025-12-29",
     backgroundColor: "black",
     introText: "This project is a photographic essay created as part of a food photography assignment, centered around an underground <br/> pop-up called Hunger. The work explores the figure of “the butcher,” focusing on raw materials, hands-on process, and the ritual around meat rather than the final dish. Through a dark, moody visual language, the goal was to add value for the viewer by revealing the passion, tension, and instinct behind the act of cooking.",
@@ -1240,7 +1243,8 @@ export const caseStudies: CaseStudy[] = [
     backgroundColor: "#232428ff",
     date: "2025-07-22",
     cover: "/case-studies/photography/out-of-bounds/page-cover.webp",
-    heroImage: "/case-studies/photography/out-of-bounds/hero-image-v4.svg",
+    heroImage: "/case-studies/photography/out-of-bounds/hero-image.svg",
+    heroBackgroundColor: "#000000",
     introText: "This project is a portrait series created as part of a photography course, focusing on moments that break the routine of running. Instead of portraying running as a perfect, ideal action, the work highlights small mistakes, pauses, and human imperfections. <br/> <br/> The goal was to slow time and  revealing the vulnerability and humanity hidden within a repetitive act.",
     gallery: [
       {
@@ -1294,7 +1298,7 @@ export const caseStudies: CaseStudy[] = [
     backgroundColor: "#000000",
     navbarTextColor: "#c22419",
     heroImage: "/case-studies/catalogues/anatomy-of-memory/hero-image.svg",
-    heroBackgroundColor: "#fff9eb",
+    heroBackgroundColor: "#fffbf3",
     introText: "Anatomy of Memory traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence. The catalogue examines how objects, space, and threads become carriers of memory and presence.<br/><br/>I discovered Chiharu Shiota by chance while I was in Prague. On my way to Prague Castle, I saw a poster for her exhibition at Kunsthalle Praha. Something about the array of red threads intrigued me enough to go inside.<br/>Until then, I never understood why our lecturers kept telling us to step away from our screens and experience art in galleries when we could find everything online. Inside Shiota’s exhibition, I finally understood. I felt surrounded by the memories, pain, and presence of people I had never known. I left amazed by how much power could be created with something as simple as threads and everyday objects.<br/><br/>This catalogue is my semester project for the Visual Communication 2 course, under the guidance of Golan Gafni.",
     cover: "/case-studies/catalogues/anatomy-of-memory/cover.webp",
     projectUrl: "https://www.chiharu-shiota.com",
@@ -1389,7 +1393,7 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 
-  // typography - cinemateque magazine
+  // editorial & print - cinemateque magazine
   {
     slug: "cinemateque-magazine",
     title: "Cinemateque Magazine",
@@ -1400,7 +1404,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "editorial-and-print",
     date: "2026-02-08",
     backgroundColor: "#1b1b1bff",
-    heroImage: "/case-studies/typography/cinemateque/Masthead.svg",
+    heroImage: "/case-studies/typography/cinemateque/hero-image.svg",
+    heroBackgroundColor: "#000000",
     introText: "In this typography studio assignment, the task was to design a paged editorial format based on a long-form article. The goal was to utilize a structured grid and a robust typographic system to create an engaging reading experience across multiple spreads. For this project, I specifically selected an essay from the Tel Aviv Cinematheque exploring the automobile as a narrative space in film—a vehicle that actively drives the plot forward.",
     cover: "/case-studies/typography/cinemateque/cover.webp",
     processSteps: [
@@ -1486,6 +1491,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "editorial-and-print",
     date: "2025-12-23",
     heroImage: "/case-studies/typography/liebling-haus/hero-image.svg",
+    heroBackgroundColor: "#000000",
+    backgroundColor: "#1b1b1bff",
     introText: "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
     cover: "/case-studies/typography/liebling-haus/page-cover.webp",
     gallery: [
@@ -1507,6 +1514,7 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "editorial-and-print",
     date: "2025-11-20",
     heroImage: "/case-studies/typography/dance-tel-aviv/hero-image.svg",
+    heroBackgroundColor: "#000000",
     backgroundColor: "#1b1b1bff",
     introText: "This project is an event flyer designed around the idea of expressing human movement through typography, inspired by a dance-focused festival. The concept is translated through the use of the Ezer Dialogue typeface, combined with folding and a grid system that emerges from the physical format itself. Together, these elements create a dynamic layout that reflects rhythm, motion, and the body in motion.",
     projectUrl: "https://www.ezertypehouse.com/fonts/ezerdialogue",
@@ -1550,6 +1558,7 @@ export const caseStudies: CaseStudy[] = [
     date: "2025-05-28",
     cover: "/case-studies/typography/alchemist-homage/page-cover.webp",
     heroImage: "/case-studies/typography/alchemist-homage/hero-image.svg",
+    heroBackgroundColor: "#ffffff",
     backgroundColor: "#000000",
     navbarTextColor: "#000000",
     introText: "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
@@ -1571,17 +1580,6 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
-
-  // typography - theory of relativity
-  // {
-  //   slug: "theory-of-relativity",
-  //   title: "Theory of Relativity",
-  //   excerpt: "A typographic poster, capturing the movement and soul of the festival",
-  //   tags: ["HIT", "Visual Communication BA", "1st Year"],
-  //   collectionSlug: "typography",
-  //   date: "2025-05-28",
-  //   introText: "This project is an informational leaflet built around a text from Einstein’s Theory of Relativity, which I selected from several text options. The core concept is space–time, translated into typography through layout, spacing, and structure to visually express relativity and perception. The goal was to add value for the viewer by teaching the idea through the visual language itself, not just the written content",
-  // },
 
 
   // product design
@@ -1741,6 +1739,7 @@ export const caseStudies: CaseStudy[] = [
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
     tags: ["Passion Project", "Typography", "Gaming", "Software Development"],
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
+    heroBackgroundColor: "#4673b0",
     backgroundColor: "#133C66",
     projectUrl: "http://namethefont.com",
     projectUrlText: "Play now!",
@@ -1831,7 +1830,8 @@ export const caseStudies: CaseStudy[] = [
     favorite: true,
     collectionSlug: "product-design",
     date: "2025-10-01",
-    heroImage: "/case-studies/product-design/infowork/hero.svg",
+    heroImage: "/case-studies/product-design/infowork/hero-image.svg",
+    heroBackgroundColor: "#4f46e4",
     introText: "Informat, founded in 1994, is one of Israel’s leading IT companies, offering advanced computing solutions, infrastructure, hardware, licensing, and support services across industries. <br/><br/> When I joined as a part-time Social Media Designer, I was responsible for creative concepts for Facebook, LinkedIn, and newsletters. The creative side was fun, but managing the work was messy. I kept losing track of how many posts I had made, when they were scheduled, and what content belonged where. Everything got buried in my inbox and in my excel sheet. What should have been an inspiring process turned into something frustrating and overwhelming. <br/><br/> That was the trigger for Infowork – my own smart tool to manage social content.",
     backgroundColor: "#232066",
     processSteps: [
@@ -1894,7 +1894,8 @@ export const caseStudies: CaseStudy[] = [
     date: "2024-05-22",
     cover: "/case-studies/product-design/lushay-docs/page-cover.svg",
     backgroundColor: "#1A254D",
-    heroImage: "/case-studies/product-design/lushay-docs/hero.svg",
+    heroImage: "/case-studies/product-design/lushay-docs/hero-image.svg",
+    heroBackgroundColor: "#233266",
     introText: "Lushay Labs is a company specializing in electrical engineering, focusing on creating educational content in the FPGA domain. For this project, I crafted a new user experience for their website, Lushay Docs. This site offers comprehensive class documentation for all built-in FPGA primitives.",
     processSteps: [
       {
@@ -1991,7 +1992,8 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2021-12-25",
     cover: "/case-studies/product-design/upllery/page-cover.jpg",
-    heroImage: "/case-studies/product-design/upllery/hero.svg",
+    heroImage: "/case-studies/product-design/upllery/hero-image.svg",
+    heroBackgroundColor: "#000000",
     introText: "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design Upllery's management platform for real-time interaction with event attendees.",
     backgroundColor: "#1B1B1B",
     processSteps: [
@@ -2039,7 +2041,9 @@ export const caseStudies: CaseStudy[] = [
     collectionSlug: "product-design",
     date: "2024-7-2",
     cover: "/case-studies/product-design/3dmylev/page-cover.jpg",
-    heroImage: "/case-studies/product-design/3dmylev/hero.svg",
+    heroImage: "/case-studies/product-design/3dmylev/hero-image.svg",
+    heroBackgroundColor: "#fefbfc",
+    navbarTextColor: "#f2194b",
     introText: "3D Mylev is a company specializes in 3D printing, with a huge passion for arts. In this design, I’ve tried to create a smooth user experience for their online shop, which capturing the essence of 3D Mylev - creating amazing art while changing the public’s point of view about Autism through design and art.",
     backgroundColor: "#5C0009",
     processSteps: [

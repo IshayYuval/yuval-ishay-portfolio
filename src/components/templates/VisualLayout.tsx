@@ -25,14 +25,14 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                             loop
                             muted
                             playsInline
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                         />
                     ) : (
                         <Image
                             src={data.heroImage}
                             alt={`${data.title} Hero`}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             priority
                         />
                     )}

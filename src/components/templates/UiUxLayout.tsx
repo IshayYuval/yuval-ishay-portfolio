@@ -32,7 +32,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                             src={data.heroImage!}
                             alt={`${data.title} Hero`}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             priority
                         />
                     )}

@@ -24,7 +24,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         src={data.heroImage}
                         alt={`${data.title} Hero`}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         priority
                     />
                 </div>

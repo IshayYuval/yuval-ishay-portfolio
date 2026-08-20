@@ -1178,55 +1178,55 @@ export const caseStudies: CaseStudy[] = [
 
   // photography - hunger
   {
-    slug: "hunger",
-    title: "Hunger",
+    slug: "the-butcher",
+    title: "The Butcher",
     excerpt: "A photographic essay that explores raw materials, ritual, and instinct, revealing the passion behind food through process rather than the final dish.",
     tags: ["HIT", "Visual Communication BA", "2nd Year"],
     collectionSlug: "photography",
-    cover: "/case-studies/photography/hunger/page-cover.webp",
-    heroImage: "/case-studies/photography/hunger/hero-image.svg",
+    cover: "/case-studies/photography/the-butcher/page-cover.webp",
+    heroImage: "/case-studies/photography/the-butcher/hero-image.svg",
     heroBackgroundColor: "#000000",
     date: "2025-12-29",
     backgroundColor: "black",
-    introText: "This project is a photographic essay created as part of a food photography assignment, centered around an underground <br/> pop-up called Hunger. The work explores the figure of “the butcher,” focusing on raw materials, hands-on process, and the ritual around meat rather than the final dish. Through a dark, moody visual language, the goal was to add value for the viewer by revealing the passion, tension, and instinct behind the act of cooking.",
+    introText: "This project is a photographic essay created as part of a food photography assignment, centered around an underground <br/> meat pop-up. The work explores the figure of “the butcher,” focusing on raw materials, hands-on process, and the ritual around meat rather than the final dish. Through a dark, moody visual language, the goal was to reveal the passion, tension, and instinct behind the act of cooking.",
     gallery: [
       {
-        src: "/case-studies/photography/hunger/raw-meat.webp",
+        src: "/case-studies/photography/the-butcher/raw-meat.webp",
         alt: "Image 1",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/whiskey.webp",
+        src: "/case-studies/photography/the-butcher/whiskey.webp",
         alt: "Image 2",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/preparing-meat.webp",
+        src: "/case-studies/photography/the-butcher/preparing-meat.webp",
         alt: "Image 3",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/butcher-burner.webp",
+        src: "/case-studies/photography/the-butcher/butcher-burner.webp",
         alt: "Image 4",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/butcher-whiskey.webp",
+        src: "/case-studies/photography/the-butcher/butcher-whiskey.webp",
         alt: "Image 5",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/wine-and-meat.webp",
+        src: "/case-studies/photography/the-butcher/wine-and-meat.webp",
         alt: "Image 6",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/dinner.webp",
+        src: "/case-studies/photography/the-butcher/dinner.webp",
         alt: "Image 7",
         colSpan: "full",
       },
       {
-        src: "/case-studies/photography/hunger/hunger.webp",
+        src: "/case-studies/photography/the-butcher/hunger.webp",
         alt: "Image 7",
         colSpan: "full",
       },

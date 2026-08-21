@@ -15,7 +15,6 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
     ],
     collectionSlug: "video-installations",
     date: "2026-02-04",
-    favorite: true,
     introText:
       "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
     cover:
@@ -135,7 +134,6 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "video-installations",
-    favorite: true,
     date: "2025-07-11",
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
     heroImage:

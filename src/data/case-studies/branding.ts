@@ -11,8 +11,6 @@ export const brandingCaseStudies: CaseStudy[] = [
     collectionSlug: "branding",
     cover: "/case-studies/branding/cheetah/page-cover.svg",
     date: "2025-01-18",
-    favorite: true,
-    appearanceOrder: 1,
     introText:
       "During my first year of my Visual Communication B.A, we got an exercise to research an animal of our choice, and based on that animal, to create a visual identity for an imaginary company, which could be represented in theory by the animal we chose. Since a cheetah is one of my favorite wild animals, I knew in the very first second I'll choose it.",
     heroImage: "/case-studies/branding/cheetah/hero-image.svg",

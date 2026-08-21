@@ -5,8 +5,6 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
   {
     slug: "anatomy-of-memory",
     title: "Anatomy of Memory",
-    favorite: true,
-    appearanceOrder: 3,
     excerpt:
       "The catalogue traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence.",
     tags: [
@@ -121,8 +119,6 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
   {
     slug: "cinemateque-magazine",
     title: "Cinemateque Magazine",
-    favorite: true,
-    appearanceOrder: 2,
     excerpt:
       "This project is designed as a magazine editorial, exploring the automobile in cinema as a space that drives narrative and shapes on-screen events.",
     tags: [

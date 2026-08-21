@@ -5,8 +5,6 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "spod",
     title: "Spod",
-    favorite: true,
-    appearanceOrder: 3,
     cover: "/case-studies/product-design/spod/updated-cover.jpg",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
@@ -267,7 +265,6 @@ export const productDesignCaseStudies: CaseStudy[] = [
     excerpt:
       "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
     tags: ["Personal Project", "SaaS"],
-    favorite: true,
     collectionSlug: "product-design",
     date: "2025-10-01",
     heroImage: "/case-studies/product-design/infowork/hero-image.svg",

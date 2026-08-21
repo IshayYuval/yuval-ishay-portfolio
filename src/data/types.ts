@@ -56,8 +56,6 @@ export type CaseStudy = {
   date?: string;
   startDate?: string;
   endDate?: string;
-  favorite?: boolean;
-  appearanceOrder?: number; // Order to display on landing page carousel
   introText?: string;
   heroImage?: string; // specific for Branding / Visual top section
   heroBackgroundColor?: string; // optional background color for hero section
@@ -94,7 +92,6 @@ export type FavoriteConfig = {
   headingColor: string;
   textColor: string;
   coverSrc?: string;
-  appearanceOrder: number;
   buttonTheme?: "light" | "dark";
   blendMode?:
     | "normal"

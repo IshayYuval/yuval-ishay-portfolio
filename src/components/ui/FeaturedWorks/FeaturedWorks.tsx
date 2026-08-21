@@ -1,10 +1,12 @@
-import { caseStudies } from "@/data/portfolio";
+import { caseStudies, favorites } from "@/data/portfolio";
 import HorizontalScroll from "./HorizontalScroll";
 
 export default function FeaturedWorks() {
-    const favoriteWorks = caseStudies
-        .filter((study) => study.favorite)
-        .sort((a, b) => (a.appearanceOrder ?? 99) - (b.appearanceOrder ?? 99));
+    const favoriteWorks = favorites.reduce((acc, fav) => {
+        const study = caseStudies.find((s) => s.slug === fav.slug);
+        if (study) acc.push(study);
+        return acc;
+    }, [] as typeof caseStudies);
 
     if (favoriteWorks.length === 0) {
         return null;

@@ -14,7 +14,6 @@ export const packagingDesignCaseStudies: CaseStudy[] = [
       "Visual Communication 1",
     ],
     collectionSlug: "packaging-design",
-    favorite: true,
     date: "2025-12-26",
     navbarTextColor: "#612423",
     backgroundColor: "#2e1010ff",

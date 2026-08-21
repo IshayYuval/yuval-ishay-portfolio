@@ -271,10 +271,9 @@ stopMotionData: {
 
 ## 🌟 Adding a Project to Landing Page Favorites
 
-To feature a case study in the landing page favorites carousel:
+To feature a case study in the landing page favorites section:
 
-1. In the case study object, set `favorite: true`.
-2. Open `src/data/favorites.ts` and add an entry:
+Add an entry to `src/data/favorites.ts`. The order of items in this array determines the display order on the landing page:
 
 ```typescript
 {
@@ -282,8 +281,7 @@ To feature a case study in the landing page favorites carousel:
   backgroundColor: "#101440",       // Slide background color
   headingColor: "#ffffff",          // Title text color
   textColor: "#ffffff",             // Description text color
-  coverSrc: "/favorites/my-cover.webp", // Thumbnail or MP4 loop
-  appearanceOrder: 1,               // 1-based order in carousel
+  coverSrc: "/favorites/my-cover.webp", // Thumbnail or MP4 loop (Optional)
   buttonTheme: "dark",              // "light" | "dark" (Optional)
   blendMode: "normal"               // CSS blend mode (Optional)
 }

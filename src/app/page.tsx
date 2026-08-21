@@ -34,13 +34,11 @@ const cardVariants: Variants = {
 
 export default function Home() {
   const isBackNav = useContext(AnimationContext);
-  const favoriteWorks = favorites
-    .sort((a, b) => a.appearanceOrder - b.appearanceOrder)
-    .reduce((acc, fav) => {
-      const study = caseStudies.find(s => s.slug === fav.slug);
-      if (study) acc.push(study);
-      return acc;
-    }, [] as typeof caseStudies);
+  const favoriteWorks = favorites.reduce((acc, fav) => {
+    const study = caseStudies.find((s) => s.slug === fav.slug);
+    if (study) acc.push(study);
+    return acc;
+  }, [] as typeof caseStudies);
 
   return (
     <>

@@ -10,11 +10,11 @@ export const productDesignCaseStudies: CaseStudy[] = [
     excerpt:
       "Notch is a fashionable smart medical patch that connects to your phone, monitors allergic reactions, and protects you when every second matters.",
     tags: [
-      "HIT",
-      "Visual Communication BA",
-      "2nd Year",
-      "Interactive Design Intro",
       "App Design",
+      "Landing Page Design",
+      "Packaging Design",
+      "Wearable Patch",
+      "Branding"
     ],
     heroBackgroundColor: "#FDF9EF",
     navbarTextColor: "#AD857A",
@@ -119,11 +119,8 @@ export const productDesignCaseStudies: CaseStudy[] = [
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: [
-      "HIT",
-      "Visual Communication BA",
-      "2nd Year",
-      "Interactive Design Intro",
       "App Design",
+      "Branding",
     ],
     heroBackgroundColor: "#FCF0FF",
     navbarTextColor: "#9600A6",
@@ -276,7 +273,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     cover: "/case-studies/product-design/name-the-font/cover.webp",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
-    tags: ["Passion Project", "Typography", "Gaming", "Software Development"],
+    tags: ["Web App Design", "Branding", "Gaming", "Web Development"],
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
     heroBackgroundColor: "#4673b0",
     backgroundColor: "#133C66",
@@ -374,7 +371,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     cover: "/case-studies/product-design/infowork/page-cover.jpg",
     excerpt:
       "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
-    tags: ["Personal Project", "SaaS"],
+    tags: ["Web App Design", "Web App Development"],
     collectionSlug: "product-design",
     date: "2025-10-01",
     heroImage: "/case-studies/product-design/infowork/hero-image.svg",
@@ -447,7 +444,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     title: "Lushay Docs",
     excerpt:
       "A documentation site for learning and enhancing FPGA knowledge.",
-    tags: ["Client Project", "Documentation", "Learning Platform"],
+    tags: ["Web App Design"],
     collectionSlug: "product-design",
     date: "2024-05-22",
     cover: "/case-studies/product-design/lushay-docs/page-cover.webp",
@@ -500,7 +497,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     title: "Upllery Event Manager",
     excerpt:
       "Web management platform for Upllery events - Use your audience Instagram stories as your events content!",
-    tags: ["Client Project", "SaaS"],
+    tags: ["Web App Design"],
     collectionSlug: "product-design",
     date: "2021-12-25",
     cover: "/case-studies/product-design/upllery/page-cover.webp",
@@ -555,7 +552,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     slug: "3dmylev",
     title: "3DMylev",
     excerpt: "An online business for 3D Printing designers furnitures",
-    tags: ["Client Project", "E-commerce", "Shopify"],
+    tags: ["E-commerce Shopify Store Design"],
     collectionSlug: "product-design",
     date: "2024-7-2",
     cover: "/case-studies/product-design/3dmylev/page-cover.webp",

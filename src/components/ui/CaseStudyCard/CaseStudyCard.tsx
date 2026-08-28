@@ -61,13 +61,13 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-10 py-4 transition-all duration-300 opacity-0 group-hover:opacity-100 bg-[var(--color-brand-secondary-700)]/70 backdrop-blur-[4px]">
-                    <h3 className={`mb-2 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300`}>{study.title}</h3>
-                    <span className="px-1 block text-white/70 mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-50">
+                    <h3 className={`px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300`}>{study.title}</h3>
+                    <span className="px-1 block text-white/70 mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-50">
                         {formattedDate}
                     </span>
                     {!hideExcerpt && <p className={`mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>}
                     {!hideTags && (
-                        <div className="flex gap-1 md:gap-2 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                        <div className="flex gap-1 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
                             {study.tags.map(tag => (
                                 <Tag key={tag}>
                                     {tag}

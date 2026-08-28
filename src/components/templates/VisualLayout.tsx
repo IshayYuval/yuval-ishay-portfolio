@@ -1,7 +1,7 @@
-import React from "react";
 import Image from "next/image";
 import { CaseStudy } from "@/data/portfolio";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
+import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
 import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
 import { renderTextWithBreaks } from "@/utils/text";
@@ -10,6 +10,152 @@ import Button from "../ui/Button/Button";
 import { formatCaseStudyDate } from "@/utils/dateUtils";
 
 export default function VisualLayout({ data }: { data: CaseStudy }) {
+    const resolveGalleryData = (gallery?: CaseStudy["gallery"], defaultTitle?: string, defaultDesc?: string) => {
+        if (!gallery) return null;
+        if (Array.isArray(gallery)) {
+            if (gallery.length === 0) return null;
+            return {
+                items: gallery,
+                title: defaultTitle,
+                description: defaultDesc,
+            };
+        }
+        if (gallery && typeof gallery === "object" && "items" in gallery && Array.isArray(gallery.items)) {
+            if (gallery.items.length === 0) return null;
+            return {
+                items: gallery.items,
+                title: gallery.title || defaultTitle,
+                description: gallery.description || defaultDesc,
+            };
+        }
+        return null;
+    };
+
+    const renderSection = (key: string) => {
+        switch (key) {
+            case "processSteps":
+                if (!data.processSteps || data.processSteps.length === 0) return null;
+                return (
+                    <section key="processSteps" className="grid grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto mt-12">
+                        {data.processSteps.map((step, index) => (
+                            <div key={index} className="flex flex-col gap-4">
+                                <h3 className="font-bold">{renderTextWithBreaks(step.title)}</h3>
+                                {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
+                                {step.bulletsTitle && <h4 className="font-bold mt-2">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
+                                {step.bullets && step.bullets.length > 0 && (
+                                    <ul className="list-disc pl-5 text-body space-y-1.5">
+                                        {step.bullets.map((bullet, i) => (
+                                            <li key={i}>
+                                                {typeof bullet === "string" ? (
+                                                    renderTextWithBreaks(bullet)
+                                                ) : (
+                                                    <>
+                                                        {bullet.label && (
+                                                            <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
+                                                                {bullet.label}
+                                                            </span>
+                                                        )}
+                                                        {renderTextWithBreaks(bullet.text)}
+                                                    </>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {step.bulletSections && step.bulletSections.map((section, sIndex) => (
+                                    <div key={sIndex} className="mt-4">
+                                        {section.title && <h4 className="font-bold mt-2">{renderTextWithBreaks(section.title)}</h4>}
+                                        <ul className="list-disc pl-5 text-body space-y-1.5">
+                                            {section.bullets.map((bullet, bIndex) => (
+                                                <li key={bIndex}>
+                                                    {typeof bullet === "string" ? (
+                                                        renderTextWithBreaks(bullet)
+                                                    ) : (
+                                                        <>
+                                                            {bullet.label && (
+                                                                <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
+                                                                    {bullet.label}
+                                                                </span>
+                                                            )}
+                                                            {renderTextWithBreaks(bullet.text)}
+                                                        </>
+                                                    )}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                                {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
+                            </div>
+                        ))}
+                    </section>
+                );
+
+            case "gallery": {
+                const galleryData = resolveGalleryData(data.gallery, data.galleryTitle, data.galleryDescription);
+                if (!galleryData) return null;
+                return (
+                    <section key="gallery" className="py-12">
+                        {(galleryData.title || galleryData.description) && (
+                            <div className="max-w-4xl mx-auto mb-8">
+                                {galleryData.title && (
+                                    <h1 className="mb-4 text-center">{renderTextWithBreaks(galleryData.title)}</h1>
+                                )}
+                                {galleryData.description && (
+                                    <p className="text-body">{renderTextWithBreaks(galleryData.description)}</p>
+                                )}
+                            </div>
+                        )}
+                        <DynamicGrid items={galleryData.items} />
+                    </section>
+                );
+            }
+
+            case "galleries":
+                if (!data.galleries || data.galleries.length === 0) return null;
+                return (
+                    <div key="galleries" className="flex flex-col gap-12 py-12">
+                        {data.galleries.map((gallerySection, idx) => (
+                            <section key={idx} className="w-full">
+                                {(gallerySection.title || gallerySection.description) && (
+                                    <div className="max-w-4xl mx-auto mb-8">
+                                        {gallerySection.title && (
+                                            <h1 className="mb-6 text-center">{renderTextWithBreaks(gallerySection.title)}</h1>
+                                        )}
+                                        {gallerySection.description && (
+                                            <p className="text-body">{renderTextWithBreaks(gallerySection.description)}</p>
+                                        )}
+                                    </div>
+                                )}
+                                <DynamicGrid items={gallerySection.items} />
+                            </section>
+                        ))}
+                    </div>
+                );
+
+            case "contentSections":
+                if (!data.contentSections || data.contentSections.length === 0) return null;
+                return (
+                    <section key="contentSections" className="py-12">
+                        {data.contentSections.map((section, index) => (
+                            <ZigZagRow key={index} {...section} enableLightbox={true} />
+                        ))}
+                    </section>
+                );
+
+            case "prototype":
+                if (!data.prototype) return null;
+                return (
+                    <PrototypeSection key="prototype" {...data.prototype} />
+                );
+
+            default:
+                return null;
+        }
+    };
+
+    const contentKeys = Object.keys(data);
+
     return (
         <article className="min-h-screen pb-24" style={{ backgroundColor: data.backgroundColor }}>
             {/* Hero Section */}
@@ -79,92 +225,8 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                     )}
                 </header>
 
-
-
-                {/* Process Steps */}
-                {data.processSteps && (
-                    <section className="grid grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto mt-12">
-                        {data.processSteps.map((step, index) => (
-                            <div key={index} className="flex flex-col gap-4">
-                                <h3 className="font-bold">{renderTextWithBreaks(step.title)}</h3>
-                                {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
-                                {step.bulletsTitle && <h4 className="font-bold mt-2">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
-                                {step.bullets && step.bullets.length > 0 && (
-                                    <ul className="list-disc pl-5 text-body space-y-1.5">
-                                        {step.bullets.map((bullet, i) => (
-                                            <li key={i}>
-                                                {typeof bullet === "string" ? (
-                                                    renderTextWithBreaks(bullet)
-                                                ) : (
-                                                    <>
-                                                        {bullet.label && (
-                                                            <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
-                                                                {bullet.label}
-                                                            </span>
-                                                        )}
-                                                        {renderTextWithBreaks(bullet.text)}
-                                                    </>
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                                {step.bulletSections && step.bulletSections.map((section, sIndex) => (
-                                    <div key={sIndex} className="mt-4">
-                                        {section.title && <h4 className="font-bold mt-2">{renderTextWithBreaks(section.title)}</h4>}
-                                        <ul className="list-disc pl-5 text-body space-y-1.5">
-                                            {section.bullets.map((bullet, bIndex) => (
-                                                <li key={bIndex}>
-                                                    {typeof bullet === "string" ? (
-                                                        renderTextWithBreaks(bullet)
-                                                    ) : (
-                                                        <>
-                                                            {bullet.label && (
-                                                                <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
-                                                                    {bullet.label}
-                                                                </span>
-                                                            )}
-                                                            {renderTextWithBreaks(bullet.text)}
-                                                        </>
-                                                    )}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
-                                {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
-                            </div>
-                        ))}
-                    </section>
-                )}
-
-                {/* Gallery */}
-                {(data.gallery && data.gallery.length > 0) && (
-                    <section className="py-12">
-                        <DynamicGrid items={data.gallery} />
-                    </section>
-                )}
-
-                {/* Multiple Galleries */}
-                {data.galleries && data.galleries.length > 0 && (
-                    <div className="flex flex-col gap-12 py-12">
-                        {data.galleries.map((gallerySection, idx) => (
-                            <section key={idx} className="w-full">
-                                {gallerySection.title && (
-                                    <div className="max-w-4xl mx-auto mb-6">
-                                        <h2 className="text-5xl md:text-7xl font-bold text-center mb-8">{renderTextWithBreaks(gallerySection.title)}</h2>
-                                    </div>
-                                )}
-                                <DynamicGrid items={gallerySection.items} />
-                            </section>
-                        ))}
-                    </div>
-                )}
-
-                {/* Prototype */}
-                {data.prototype && (
-                    <PrototypeSection {...data.prototype} />
-                )}
+                {/* Dynamically Ordered Content Sections */}
+                {contentKeys.map((key) => renderSection(key))}
 
                 <MoreLikeThis currentSlug={data.slug} collectionSlug={data.collectionSlug} />
             </div>

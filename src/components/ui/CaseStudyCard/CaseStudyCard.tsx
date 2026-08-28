@@ -47,6 +47,7 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
                         <Image
                             src={study.cover}
                             alt={study.title}
+                            unoptimized
                             fill
                             className={`object-cover transition-transform duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

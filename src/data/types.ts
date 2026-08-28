@@ -43,8 +43,11 @@ export type ProcessStep = {
 
 export type GallerySection = {
   title?: string;
+  description?: string;
   items: GalleryItem[];
 };
+
+export type GalleryData = GalleryItem[] | GallerySection;
 
 export type CaseStudy = {
   slug: string;
@@ -69,8 +72,10 @@ export type CaseStudy = {
   secondaryProjectUrlText?: string;
   processSteps?: ProcessStep[]; // for UX/UI and custom case studies
   contentSections?: ZigZagSection[];
-  gallery?: GalleryItem[];
+  gallery?: GalleryData;
   galleries?: GallerySection[];
+  galleryTitle?: string;
+  galleryDescription?: string;
   backgroundColor?: string;
   stopMotionData?: {
     images: string[];

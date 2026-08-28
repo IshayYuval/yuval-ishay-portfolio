@@ -1,11 +1,121 @@
 import { CaseStudy } from "../types";
 
 export const productDesignCaseStudies: CaseStudy[] = [
+
+  // notch
+  {
+    slug: "notch",
+    title: "Notch",
+    cover: "/case-studies/product-design/notch/page-cover.webp",
+    excerpt:
+      "Notch is a fashionable smart medical patch that connects to your phone, monitors allergic reactions, and protects you when every second matters.",
+    tags: [
+      "HIT",
+      "Visual Communication BA",
+      "2nd Year",
+      "Interactive Design Intro",
+      "App Design",
+    ],
+    heroBackgroundColor: "#FDF9EF",
+    navbarTextColor: "#AD857A",
+    backgroundColor: "#4D3A35",
+    projectUrl: "https://noakuterman.myportfolio.com",
+    projectUrlText: "Noa's Portfolio",
+    projectUrlVariant: "secondary",
+    heroImage: "/case-studies/product-design/notch/hero-video.mp4",
+    collectionSlug: "product-design",
+    date: "2026-07-01",
+    introText:
+      "Notch is a smart wearable patch designed for people with severe allergies. It monitors vital signs to detect an allergic reaction and can automatically inject epinephrine when needed. The connected app also lets users trigger an injection manually and alert family members in an emergency. <br/>Notch was designed as the final project for the Designing Interactive Products course, as a collaborative effort with my friend and amazing designer in her own right, Noa Kuterman.",
+    processSteps: [
+      {
+        title: "The Problem",
+        text: "For people with severe allergies, staying safe still depends on carrying an EpiPen at all times — a bulky, visible device that can be inconvenient and socially uncomfortable. At the same time, allergic reactions can be difficult to identify with certainty, making the decision to use it even more complicated.",
+      },
+      {
+        title: "The Research",
+        text: "We conducted extensive research with people living with allergies to better understand their everyday challenges.",
+        bullets: [
+          {
+            label: "100%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " of respondents have experienced a severe allergic reaction.",
+          },
+          {
+            label: "54%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " have not carried an EpiPen when they were supposed to.",
+          },
+          {
+            label: "23%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " are confident they could use an EpiPen correctly in an emergency.",
+          },
+          {
+            label: "77%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " try to determine whether they are actually experiencing an allergic reaction.",
+          },
+          {
+            label: "70%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " take more than 10 seconds to access their EpiPen.",
+          },
+          {
+            label: "69%",
+            labelColor: "white",
+            labelWeight: "bold",
+            text: " are concerned they may not be able to respond in time during an allergic emergency.",
+          },
+        ],
+      },
+    ],
+
+    contentSections: [
+      {
+        image: "/case-studies/product-design/notch/home-page.jpg",
+        title:
+          "A simple dashboard that helps users understand whether they’re having an allergic reaction.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/notch/anaphylaxis-detected.jpg",
+        title:
+          "Using iOS Critical Alerts to ensure an anaphylactic reaction is never missed.<br><br> Slide to Inject button makes sure the user doesn't inject accidentally. <br><br>First responders are automatically alerted as soon as the user injects.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/notch/tutorial-flow.jpg",
+        title:
+          "Illustrated guidance showing users how and where to place the patch.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/notch/my-patch.jpg",
+        title:
+          "Signup use college credentials to pull the student’s presentation schedule based on their department and year, without manual input.<br/><br/> Signup happens during the reservation flow, so the podium is saved for the specific student who booked it, and only for them.",
+        text: "",
+      },
+      {
+        image: "/case-studies/product-design/notch/nfc-connection.jpg",
+        title:
+          "Simply bring the patch close to your iPhone to pair it with the app via NFC.",
+        text: "",
+      },
+    ],
+  },
+
+
   // spod
   {
     slug: "spod",
     title: "Spod",
-    cover: "/case-studies/product-design/spod/updated-cover.jpg",
+    cover: "/case-studies/product-design/spod/page-cover.webp",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: [
@@ -163,7 +273,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "namethefont",
     title: "Name the Font",
-    cover: "/case-studies/product-design/name-the-font/page-cover.jpg",
+    cover: "/case-studies/product-design/name-the-font/cover.webp",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
     tags: ["Passion Project", "Typography", "Gaming", "Software Development"],
@@ -340,7 +450,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["Client Project", "Documentation", "Learning Platform"],
     collectionSlug: "product-design",
     date: "2024-05-22",
-    cover: "/case-studies/product-design/lushay-docs/page-cover.svg",
+    cover: "/case-studies/product-design/lushay-docs/page-cover.webp",
     backgroundColor: "#1A254D",
     heroImage: "/case-studies/product-design/lushay-docs/hero-image.svg",
     heroBackgroundColor: "#233266",
@@ -393,7 +503,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["Client Project", "SaaS"],
     collectionSlug: "product-design",
     date: "2021-12-25",
-    cover: "/case-studies/product-design/upllery/page-cover.jpg",
+    cover: "/case-studies/product-design/upllery/page-cover.webp",
     heroImage: "/case-studies/product-design/upllery/hero-image.svg",
     heroBackgroundColor: "#000000",
     introText:
@@ -448,7 +558,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["Client Project", "E-commerce", "Shopify"],
     collectionSlug: "product-design",
     date: "2024-7-2",
-    cover: "/case-studies/product-design/3dmylev/page-cover.jpg",
+    cover: "/case-studies/product-design/3dmylev/page-cover.webp",
     heroImage: "/case-studies/product-design/3dmylev/hero-image.svg",
     heroBackgroundColor: "#fefbfc",
     navbarTextColor: "#f2194b",

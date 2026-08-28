@@ -73,21 +73,25 @@ export const exampleCaseStudy: CaseStudy = {
     },
   ],
 
-  // Gallery of Images & Media (Optional)
-  gallery: [
-    {
-      src: "/case-studies/branding/project-slug/mockup-1.webp",
-      alt: "Project Mockup",
-      colSpan: "half", // "full" | "half"
-      width: 2000,
-      height: 1500,
-    },
-    {
-      src: "/case-studies/branding/project-slug/mockup-2.webp",
-      alt: "Full-width Mockup",
-      colSpan: "full",
-    },
-  ],
+  // Gallery of Images & Media (Optional - supports title and description for the whole gallery)
+  gallery: {
+    title: "The Brand In Action",
+    description: "Overview of visual assets and real-world mockups.",
+    items: [
+      {
+        src: "/case-studies/branding/project-slug/mockup-1.webp",
+        alt: "Project Mockup",
+        colSpan: "half", // "full" | "half"
+        width: 2000,
+        height: 1500,
+      },
+      {
+        src: "/case-studies/branding/project-slug/mockup-2.webp",
+        alt: "Full-width Mockup",
+        colSpan: "full",
+      },
+    ],
+  },
 
   // Figma Prototype Embed (Optional)
   // prototype: {

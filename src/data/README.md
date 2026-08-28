@@ -74,11 +74,14 @@ The site automatically selects the layout template based on the `collectionSlug`
 | `collectionSlug` | Template Rendered | Layout Features |
 | :--- | :--- | :--- |
 | `branding` | `BrandingLayout` | Hero banner, intro, process bullets, ZigZag sections, media gallery |
-| `product-design` | `UiUxLayout` | Hero Lottie/image, deep research bullets, personas, feature ZigZags, prototype |
+| `product-design` | `UiUxLayout` | Hero Lottie/image, deep research bullets, personas, galleries, feature ZigZags, prototype |
 | `editorial-and-print` | `VisualLayout` | Large format hero, clean intro, full & half width image spreads, galleries |
 | `video-installations` | `VisualLayout` | Vimeo video player embeds, research bullets, sticker mockups, prototype |
 | `packaging-design` | `VisualLayout` | Stop-motion cover player, process steps, 3D/bottle galleries, prototype |
 | `photography` | `VisualLayout` | Dark mode aesthetic, photographic essay full-spread gallery |
+
+> [!NOTE]
+> Section ordering is flexible: content blocks (`processSteps`, `gallery`, `galleries`, `contentSections`, `prototype`) are rendered in the exact order they are placed in the case study object.
 
 ---
 
@@ -207,32 +210,42 @@ contentSections: [
 
 ### 8. Galleries & Video Embeds (`gallery`)
 
-Showcases images and Vimeo videos in half or full grid widths:
+Showcases images and Vimeo videos in half or full grid widths. Supports optional `title` (rendered with `<h1>`) and `description` for the whole gallery:
 
 ```typescript
-gallery: [
-  // Full-width Image
-  {
-    src: "/case-studies/product-design/spod/explore-page.jpg",
-    alt: "Explore Page",
-    colSpan: "full"
-  },
-  // Half-width Image with explicit dimensions (helps prevent layout shift)
-  {
-    src: "/case-studies/branding/cheetah/mockups/packages.jpg",
-    alt: "Packaging Mockup",
-    colSpan: "half",
-    width: 2339,
-    height: 3307
-  },
-  // Embedded Vimeo Video
-  {
-    src: "", // empty when using vimeoSrc
-    vimeoSrc: "https://player.vimeo.com/video/1171841024?badge=0&autopause=0",
-    alt: "Video Showcase",
-    colSpan: "full"
-  }
-]
+// Object syntax with title and description
+gallery: {
+  title: "Brand In Action",
+  description: "Comprehensive overview of the visual assets and deliverables across various platforms.",
+  items: [
+    // Full-width Image
+    {
+      src: "/case-studies/product-design/spod/explore-page.jpg",
+      alt: "Explore Page",
+      colSpan: "full"
+    },
+    // Half-width Image with explicit dimensions
+    {
+      src: "/case-studies/branding/cheetah/mockups/packages.jpg",
+      alt: "Packaging Mockup",
+      colSpan: "half",
+      width: 2339,
+      height: 3307
+    },
+    // Embedded Vimeo Video
+    {
+      src: "",
+      vimeoSrc: "https://player.vimeo.com/video/1171841024?badge=0&autopause=0",
+      alt: "Video Showcase",
+      colSpan: "full"
+    }
+  ]
+}
+
+// Or array syntax with optional top-level galleryTitle / galleryDescription
+gallery: [ ... ],
+galleryTitle: "Brand In Action",
+galleryDescription: "Overview of deliverables...",
 ```
 
 ---

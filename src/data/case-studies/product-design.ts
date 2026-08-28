@@ -368,7 +368,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "infowork",
     title: "Infowork",
-    cover: "/case-studies/product-design/infowork/page-cover.jpg",
+    cover: "/case-studies/product-design/infowork/page-cover.webp",
     excerpt:
       "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
     tags: ["Web App Design", "Web App Development"],

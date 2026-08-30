@@ -8,28 +8,10 @@ import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 import { renderTextWithBreaks } from "@/utils/text";
 import { formatCaseStudyDate } from "@/utils/dateUtils";
+import { resolveGalleryData, getCaseStudySlides } from "@/utils/lightboxUtils";
 
 export default function BrandingLayout({ data }: { data: CaseStudy }) {
-    const resolveGalleryData = (gallery?: CaseStudy["gallery"], defaultTitle?: string, defaultDesc?: string) => {
-        if (!gallery) return null;
-        if (Array.isArray(gallery)) {
-            if (gallery.length === 0) return null;
-            return {
-                items: gallery,
-                title: defaultTitle,
-                description: defaultDesc,
-            };
-        }
-        if (gallery && typeof gallery === "object" && "items" in gallery && Array.isArray(gallery.items)) {
-            if (gallery.items.length === 0) return null;
-            return {
-                items: gallery.items,
-                title: gallery.title || defaultTitle,
-                description: gallery.description || defaultDesc,
-            };
-        }
-        return null;
-    };
+    const { slides, sectionStartIndices } = getCaseStudySlides(data);
 
     const renderSection = (key: string) => {
         switch (key) {
@@ -93,11 +75,18 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
 
             case "contentSections":
                 if (!data.contentSections || data.contentSections.length === 0) return null;
+                const contentStartIndex = typeof sectionStartIndices["contentSections"] === "number" ? sectionStartIndices["contentSections"] : 0;
                 return (
                     <section key="contentSections" className="pt-14">
                         <h1 className="mb-2 text-center">Visual Language</h1>
                         {data.contentSections.map((section, index) => (
-                            <ZigZagRow key={index} {...section} />
+                            <ZigZagRow
+                                key={index}
+                                {...section}
+                                enableLightbox={true}
+                                lightboxSlides={slides}
+                                lightboxIndex={contentStartIndex + index}
+                            />
                         ))}
                     </section>
                 );
@@ -105,6 +94,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
             case "gallery": {
                 const galleryData = resolveGalleryData(data.gallery, data.galleryTitle || "The brand in action", data.galleryDescription);
                 if (!galleryData) return null;
+                const galleryStartIndex = typeof sectionStartIndices["gallery"] === "number" ? sectionStartIndices["gallery"] : 0;
                 return (
                     <section key="gallery" className="py-24">
                         {(galleryData.title || galleryData.description) && (
@@ -117,13 +107,18 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                                 )}
                             </div>
                         )}
-                        <DynamicGrid items={galleryData.items} />
+                        <DynamicGrid
+                            items={galleryData.items}
+                            lightboxSlides={slides}
+                            startIndex={galleryStartIndex}
+                        />
                     </section>
                 );
             }
 
             case "galleries":
                 if (!data.galleries || data.galleries.length === 0) return null;
+                const galleriesIndices = Array.isArray(sectionStartIndices["galleries"]) ? sectionStartIndices["galleries"] : [];
                 return (
                     <div key="galleries" className="flex flex-col gap-12 py-12">
                         {data.galleries.map((gallerySection, idx) => (
@@ -138,7 +133,11 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                                         )}
                                     </div>
                                 )}
-                                <DynamicGrid items={gallerySection.items} />
+                                <DynamicGrid
+                                    items={gallerySection.items}
+                                    lightboxSlides={slides}
+                                    startIndex={galleriesIndices[idx] ?? 0}
+                                />
                             </section>
                         ))}
                     </div>

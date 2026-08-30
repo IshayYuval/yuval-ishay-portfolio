@@ -3,15 +3,15 @@ import { CaseStudy } from "../types";
 export const videoInstallationsCaseStudies: CaseStudy[] = [
   // conceptual art - Supporters Voice
   {
-    slug: "social-campaign",
-    title: "Social Campaign - Supporters Voice",
+    slug: "supporters-voice",
+    title: "Supporters Voice",
     excerpt:
       "My social campaign is a protest campaign called “The Supporters’ Protest.” The protest aims to unite all sports supporters against the disgraceful practice of broadcasting games in bars without sound. #משחקלארואיםמושתק #מחאתהאוהדים #תפסיקולשדראושתפסיקולשקר",
     tags: [
-      "HIT",
-      "Visual Communication BA",
-      "2nd Year",
-      "Visual Communication 1",
+      "Social Campaign",
+      "Motion Design",
+      "Video Editing",
+      "Art Direction",
     ],
     collectionSlug: "video-installations",
     date: "2026-02-04",
@@ -132,7 +132,7 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
     title: "Long-Distance Love",
     excerpt:
       "Conceptual video and print project showing me and my life partner's way for success in a long-distance relationship.",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    tags: ["Video Editing", "Art Direction", "Videography", "Printed Material", "Sound Design"],
     collectionSlug: "video-installations",
     date: "2025-07-11",
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
@@ -140,7 +140,9 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       "/case-studies/conceptual-design/long-distance-love/hero-image.svg",
     heroBackgroundColor: "#2c487e",
     introText:
-      "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships.",
+      "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships. <br/><br/> Special thanks to my friend, and amazing designer, Sharon Kisilevich for the amazing commentary!",
+    projectUrl: "https://sharonkisil.myportfolio.com",
+    projectUrlText: "Sharon's Portfolio",
     gallery: [
       {
         src: "", // Placeholder or thumbnail if needed, but the loop video acts as cover

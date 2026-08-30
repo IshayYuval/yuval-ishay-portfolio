@@ -7,9 +7,19 @@ import LightboxImage from "../ui/LightboxImage/LightboxImage";
 
 interface ZigZagRowProps extends ZigZagSection {
     enableLightbox?: boolean;
+    lightboxSlides?: { src: string }[];
+    lightboxIndex?: number;
 }
 
-export default function ZigZagRow({ image, title, text, reverse, enableLightbox = false }: ZigZagRowProps) {
+export default function ZigZagRow({
+    image,
+    title,
+    text,
+    reverse,
+    enableLightbox = false,
+    lightboxSlides,
+    lightboxIndex = 0,
+}: ZigZagRowProps) {
     return (
         <div className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 my-12 ${reverse ? 'md:flex-row-reverse' : ''}`}>
             {/* Image Side */}
@@ -25,6 +35,8 @@ export default function ZigZagRow({ image, title, text, reverse, enableLightbox 
                         sizes="100vw"
                         className="w-full h-auto md:hidden"
                         enableZoom={true}
+                        lightboxSlides={lightboxSlides}
+                        lightboxIndex={lightboxIndex}
                     />
                 ) : (
                     <Image
@@ -45,6 +57,8 @@ export default function ZigZagRow({ image, title, text, reverse, enableLightbox 
                         fill
                         className="object-contain hidden md:block"
                         enableZoom={true}
+                        lightboxSlides={lightboxSlides}
+                        lightboxIndex={lightboxIndex}
                     />
                 ) : (
                     <Image

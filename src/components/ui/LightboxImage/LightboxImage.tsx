@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image, { ImageProps } from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -13,24 +13,36 @@ interface LightboxImageProps extends Omit<ImageProps, "onClick"> {
     enableZoom?: boolean;
 }
 
-export default function LightboxImage({ lightboxSlides, lightboxIndex = 0, className, onClick, enableZoom = false, ...props }: LightboxImageProps) {
+export default function LightboxImage({
+    lightboxSlides,
+    lightboxIndex = 0,
+    className,
+    onClick,
+    enableZoom = false,
+    ...props
+}: LightboxImageProps) {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(lightboxIndex);
 
+    // If slides are provided, use them. Otherwise, use the current image as the single slide.
+    const slides = useMemo(() => {
+        if (lightboxSlides && lightboxSlides.length > 0) {
+            return lightboxSlides;
+        }
+        const src = typeof props.src === "string" ? props.src : (props.src as any)?.src;
+        return src ? [{ src }] : [];
+    }, [lightboxSlides, props.src]);
+
     // Reset index to the prop value whenever the lightbox opens
-    React.useEffect(() => {
+    useEffect(() => {
         if (open) {
             setIndex(lightboxIndex);
         }
     }, [open, lightboxIndex]);
 
-    // If slides are provided, use them. Otherwise, use the current image as the single slide.
-    const slides = lightboxSlides || [
-        { src: typeof props.src === "string" ? props.src : (props.src as any).src },
-    ];
-
     const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
         if (onClick) onClick(e);
+        setIndex(lightboxIndex);
         setOpen(true);
     };
 

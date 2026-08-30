@@ -5,13 +5,15 @@ import { GalleryItem } from "@/data/portfolio";
 
 interface DynamicGridProps {
     items: GalleryItem[];
+    lightboxSlides?: { src: string }[];
+    startIndex?: number;
 }
 
-export default function DynamicGrid({ items }: DynamicGridProps) {
+export default function DynamicGrid({ items, lightboxSlides, startIndex = 0 }: DynamicGridProps) {
     if (!items || items.length === 0) return null;
 
     // Create slides for Lightbox, filtering out items without a src (e.g. Vimeo videos without a placeholder)
-    const slides = items
+    const slides = lightboxSlides || items
         .filter(item => item.src && item.src.length > 0)
         .map(item => ({ src: item.src }));
 
@@ -41,7 +43,7 @@ export default function DynamicGrid({ items }: DynamicGridProps) {
         rows.push(currentRow); // leftover item
     }
 
-    let slideIndex = 0;
+    let slideIndex = startIndex;
 
     return (
         <div className="flex flex-col gap-2 w-full my-12">

@@ -14,9 +14,15 @@ interface CaseStudyCardProps {
     study: CaseStudy;
     hideExcerpt?: boolean;
     hideTags?: boolean;
+    useThemeSurface?: boolean;
 }
 
-export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = false }: CaseStudyCardProps) {
+export default function CaseStudyCard({
+    study,
+    hideExcerpt = false,
+    hideTags = false,
+    useThemeSurface = false,
+}: CaseStudyCardProps) {
     const formattedDate = formatCaseStudyDate(study);
 
     // Default loading to true until loaded.
@@ -25,7 +31,13 @@ export default function CaseStudyCard({ study, hideExcerpt = false, hideTags = f
 
     return (
         <Link href={`/${study.slug}`} className={`${styles.card} group relative block overflow-hidden rounded-[var(--radius)]`}>
-            <div className={`${styles['card-image-wrapper']} relative aspect-[4/3] w-full bg-[var(--color-brand-secondary-800)]`}>
+            <div
+                className={`${styles['card-image-wrapper']} relative aspect-[4/3] w-full ${
+                    useThemeSurface
+                        ? "bg-[var(--theme-surface,var(--color-brand-secondary-800))]"
+                        : "bg-[var(--color-brand-secondary-800)]"
+                }`}
+            >
                 {study.stopMotionData ? (
                     <StopMotion
                         images={study.stopMotionData.images}

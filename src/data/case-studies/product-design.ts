@@ -6,9 +6,10 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "notch",
     title: "Notch",
-    cover: "/case-studies/product-design/notch/page-cover.webp",
+    cover: "/case-studies/product-design/notch/card-cover.webp",
     excerpt:
       "Notch is a fashionable smart medical patch that connects to your phone, monitors allergic reactions, and protects you when every second matters.",
+    heroImage: "/case-studies/product-design/notch/hero-video.mp4",
     tags: [
       "App Design",
       "Landing Page Design",
@@ -16,13 +17,18 @@ export const productDesignCaseStudies: CaseStudy[] = [
       "Wearable Patch",
       "Branding"
     ],
-    heroBackgroundColor: "#FDF9EF",
-    navbarTextColor: "#AD857A",
-    backgroundColor: "#4D3A35",
+    theme: {
+      heroBackground: "#FDF9EF",
+      navbarTextColor: "#AD857A",
+      pageBackground: "#4D3A35",
+      primaryColor: "#FFF7EB",
+      surfaceColor: "#806159",
+      mutedSurfaceColor: "#5E4741",
+      borderColor: "#806159"
+    },
     projectUrl: "https://noakuterman.myportfolio.com",
     projectUrlText: "Noa's Portfolio",
     projectUrlVariant: "secondary",
-    heroImage: "/case-studies/product-design/notch/hero-video.mp4",
     collectionSlug: "product-design",
     date: "2026-07-01",
     introText:
@@ -35,42 +41,30 @@ export const productDesignCaseStudies: CaseStudy[] = [
       {
         title: "The Research",
         text: "We conducted extensive research with people living with allergies to better understand their everyday challenges.",
-        bullets: [
+        graphs: [
           {
-            label: "100%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of respondents have experienced a severe allergic reaction.",
+            percentage: 100,
+            text: "of respondents have experienced a severe allergic reaction.",
           },
           {
-            label: "54%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " have not carried an EpiPen when they were supposed to.",
+            percentage: 54,
+            text: "have not carried an EpiPen when they were supposed to.",
           },
           {
-            label: "23%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " are confident they could use an EpiPen correctly in an emergency.",
+            percentage: 23,
+            text: "are confident they could use an EpiPen correctly in an emergency.",
           },
           {
-            label: "77%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " try to determine whether they are actually experiencing an allergic reaction.",
+            percentage: 77,
+            text: "try to determine whether they are actually experiencing an allergic reaction.",
           },
           {
-            label: "70%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " take more than 10 seconds to access their EpiPen.",
+            percentage: 70,
+            text: "take more than 10 seconds to access their EpiPen.",
           },
           {
-            label: "69%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " are concerned they may not be able to respond in time during an allergic emergency.",
+            percentage: 69,
+            text: "are concerned they may not be able to respond in time during an allergic emergency.",
           },
         ],
       },
@@ -115,16 +109,22 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "spod",
     title: "Spod",
-    cover: "/case-studies/product-design/spod/page-cover.webp",
+    cover: "/case-studies/product-design/spod/card-cover.webp",
     excerpt:
       "Spod was created to solve the podium shortage problem during presentations for visual communication students across academic institutions nationwide.",
     tags: [
       "App Design",
       "Branding",
     ],
-    heroBackgroundColor: "#FCF0FF",
-    navbarTextColor: "#9600A6",
-    backgroundColor: "#400047",
+    theme: {
+      heroBackground: "#FCF0FF",
+      navbarTextColor: "#9600A6",
+      pageBackground: "#400047",
+      primaryColor: "#F5B9FF",
+      surfaceColor: "#680073",
+      mutedSurfaceColor: "#52005B",
+      borderColor: "#680073"
+    },
     projectUrl: "https://noakuterman.myportfolio.com",
     projectUrlText: "Noa's Portfolio",
     projectUrlVariant: "secondary",
@@ -144,40 +144,28 @@ export const productDesignCaseStudies: CaseStudy[] = [
       {
         title: "The Research",
         text: "We've commited a deep user research to see how many of the students have the same worries as us. here are the numbers:",
-        bullets: [
+        graphs: [
           {
-            label: "70%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of students arrive ahead of time physically to campus to check for available podiums",
+            percentage: 70,
+            text: "of students arrive ahead of time physically to campus to check for available podiums",
           },
           {
-            label: "60%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of students reported running into overload and chaos during submission week due to poor organization.",
+            percentage: 60,
+            text: "of students reported running into overload and chaos during submission week due to poor organization.",
           },
           {
-            label: "42%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of students use a podium more than five times a year.",
+            percentage: 42,
+            text: "of students use a podium more than five times a year.",
           },
           {
-            label: "90%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of students rated their desire for a podium reservation app at 4 or higher out of 5, with 5 being the strongest interest.",
+            percentage: 90,
+            text: "of students rated their desire for a podium reservation app at 4 or higher out of 5, with 5 being the strongest interest.",
           },
           {
-            label: "40%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of students signed up for the newsletter to receive project updates, join the pilot, and get notified when it launches.",
+            percentage: 40,
+            text: "of students signed up for the newsletter to receive project updates, join the pilot, and get notified when it launches.",
           },
         ],
-        textAfter:
-          "The numbers are clear. We've found a real problem that needs solving.",
       },
       {
         title: "User Interviews & Personas",
@@ -270,13 +258,16 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "namethefont",
     title: "Name the Font",
-    cover: "/case-studies/product-design/name-the-font/cover.webp",
+    cover: "/case-studies/product-design/name-the-font/card-cover.webp",
     excerpt:
       "Name the font (Hebrew: זהה את הגופן) is a game bringing the fonts you see around you to the main stage. How many of them can you recognize?",
     tags: ["Web App Design", "Branding", "Gaming", "Web Development"],
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
-    heroBackgroundColor: "#4673b0",
-    backgroundColor: "#133C66",
+    theme: {
+      heroBackground: "#4673b0",
+      pageBackground: "#133C66",
+      primaryColor: "#FADA7A",
+    },
     projectUrl: "http://namethefont.com",
     projectUrlText: "Play now!",
     collectionSlug: "product-design",
@@ -368,17 +359,20 @@ export const productDesignCaseStudies: CaseStudy[] = [
   {
     slug: "infowork",
     title: "Infowork",
-    cover: "/case-studies/product-design/infowork/page-cover.webp",
+    cover: "/case-studies/product-design/infowork/card-cover.webp",
     excerpt:
       "Smart content management system I designed to organize, track, and simplify my social media work for Informat.",
     tags: ["Web App Design", "Web App Development"],
     collectionSlug: "product-design",
     date: "2025-10-01",
     heroImage: "/case-studies/product-design/infowork/hero-image.svg",
-    heroBackgroundColor: "#4f46e4",
+    theme: {
+      heroBackground: "#4f46e4",
+      pageBackground: "#232066",
+      primaryColor: "#4f46e4",
+    },
     introText:
       "Informat, founded in 1994, is one of Israel’s leading IT companies, offering advanced computing solutions, infrastructure, hardware, licensing, and support services across industries. <br/><br/> When I joined as a part-time Social Media Designer, I was responsible for creative concepts for Facebook, LinkedIn, and newsletters. The creative side was fun, but managing the work was messy. I kept losing track of how many posts I had made, when they were scheduled, and what content belonged where. Everything got buried in my inbox and in my excel sheet. What should have been an inspiring process turned into something frustrating and overwhelming. <br/><br/> That was the trigger for Infowork – my own smart tool to manage social content.",
-    backgroundColor: "#232066",
     processSteps: [
       {
         title: "User Research",
@@ -447,10 +441,13 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["Web App Design"],
     collectionSlug: "product-design",
     date: "2024-05-22",
-    cover: "/case-studies/product-design/lushay-docs/page-cover.webp",
-    backgroundColor: "#1A254D",
+    cover: "/case-studies/product-design/lushay-docs/card-cover.webp",
     heroImage: "/case-studies/product-design/lushay-docs/hero-image.svg",
-    heroBackgroundColor: "#233266",
+    theme: {
+      heroBackground: "#233266",
+      pageBackground: "#1A254D",
+      primaryColor: "#8BFCF4",
+    },
     introText:
       "Lushay Labs is a company specializing in electrical engineering, focusing on creating educational content in the FPGA domain. For this project, I crafted a new user experience for their website, Lushay Docs. This site offers comprehensive class documentation for all built-in FPGA primitives.",
     processSteps: [
@@ -500,12 +497,14 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["Web App Design"],
     collectionSlug: "product-design",
     date: "2021-12-25",
-    cover: "/case-studies/product-design/upllery/page-cover.webp",
+    cover: "/case-studies/product-design/upllery/card-cover.webp",
     heroImage: "/case-studies/product-design/upllery/hero-image.svg",
-    heroBackgroundColor: "#000000",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#1B1B1B",
+    },
     introText:
       "Upllery boosts brand engagement and exposure across social media, transforming fans' posts into promotional content for wider reach. My objective was to design Upllery's management platform for real-time interaction with event attendees.",
-    backgroundColor: "#1B1B1B",
     processSteps: [
       {
         title: "The Goals:",
@@ -555,13 +554,16 @@ export const productDesignCaseStudies: CaseStudy[] = [
     tags: ["E-commerce Shopify Store Design"],
     collectionSlug: "product-design",
     date: "2024-7-2",
-    cover: "/case-studies/product-design/3dmylev/page-cover.webp",
+    cover: "/case-studies/product-design/3dmylev/card-cover.webp",
     heroImage: "/case-studies/product-design/3dmylev/hero-image.svg",
-    heroBackgroundColor: "#fefbfc",
-    navbarTextColor: "#f2194b",
+    theme: {
+      heroBackground: "#fefbfc",
+      navbarTextColor: "#f2194b",
+      pageBackground: "#5C0009",
+      primaryColor: "#f2194b",
+    },
     introText:
       "3D Mylev is a company specializes in 3D printing, with a huge passion for arts. In this design, I’ve tried to create a smooth user experience for their online shop, which capturing the essence of 3D Mylev - creating amazing art while changing the public’s point of view about Autism through design and art.",
-    backgroundColor: "#5C0009",
     processSteps: [
       {
         title: "The Challenges:",

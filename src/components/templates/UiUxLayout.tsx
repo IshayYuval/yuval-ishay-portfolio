@@ -6,11 +6,13 @@ import ZigZagRow from "@/components/case-study-parts/ZigZagRow";
 import DynamicGrid from "@/components/case-study-parts/DynamicGrid";
 import PrototypeSection from "@/components/case-study-parts/PrototypeSection";
 import MoreLikeThis from "@/components/case-study-parts/MoreLikeThis";
+import ResearchGraph from "@/components/case-study-parts/ResearchGraph/ResearchGraph";
 import { renderTextWithBreaks } from "@/utils/text";
 import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 import { formatCaseStudyDate } from "@/utils/dateUtils";
 import { resolveGalleryData, getCaseStudySlides } from "@/utils/lightboxUtils";
+import { getCaseStudyThemeStyles, getResolvedPageBackground, getResolvedHeroBackground } from "@/utils/themeUtils";
 
 import LottieAnimation from "../ui/LottieAnimation/LottieAnimation"; // Added import
 
@@ -19,12 +21,48 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
 
     const renderSection = (key: string) => {
         switch (key) {
+            case "researchGraph": {
+                if (!data.researchGraph) return null;
+                const graphsList = Array.isArray(data.researchGraph) ? data.researchGraph : [data.researchGraph];
+                return (
+                    <section key="researchGraph" className="grid pt-12 grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
+                        {graphsList.map((graphData, index) => (
+                            <ResearchGraph key={index} {...graphData} />
+                        ))}
+                    </section>
+                );
+            }
+
+            case "researchGraphs": {
+                if (!data.researchGraphs || data.researchGraphs.length === 0) return null;
+                return (
+                    <section key="researchGraphs" className="grid pt-12 grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
+                        {data.researchGraphs.map((graphData, index) => (
+                            <ResearchGraph key={index} {...graphData} />
+                        ))}
+                    </section>
+                );
+            }
+
             case "processSteps":
                 if (!data.processSteps || data.processSteps.length === 0) return null;
                 return (
                     <section key="processSteps" className="grid pt-12 grid-cols-1 gap-12 mb-16 max-w-4xl mx-auto">
-                        {data.processSteps.map((step, index) => (
-                            <div key={index} className="flex flex-col gap-4">
+                        {data.processSteps.map((step, index) => {
+                            if (step.graphs || step.researchGraph) {
+                                return (
+                                    <div key={index} className="flex flex-col gap-4">
+                                        <ResearchGraph
+                                            title={step.title}
+                                            description={step.text}
+                                            graphs={step.graphs || step.researchGraph?.graphs}
+                                            textAfter={step.textAfter || step.researchGraph?.textAfter}
+                                        />
+                                    </div>
+                                );
+                            }
+                            return (
+                                <div key={index} className="flex flex-col gap-4">
                                 <h3>{renderTextWithBreaks(step.title)}</h3>
                                 {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
                                 {step.bulletsTitle && <h4 className="font-bold mt-2 mb-4">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
@@ -73,9 +111,10 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
                                 ))}
                                 {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
                             </div>
-                        ))}
-                    </section>
-                );
+                        );
+                    })}
+                </section>
+            );
 
             case "gallery": {
                 const galleryData = resolveGalleryData(data.gallery, data.galleryTitle, data.galleryDescription);
@@ -158,14 +197,23 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
     };
 
     const contentKeys = Object.keys(data);
+    const themeStyles = getCaseStudyThemeStyles(data.theme);
+    const pageBackground = getResolvedPageBackground(data);
+    const heroBackground = getResolvedHeroBackground(data);
 
     return (
-        <article className="min-h-screen pb-24" style={{ backgroundColor: data.backgroundColor }}>
+        <article
+            className="min-h-screen pb-24"
+            style={{
+                ...themeStyles,
+                backgroundColor: pageBackground,
+            }}
+        >
             {/* Hero Section */}
             {(data.heroImage || data.heroLottie) && (
                 <div
                     className="relative w-full h-[24vh] md:h-[40vh]"
-                    style={{ backgroundColor: data.heroBackgroundColor }}
+                    style={{ backgroundColor: heroBackground }}
                 >
                     {data.heroLottie ? (
                         <LottieAnimation

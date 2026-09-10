@@ -53,7 +53,10 @@ Copy the template from [template.example.ts](./case-studies/template.example.ts)
   collectionSlug: "branding", // Must match collection slug
   cover: "/case-studies/branding/my-new-project/cover.webp",
   date: "2026-03-01",
-  backgroundColor: "#1D2855",
+  theme: {
+    pageBackground: "#1D2855",
+    primaryColor: "#EFAF22",
+  },
   introText: "Detailed intro story about the project...",
   // ... add optional sections as needed
 }
@@ -81,7 +84,7 @@ The site automatically selects the layout template based on the `collectionSlug`
 | `photography` | `VisualLayout` | Dark mode aesthetic, photographic essay full-spread gallery |
 
 > [!NOTE]
-> Section ordering is flexible: content blocks (`processSteps`, `gallery`, `galleries`, `contentSections`, `prototype`) are rendered in the exact order they are placed in the case study object.
+> Section ordering is flexible: content blocks (`processSteps`, `researchGraph`, `gallery`, `galleries`, `contentSections`, `prototype`) are rendered in the exact order they are placed in the case study object.
 
 ---
 
@@ -102,12 +105,32 @@ The site automatically selects the layout template based on the `collectionSlug`
 
 ---
 
-### 2. Styling & Navigation Overrides
+### 2. Semantic Theme Configuration (`theme`)
+
+Customize the visual palette for the entire case study:
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| `backgroundColor` | `string` | Hex or CSS color for the page background (e.g. `"#1D2855"`, `"#000000"`). |
-| `navbarTextColor` | `string` | Color override for navbar text when contrasting against hero colors (e.g. `"black"`, `"#ffffff"`). |
+| `pageBackground` | `string` | Main background color for the case study container (`--theme-page-background`). |
+| `heroBackground` | `string` | Background color for the top hero banner container (`--theme-hero-background`). |
+| `navbarTextColor` | `string` | Color override for header text / brandmark when at top over the hero (`--theme-navbar-text`). |
+| `primaryColor` | `string` | Primary accent / CTA button fill / graph progress stroke (`--theme-primary`). |
+| `secondaryColor` | `string` | Contrast text on primary buttons (`--theme-secondary`). |
+| `surfaceColor` | `string` | Background for tags, elevated cards, button hovers (`--theme-surface`). |
+| `mutedSurfaceColor` | `string` | Surface-on-surface color, background track circle for graphs (`--theme-surface-muted`). Alias: `surfaceMutedColor`. |
+| `borderColor` | `string` | Border for cards and containers (`--theme-border`). |
+
+```typescript
+theme: {
+  pageBackground: "#400047",
+  heroBackground: "#FCF0FF",
+  navbarTextColor: "#9600A6",
+  primaryColor: "#9600A6",
+  surfaceColor: "#55005e",
+  mutedSurfaceColor: "#45004d",
+  borderColor: "#780084",
+}
+```
 
 ---
 
@@ -116,7 +139,6 @@ The site automatically selects the layout template based on the `collectionSlug`
 | Field | Type | Description |
 | :--- | :--- | :--- |
 | `heroImage` | `string` | Image/SVG or looped video path for the top hero banner. |
-| `heroBackgroundColor`| `string` | Background color for the hero banner container. |
 | `heroLottie` | `string` | Path to a Lottie JSON file (e.g. `"/lottie/spod/hero-case-study.json"`). Replaces `heroImage` with animation. |
 
 ---
@@ -185,7 +207,31 @@ processSteps: [
 
 ---
 
-### 7. Zig-Zag Feature Rows (`contentSections`)
+### 7. Research Graphs (`researchGraph` / `researchGraphs`)
+
+Render visual pie/donut statistics for research and survey data:
+
+```typescript
+researchGraph: {
+  title: "The Research",
+  description: "We conducted extensive research to understand key pain points:",
+  graphs: [
+    {
+      percentage: 70,
+      text: "of users experience difficulty finding equipment on campus."
+    },
+    {
+      percentage: 90,
+      text: "desired a dedicated booking solution."
+    }
+  ],
+  textAfter: "The quantitative data confirmed high interest in the product."
+}
+```
+
+---
+
+### 8. Zig-Zag Feature Rows (`contentSections`)
 
 Alternating text and image showcase blocks:
 

@@ -11,9 +11,11 @@ export const photographyCaseStudies: CaseStudy[] = [
     collectionSlug: "photography",
     cover: "/case-studies/photography/the-butcher/page-cover.webp",
     heroImage: "/case-studies/photography/the-butcher/hero-image.svg",
-    heroBackgroundColor: "#000000",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "black",
+    },
     date: "2025-12-29",
-    backgroundColor: "black",
     introText:
       "This project is a photographic essay created as part of a food photography assignment, centered around an underground <br/> meat pop-up. The work explores the figure of “the butcher,” focusing on raw materials, hands-on process, and the ritual around meat rather than the final dish. Through a dark, moody visual language, the goal was to reveal the passion, tension, and instinct behind the act of cooking.",
     gallery: [
@@ -68,11 +70,13 @@ export const photographyCaseStudies: CaseStudy[] = [
       "A portrait series that captures the human moments, imperfections, and quiet breaks hidden within the act of running.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "photography",
-    backgroundColor: "#232428ff",
     date: "2025-07-22",
     cover: "/case-studies/photography/out-of-bounds/page-cover.webp",
     heroImage: "/case-studies/photography/out-of-bounds/hero-image.svg",
-    heroBackgroundColor: "#000000",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#232428ff",
+    },
     introText:
       "This project is a portrait series created as part of a photography course, focusing on moments that break the routine of running. Instead of portraying running as a perfect, ideal action, the work highlights small mistakes, pauses, and human imperfections. <br/> <br/> The goal was to slow time and  revealing the vulnerability and humanity hidden within a repetitive act.",
     gallery: [

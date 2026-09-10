@@ -14,8 +14,11 @@ export const brandingCaseStudies: CaseStudy[] = [
     introText:
       "During my first year of my Visual Communication B.A, we got an exercise to research an animal of our choice, and based on that animal, to create a visual identity for an imaginary company, which could be represented in theory by the animal we chose. Since a cheetah is one of my favorite wild animals, I knew in the very first second I'll choose it.",
     heroImage: "/case-studies/branding/cheetah/hero-image.svg",
-    heroBackgroundColor: "#101440",
-    backgroundColor: "#1D2855",
+    theme: {
+      heroBackground: "#101440",
+      pageBackground: "#1D2855",
+      primaryColor: "#EFAF22",
+    },
     processSteps: [
       {
         title: "",
@@ -115,7 +118,6 @@ export const brandingCaseStudies: CaseStudy[] = [
     cover: "/case-studies/branding/name-the-font/page-cover.svg",
     date: "2025-11-01",
     heroImage: "/case-studies/branding/name-the-font/hero-image.svg",
-    heroBackgroundColor: "#4673b0",
     introText:
       "During my first year studying Visual Communication, a friend from class and I discovered a shared obsession with Hebrew typography — and an ongoing debate about who was better at identifying fonts by sight. What started as a playful rivalry quickly turned into an idea for a game that could settle it once and for all. That’s how Name the Font was born — a browser-based game that challenges players to recognize Hebrew typefaces used in our daily life, under time pressure. <br/> <br/> Wanna see for yourselves? Let's go! Grab your place at the leaderboards table!",
     processSteps: [
@@ -146,7 +148,11 @@ export const brandingCaseStudies: CaseStudy[] = [
           "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
       },
     ],
-    backgroundColor: "#133C66",
+    theme: {
+      heroBackground: "#4673b0",
+      pageBackground: "#133C66",
+      primaryColor: "#FADA7A",
+    },
     projectUrl: "http://namethefont.com",
     contentSections: [
       {
@@ -215,7 +221,6 @@ export const brandingCaseStudies: CaseStudy[] = [
     projectUrlVariant: "primary",
     collectionSlug: "branding",
     cover: "/case-studies/branding/unique-freight/page-cover.svg",
-    navbarTextColor: "#1d2955",
     date: "2024-01-12",
     introText:
       "Unique Freight is a freight forwarding company specializing in providing end-to-end logistics solutions, including air and sea freight, customs brokerage, and tax payments. The company serves medium to large-sized businesses, offering dedicated and personalized service with a strong emphasis on client satisfaction. Their commitment to going the extra mile, alongside free consulting for regular clients, sets them apart in the industry.",
@@ -248,8 +253,12 @@ export const brandingCaseStudies: CaseStudy[] = [
       },
     ],
     heroImage: "/case-studies/branding/unique-freight/hero.svg",
-    heroBackgroundColor: "#ed2c37",
-    backgroundColor: "#1D2855",
+    theme: {
+      heroBackground: "#ed2c37",
+      navbarTextColor: "#1d2955",
+      pageBackground: "#1D2855",
+      primaryColor: "#FF7176",
+    },
     contentSections: [
       {
         image: "/case-studies/branding/unique-freight/brandmark.svg",
@@ -309,13 +318,16 @@ export const brandingCaseStudies: CaseStudy[] = [
     excerpt:
       "Onyx is a product team in a web services company, which responsible for creating the long term strategy of their company's product. ",
     tags: ["Client Project", "Software", "Digital"],
-    heroImage: "/case-studies/branding/onyx/hero-image.svg",
-    heroBackgroundColor: "#56ff99",
-    backgroundColor: "#171918",
+    theme: {
+      heroBackground: "#56ff99",
+      navbarTextColor: "#2d302e",
+      pageBackground: "#171918",
+      primaryColor: "#56ff99",
+    },
     collectionSlug: "branding",
     cover: "/case-studies/branding/onyx/page-cover.svg",
+    heroImage: "/case-studies/branding/onyx/hero-image.svg",
     date: "2023-11-28",
-    navbarTextColor: "#2d302e",
     introText:
       "Onyx is an in-organization team, responsible for creating the long-term strategy and working methods for their organization. Onyx is also responsible for the product of the company, as the team is built from product managers, QA's and product designers.",
     processSteps: [
@@ -393,13 +405,18 @@ export const brandingCaseStudies: CaseStudy[] = [
   {
     slug: "nouvelle",
     title: "Nouvelle",
+    cover: "/case-studies/branding/nouvelle/page-cover.svg",
+    heroImage: "/case-studies/branding/nouvelle/hero-image.svg",
     excerpt:
       "Nouvelle is an emerging patisserie specializing in high-quality baking services including desserts, bread, cakes, and pralines. ",
     tags: ["Client Project", "Bakery", "Print & Digital"],
     collectionSlug: "branding",
-    cover: "/case-studies/branding/nouvelle/page-cover.svg",
-    heroBackgroundColor: "#2f6c88",
-    navbarTextColor: "#e3b397",
+    theme: {
+      heroBackground: "#2f6c88",
+      navbarTextColor: "#e3b397",
+      pageBackground: "#1B3F4C",
+      primaryColor: "#E4B397",
+    },
     date: "2024-05-03",
     introText:
       "Nouvelle is an emerging patisserie specializing in high-quality baking services including desserts, bread, cakes, and pralines. The business prides itself on offering personal treatment, boutique services, and the unique ability to fulfill special requests as per customer preference.",
@@ -431,8 +448,6 @@ export const brandingCaseStudies: CaseStudy[] = [
           "This concept defines not only the look of the logo but also the tone and visual identity of the brand, including colors, typography, and applications across different mediums.",
       },
     ],
-    heroImage: "/case-studies/branding/nouvelle/hero-image.svg",
-    backgroundColor: "#1B3F4C",
     gallery: [
       {
         src: "/case-studies/branding/nouvelle/mockups/patisserie.webp",
@@ -472,9 +487,12 @@ export const brandingCaseStudies: CaseStudy[] = [
     collectionSlug: "branding",
     cover: "/case-studies/branding/uffa/page-cover.svg",
     date: "2024-04-03",
-    backgroundColor: "#072131",
     heroImage: "/case-studies/branding/uffa/hero-image.svg",
-    heroBackgroundColor: "#0d303f",
+    theme: {
+      heroBackground: "#0d303f",
+      pageBackground: "#072131",
+      primaryColor: "#EFAF22",
+    },
     introText:
       "United Future Football Academy is a premier institution dedicated to cultivating young soccer talent and instilling a deep love for the game. It stands out for its comprehensive approach to player development, combining physical training, tactical knowledge, and mental resilience. The academy is committed to shaping well-rounded athletes who excel on the pitch and demonstrate integrity off it. <br/> <br/>This project is a part of my ChatGPT challenge, in which I design a comprehensive visual identity according to the briefs provided by the Chat :)",
     processSteps: [

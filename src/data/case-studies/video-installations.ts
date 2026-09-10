@@ -19,10 +19,12 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       "In the last assignment of the VC course in my Visual Communication BA, we were asked to create a social campaign that expresses support or protest around a chosen social issue and translate it into a clear visual and verbal language across multiple formats.<br><br>For this exercise, I created a protest campaign addressing the phenomenon of broadcasting sports games in bars without sound, an experience many supporters find frustrating because audio is an essential part of watching a match.<br><br>The campaign calls on bars to stop muting games and includes three advertisements, a sticker sheet designed to be placed on bars that ruin the shared experience, and a testimonial series from supporters whose viewing moments were spoiled.",
     cover:
       "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
-    heroBackgroundColor: "#000000",
-    backgroundColor: "#000000",
     heroImage:
       "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#000000",
+    },
     processSteps: [
       {
         title: "The Problem",
@@ -31,30 +33,22 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       {
         title: "The Research",
         text: "I've commited a survey among football and basketball fans, to see if other fans are pissed about this phenomenon:",
-        bullets: [
+        graphs: [
           {
-            label: "95%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of voters go to watch a sports match at least once a month.",
+            percentage: 95,
+            text: "of voters go to watch a sports match at least once a month.",
           },
           {
-            label: "68%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of voters came across this horrific issue in a medium-high frequency.",
+            percentage: 68,
+            text: "of voters came across this horrific issue in a medium-high frequency.",
           },
           {
-            label: "74%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of voters will stay at the bar, but will be pissed about it.",
+            percentage: 74,
+            text: "of voters will stay at the bar, but will be pissed about it.",
           },
           {
-            label: "50%",
-            labelColor: "white",
-            labelWeight: "bold",
-            text: " of voters have experienced a situation where the bar said he's broadcasting the game, but didn't mention the lack of sound issue.",
+            percentage: 50,
+            text: "of voters have experienced a situation where the bar said he's broadcasting the game, but didn't mention the lack of sound issue.",
           },
         ],
         textAfter: "The numbers are clear. This is annoying. Very annoying.",
@@ -138,7 +132,9 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
     cover: "/case-studies/conceptual-design/long-distance-love/page-cover.mp4",
     heroImage:
       "/case-studies/conceptual-design/long-distance-love/hero-image.svg",
-    heroBackgroundColor: "#2c487e",
+    theme: {
+      heroBackground: "#2c487e",
+    },
     introText:
       "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships. <br/><br/> Special thanks to my friend, and amazing designer, Sharon Kisilevich for the amazing commentary!",
     projectUrl: "https://sharonkisil.myportfolio.com",

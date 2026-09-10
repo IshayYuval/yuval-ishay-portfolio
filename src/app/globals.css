@@ -20,6 +20,13 @@
   --color-brand-secondary-600: #36437A;
   --color-brand-secondary-500: #435499;
 
+  /* Semantic Theme Tokens (Defaults fall back to brand colors; overridden per case study) */
+  --theme-primary: var(--color-brand-primary-500);
+  --theme-secondary: var(--color-brand-secondary-900);
+  --theme-page-background: var(--color-brand-secondary-900);
+  --theme-hero-background: transparent;
+  --theme-navbar-text: var(--color-typography-header);
+
   /* border-radius */
   --radius-xs: .25rem;
   --radius-sm: .5rem;

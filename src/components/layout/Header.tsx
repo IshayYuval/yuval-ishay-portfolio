@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import NavItem from "../nav/NavItem";
@@ -10,6 +9,7 @@ import NavDropdown from "../nav/NavDropdown";
 import MobileMenuToggle from "../nav/MobileMenuToggle";
 import MobileMenu from "../nav/MobileMenu";
 import { collections, caseStudies } from "@/data/portfolio";
+import { getResolvedPageBackground, getResolvedNavbarTextColor } from "@/utils/themeUtils";
 import styles from "../nav/NavDropdown.module.css";
 
 export default function Header() {
@@ -29,9 +29,20 @@ export default function Header() {
     // Dynamic Color Logic
     // Apply override ONLY when header is transparent (top of page, closed menu/dropdown)
     const isHeaderTransparent = !isScrolled && !isDropdownOpen && !isMobileMenuOpen;
-    const dynamicTextColor = isHeaderTransparent && currentCaseStudy?.navbarTextColor
-        ? currentCaseStudy.navbarTextColor
+    const navbarTextColor = currentCaseStudy ? getResolvedNavbarTextColor(currentCaseStudy) : undefined;
+    const pageBackground = currentCaseStudy ? getResolvedPageBackground(currentCaseStudy) : undefined;
+
+    const dynamicTextColor = isHeaderTransparent && navbarTextColor
+        ? navbarTextColor
         : undefined;
+
+    // Header on-scroll background logic:
+    // If a navbarTextColor and a pageBackground are present for a case study theme,
+    // the on scroll background takes pageBackground value.
+    const hasThemeScrollBg = Boolean(navbarTextColor && pageBackground);
+    const scrollBg = hasThemeScrollBg && pageBackground
+        ? pageBackground
+        : 'var(--color-brand-secondary-950)';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,9 +58,11 @@ export default function Header() {
     }, []);
 
     // Header background logic
-    const headerBg = isDropdownOpen || isScrolled || isHovered || isMobileMenuOpen
-        ? 'var(--color-brand-secondary-950)'
-        : 'transparent';
+    // When the My Work dropdown is visible, the background color returns to the default value.
+    const defaultBg = 'var(--color-brand-secondary-950)';
+    const headerBg = isDropdownOpen
+        ? defaultBg
+        : (isScrolled || isHovered || isMobileMenuOpen ? scrollBg : 'transparent');
 
     const handleDropdownEnter = () => {
         setIsDropdownOpen(true);

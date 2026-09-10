@@ -39,7 +39,13 @@ export default function MoreLikeThis({ currentSlug, collectionSlug }: MoreLikeTh
                 <h3 className="ml-1 mb-6">You may also like</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
                     {relatedStudies.map(study => (
-                        <CaseStudyCard key={study.slug} study={study} hideExcerpt={true} hideTags={true} />
+                        <CaseStudyCard
+                            key={study.slug}
+                            study={study}
+                            hideExcerpt={true}
+                            hideTags={true}
+                            useThemeSurface={true}
+                        />
                     ))}
                 </div>
             </div>

@@ -15,11 +15,14 @@ export const packagingDesignCaseStudies: CaseStudy[] = [
     ],
     collectionSlug: "packaging-design",
     date: "2025-12-26",
-    navbarTextColor: "#612423",
-    backgroundColor: "#2e1010ff",
     heroImage:
       "/case-studies/conceptual-design/basic-food-packaging/hero-image.svg",
-    heroBackgroundColor: "#ffffff",
+    theme: {
+      heroBackground: "#ffffff",
+      navbarTextColor: "#612423",
+      pageBackground: "#2e1010ff",
+      primaryColor: "#612423",
+    },
     introText:
       "This project explores the design of a packaging series for a basic food product — an everyday, essential item that is usually taken for granted. The starting point was an in-depth research process into the product’s cultural, historical, and social contexts, deliberately moving away from packaging as a purely functional solution.<br><br>The packaging is treated as a conceptual medium: a visual system that communicates values, ideas, and a new point of view. Throughout the process, a unified visual language was developed for the entire series, while questioning the product’s conventional associations and stretching the boundaries of how it is typically perceived.<br><br>The result is a packaging series that prioritizes idea over utility, positioning design as a critical and expressive tool rather than a purely commercial object.<br/><br/> The food product I've chose is Corn.",
     cover:
@@ -116,10 +119,13 @@ export const packagingDesignCaseStudies: CaseStudy[] = [
       "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
     tags: ["HIT", "Visual Communication BA", "1st Year"],
     collectionSlug: "packaging-design",
-    backgroundColor: "#272727",
-    navbarTextColor: "black",
     heroImage: "/case-studies/conceptual-design/tarantino/hero-image.svg",
-    heroBackgroundColor: "#f6d548",
+    theme: {
+      heroBackground: "#f6d548",
+      navbarTextColor: "black",
+      pageBackground: "#272727",
+      primaryColor: "#f6d548",
+    },
     stopMotionData: {
       images: [
         "/case-studies/conceptual-design/tarantino/cover/cover-1.webp",

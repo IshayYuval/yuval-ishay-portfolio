@@ -25,13 +25,20 @@ export const exampleCaseStudy: CaseStudy = {
   // Cover image for collection grids / cards
   cover: "/case-studies/branding/project-slug/cover.webp",
 
-  // Colors & Navbar customization (Optional)
-  backgroundColor: "#0d1117",
-  navbarTextColor: "#ffffff", // override header nav text color if needed
+  // Semantic Theme & Styling (Optional)
+  theme: {
+    pageBackground: "#0d1117",
+    heroBackground: "#161b22",
+    navbarTextColor: "#ffffff", // override header nav text color if needed
+    primaryColor: "#58a6ff", // accent / CTA button fill / progress circle
+    // secondaryColor: "#0d1117", // contrast text on primary buttons
+    // surfaceColor: "#161b22", // tag and card surfaces
+    // mutedSurfaceColor: "#21262d", // graph track circles / surface-on-surface (alias: surfaceMutedColor)
+    // borderColor: "#30363d", // card borders
+  },
 
   // Hero Section (Optional)
   heroImage: "/case-studies/branding/project-slug/hero.svg",
-  heroBackgroundColor: "#161b22",
   // heroLottie: "/lottie/project-slug/animation.json", // Optional: replaces heroImage with animated Lottie
 
   // Introduction text (Supports HTML like <br/> or <br/><br/>)
@@ -46,22 +53,39 @@ export const exampleCaseStudy: CaseStudy = {
   // secondaryProjectUrlText: "View Code",
   // secondaryProjectUrlVariant: "secondary",
 
-  // Process Steps / Research / Personas (Optional, commonly used in UX/UI and Branding)
+  // Process Steps / Personas (Optional, commonly used in UX/UI and Branding)
   processSteps: [
     {
       title: "The Problem",
       text: "Description of the problem space and challenges addressed.",
       bullets: [
         {
-          label: "Research Finding: ",
+          label: "Key Takeaway: ",
           labelWeight: "bold",
           labelColor: "#FF7176",
-          text: "Key statistic or takeaway from user research.",
+          text: "Important observation or learning.",
         },
       ],
       textAfter: "Summary or closing note about this process step.",
     },
   ],
+
+  // Research Graphs (Optional - pie graphs for survey / research statistics)
+  // researchGraph: {
+  //   title: "The Research",
+  //   description: "Survey conducted to understand core user pain points.",
+  //   graphs: [
+  //     {
+  //       percentage: 75,
+  //       text: "of users reported encountering the problem regularly.",
+  //     },
+  //     {
+  //       percentage: 90,
+  //       text: "expressed strong interest in an automated solution.",
+  //     },
+  //   ],
+  //   textAfter: "The quantitative data clearly highlights the market need.",
+  // },
 
   // Zig-Zag Feature Showcase Rows (Optional)
   contentSections: [

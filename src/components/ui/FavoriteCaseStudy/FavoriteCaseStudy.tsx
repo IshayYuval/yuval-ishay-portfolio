@@ -15,7 +15,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
   const isBackNav = useContext(AnimationContext);
   const favoriteConfig = favorites.find(f => f.slug === work.slug);
 
-  const bgColor = favoriteConfig?.backgroundColor || work.backgroundColor || 'var(--color-brand-secondary-950)';
+  const bgColor = favoriteConfig?.backgroundColor || work.theme?.pageBackground || work.backgroundColor || 'var(--color-brand-secondary-950)';
   const headingColor = favoriteConfig?.headingColor;
   const textColor = favoriteConfig?.textColor;
   const coverSrc = favoriteConfig?.coverSrc || work.cover;

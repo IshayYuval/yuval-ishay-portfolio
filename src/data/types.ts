@@ -29,11 +29,36 @@ export type ProcessStepBullet = string | {
   text: string;
 };
 
+export type ResearchGraphItem = {
+  percentage?: number;
+  value?: number;
+  label?: string;
+  labelColor?: string;
+  labelWeight?: string | number;
+  text: string;
+  color?: string;
+  trackColor?: string;
+  size?: number;
+  strokeWidth?: number;
+};
+
+export type ResearchGraphData = {
+  title?: string;
+  description?: string;
+  text?: string;
+  graphs?: (ResearchGraphItem | string)[];
+  items?: (ResearchGraphItem | string)[];
+  bullets?: (ResearchGraphItem | string)[];
+  textAfter?: string;
+};
+
 export type ProcessStep = {
   title: string;
   text: string;
   bulletsTitle?: string;
   bullets?: ProcessStepBullet[];
+  graphs?: (ResearchGraphItem | string)[];
+  researchGraph?: ResearchGraphData;
   bulletSections?: {
     title?: string;
     bullets: ProcessStepBullet[];
@@ -49,6 +74,18 @@ export type GallerySection = {
 
 export type GalleryData = GalleryItem[] | GallerySection;
 
+export type CaseStudyTheme = {
+  primaryColor?: string;
+  secondaryColor?: string;
+  surfaceColor?: string;
+  surfaceMutedColor?: string;
+  mutedSurfaceColor?: string;
+  borderColor?: string;
+  pageBackground?: string;
+  heroBackground?: string;
+  navbarTextColor?: string;
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -61,9 +98,10 @@ export type CaseStudy = {
   endDate?: string;
   introText?: string;
   heroImage?: string; // specific for Branding / Visual top section
-  heroBackgroundColor?: string; // optional background color for hero section
+  heroBackgroundColor?: string; // legacy fallback: optional background color for hero section
   heroLottie?: string; // specific for Lottie hero animation
-  navbarTextColor?: string; // optional override for navbar text color (e.g. "black" or hex)
+  navbarTextColor?: string; // legacy fallback: optional override for navbar text color (e.g. "black" or hex)
+  theme?: CaseStudyTheme; // custom semantic theme configuration
   projectUrl?: string; // optional external link
   projectUrlVariant?: "primary" | "secondary";
   projectUrlText?: string;
@@ -71,12 +109,14 @@ export type CaseStudy = {
   secondaryProjectUrlVariant?: "primary" | "secondary";
   secondaryProjectUrlText?: string;
   processSteps?: ProcessStep[]; // for UX/UI and custom case studies
+  researchGraph?: ResearchGraphData | ResearchGraphData[];
+  researchGraphs?: ResearchGraphData[];
   contentSections?: ZigZagSection[];
   gallery?: GalleryData;
   galleries?: GallerySection[];
   galleryTitle?: string;
   galleryDescription?: string;
-  backgroundColor?: string;
+  backgroundColor?: string; // legacy fallback: page background
   stopMotionData?: {
     images: string[];
     duration: number;

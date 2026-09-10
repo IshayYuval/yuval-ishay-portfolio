@@ -15,10 +15,12 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
     ],
     collectionSlug: "editorial-and-print",
     date: "2026-07-13",
-    backgroundColor: "#000000",
-    navbarTextColor: "#c22419",
     heroImage: "/case-studies/catalogues/anatomy-of-memory/hero-image.svg",
-    heroBackgroundColor: "#fffbf3",
+    theme: {
+      heroBackground: "#fffbf3",
+      navbarTextColor: "#c22419",
+      pageBackground: "#000000",
+    },
     introText:
       "Anatomy of Memory traces the evolution of Chiharu Shiota’s artistic practice, from painting to installation and her exploration of memory, identity, belonging, and human existence. The catalogue examines how objects, space, and threads become carriers of memory and presence.<br/><br/>I discovered Chiharu Shiota by chance while I was in Prague. On my way to Prague Castle, I saw a poster for her exhibition at Kunsthalle Praha. Something about the array of red threads intrigued me enough to go inside.<br/>Until then, I never understood why our lecturers kept telling us to step away from our screens and experience art in galleries when we could find everything online. Inside Shiota’s exhibition, I finally understood. I felt surrounded by the memories, pain, and presence of people I had never known. I left amazed by how much power could be created with something as simple as threads and everyday objects.<br/><br/>This catalogue is my semester project for the Visual Communication 2 course, under the guidance of Golan Gafni.",
     cover: "/case-studies/catalogues/anatomy-of-memory/cover.webp",
@@ -129,9 +131,11 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
     ],
     collectionSlug: "editorial-and-print",
     date: "2026-02-08",
-    backgroundColor: "#1b1b1bff",
     heroImage: "/case-studies/typography/cinemateque/hero-image.svg",
-    heroBackgroundColor: "#000000",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#1b1b1bff",
+    },
     introText:
       "In this typography studio assignment, the task was to design a paged editorial format based on a long-form article. The goal was to utilize a structured grid and a robust typographic system to create an engaging reading experience across multiple spreads. For this project, I specifically selected an essay from the Tel Aviv Cinematheque exploring the automobile as a narrative space in film—a vehicle that actively drives the plot forward.",
     cover: "/case-studies/typography/cinemateque/cover.webp",
@@ -221,8 +225,10 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
     collectionSlug: "editorial-and-print",
     date: "2025-12-23",
     heroImage: "/case-studies/typography/liebling-haus/hero-image.svg",
-    heroBackgroundColor: "#000000",
-    backgroundColor: "#1b1b1bff",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#1b1b1bff",
+    },
     introText:
       "This project focuses on designing a large-format, content-rich poster with a strong emphasis on typography, grid, and clear hierarchy. I worked with content from Beit Liebling, developing a conceptual approach that translates its design-driven values into a typographic visual language. <br/> <br/> The goal was to create a clear, readable layout that reflects the spirit and design culture the institution is built on.",
     cover: "/case-studies/typography/liebling-haus/page-cover.webp",
@@ -251,8 +257,10 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
     collectionSlug: "editorial-and-print",
     date: "2025-11-20",
     heroImage: "/case-studies/typography/dance-tel-aviv/hero-image.svg",
-    heroBackgroundColor: "#000000",
-    backgroundColor: "#1b1b1bff",
+    theme: {
+      heroBackground: "#000000",
+      pageBackground: "#1b1b1bff",
+    },
     introText:
       "This project is an event flyer designed around the idea of expressing human movement through typography, inspired by a dance-focused festival. The concept is translated through the use of the Ezer Dialogue typeface, combined with folding and a grid system that emerges from the physical format itself. Together, these elements create a dynamic layout that reflects rhythm, motion, and the body in motion.",
     projectUrl: "https://www.ezertypehouse.com/fonts/ezerdialogue",
@@ -297,9 +305,11 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
     date: "2025-05-28",
     cover: "/case-studies/typography/alchemist-homage/page-cover.webp",
     heroImage: "/case-studies/typography/alchemist-homage/hero-image.svg",
-    heroBackgroundColor: "#ffffff",
-    backgroundColor: "#000000",
-    navbarTextColor: "#000000",
+    theme: {
+      heroBackground: "#ffffff",
+      navbarTextColor: "#000000",
+      pageBackground: "#000000",
+    },
     introText:
       "This project is a typographic tribute poster to the Hebrew typeface Ezer Alchemist, developed through a research-driven and concept-led process. I began by studying the typeface and identified its most distinctive feature—its ink traps—which became the core visual concept of the poster. <br/> <br/> The goal was to create a clear and precise visual that adds value for the viewer by teaching something new about the typeface through design itself.",
     gallery: [

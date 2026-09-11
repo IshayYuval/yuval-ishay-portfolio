@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
+import BoundingBoxAnimation from "@/components/ui/BoundingBoxAnimation/BoundingBoxAnimation";
 import { useRouter } from "next/navigation";
 
 const buttonContainerVariants: Variants = {
@@ -43,34 +44,11 @@ export default function PrivacyPolicyPage() {
     return (
         <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)] min-h-screen">
             <Section>
-                <motion.h1
-                    className="mb-1"
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                        hidden: { opacity: 1 },
-                        visible: {
-                            opacity: 1,
-                            transition: {
-                                staggerChildren: 0.04
-                            }
-                        }
-                    }}
-                >
-                    {"Privacy Policy".split("").map((char, index) => (
-                        <motion.span
-                            key={index}
-                            variants={{
-                                hidden: { opacity: 0, display: "none" },
-                                visible: { opacity: 1, display: "inline-block" }
-                            }}
-                        >
-                            {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                    ))}
-                </motion.h1>
+                <h1>
+                    <BoundingBoxAnimation text="Privacy Policy" delay={0.2} />
+                </h1>
 
-                <div className="pt-4 max-w-2xl">
+                <div className="pt-4 max-w-2xl px-[.75rem]">
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}

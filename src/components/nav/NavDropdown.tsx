@@ -35,7 +35,9 @@ export default function NavDropdown({ label, isOpen, onOpenChange, id, overrideC
     // Apply override if not active/open and override exists
     const shouldUseOverride = !isActive && !isOpen && overrideColor;
     const textStyle = shouldUseOverride ? { color: overrideColor } : {};
-    // For Chevron, we use currentColor if text color is set, or explicit style
+    const textColorClass = (isActive || isOpen)
+        ? 'text-[var(--color-brand-primary-500)]'
+        : (shouldUseOverride ? '' : 'text-[var(--color-typography-header)]');
 
     return (
         <div
@@ -50,21 +52,21 @@ export default function NavDropdown({ label, isOpen, onOpenChange, id, overrideC
                 style={{ backgroundColor: "transparent", outline: "none", border: "none" }}
             >
                 <span
-                    className={`transition-colors duration-300 ${isActive || isOpen ? 'text-[var(--color-brand-primary)]' : (shouldUseOverride ? '' : 'text-[var(--color-typography-header)]')}`}
+                    className={`transition-colors duration-300 ${textColorClass}`}
                     style={textStyle}
                 >
                     {label}
                 </span>
                 <ChevronDown
                     size={16}
-                    className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-[var(--color-brand-primary)]" : "" /* Let it inherit or set explicitly? Original was text-[var(--color-typography-header)]. If override, we want it to match text. If I remove class, it might default to currentColor? Need to be sure. */}`}
-                    style={isOpen ? {} : (shouldUseOverride ? { color: overrideColor } : { color: 'var(--color-typography-header)' })} /* Using style for standard color too to be safe/consistent? Or class? Original used class. */
+                    className={`transition-all duration-300 ${isOpen ? "rotate-180" : ""} ${textColorClass}`}
+                    style={textStyle}
                 />
             </button>
 
             {/* Underline Animation */}
             <span
-                className={`h-[2px] w-full origin-center transform transition-transform duration-300 ease-out ${isActive || isOpen ? 'scale-x-100 bg-[var(--color-brand-primary)]' : 'scale-x-0 group-hover:scale-x-100 bg-[var(--color-typography-header)]'}`}
+                className={`h-[2px] w-full origin-center transform transition-transform duration-300 ease-out ${isActive || isOpen ? 'scale-x-100 bg-[var(--color-brand-primary-500)]' : 'scale-x-0 group-hover:scale-x-100 bg-[var(--color-typography-header)]'}`}
                 style={!isActive && !isOpen && shouldUseOverride ? { backgroundColor: overrideColor } : {}}
             />
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, createContext, useContext } from "react";
+import { useEffect, useState, useRef, createContext } from "react";
 import { usePathname } from "next/navigation";
 import { MotionConfig } from "framer-motion";
 

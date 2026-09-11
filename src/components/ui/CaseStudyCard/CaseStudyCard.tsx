@@ -61,7 +61,7 @@ export default function CaseStudyCard({
                             alt={study.title}
                             unoptimized
                             fill
-                            className={`object-cover transition-transform duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                            className={`${styles['card-image']} ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             onLoad={() => setIsLoading(false)}
                         />
@@ -77,7 +77,7 @@ export default function CaseStudyCard({
                     <span className="px-1 block text-white/70 mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-50">
                         {formattedDate}
                     </span>
-                    {!hideExcerpt && <p className={`mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>}
+                    {!hideExcerpt && <p className={`${styles['card-excerpt']} mb-4 px-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75`}>{study.excerpt}</p>}
                     {!hideTags && (
                         <div className="flex gap-1 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
                             {study.tags.map(tag => (

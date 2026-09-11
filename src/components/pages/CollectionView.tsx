@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { Collection, caseStudies } from "@/data/portfolio";
 import Section from "@/components/layout/Section";
 import CaseStudyCard from "@/components/ui/CaseStudyCard/CaseStudyCard";
+import BoundingBoxAnimation from "@/components/ui/BoundingBoxAnimation/BoundingBoxAnimation";
 import { useContext } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 
@@ -17,44 +18,6 @@ const containerVariants: Variants = {
         },
     },
 };
-
-const wordVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 100,
-        },
-    },
-};
-
-function AnimatedText({ text, delay = 0, className = "" }: { text: string, delay?: number, className?: string }) {
-    const isBackNav = useContext(AnimationContext);
-    if (!text) return null;
-    return (
-        <motion.span
-            className={`inline-block ${className}`}
-            initial={isBackNav ? false : "hidden"}
-            animate="show"
-            variants={{
-                hidden: { opacity: 0 },
-                show: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.04, delayChildren: delay }
-                }
-            }}
-        >
-            {text.split(" ").map((word, index) => (
-                <motion.span key={index} className="inline-block mr-[0.25em]" variants={wordVariants}>
-                    {word}
-                </motion.span>
-            ))}
-        </motion.span>
-    );
-}
 
 const itemVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
@@ -70,7 +33,7 @@ interface CollectionViewProps {
 }
 
 export default function CollectionView({ collection }: CollectionViewProps) {
-  const isBackNav = useContext(AnimationContext);
+    const isBackNav = useContext(AnimationContext);
     const studies = caseStudies.filter((s) => s.collectionSlug === collection.slug);
 
     return (
@@ -80,10 +43,10 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                     initial={isBackNav ? false : { opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-30 lg:px-56 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
+                    className="absolute top-0 left-0 right-0 pt-38 md:pt-48 pb-12 md:pb-16 px-12 md:px-30 lg:px-48 mb-16 bg-[var(--color-brand-secondary-900)] w-full"
                 >
                     <motion.h5
-                        className="text-body min-h-[1.25rem]"
+                        className="text-body min-h-[1.25rem] px-[.25rem] md:px-[1rem]"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
@@ -91,35 +54,12 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                         {collection.title || " "}
                     </motion.h5>
 
-                    <motion.h1
-                        className="mb-1 uppercase"
-                        initial={isBackNav ? false : "hidden"}
-                        animate="visible"
-                        variants={{
-                            hidden: { opacity: 1 },
-                            visible: {
-                                opacity: 1,
-                                transition: {
-                                    staggerChildren: 0.04
-                                }
-                            }
-                        }}
-                    >
-                        {"Case Studies".split("").map((char, index) => (
-                            <motion.span
-                                key={index}
-                                variants={{
-                                    hidden: { opacity: 0, display: "none" },
-                                    visible: { opacity: 1, display: "inline-block" }
-                                }}
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                        ))}
-                    </motion.h1>
+                    <h1 className="mb-1 uppercase">
+                        <BoundingBoxAnimation text="Case Studies" delay={0.2} />
+                    </h1>
 
                     <motion.span
-                        className="text-body block min-h-[1rem]"
+                        className="text-body block min-h-[1rem] px-[.25rem] md:px-[1rem]"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}

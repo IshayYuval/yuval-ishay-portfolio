@@ -12,6 +12,7 @@
   --color-typography-body: #D6D6D6;
   --color-brand-primary-500: #8BFCF4;
   --color-brand-primary-600: #7CE7E2;
+  --color-brand-primary: var(--color-brand-primary-500);
   --color-brand-secondary-950: #10162C;
   --color-brand-secondary-950-subtle: rgba(16, 22, 44, 0.9);
   --color-brand-secondary-900: #151E3D;
@@ -27,44 +28,14 @@
   --theme-hero-background: transparent;
   --theme-navbar-text: var(--color-typography-header);
 
-  /* border-radius */
-  --radius-xs: .25rem;
-  --radius-sm: .5rem;
+  /* Border radius */
   --radius-md: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
-  --radius-2xl: 4rem;
 
-
-  /* Padding */
-  --padding-x-xs: .25rem;
-  --padding-x-sm: .5rem;
-  --padding-x-md: 1rem;
-  --padding-x-lg: 2rem;
-  --padding-x-xl: 3rem;
-  --padding-x-2xl: 4rem;
-
-  --padding-y-xs: .25rem;
-  --padding-y-sm: .5rem;
-  --padding-y-md: 1rem;
-  --padding-y-lg: 2rem;
-  --padding-y-xl: 3rem;
-  --padding-y-2xl: 4rem;
-  --padding-y-3xl: 6rem;
-
-  --padding-full-xs: .25rem;
-  --padding-full-sm: .5rem;
-  --padding-full-md: 1rem;
-  --padding-full-lg: 2rem;
-  --padding-full-xl: 3rem;
-  --padding-full-2xl: 4rem;
-
-  --gap-xs: .5rem;
-  --gap-sm: .75rem;
+  /* Spacing */
   --gap-md: 1rem;
   --gap-lg: 2rem;
   --gap-xl: 3rem;
-  --gap-2xl: 4rem;
+  --padding-y-3xl: 6rem;
 
   /* Typography */
   --font-sans: "proxima-nova", sans-serif;
@@ -74,10 +45,8 @@
   --container-width: 1400px;
 
   /* Effects */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
 }
 
 body {
@@ -176,22 +145,10 @@ h5 {
   color: var(--foreground);
 }
 
-/* Dropdown */
-.dropdown-panel {
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  z-index: 50;
-}
-
 .backdrop-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-.landing-page-container {
-  padding-top: var(--padding-y-3xl);
 }
 
 /* Utilities */
@@ -339,19 +296,6 @@ h5 {
     letter-spacing: 0.01em;
     /* עוזר לשבירת שורות מאוזנת יותר */
   }
-}
-
-/* Utilities for hiding scrollbar while keeping functionality */
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari and Opera */
 }
 
 /* Custom Selection */

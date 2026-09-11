@@ -1,0 +1,42 @@
+.boundingBox {
+  border: 2px solid var(--color-brand-primary-500);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.text {
+  letter-spacing: -0.025em;
+  padding: 0.15rem 0.75rem;
+  box-sizing: border-box;
+}
+
+.ghostText {
+  letter-spacing: -0.025em;
+  padding: 0.15rem 0.75rem;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.handle {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 2px solid var(--color-brand-primary-500);
+  pointer-events: none;
+  z-index: 30;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .text {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .ghostText {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}

@@ -1,9 +1,112 @@
+.revealContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: baseline;
+  z-index: 20;
+  animation: revealText 0.85s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0.56s) both;
+}
+
+@keyframes revealText {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .boundingBox {
   border: 2px solid var(--color-brand-primary-500);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
+  transform-origin: left center;
+  animation: boxSequence 2.21s linear var(--box-delay, 0.2s) both;
+}
+
+.boundingBoxNoFade {
+  border: 2px solid var(--color-brand-primary-500);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  transform-origin: left center;
+  animation: boxSequenceNoFade 1.61s linear var(--box-delay, 0.2s) both;
+}
+
+@keyframes boxSequence {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    width: 0%;
+    animation-timing-function: ease-out;
+  }
+  13.57% {
+    opacity: 1;
+    transform: scale(1);
+    width: 0%;
+    animation-timing-function: linear;
+  }
+  16.29% {
+    opacity: 1;
+    transform: scale(1);
+    width: 0%;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  54.75% {
+    opacity: 1;
+    transform: scale(1);
+    width: 100%;
+    animation-timing-function: linear;
+  }
+  72.85% {
+    opacity: 1;
+    transform: scale(1);
+    width: 100%;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    width: 100%;
+  }
+}
+
+@keyframes boxSequenceNoFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    width: 0%;
+    animation-timing-function: ease-out;
+  }
+  18.63% {
+    opacity: 1;
+    transform: scale(1);
+    width: 0%;
+    animation-timing-function: linear;
+  }
+  22.36% {
+    opacity: 1;
+    transform: scale(1);
+    width: 0%;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  75.16% {
+    opacity: 1;
+    transform: scale(1);
+    width: 100%;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    width: 100%;
+  }
 }
 
 .text {
@@ -38,5 +141,16 @@
   .ghostText {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revealContainer {
+    animation: none;
+    width: 100%;
+  }
+  .boundingBox,
+  .boundingBoxNoFade {
+    display: none;
   }
 }

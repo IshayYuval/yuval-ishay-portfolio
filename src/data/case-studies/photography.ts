@@ -7,7 +7,9 @@ export const photographyCaseStudies: CaseStudy[] = [
     title: "The Butcher",
     excerpt:
       "A photographic essay that explores raw materials, ritual, and instinct, revealing the passion behind food through process rather than the final dish.",
-    tags: ["HIT", "Visual Communication BA", "2nd Year"],
+    tags: [
+      "Food Photography",
+      "Staging"],
     collectionSlug: "photography",
     cover: "/case-studies/photography/the-butcher/page-cover.webp",
     heroImage: "/case-studies/photography/the-butcher/hero-image.svg",
@@ -68,7 +70,10 @@ export const photographyCaseStudies: CaseStudy[] = [
     title: "Out of Bounds",
     excerpt:
       "A portrait series that captures the human moments, imperfections, and quiet breaks hidden within the act of running.",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    tags: [
+      "Decisive Moment",
+      "Sports",
+    ],
     collectionSlug: "photography",
     date: "2025-07-22",
     cover: "/case-studies/photography/out-of-bounds/page-cover.webp",

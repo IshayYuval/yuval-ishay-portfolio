@@ -8,10 +8,10 @@ export const packagingDesignCaseStudies: CaseStudy[] = [
     excerpt:
       "A conceptual packaging series for a basic food product, re-examining cultural, and social meanings through visual language rather than functional solutions.",
     tags: [
-      "HIT",
-      "Visual Communication BA",
-      "2nd Year",
-      "Visual Communication 1",
+      "Packaging",
+      "Labels",
+      "Illustrations",
+      "Landing Page",
     ],
     collectionSlug: "packaging-design",
     date: "2025-12-26",
@@ -117,7 +117,10 @@ export const packagingDesignCaseStudies: CaseStudy[] = [
     title: "Tarantino Homage",
     excerpt:
       "A conceptual tribute to Quentin Tarantino, inspired by his cinematic style and his alleged fascination with feet.",
-    tags: ["HIT", "Visual Communication BA", "1st Year"],
+    tags: [
+      "Packaging",
+      "Shoes Design",
+    ],
     collectionSlug: "packaging-design",
     heroImage: "/case-studies/conceptual-design/tarantino/hero-image.svg",
     theme: {

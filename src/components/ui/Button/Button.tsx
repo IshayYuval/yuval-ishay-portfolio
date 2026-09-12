@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import React from "react";
+import { motion, TargetAndTransition, VariantLabels } from "framer-motion";
 import styles from "./Button.module.css";
+
+const MotionLink = motion.create(Link);
 
 type ButtonBaseProps = {
     variant?: "primary" | "secondary";
@@ -10,15 +13,18 @@ type ButtonBaseProps = {
     children: React.ReactNode;
     className?: string;
     targetId?: string;
+    whileTap?: TargetAndTransition | VariantLabels;
 };
 
+type ConflictingProps = "onAnimationStart" | "onDrag" | "onDragStart" | "onDragEnd";
+
 type ButtonAsButton = ButtonBaseProps &
-    React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, ConflictingProps> & {
         href?: undefined;
     };
 
 type ButtonAsLink = ButtonBaseProps &
-    React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, ConflictingProps> & {
         href: string;
     };
 
@@ -30,6 +36,7 @@ export default function Button({
     className = "",
     children,
     targetId,
+    whileTap = { scale: 0.98 },
     ...props
 }: ButtonProps) {
     const isDark = theme === "dark";
@@ -46,9 +53,14 @@ export default function Button({
     if (props.href) {
         const { href, ...linkProps } = props as ButtonAsLink;
         return (
-            <Link href={href} className={combinedClassName} {...linkProps}>
+            <MotionLink
+                href={href}
+                whileTap={whileTap}
+                className={combinedClassName}
+                {...linkProps}
+            >
                 {children}
-            </Link>
+            </MotionLink>
         );
     }
 
@@ -93,12 +105,13 @@ export default function Button({
     };
 
     return (
-        <button
+        <motion.button
+            whileTap={whileTap}
             className={combinedClassName}
             {...(props as ButtonAsButton)}
             onClick={handleClick}
         >
             {children}
-        </button>
+        </motion.button>
     );
 }

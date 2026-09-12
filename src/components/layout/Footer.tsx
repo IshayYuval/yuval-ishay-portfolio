@@ -17,7 +17,7 @@ export default function Footer() {
             className="relative z-10 py-6 transition-colors duration-300"
             style={{ backgroundColor: pageBg || 'var(--color-brand-secondary-950)' }}
         >
-            <div className="container-custom flex justify-between items-center">
+            <div className="nav-bar-container flex justify-between items-center">
                 <p className="text-caption">© 2026 Yuval Ishay <br /> All rights reserved</p>
                 <Link href="/privacy-policy" className="footer-item">
                     Privacy Policy

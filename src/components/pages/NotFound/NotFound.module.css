@@ -1,0 +1,93 @@
+.handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 2px solid var(--color-brand-primary-500);
+  box-sizing: border-box;
+  z-index: 30;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  touch-action: none;
+}
+
+/* Invisible expanded hit target for smooth mobile touch & desktop dragging */
+.handle::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+}
+
+@media (min-width: 640px) {
+  .handle {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.handle:hover {
+  transform: scale(1.35);
+  background-color: var(--color-brand-primary-500);
+}
+
+.boundingBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-brand-primary-500);
+  background: rgba(16, 22, 44, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 252, 244, 0.12);
+  user-select: none;
+  touch-action: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge {
+  position: absolute;
+  top: -30px;
+  left: -2px;
+  white-space: nowrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-brand-primary-500);
+  background-color: var(--color-brand-secondary-900);
+  border: 1px solid rgba(139, 252, 244, 0.4);
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 35;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .badge {
+    top: -24px;
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+}
+
+.patternBg {
+  background-color: var(--color-brand-secondary-950);
+  background-image: radial-gradient(rgba(139, 252, 244, 0.15) 1.25px, transparent 1.25px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .handle {
+    transition: none;
+  }
+
+  .boundingBox {
+    transition: none;
+  }
+}

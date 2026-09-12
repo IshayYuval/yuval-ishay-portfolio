@@ -6,7 +6,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: .675rem;
-    transition: all var(--transition-fast);
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), opacity var(--transition-fast), box-shadow var(--transition-fast);
     cursor: pointer;
     text-decoration: none;
     min-width: 7.5rem;

@@ -38,10 +38,10 @@ export default function RootLayout({
           <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
         )}
       </head>
-      <body className="antialiased">
+      <body className="antialiased min-h-screen flex flex-col">
         <AnimationProvider>
           <Header />
-          <main className="min-h-screen">
+          <main className="flex-1 flex flex-col">
             {children}
             <Analytics />
           </main>

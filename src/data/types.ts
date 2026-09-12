@@ -9,9 +9,19 @@ export type Collection = {
 export type ZigZagSection = {
   image: string;
   title?: string;
-  text: string;
+  text?: string;
+  description?: string;
   reverse?: boolean;
 };
+
+export type ContentSectionsGroup = {
+  title?: string;
+  description?: string;
+  items?: ZigZagSection[];
+  sections?: ZigZagSection[];
+};
+
+export type ContentSectionsData = ZigZagSection[] | ContentSectionsGroup;
 
 export type GalleryItem = {
   src: string;
@@ -111,7 +121,9 @@ export type CaseStudy = {
   processSteps?: ProcessStep[]; // for UX/UI and custom case studies
   researchGraph?: ResearchGraphData | ResearchGraphData[];
   researchGraphs?: ResearchGraphData[];
-  contentSections?: ZigZagSection[];
+  contentSections?: ContentSectionsData;
+  contentSectionsTitle?: string;
+  contentSectionsDescription?: string;
   gallery?: GalleryData;
   galleries?: GallerySection[];
   galleryTitle?: string;

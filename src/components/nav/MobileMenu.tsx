@@ -63,10 +63,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                             </MobileNavItem>
 
                             <div className="flex gap-4 items-center">
-                                <a href="https://www.instagram.com/yuvalishay.art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                <a href="https://www.instagram.com/yuvalishay.art" aria-label="Yuval Ishay on Instagram" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                                     <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 invert" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/yuvalishay-art" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                <a href="https://www.linkedin.com/in/yuvalishay-art" aria-label="Yuval Ishay on LinkedIn" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                                     <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 invert" />
                                 </a>
                             </div>

@@ -34,7 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rny1uhx.css" />
-        <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
+        {process.env.NODE_ENV === "development" && (
+          <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
+        )}
       </head>
       <body className="antialiased">
         <AnimationProvider>

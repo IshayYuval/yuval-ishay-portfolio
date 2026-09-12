@@ -9,7 +9,7 @@ import { renderTextWithBreaks } from "@/utils/text";
 import Tag from "../ui/Tag/Tag";
 import Button from "../ui/Button/Button";
 import { formatCaseStudyDate } from "@/utils/dateUtils";
-import { resolveGalleryData, getCaseStudySlides } from "@/utils/lightboxUtils";
+import { resolveGalleryData, resolveContentSectionsData, getCaseStudySlides } from "@/utils/lightboxUtils";
 import { getCaseStudyThemeStyles, getResolvedPageBackground, getResolvedHeroBackground } from "@/utils/themeUtils";
 
 export default function VisualLayout({ data }: { data: CaseStudy }) {
@@ -164,12 +164,23 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                     </div>
                 );
 
-            case "contentSections":
-                if (!data.contentSections || data.contentSections.length === 0) return null;
+            case "contentSections": {
+                const contentData = resolveContentSectionsData(data.contentSections, data.contentSectionsTitle, data.contentSectionsDescription);
+                if (!contentData || contentData.items.length === 0) return null;
                 const contentStartIndex = typeof sectionStartIndices["contentSections"] === "number" ? sectionStartIndices["contentSections"] : 0;
                 return (
                     <section key="contentSections" className="py-12">
-                        {data.contentSections.map((section, index) => (
+                        {(contentData.title || contentData.description) && (
+                            <div className="max-w-4xl mx-auto mb-8 flex flex-col gap-4">
+                                {contentData.title && (
+                                    <h3>{renderTextWithBreaks(contentData.title)}</h3>
+                                )}
+                                {contentData.description && (
+                                    <p className="text-body">{renderTextWithBreaks(contentData.description)}</p>
+                                )}
+                            </div>
+                        )}
+                        {contentData.items.map((section, index) => (
                             <ZigZagRow
                                 key={index}
                                 {...section}
@@ -180,6 +191,7 @@ export default function VisualLayout({ data }: { data: CaseStudy }) {
                         ))}
                     </section>
                 );
+            }
 
             case "prototype":
                 if (!data.prototype) return null;

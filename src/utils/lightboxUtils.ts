@@ -1,4 +1,4 @@
-import { CaseStudy } from "@/data/portfolio";
+import { CaseStudy, ZigZagSection } from "@/data/portfolio";
 
 export const resolveGalleryData = (
     gallery?: CaseStudy["gallery"],
@@ -25,6 +25,42 @@ export const resolveGalleryData = (
     return null;
 };
 
+export interface ResolvedContentSectionsData {
+    items: ZigZagSection[];
+    title?: string;
+    description?: string;
+}
+
+export const resolveContentSectionsData = (
+    contentSections?: CaseStudy["contentSections"],
+    defaultTitle?: string,
+    defaultDesc?: string
+): ResolvedContentSectionsData | null => {
+    if (!contentSections) return null;
+    if (Array.isArray(contentSections)) {
+        if (contentSections.length === 0) return null;
+        return {
+            items: contentSections,
+            title: (contentSections as any).title || defaultTitle,
+            description: (contentSections as any).description || defaultDesc,
+        };
+    }
+    if (contentSections && typeof contentSections === "object") {
+        const items = "items" in contentSections && Array.isArray(contentSections.items)
+            ? contentSections.items
+            : "sections" in contentSections && Array.isArray(contentSections.sections)
+                ? contentSections.sections
+                : [];
+        if (items.length === 0) return null;
+        return {
+            items,
+            title: contentSections.title || defaultTitle,
+            description: contentSections.description || defaultDesc,
+        };
+    }
+    return null;
+};
+
 export interface CaseStudySlidesResult {
     slides: { src: string }[];
     sectionStartIndices: Record<string, number | number[]>;
@@ -39,11 +75,14 @@ export function getCaseStudySlides(data: CaseStudy): CaseStudySlidesResult {
     const contentKeys = Object.keys(data);
 
     for (const key of contentKeys) {
-        if (key === "contentSections" && data.contentSections && data.contentSections.length > 0) {
-            sectionStartIndices["contentSections"] = slides.length;
-            for (const section of data.contentSections) {
-                if (section.image && section.image.length > 0) {
-                    slides.push({ src: section.image });
+        if (key === "contentSections" && data.contentSections) {
+            const contentData = resolveContentSectionsData(data.contentSections, data.contentSectionsTitle, data.contentSectionsDescription);
+            if (contentData && contentData.items && contentData.items.length > 0) {
+                sectionStartIndices["contentSections"] = slides.length;
+                for (const section of contentData.items) {
+                    if (section.image && section.image.length > 0) {
+                        slides.push({ src: section.image });
+                    }
                 }
             }
         } else if (key === "gallery" && data.gallery) {

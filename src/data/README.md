@@ -233,21 +233,44 @@ researchGraph: {
 
 ### 8. Zig-Zag Feature Rows (`contentSections`)
 
-Alternating text and image showcase blocks:
+Alternating text and image showcase blocks. Supports an optional section `title` (rendered with `<h3>`) and `description` (rendered with `text-body`) following standard alignment practices:
 
 ```typescript
+// Object syntax with title and description
+contentSections: {
+  title: "Visual Language",
+  description: "Comprehensive breakdown of the core design system and components.",
+  items: [
+    {
+      image: "/case-studies/branding/cheetah/brandmark.svg",
+      title: "The Brandmark",
+      description: "Constructed using rectangular and sharp lines to emphasize speed.",
+      reverse: false // set to true to position image on the right
+    },
+    {
+      image: "/case-studies/branding/cheetah/typography.svg",
+      title: "Typography",
+      description: "Savanna is a dynamic sans serif typeface designed specifically for the brand.",
+      reverse: true // image right, text left
+    }
+  ]
+}
+
+// Or array syntax with optional top-level contentSectionsTitle / contentSectionsDescription
+contentSectionsTitle: "Visual Language",
+contentSectionsDescription: "Comprehensive breakdown of the core design system and components.",
 contentSections: [
   {
     image: "/case-studies/branding/cheetah/brandmark.svg",
     title: "The Brandmark",
     text: "Constructed using rectangular and sharp lines to emphasize speed.",
-    reverse: false // set to true to position image on the right
+    reverse: false
   },
   {
     image: "/case-studies/branding/cheetah/typography.svg",
     title: "Typography",
     text: "Savanna is a dynamic sans serif typeface designed specifically for the brand.",
-    reverse: true // image right, text left
+    reverse: true
   }
 ]
 ```

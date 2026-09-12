@@ -87,12 +87,13 @@ export const exampleCaseStudy: CaseStudy = {
   //   textAfter: "The quantitative data clearly highlights the market need.",
   // },
 
-  // Zig-Zag Feature Showcase Rows (Optional)
+  // Zig-Zag Feature Showcase Rows (Optional - supports title (h3) and description (text-body))
+  // Can be an object with { title, description, items } or an array with contentSectionsTitle / contentSectionsDescription
   contentSections: [
     {
       image: "/case-studies/branding/project-slug/brandmark.svg",
       title: "The Brandmark",
-      text: "Explanation of the design decisions behind the visual identity.",
+      description: "Explanation of the design decisions behind the visual identity.",
       reverse: false, // set true to swap image and text position
     },
   ],

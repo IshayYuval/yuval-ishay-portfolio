@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 
 const PHRASES = [
-  "a multidisiplinary designer",
+  "a Multidisciplinary designer",
   "a product designer",
   "a product builder",
   "a typography lover",

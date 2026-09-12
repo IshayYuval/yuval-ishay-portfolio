@@ -9,7 +9,7 @@ import Button from "../ui/Button/Button";
 import Tag from "../ui/Tag/Tag";
 import { renderTextWithBreaks } from "@/utils/text";
 import { formatCaseStudyDate } from "@/utils/dateUtils";
-import { resolveGalleryData, getCaseStudySlides } from "@/utils/lightboxUtils";
+import { resolveGalleryData, resolveContentSectionsData, getCaseStudySlides } from "@/utils/lightboxUtils";
 import { getCaseStudyThemeStyles, getResolvedPageBackground, getResolvedHeroBackground } from "@/utils/themeUtils";
 
 export default function BrandingLayout({ data }: { data: CaseStudy }) {
@@ -112,13 +112,25 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                 </section>
             );
 
-            case "contentSections":
-                if (!data.contentSections || data.contentSections.length === 0) return null;
+            case "contentSections": {
+                const contentData = resolveContentSectionsData(data.contentSections, data.contentSectionsTitle, data.contentSectionsDescription);
+                if (!contentData || contentData.items.length === 0) return null;
                 const contentStartIndex = typeof sectionStartIndices["contentSections"] === "number" ? sectionStartIndices["contentSections"] : 0;
                 return (
                     <section key="contentSections" className="pt-14">
-                        <h1 className="mb-2 text-center">Visual Language</h1>
-                        {data.contentSections.map((section, index) => (
+                        {(contentData.title || contentData.description) ? (
+                            <div className="max-w-4xl mx-auto mb-8 flex flex-col gap-4">
+                                {contentData.title && (
+                                    <h3>{renderTextWithBreaks(contentData.title)}</h3>
+                                )}
+                                {contentData.description && (
+                                    <p className="text-body">{renderTextWithBreaks(contentData.description)}</p>
+                                )}
+                            </div>
+                        ) : (
+                            <h1 className="mb-2 text-center">Visual Language</h1>
+                        )}
+                        {contentData.items.map((section, index) => (
                             <ZigZagRow
                                 key={index}
                                 {...section}
@@ -129,6 +141,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         ))}
                     </section>
                 );
+            }
 
             case "gallery": {
                 const galleryData = resolveGalleryData(data.gallery, data.galleryTitle || "The brand in action", data.galleryDescription);

@@ -70,6 +70,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
       },
     ],
 
+    contentSectionsTitle: "The Notch App",
     contentSections: [
       {
         image: "/case-studies/product-design/notch/home-page.jpg",
@@ -92,7 +93,7 @@ export const productDesignCaseStudies: CaseStudy[] = [
       {
         image: "/case-studies/product-design/notch/my-patch.jpg",
         title:
-          "Signup use college credentials to pull the student’s presentation schedule based on their department and year, without manual input.<br/><br/> Signup happens during the reservation flow, so the podium is saved for the specific student who booked it, and only for them.",
+          "A dedicated patch page showing the patch design, capsule expiration date, and an order button for easy replacement.",
         text: "",
       },
       {

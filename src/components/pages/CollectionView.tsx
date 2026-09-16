@@ -54,7 +54,8 @@ export default function CollectionView({ collection }: CollectionViewProps) {
                         {collection.title || " "}
                     </motion.h5>
 
-                    <h1 className="mb-1 uppercase">
+                    <h1 className="sr-only">Case Studies</h1>
+                    <h1 aria-hidden="true" className="mb-1 uppercase">
                         <BoundingBoxAnimation text="Case Studies" delay={0.2} />
                     </h1>
 

@@ -55,7 +55,9 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
 
         {/* COLUMN 1: Text Container */}
         <div className="order-2 md:order-1 flex flex-col justify-center px-6 md:pr-0 md:pl-8 lg:pl-32 xl:pl-64">
+          <h3 className="sr-only">{work.title}</h3>
           <motion.h3
+            aria-hidden="true"
             className={`${styles.title} text-4xl md:text-5xl lg:text-6xl mb-3`}
             style={headingColor ? { color: headingColor } : undefined}
             initial={isBackNav ? false : "hidden"}

@@ -70,7 +70,9 @@ export default function AboutPage() {
 
                     {/* Section 1 */}
                     <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-4 lg:py-12">
+                        <h1 className="sr-only">Hey there, I&#39;m Yuval!</h1>
                         <motion.h1
+                            aria-hidden="true"
                             initial={isBackNav ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -121,7 +123,9 @@ export default function AboutPage() {
 
                     {/* Section 2 */}
                     <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
+                        <h1 className="sr-only">My Background</h1>
                         <motion.h1
+                            aria-hidden="true"
                             initial={isBackNav ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -171,7 +175,9 @@ export default function AboutPage() {
 
                     {/* Section 3 */}
                     <div id="hobbies" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
+                        <h1 className="sr-only">Outside the Studio</h1>
                         <motion.h1
+                            aria-hidden="true"
                             initial={isBackNav ? false : "hidden"}
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}

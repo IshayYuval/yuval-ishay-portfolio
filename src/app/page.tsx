@@ -72,7 +72,9 @@ export default function Home() {
         </section>
 
         <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
+          <h2 className="sr-only">Wanna see more?</h2>
           <motion.h2
+            aria-hidden="true"
             className="mb-12 text-white"
             initial={isBackNav ? false : "hidden"}
             whileInView="visible"

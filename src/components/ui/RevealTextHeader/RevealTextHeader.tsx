@@ -263,8 +263,15 @@ export default function RevealTextHeader() {
   };
 
   return (
-    <h1 className="inline-flex flex-wrap items-baseline gap-y-2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-left uppercase select-none">
-      {/* Static Part - Split word-by-word animation */}
+    <>
+      <h1 className="sr-only">
+        I&#39;m Yuval Ishay, and I&#39;m a Multidisciplinary designer
+      </h1>
+      <h1
+        aria-hidden="true"
+        className="inline-flex flex-wrap items-baseline gap-y-2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-left uppercase select-none"
+      >
+        {/* Static Part - Split word-by-word animation */}
       <motion.span
         className="inline-flex flex-wrap items-baseline"
         variants={isBackNav ? undefined : headerContainerVariants}
@@ -343,5 +350,6 @@ export default function RevealTextHeader() {
         </span>
       </motion.span>
     </h1>
+    </>
   );
 }

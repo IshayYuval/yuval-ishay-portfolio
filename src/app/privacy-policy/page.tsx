@@ -44,7 +44,8 @@ export default function PrivacyPolicyPage() {
     return (
         <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)] min-h-screen">
             <Section>
-                <h1>
+                <h1 className="sr-only">Privacy Policy</h1>
+                <h1 aria-hidden="true">
                     <BoundingBoxAnimation text="Privacy Policy" delay={0.2} />
                 </h1>
 

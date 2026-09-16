@@ -64,7 +64,9 @@ export default function HeroAnimatedContent() {
         <motion.div className="px-0 sm:px-[4rem] z-10" style={{ opacity }}>
             <RevealTextHeader />
 
+            <p className="sr-only">{subText}</p>
             <motion.div
+                aria-hidden="true"
                 className="subhero ml-0.5 block mt-6"
                 variants={subheroContainerVariants}
                 initial={isBackNav ? false : "hidden"}

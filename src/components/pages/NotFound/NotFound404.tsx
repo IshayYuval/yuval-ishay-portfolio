@@ -21,23 +21,7 @@ type HandleDirection =
 export default function NotFound404({ className = "" }: NotFound404Props) {
   const boxRef = useRef<HTMLDivElement>(null);
   const [boxSize, setBoxSize] = useState<{ width: number; height: number } | null>(null);
-  const [measuredSize, setMeasuredSize] = useState<{ width: number; height: number } | null>(null);
   const [isDraggingHandle, setIsDraggingHandle] = useState(false);
-
-  // Measure rendered size of the bounding box on mount & resize
-  React.useEffect(() => {
-    const updateMeasured = () => {
-      if (boxRef.current) {
-        setMeasuredSize({
-          width: Math.round(boxRef.current.offsetWidth),
-          height: Math.round(boxRef.current.offsetHeight),
-        });
-      }
-    };
-    updateMeasured();
-    window.addEventListener("resize", updateMeasured);
-    return () => window.removeEventListener("resize", updateMeasured);
-  }, []);
 
   // Active drag state refs
   const activeHandleRef = useRef<HandleDirection | null>(null);
@@ -144,11 +128,6 @@ export default function NotFound404({ className = "" }: NotFound404Props) {
           }}
           className={`w-[54px] h-[78px] sm:w-[72px] sm:h-[105px] md:w-[98px] md:h-[142px] lg:w-[124px] lg:h-[180px] rounded-lg sm:rounded-xl cursor-grab active:cursor-grabbing ${styles.boundingBox}`}
         >
-          {/* Floating Figma-style Layer / Dimension Badge (Always shows width and height) */}
-          <div className={styles.badge}>
-            w: {boxSize?.width ?? measuredSize?.width ?? 124}&nbsp; h: {boxSize?.height ?? measuredSize?.height ?? 180}
-          </div>
-
           {/* Inner geometry forming the aperture of the digit '0' */}
           <div className="relative w-[40%] h-[58%] rounded-md sm:rounded-lg border-2 border-dashed border-[var(--color-brand-primary-500)]/40 bg-[var(--color-brand-secondary-950)]/90 flex items-center justify-center transition-all duration-200 group-hover:border-[var(--color-brand-primary-500)]/80">
             {/* Center crosshair / null point */}

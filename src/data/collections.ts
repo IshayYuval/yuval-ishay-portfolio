@@ -6,33 +6,33 @@ export const collections: Collection[] = [
     title: "Product Design",
     shortTitle: "UX",
     description:
-      "Explore my past projects and detailed case studies showcasing my product design work and broad expertise across diverse industry sectors.",
+      "From real problems and rough ideas to products people can actually use.",
     parentNav: "my-work",
   },
   {
     slug: "branding",
     title: "Branding",
     description:
-      "Discover my branding projects and case studies that reflect my approach and extensive work across various industries.",
+      "Brand identities that start with a story and tell it through every detail.",
     parentNav: "my-work",
   },
   {
     slug: "editorial-and-print",
     title: "Editorial & Print",
     description:
-      "Several print projects showing how typography and imaging work in different mediums.",
+      "Stories told through typography, imagery, layout, and the physical page.",
     parentNav: "my-work",
   },
   {
     slug: "video-installations",
     title: "Video Installations",
-    description: "Video art, motion design, and video installations.",
+    description: "Experiments with motion, sound, and space; from video art to physical installations.",
     parentNav: "my-work",
   },
   {
     slug: "packaging-design",
     title: "Packaging Design",
-    description: "My exploration of how concept can meet practicality.",
+    description: "Where strong concepts become something you can hold, use, and remember.",
     parentNav: "my-work",
   },
   {

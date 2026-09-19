@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button/Button";
 import BoundingBoxAnimation from "@/components/ui/BoundingBoxAnimation/BoundingBoxAnimation";
+import DotPattern from "@/components/ui/Patterns";
 import { useRouter } from "next/navigation";
 
 const buttonContainerVariants: Variants = {
@@ -42,7 +43,7 @@ export default function PrivacyPolicyPage() {
     };
 
     return (
-        <div className="pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)] min-h-screen">
+        <DotPattern className="flex-1 pt-[var(--header-height)]">
             <Section>
                 <h1 className="sr-only">Privacy Policy</h1>
                 <h1 aria-hidden="true">
@@ -56,13 +57,15 @@ export default function PrivacyPolicyPage() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
                         className="text-body mb-8"
                     >
-                        Looks like you're worried if you're here, so let me reassure you ;)
+
+                        Oh, you’re checking the privacy policy? Fair enough ;)
                         <br />
-                        I'm just a designer showcasing his work, so I collect absolutely nothing.
-                        Not cookies, not your browsing information, not tracking of any kind, nothing.
+                        I’m just a designer sharing my work. No tracking, no analytics, no cookies.
+                        <br />
+                        Just a portfolio and someone who probably spent too long deciding which font you’re reading this in.
                         <br />
                         <br />
-                        In addition, I'm using a secure HTTPS protocol to protect your information while here, so you can get comfortable, drink your coffee (or tea, I don't judge), and watch my work with a peace of mind!
+                        The connection is encrypted with HTTPS, too. So grab your coffee (or tea, I don’t judge), make yourself comfortable, and have a look around.
                     </motion.p>
                     <motion.div
                         variants={buttonContainerVariants}
@@ -78,6 +81,6 @@ export default function PrivacyPolicyPage() {
                     </motion.div>
                 </div>
             </Section >
-        </div >
+        </DotPattern>
     );
 }

@@ -4,7 +4,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import NotFound404 from "./NotFound404";
-import styles from "./NotFound.module.css";
+import DotPattern from "@/components/ui/Patterns";
 
 const contentContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -31,14 +31,8 @@ const itemVariants: Variants = {
 
 export default function NotFoundView() {
   return (
-    <div
+    <DotPattern
       className="relative flex-1 flex flex-col items-center justify-center pt-[var(--header-height)] px-4 sm:px-6 md:px-8 py-8 md:py-12 overflow-hidden"
-      style={{
-        backgroundColor: "var(--color-brand-secondary-950)",
-        backgroundImage: "radial-gradient(rgba(139, 252, 244, 0.15) 1.25px, transparent 1.25px)",
-        backgroundSize: "20px 20px",
-        backgroundPosition: "0 0",
-      }}
     >
       <motion.div
         variants={contentContainerVariants}
@@ -82,6 +76,6 @@ export default function NotFoundView() {
           </Button>
         </motion.div>
       </motion.div>
-    </div>
+    </DotPattern>
   );
 }

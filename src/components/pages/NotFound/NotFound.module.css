@@ -47,14 +47,6 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-.patternBg {
-  background-color: var(--color-brand-secondary-950);
-  background-image: radial-gradient(rgba(139, 252, 244, 0.15) 1.25px, transparent 1.25px);
-  background-size: 20px 20px;
-  background-position: 0 0;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .handle {
     transition: none;

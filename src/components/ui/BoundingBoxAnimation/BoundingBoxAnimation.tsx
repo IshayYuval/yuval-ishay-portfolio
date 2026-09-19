@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import styles from "./BoundingBoxAnimation.module.css";
 
 export interface BoundingBoxAnimationProps {
@@ -25,6 +26,10 @@ export interface BoundingBoxAnimationProps {
   boxClassName?: string;
   /** The HTML tag or React component to render as. Default: "span" */
   as?: React.ElementType;
+  /** Whether to trigger the animation only when scrolled into view. Default: false */
+  triggerOnView?: boolean;
+  /** Viewport amount required to trigger when triggerOnView is true (0 to 1). Default: 0.5 */
+  viewportAmount?: "some" | "all" | number;
 }
 
 export default function BoundingBoxAnimation({
@@ -36,9 +41,18 @@ export default function BoundingBoxAnimation({
   textClassName = "",
   boxClassName = "",
   as: Component = "span",
+  triggerOnView = false,
+  viewportAmount = 0.5,
 }: BoundingBoxAnimationProps) {
   const displayText = text ?? (typeof children === "string" ? children : "");
   const [animationKey, setAnimationKey] = useState(0);
+  const containerRef = useRef<HTMLElement>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    amount: viewportAmount,
+  });
+
+  const shouldAnimate = triggerOnView ? isInView : true;
 
   // Listen to popstate and pageshow to ensure the animation replays on browser back/forward navigation
   useEffect(() => {
@@ -60,6 +74,7 @@ export default function BoundingBoxAnimation({
 
   return (
     <Component
+      ref={containerRef}
       key={animationKey}
       className={`relative inline-flex items-baseline select-none ${className}`}
       style={
@@ -78,35 +93,39 @@ export default function BoundingBoxAnimation({
       </span>
 
       {/* 2. Text reveal container (animates width from 0% to 100%) */}
-      <span className={styles.revealContainer}>
-        <span
-          className={`relative tracking-tight whitespace-nowrap inline-block left-0 top-0 ${styles.text} ${textClassName}`}
-        >
-          {displayText}
+      {shouldAnimate && (
+        <span className={styles.revealContainer}>
+          <span
+            className={`relative tracking-tight whitespace-nowrap inline-block left-0 top-0 ${styles.text} ${textClassName}`}
+          >
+            {displayText}
+          </span>
         </span>
-      </span>
+      )}
 
       {/* 3. Bounding Box Frame (Border, Background fill, and Handles) */}
-      <span
-        className={`absolute left-0 top-0 bottom-0 pointer-events-none inline-flex items-baseline z-10 ${
-          fadeBox ? styles.boundingBox : styles.boundingBoxNoFade
-        } ${boxClassName}`}
-      >
-        {/* Top-Left Handle */}
-        <span className={`absolute -top-[5px] -left-[5px] ${styles.handle}`} />
+      {shouldAnimate && (
+        <span
+          className={`absolute left-0 top-0 bottom-0 pointer-events-none inline-flex items-baseline z-10 ${
+            fadeBox ? styles.boundingBox : styles.boundingBoxNoFade
+          } ${boxClassName}`}
+        >
+          {/* Top-Left Handle */}
+          <span className={`absolute -top-[5px] -left-[5px] ${styles.handle}`} />
 
-        {/* Bottom-Left Handle */}
-        <span className={`absolute -bottom-[5px] -left-[5px] ${styles.handle}`} />
+          {/* Bottom-Left Handle */}
+          <span className={`absolute -bottom-[5px] -left-[5px] ${styles.handle}`} />
 
-        {/* Top-Right Handle */}
-        <span className={`absolute -top-[5px] -right-[5px] ${styles.handle}`} />
+          {/* Top-Right Handle */}
+          <span className={`absolute -top-[5px] -right-[5px] ${styles.handle}`} />
 
-        {/* Bottom-Right Handle */}
-        <span className={`absolute -bottom-[5px] -right-[5px] ${styles.handle}`} />
+          {/* Bottom-Right Handle */}
+          <span className={`absolute -bottom-[5px] -right-[5px] ${styles.handle}`} />
 
-        {/* Center-Right Handle */}
-        <span className={`absolute top-1/2 -translate-y-1/2 -right-[5px] ${styles.handle}`} />
-      </span>
+          {/* Center-Right Handle */}
+          <span className={`absolute top-1/2 -translate-y-1/2 -right-[5px] ${styles.handle}`} />
+        </span>
+      )}
     </Component>
   );
 }

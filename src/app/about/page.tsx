@@ -32,7 +32,7 @@ const buttonVariants: Variants = {
 };
 
 export default function AboutPage() {
-  const isBackNav = useContext(AnimationContext);
+    const isBackNav = useContext(AnimationContext);
     const handleEmailClick = () => {
         // Prevent basic HTML scrapers from detecting the raw email string in the DOM
         const user = "yuvalishay14";
@@ -101,10 +101,14 @@ export default function AboutPage() {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
                             className="max-w-xl text-body"
                         >
-                            I am a multidisciplinary designer based in Israel, currently in my second year of the Visual Communication B.A. program at the Holon Institute of Technology (HIT).
+                            I am a multidisciplinary designer living in Rishon LeZion (which is like Tel-Aviv, but with only shopping malls). I’m currently in my second year of the Visual Communication B.A. program at HIT.
                             <br />
                             <br />
-                            My work is driven by curiosity, research, and a search for narrative—whether through strict typographic grids or conceptual packaging. To bridge the gap between static concepts and functioning reality, I deeply integrate AI frameworks into my workflow. Tools like Antigravity (which I used to code this very portfolio) and Base44 serve as my creative amplifiers, empowering me to turn abstract design thinking into living, interactive digital products autonomously.
+                            My love story with design began in elementary school, when I discovered a weird program on my computer called Photoshop. I started experimenting with brushes and uploading my work to a graphic design community on the Ikariam forum.
+
+                            Everybody told me to quit and that design wasn’t for me.
+                            <br />
+                            Well, I didn’t ;)
                         </motion.p>
                         <motion.div
                             className="flex mt-[var(--gap-xl)]"
@@ -113,9 +117,9 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.5 }}
                         >
-                            <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                            <motion.div variants={buttonVariants} className="w-full sm:w-[160px]">
                                 <Button variant="primary" targetId="background" className="w-full justify-center">
-                                    How did you start?
+                                    See how I think
                                 </Button>
                             </motion.div>
                         </motion.div>
@@ -123,7 +127,7 @@ export default function AboutPage() {
 
                     {/* Section 2 */}
                     <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
-                        <h1 className="sr-only">My Background</h1>
+                        <h1 className="sr-only">My Approach</h1>
                         <motion.h1
                             aria-hidden="true"
                             initial={isBackNav ? false : "hidden"}
@@ -141,7 +145,7 @@ export default function AboutPage() {
                             className="mb-[var(--gap-md)]"
                         >
                             <AnimatedText text="My " />
-                            <AnimatedText text="Background" className="emphasized-text" />
+                            <AnimatedText text="Approach" className="emphasized-text" />
                         </motion.h1>
 
                         <motion.p
@@ -151,12 +155,12 @@ export default function AboutPage() {
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             className="max-w-xl text-body"
                         >
-                            Before trading my office chair for a student desk, I spent about a decade out in the wild working on product design (UX/UI) and branding.
-                            So, why go back to school?
+                            My approach to design comes down to two things: having a story worth telling, and caring about every little detail that helps tell it.
+                            <br />
+                            Without a story, design might look good, but it doesn’t have much to say. And if that story doesn’t work at every level, from the overall concept to the smallest detail, the work feels unfinished.
                             <br />
                             <br />
-                            Honestly, just making things look good and work smoothly wasn't enough anymore. I came to HIT to geek out on the
-                            why behind it all; the conceptual storytelling that turns a nice design into something with an actual soul.
+                            A lot of what I know, I taught myself. I believe that part of being a designer today is to never stop learning and picking up new tools. Not just for the sake of knowing more, but because every new tool gives me another way to bring ideas to life and tell better stories.
                         </motion.p>
                         <motion.div
                             className="mt-[var(--gap-xl)]"
@@ -165,62 +169,13 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.5 }}
                         >
-                            <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
-                                <Button variant="primary" targetId="hobbies" className="w-full justify-center">
-                                    Do you ever log off?
-                                </Button>
-                            </motion.div>
-                        </motion.div>
-                    </div>
-
-                    {/* Section 3 */}
-                    <div id="hobbies" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
-                        <h1 className="sr-only">Outside the Studio</h1>
-                        <motion.h1
-                            aria-hidden="true"
-                            initial={isBackNav ? false : "hidden"}
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.3 }}
-                            variants={{
-                                hidden: { opacity: 1 },
-                                visible: {
-                                    opacity: 1,
-                                    transition: {
-                                        staggerChildren: 0.04,
-                                    }
-                                }
-                            }}
-                            className="mb-[var(--gap-lg)]"
-                        >
-                            <AnimatedText text="Outside the " />
-                            <AnimatedText text="Studio" className="emphasized-text" />
-                        </motion.h1>
-
-                        <motion.p
-                            initial={isBackNav ? false : { opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="max-w-xl text-body"
-                        >
-                            When I'm not obsessing over micro-typography or experimenting with new AI models, I'm usually practicing martial arts,
-                            following football, or listening to music. I'm constantly seeking to step out of my comfort zone, it applies to my hobbies, it applies to my lifestyle and it applies to how I design.
-                        </motion.p>
-                        <motion.div
-                            className="mt-[var(--gap-xl)]"
-                            variants={buttonContainerVariants}
-                            initial={isBackNav ? false : "hidden"}
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.5 }}
-                        >
-                            <motion.div variants={buttonVariants} className="w-full sm:w-[200px]">
+                            <motion.div variants={buttonVariants} className="w-full sm:w-[120px]">
                                 <Button variant="primary" onClick={handleEmailClick} className="w-full justify-center">
-                                    Let's talk :)
+                                    Say hello
                                 </Button>
                             </motion.div>
                         </motion.div>
                     </div>
-
                 </div>
             </div>
         </div>

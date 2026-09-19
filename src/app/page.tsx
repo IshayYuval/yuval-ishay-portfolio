@@ -6,7 +6,8 @@ import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
 import { caseStudies, collections, favorites } from "@/data/portfolio";
 import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
 import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
-import AnimatedText from "@/components/ui/AnimatedText/AnimatedText";
+import BoundingBoxAnimation from "@/components/ui/BoundingBoxAnimation/BoundingBoxAnimation";
+import DotPattern from "@/components/ui/Patterns";
 import { useContext } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 const cardContainerVariants: Variants = {
@@ -44,18 +45,13 @@ export default function Home() {
     <>
       <div className="relative w-full h-screen">
         {/* Masthead */}
-        <section
+        <DotPattern
+          as="section"
           className="fixed top-0 left-0 w-full h-screen flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] overflow-hidden z-0"
-          style={{
-            backgroundColor: 'var(--color-brand-secondary-950)',
-            backgroundImage: 'radial-gradient(rgba(139, 252, 244, 0.15) 1.25px, transparent 1.25px)',
-            backgroundSize: '20px 20px',
-            backgroundPosition: '0 0'
-          }}
         >
           <HeroAnimatedContent />
           <ScrollDownButton targetId="featured-works" />
-        </section>
+        </DotPattern>
       </div>
 
       <div className="relative z-10 bg-[var(--color-brand-secondary-950)]">
@@ -73,22 +69,9 @@ export default function Home() {
 
         <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
           <h2 className="sr-only">Wanna see more?</h2>
-          <motion.h2
-            aria-hidden="true"
-            className="mb-12 text-white"
-            initial={isBackNav ? false : "hidden"}
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              hidden: { opacity: 1 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.04 }
-              }
-            }}
-          >
-            <AnimatedText text="Wanna see more?" />
-          </motion.h2>
+          <h2 aria-hidden="true" className="mb-12 text-white">
+            <BoundingBoxAnimation text="Wanna see more?" triggerOnView delay={0.2} />
+          </h2>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             variants={cardContainerVariants}

@@ -8,7 +8,7 @@ import CollectionCard from "@/components/ui/CollectionCard/CollectionCard";
 import FavoriteCaseStudy from "@/components/ui/FavoriteCaseStudy/FavoriteCaseStudy";
 import BoundingBoxAnimation from "@/components/ui/BoundingBoxAnimation/BoundingBoxAnimation";
 import DotPattern from "@/components/ui/Patterns";
-import { useContext } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -35,6 +35,24 @@ const cardVariants: Variants = {
 
 export default function Home() {
   const isBackNav = useContext(AnimationContext);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Once scrolled past the hero wrapper height, hide it so it doesn't stay fixed in the viewport
+      const heroHeight = heroRef.current ? heroRef.current.offsetHeight : window.innerHeight;
+      setIsHeroVisible(window.scrollY < heroHeight);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   const favoriteWorks = favorites.reduce((acc, fav) => {
     const study = caseStudies.find((s) => s.slug === fav.slug);
     if (study) acc.push(study);
@@ -43,18 +61,21 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative w-full h-screen">
+      <div ref={heroRef} data-bg-color="#10162C" className="relative w-full min-h-screen min-h-[100lvh] h-[100lvh]">
         {/* Masthead */}
         <DotPattern
           as="section"
-          className="fixed top-0 left-0 w-full h-screen flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] overflow-hidden z-0"
+          data-bg-color="#10162C"
+          className={`fixed inset-0 w-full min-h-screen min-h-[100lvh] h-[100lvh] flex items-center pt-20 px-4 md:px-5 lg:px-[7.5rem] overflow-hidden z-0 transition-opacity duration-300 ${
+            isHeroVisible ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          }`}
         >
           <HeroAnimatedContent />
           <ScrollDownButton targetId="featured-works" />
         </DotPattern>
       </div>
 
-      <div className="relative z-10 bg-[var(--color-brand-secondary-950)]">
+      <div className="relative z-10">
         <section id="featured-works" className="relative w-full">
           <div className="relative z-10 flex flex-col">
             {favoriteWorks.map((work) => (
@@ -67,7 +88,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="wanna-see-more" className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white">
+        <section
+          id="wanna-see-more"
+          data-bg-color="#10162C"
+          className="relative w-full min-h-[calc(100vh-var(--header-height))] py-24 md:py-32 px-8 lg:px-32 xl:px-64 bg-[var(--color-brand-secondary-950)] text-white"
+        >
           <h2 className="sr-only">Wanna see more?</h2>
           <h2 aria-hidden="true" className="mb-12 text-white">
             <BoundingBoxAnimation text="Wanna see more?" triggerOnView delay={0.2} />

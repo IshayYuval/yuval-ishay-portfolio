@@ -9,6 +9,26 @@ interface MobileMenuProps {
     onClose: () => void;
 }
 
+interface MobileNavItemProps {
+    href: string;
+    children: React.ReactNode;
+    onClick: () => void;
+    active: boolean;
+}
+
+function MobileNavItem({ href, children, onClick, active }: MobileNavItemProps) {
+    return (
+        <Link
+            href={href}
+            onClick={onClick}
+            className={`nav-link relative w-fit group pl-4 ${active ? 'text-[var(--color-brand-primary-500)]' : 'hover:text-[var(--foreground)]'}`}
+        >
+            {children}
+            <span className={`absolute left-0 top-0 h-full w-[2px] origin-center transform transition-transform duration-300 ease-out ${active ? 'scale-y-100 bg-[var(--color-brand-primary-500)]' : 'scale-y-0 group-hover:scale-y-100 bg-[var(--foreground)]'}`} />
+        </Link>
+    );
+}
+
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     const pathname = usePathname();
 
@@ -16,29 +36,15 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
     const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
 
-    const MobileNavItem = ({ href, children, onClick }: { href: string, children: React.ReactNode, onClick: () => void }) => {
-        const active = isActive(href);
-        return (
-            <Link
-                href={href}
-                onClick={onClick}
-                className={`nav-link relative w-fit group pl-4 ${active ? 'text-[var(--color-brand-primary-500)]' : 'hover:text-[var(--foreground)]'}`}
-            >
-                {children}
-                <span className={`absolute left-0 top-0 h-full w-[2px] origin-center transform transition-transform duration-300 ease-out ${active ? 'scale-y-100 bg-[var(--color-brand-primary-500)]' : 'scale-y-0 group-hover:scale-y-100 bg-[var(--foreground)]'}`} />
-            </Link>
-        );
-    };
-
     return (
         <div
-            className={`fixed inset-0 z-[60] bg-[var(--color-brand-secondary-900)] transition-transform duration-500 ease-in-out origin-top md:hidden ${isOpen ? "scale-y-100 pointer-events-auto" : "scale-y-0 pointer-events-none"
+            className={`fixed inset-0 z-[60] bg-[var(--color-brand-secondary-900)] transition-transform duration-500 ease-in-out origin-top md:hidden ${isOpen ? "scale-y-100 pointer-events-auto visible" : "scale-y-0 pointer-events-none invisible"
                 }`}
             style={{ top: 0 }}
         >
             <div className="container-custom h-full flex flex-col relative overflow-hidden">
                 <div
-                    className="absolute inset-0 pt-[var(--header-height)] px-6"
+                    className="absolute inset-0 pt-[var(--header-height)] pb-[calc(2rem+env(safe-area-inset-bottom,0px))] px-[calc(1.5rem+env(safe-area-inset-left,0px))] pr-[calc(1.5rem+env(safe-area-inset-right,0px))] overflow-y-auto"
                 >
                     <nav className={`flex flex-col mt-8 uppercase transition-all duration-700 delay-300 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                         <div className="flex flex-col gap-6">
@@ -49,6 +55,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                     key={item.slug}
                                     href={`/${item.slug}`}
                                     onClick={onClose}
+                                    active={isActive(`/${item.slug}`)}
                                 >
                                     {item.title}
                                 </MobileNavItem>
@@ -58,7 +65,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         <div className="w-full h-px bg-[var(--foreground)] opacity-20 my-8" />
 
                         <div className="flex flex-col gap-8">
-                            <MobileNavItem href="/about" onClick={onClose}>
+                            <MobileNavItem href="/about" onClick={onClose} active={isActive("/about")}>
                                 My Story
                             </MobileNavItem>
 

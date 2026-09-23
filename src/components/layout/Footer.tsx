@@ -14,7 +14,8 @@ export default function Footer() {
 
     return (
         <footer
-            className="relative z-10 py-6 transition-colors duration-300"
+            data-bg-color={pageBg || "#10162C"}
+            className="relative z-10 pt-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] transition-colors duration-300"
             style={{ backgroundColor: pageBg || 'var(--color-brand-secondary-950)' }}
         >
             <div className="nav-bar-container flex justify-between items-center">

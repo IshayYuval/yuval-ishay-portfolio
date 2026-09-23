@@ -48,6 +48,7 @@ export default function FavoriteCaseStudy({ work, collectionTitle }: FavoriteCas
 
   return (
     <section
+      data-bg-color={bgColor}
       className="w-full pt-0 pb-[3rem] md:py-[6rem] min-h-[calc(100vh-var(--header-height))] flex items-center overflow-hidden"
       style={{ backgroundColor: bgColor }}
     >

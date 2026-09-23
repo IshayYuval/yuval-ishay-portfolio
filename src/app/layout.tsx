@@ -1,9 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next"
 import AnimationProvider from "@/components/utils/AnimationProvider";
+import DynamicThemeColor from "@/components/utils/DynamicThemeColor";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yuvalishay.com"), // Replace with your actual domain
@@ -39,6 +46,7 @@ export default function RootLayout({
         )}
       </head>
       <body className="antialiased min-h-screen flex flex-col">
+        <DynamicThemeColor />
         <AnimationProvider>
           <Header />
           <main className="flex-1 flex flex-col">

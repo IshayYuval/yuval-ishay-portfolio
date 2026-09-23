@@ -17,7 +17,14 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
         if (element) {
             // Get header height from CSS variable or fallback number.
             // Since we know it's 80px, closely matching it ensures it tucks under nicely.
-            const offset = 80;
+            let offset = 80;
+            if (typeof window !== "undefined") {
+                const headerVar = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+                if (headerVar) {
+                    const parsed = parseFloat(headerVar);
+                    if (!isNaN(parsed) && parsed > 0) offset = parsed;
+                }
+            }
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - offset;
 
@@ -51,7 +58,7 @@ export default function ScrollDownButton({ targetId }: ScrollDownButtonProps) {
     return (
         <motion.button
             onClick={handleScroll}
-            className="absolute bottom-8 left-1/2 flex items-center justify-center text-white/80 hover:text-white transition-colors overflow-hidden rounded-full py-2 px-1"
+            className="absolute bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] md:bottom-8 left-1/2 flex items-center justify-center text-white/80 hover:text-white transition-colors overflow-hidden rounded-full py-2 px-1"
             aria-label="Scroll down"
             initial="initial"
             animate="animate"

@@ -41,7 +41,8 @@
   --font-sans: "proxima-nova", sans-serif;
 
   /* Spacing & Layout */
-  --header-height: 80px;
+  --nav-height: 80px;
+  --header-height: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
   --container-width: 1400px;
 
   /* Effects */
@@ -57,6 +58,7 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease;
 }
 
 /* Typography Utilities */
@@ -169,15 +171,15 @@ h5 {
 }
 
 .nav-bar-container {
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: calc(6rem + env(safe-area-inset-left, 0px));
+  padding-right: calc(6rem + env(safe-area-inset-right, 0px));
 }
 
 @media (max-width: 1200px) {
 
   .nav-bar-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: calc(2rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(2rem + env(safe-area-inset-right, 0px));
   }
 
   h1 {
@@ -273,8 +275,8 @@ h5 {
   }
 
   .nav-bar-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: calc(1rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(1rem + env(safe-area-inset-right, 0px));
   }
 
   .subhero {

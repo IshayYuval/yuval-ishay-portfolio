@@ -214,6 +214,7 @@ export default function UiUxLayout({ data }: { data: CaseStudy }) {
 
     return (
         <article
+            data-bg-color={pageBackground}
             className="min-h-screen pb-24"
             style={{
                 ...themeStyles,

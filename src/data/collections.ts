@@ -26,7 +26,7 @@ export const collections: Collection[] = [
   {
     slug: "video-installations",
     title: "Video Installations",
-    description: "Experiments with motion, sound, and space; from video art to physical installations.",
+    description: "Experiments with motion, sound, and space, from video art to physical installations.",
     parentNav: "my-work",
   },
   {

@@ -79,12 +79,12 @@ export default function Header() {
     return (
         <>
             <header
-                className="fixed top-0 left-0 w-full right-0 z-50 transition-all duration-300 ease-in-out overflow-hidden"
+                className="fixed top-0 left-0 w-full right-0 z-50 transition-all duration-300 ease-in-out overflow-hidden pt-[env(safe-area-inset-top,0px)]"
                 style={{
                     backgroundColor: (isScrolled || isDropdownOpen ||
                         // isHovered ||
                         isMobileMenuOpen) ? headerBg : 'transparent',
-                    maxHeight: isDropdownOpen ? '600px' : 'var(--header-height)',
+                    maxHeight: isDropdownOpen ? 'calc(600px + env(safe-area-inset-top, 0px))' : 'var(--header-height)',
                 }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => {
@@ -92,7 +92,7 @@ export default function Header() {
                     handleDropdownLeave();
                 }}
             >
-                <div className="w-full nav-bar-container gap-4 h-[var(--header-height)] flex items-center justify-between relative z-50">
+                <div className="w-full nav-bar-container gap-4 h-[var(--nav-height)] flex items-center justify-between relative z-50">
                     {/* Logo */}
                     <div className="flex items-center">
 
@@ -152,7 +152,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <div className="absolute top-0 right-0 h-[var(--header-height)] flex items-center px-5 md:hidden z-[61]">
+                <div className="absolute top-[env(safe-area-inset-top,0px)] right-[env(safe-area-inset-right,0px)] h-[var(--nav-height)] flex items-center px-5 md:hidden z-[61]">
                     <MobileMenuToggle
                         isOpen={isMobileMenuOpen}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -189,7 +189,7 @@ export default function Header() {
 
             {/* Backdrop Overlay */}
             <div
-                className={`fixed inset-0 backdrop-overlay transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                className={`fixed inset-0 backdrop-overlay transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 pointer-events-none invisible'}`}
                 style={{
                     top: 0,
                     zIndex: 40

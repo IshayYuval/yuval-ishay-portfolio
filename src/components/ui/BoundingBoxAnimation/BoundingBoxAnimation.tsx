@@ -42,7 +42,7 @@ export default function BoundingBoxAnimation({
   boxClassName = "",
   as: Component = "span",
   triggerOnView = false,
-  viewportAmount = 0.5,
+  viewportAmount = 0.2,
 }: BoundingBoxAnimationProps) {
   const displayText = text ?? (typeof children === "string" ? children : "");
   const [animationKey, setAnimationKey] = useState(0);
@@ -56,16 +56,23 @@ export default function BoundingBoxAnimation({
 
   // Listen to popstate and pageshow to ensure the animation replays on browser back/forward navigation
   useEffect(() => {
-    const handleNavigation = () => {
+    const handlePageShow = (event: PageTransitionEvent) => {
+      // Only replay if restored from bfcache
+      if (event.persisted) {
+        setAnimationKey((prev) => prev + 1);
+      }
+    };
+
+    const handlePopState = () => {
       setAnimationKey((prev) => prev + 1);
     };
 
-    window.addEventListener("pageshow", handleNavigation);
-    window.addEventListener("popstate", handleNavigation);
+    window.addEventListener("pageshow", handlePageShow);
+    window.addEventListener("popstate", handlePopState);
 
     return () => {
-      window.removeEventListener("pageshow", handleNavigation);
-      window.removeEventListener("popstate", handleNavigation);
+      window.removeEventListener("pageshow", handlePageShow);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, []);
 
@@ -75,7 +82,6 @@ export default function BoundingBoxAnimation({
   return (
     <Component
       ref={containerRef}
-      key={animationKey}
       className={`relative inline-flex items-baseline select-none ${className}`}
       style={
         {
@@ -94,7 +100,7 @@ export default function BoundingBoxAnimation({
 
       {/* 2. Text reveal container (animates width from 0% to 100%) */}
       {shouldAnimate && (
-        <span className={styles.revealContainer}>
+        <span key={`reveal-${animationKey}`} className={styles.revealContainer}>
           <span
             className={`relative tracking-tight whitespace-nowrap inline-block left-0 top-0 ${styles.text} ${textClassName}`}
           >
@@ -106,6 +112,7 @@ export default function BoundingBoxAnimation({
       {/* 3. Bounding Box Frame (Border, Background fill, and Handles) */}
       {shouldAnimate && (
         <span
+          key={`box-${animationKey}`}
           className={`absolute left-0 top-0 bottom-0 pointer-events-none inline-flex items-baseline z-10 ${
             fadeBox ? styles.boundingBox : styles.boundingBoxNoFade
           } ${boxClassName}`}

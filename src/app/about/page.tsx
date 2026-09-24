@@ -101,7 +101,7 @@ export default function AboutPage() {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
                             className="max-w-xl text-body"
                         >
-                            I am a multidisciplinary designer living in Rishon LeZion (which is like Tel-Aviv, but with only shopping malls). I’m currently in my second year of the Visual Communication B.A. program at HIT.
+                            I am a multidisciplinary designer living in Rishon LeZion (which is like Tel-Aviv, but with a lot of malls). I’m currently in my second year of the Visual Communication B.A. program at HIT.
                             <br />
                             <br />
                             My love story with design began in elementary school, when I discovered a weird program on my computer called Photoshop. I started experimenting with brushes and uploading my work to a graphic design community on the Ikariam forum.

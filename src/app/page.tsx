@@ -1,6 +1,5 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import ScrollDownButton from "@/components/ui/ScrollDownButton/ScrollDownButton";
 import HeroAnimatedContent from "@/components/ui/HeroAnimatedContent/HeroAnimatedContent";
 import ScrollToTop from "@/components/ui/ScrollToTop/ScrollToTop";
 import { caseStudies, collections, favorites } from "@/data/portfolio";
@@ -71,7 +70,6 @@ export default function Home() {
           }`}
         >
           <HeroAnimatedContent />
-          <ScrollDownButton targetId="featured-works" />
         </DotPattern>
       </div>
 

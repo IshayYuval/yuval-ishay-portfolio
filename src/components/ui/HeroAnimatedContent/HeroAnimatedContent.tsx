@@ -67,7 +67,7 @@ export default function HeroAnimatedContent() {
             <p className="sr-only">{subText}</p>
             <motion.div
                 aria-hidden="true"
-                className="subhero ml-0.5 block mt-6"
+                className="subhero ml-0.5 block mt-6 select-none"
                 variants={subheroContainerVariants}
                 initial={isBackNav ? false : "hidden"}
                 animate="visible"
@@ -85,14 +85,14 @@ export default function HeroAnimatedContent() {
                 initial={isBackNav ? false : "hidden"}
                 animate="visible"
             >
-                <motion.div variants={buttonVariants} className="w-full sm:w-[212px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[180px]">
                     <Button variant="primary" targetId="featured-works" className="w-full justify-center">
-                        Let me show you around!
+                        See my best work!
                     </Button>
                 </motion.div>
-                <motion.div variants={buttonVariants} className="w-full sm:w-[212px]">
+                <motion.div variants={buttonVariants} className="w-full sm:w-[180px]">
                     <Button variant="secondary" href="/about" className="w-full justify-center">
-                        A little bit about me :)
+                        A bit about me :)
                     </Button>
                 </motion.div>
             </motion.div>

@@ -21,9 +21,15 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
     heroImage:
       "/case-studies/conceptual-design/social-campaign/case-study-hero.mp4",
+
     theme: {
       heroBackground: "#000000",
+      navbarTextColor: "#ffffff",
       pageBackground: "#000000",
+      primaryColor: "#d71313",
+      surfaceColor: "#770e0e",
+      mutedSurfaceColor: "#590b0b",
+      borderColor: "#770e0e"
     },
     processSteps: [
       {
@@ -134,6 +140,10 @@ export const videoInstallationsCaseStudies: CaseStudy[] = [
       "/case-studies/conceptual-design/long-distance-love/hero-image.svg",
     theme: {
       heroBackground: "#2c487e",
+      pageBackground: "#10233f",
+      navbarTextColor: "#ffffff",
+      primaryColor: "#ffcd41",
+      surfaceColor: ""
     },
     introText:
       "This is the final project of my Creative Thinking course in the HIT Visual Communication BA program. The subject of the project was love. From the very first minute we got the brief, I knew I wanted to share my unique story of my long-distance relationship with my partner. <br/> <br/> Let's approach the brainstorming and research; I noticed a lot of couples don't survive this type of a relationship, yet we do. Why is that? What are we doing differently? <br/>I continued my research and started thinking about different aspects of life in which we have to follow guidelines, or else we won't survive. that's how I got the medium to deliver my guide for long-distance relationships. <br/><br/> Special thanks to my friend, and amazing designer, Sharon Kisilevich for the amazing commentary!",

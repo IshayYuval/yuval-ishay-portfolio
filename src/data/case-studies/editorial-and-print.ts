@@ -48,71 +48,92 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
           "I'm happy to say my catalogue was one of the few selected for the annual Artist Catalog Exhibition, held at Beit Ariela in collaboration with HIT.",
       },
     ],
-    gallery: [
+    galleries: [
       {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-7.webp",
-        alt: "page-cover",
-        colSpan: "full",
+        items: [
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-7.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-2.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-5.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-1.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-4.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-6.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-8.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-10.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-11.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
+            alt: "page-cover",
+            colSpan: "full",
+          },
+        ],
       },
       {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-2.webp",
-        alt: "page-cover",
-        colSpan: "half",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
-        alt: "page-cover",
-        colSpan: "half",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-5.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-1.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-4.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-6.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-8.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-10.webp",
-        alt: "page-cover",
-        colSpan: "half",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-11.webp",
-        alt: "page-cover",
-        colSpan: "half",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/image-9.webp",
-        alt: "page-cover",
-        colSpan: "full",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/museum-1.webp",
-        alt: "page-cover",
-        colSpan: "half",
-      },
-      {
-        src: "/case-studies/catalogues/anatomy-of-memory/museum-2.webp",
-        alt: "page-cover",
-        colSpan: "half",
+        title: "Beit Ariela Exhibition",
+        description:
+          "I'm happy to share Anatomy of Memory was selected to the HIT annual artist catalogue exhibition at Beit Ariela! It was a huge honor to see my work displayed alongside the best catalogues from my fellow and talented designers.",
+        items: [
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/museum-1.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 2.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 1.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 3.webp",
+            alt: "page-cover",
+            colSpan: "half",
+          },
+        ],
       },
     ],
   },

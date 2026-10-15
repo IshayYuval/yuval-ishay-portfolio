@@ -279,7 +279,7 @@ contentSections: [
 
 ### 8. Galleries & Video Embeds (`gallery`)
 
-Showcases images and Vimeo videos in half or full grid widths. Supports optional `title` (rendered with `<h1>`) and `description` for the whole gallery:
+Showcases images and Vimeo videos in half or full grid widths. Supports optional `title` (rendered with `<h2>`) and `description` for the whole gallery:
 
 ```typescript
 // Object syntax with title and description

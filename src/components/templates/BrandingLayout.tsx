@@ -59,35 +59,13 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                             }
                             return (
                                 <div key={index} className="flex flex-col gap-4">
-                                <h3 className="font-bold">{renderTextWithBreaks(step.title)}</h3>
-                                {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
-                                {step.bulletsTitle && <h4 className="font-bold mt-2">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
-                                {step.bullets && step.bullets.length > 0 && (
-                                    <ul className="list-disc pl-5 text-body space-y-1.5">
-                                        {step.bullets.map((bullet, i) => (
-                                            <li key={i}>
-                                                {typeof bullet === "string" ? (
-                                                    renderTextWithBreaks(bullet)
-                                                ) : (
-                                                    <>
-                                                        {bullet.label && (
-                                                            <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
-                                                                {bullet.label}
-                                                            </span>
-                                                        )}
-                                                        {renderTextWithBreaks(bullet.text)}
-                                                    </>
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                                {step.bulletSections && step.bulletSections.map((section, sIndex) => (
-                                    <div key={sIndex} className="mt-4">
-                                        {section.title && <h4 className="font-bold mt-2">{renderTextWithBreaks(section.title)}</h4>}
+                                    <h3 className="font-bold">{renderTextWithBreaks(step.title)}</h3>
+                                    {step.text && <p className="text-body">{renderTextWithBreaks(step.text)}</p>}
+                                    {step.bulletsTitle && <h4 className="font-bold mt-2">{renderTextWithBreaks(step.bulletsTitle)}</h4>}
+                                    {step.bullets && step.bullets.length > 0 && (
                                         <ul className="list-disc pl-5 text-body space-y-1.5">
-                                            {section.bullets.map((bullet, bIndex) => (
-                                                <li key={bIndex}>
+                                            {step.bullets.map((bullet, i) => (
+                                                <li key={i}>
                                                     {typeof bullet === "string" ? (
                                                         renderTextWithBreaks(bullet)
                                                     ) : (
@@ -103,14 +81,36 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                                                 </li>
                                             ))}
                                         </ul>
-                                    </div>
-                                ))}
-                                {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
-                            </div>
-                        );
-                    })}
-                </section>
-            );
+                                    )}
+                                    {step.bulletSections && step.bulletSections.map((section, sIndex) => (
+                                        <div key={sIndex} className="mt-4">
+                                            {section.title && <h4 className="font-bold mt-2">{renderTextWithBreaks(section.title)}</h4>}
+                                            <ul className="list-disc pl-5 text-body space-y-1.5">
+                                                {section.bullets.map((bullet, bIndex) => (
+                                                    <li key={bIndex}>
+                                                        {typeof bullet === "string" ? (
+                                                            renderTextWithBreaks(bullet)
+                                                        ) : (
+                                                            <>
+                                                                {bullet.label && (
+                                                                    <span style={{ color: bullet.labelColor, fontWeight: bullet.labelWeight }}>
+                                                                        {bullet.label}
+                                                                    </span>
+                                                                )}
+                                                                {renderTextWithBreaks(bullet.text)}
+                                                            </>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                    {step.textAfter && <p className="text-body">{renderTextWithBreaks(step.textAfter)}</p>}
+                                </div>
+                            );
+                        })}
+                    </section>
+                );
 
             case "contentSections": {
                 const contentData = resolveContentSectionsData(data.contentSections, data.contentSectionsTitle, data.contentSectionsDescription);
@@ -152,7 +152,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                         {(galleryData.title || galleryData.description) && (
                             <div className="max-w-4xl mx-auto mb-8">
                                 {galleryData.title && (
-                                    <h1 className="mb-4 text-center">{renderTextWithBreaks(galleryData.title)}</h1>
+                                    <h3 className="mb-4">{renderTextWithBreaks(galleryData.title)}</h3>
                                 )}
                                 {galleryData.description && (
                                     <p className="text-body">{renderTextWithBreaks(galleryData.description)}</p>
@@ -178,7 +178,7 @@ export default function BrandingLayout({ data }: { data: CaseStudy }) {
                                 {(gallerySection.title || gallerySection.description) && (
                                     <div className="max-w-4xl mx-auto mb-8">
                                         {gallerySection.title && (
-                                            <h1 className="mb-6 text-center">{renderTextWithBreaks(gallerySection.title)}</h1>
+                                            <h3 className="mb-6">{renderTextWithBreaks(gallerySection.title)}</h3>
                                         )}
                                         {gallerySection.description && (
                                             <p className="text-body">{renderTextWithBreaks(gallerySection.description)}</p>

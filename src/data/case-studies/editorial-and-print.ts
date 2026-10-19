@@ -117,11 +117,20 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
             src: "/case-studies/catalogues/anatomy-of-memory/museum-1.webp",
             alt: "page-cover",
             colSpan: "half",
+            width: 4284,
+            height: 3213,
           },
           {
-            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 2.webp",
+            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 3.webp",
             alt: "page-cover",
             colSpan: "half",
+            width: 1672,
+            height: 2230,
+          },
+          {
+            src: "/case-studies/catalogues/anatomy-of-memory/museum-2.webp",
+            alt: "page-cover",
+            colSpan: "full",
           },
           {
             src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 1.webp",
@@ -129,10 +138,11 @@ export const editorialAndPrintCaseStudies: CaseStudy[] = [
             colSpan: "half",
           },
           {
-            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 3.webp",
+            src: "/case-studies/catalogues/anatomy-of-memory/beit-ariela-exhibition/image 2.webp",
             alt: "page-cover",
             colSpan: "half",
           },
+
         ],
       },
     ],

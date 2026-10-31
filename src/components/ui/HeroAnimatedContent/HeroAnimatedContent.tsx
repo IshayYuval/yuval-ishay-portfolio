@@ -56,7 +56,7 @@ const buttonVariants: Variants = {
 
 export default function HeroAnimatedContent() {
     const isBackNav = useContext(AnimationContext);
-    const subText = "Multidisciplinary designer, specializing in branding, product design and AI-driven development.";
+    const subText = "Currently a Product Designer at Fusion Journey :)";
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 

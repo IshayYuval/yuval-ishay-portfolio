@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import "./about.css";
 import { motion, Variants } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import AnimatedText from "@/components/ui/AnimatedText/AnimatedText";
+import AboutImageStack from "@/components/ui/AboutImageStack/AboutImageStack";
 import { useContext } from "react";
 import { AnimationContext } from "@/components/utils/AnimationProvider";
 
@@ -43,33 +43,22 @@ export default function AboutPage() {
     return (
         <div className="flex flex-col lg:flex-row w-full bg-[var(--color-brand-secondary-950)] min-h-screen relative">
 
-            {/* Left side: Sticky Image */}
+            {/* Left side: Sticky Image Stack (Top on mobile, left on desktop) */}
             <motion.div
-                className="w-full lg:w-1/2 h-[50vh] lg:h-screen sticky top-0 shrink-0 z-10"
+                className="w-full lg:w-1/2 h-[46vh] lg:h-screen sticky top-0 shrink-0 z-20 flex items-center justify-center overflow-hidden bg-[var(--color-brand-secondary-950)] pt-[var(--header-height)] lg:pt-0"
                 initial={isBackNav ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <Image
-                    src="/web-assets/about-me.jpg"
-                    alt="Yuval Ishay profile picture"
-                    fill
-                    unoptimized
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                />
-                {/* Gradient Fade */}
-                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--color-brand-secondary-950)] to-transparent pointer-events-none hidden lg:block" />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--color-brand-secondary-950)] to-transparent pointer-events-none lg:hidden" />
+                <AboutImageStack />
             </motion.div>
 
-            {/* Right side: Scrolling text content */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-start pr-6 pl-6 md:pr-12 md:pl-6 lg:pr-24 lg:pl-12 z-0 pt-[var(--header-height)] bg-[var(--color-brand-secondary-950)] lg:bg-transparent shadow-[-10px_0_20px_rgba(21,30,61,1)] lg:shadow-none">
-                <div className="flex flex-col gap-12 lg:gap-32 max-w-xl pb-32">
+            {/* Right side: Scrolling text content (Bottom on mobile, right on desktop) */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-start pr-6 pl-6 md:pr-12 md:pl-6 lg:pr-24 lg:pl-12 z-10 pt-6 lg:pt-0 bg-transparent">
+                <div className="flex flex-col gap-12 lg:gap-0 max-w-xl pb-24 lg:pb-0">
 
                     {/* Section 1 */}
-                    <div className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-4 lg:py-12">
+                    <div className="min-h-[50vh] lg:min-h-screen flex flex-col justify-center py-6 lg:py-0 pt-2 lg:pt-[var(--header-height)]">
                         <h1 className="sr-only">Hey there, I&#39;m Yuval!</h1>
                         <motion.h1
                             aria-hidden="true"
@@ -126,7 +115,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Section 2 */}
-                    <div id="background" className="min-h-auto lg:min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center py-12">
+                    <div id="background" className="min-h-[50vh] lg:min-h-screen flex flex-col justify-center py-6 lg:py-0">
                         <h1 className="sr-only">My Approach</h1>
                         <motion.h1
                             aria-hidden="true"

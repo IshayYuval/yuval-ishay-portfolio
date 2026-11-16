@@ -1,8 +1,33 @@
 .container {
-    background-color: var(--color-brand-secondary-900);
-    border-radius: var(--radius-md);
+  background-color: var(--color-brand-secondary-900);
+  border: 2px solid transparent;
 }
 
-.container:hover {
-    background-color: var(--color-brand-secondary-800);
+.boundingBox {
+  border: 2px solid var(--color-brand-primary-500);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 252, 244, 0.15);
+  box-sizing: border-box;
+}
+
+.squareHandle {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 2px solid var(--color-brand-primary-500);
+  pointer-events: none;
+  z-index: 30;
+  box-sizing: border-box;
+}
+
+.cornerCircleHitbox {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
 }
